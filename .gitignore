@@ -3,10 +3,3 @@ db/*.sqlite3
 db/*.db
 log/*.log
 tmp/*
-vendor/bundler/**/*
-vendor/gems/**/*
-vendor/specifications/*
-vendor/bin/*
-!vendor/bundler/cache
-vendor/bundler/cache/git
-vendor/cache
