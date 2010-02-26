@@ -37,5 +37,7 @@ Rails::Initializer.run do |config|
   # config.i18n.default_locale = :de
 end
 
+require 'erubis/helpers/rails_helper'
+
 require 'bundler'
 Bundler.setup
