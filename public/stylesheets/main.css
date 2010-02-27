@@ -45,22 +45,22 @@ h4{font-size:120%;}
 h5{font-size:100%;}
 
 /* Structure Styles */
-body{font-family: Helvetica, Tahoma, Verdana, sans-serif;font-size:80%;position:relative;background:#fff url(../images/cle2030_bg.png) repeat-x top left;color:#333;}
-#container{width:100%;margin:0 auto;background:transparent url(../images/cle2030-clouds.jpg) no-repeat top left;}
+body{font-family: Helvetica, Tahoma, Verdana, sans-serif;font-size:80%;position:relative;background:#fff url(/images/bg-strech.jpg) repeat-x top left;color:#333;}
+#container{width:100%;margin:0 auto;background:transparent url(/images/bg.jpg) no-repeat top center;}
 #container img.skyline{position:absolute;right:140px;top:107px;}
-#shadowContainer{width:1150px;margin:0 auto;}
-#innerContainer{width:1000px;margin:0 auto;}
+#shadowContainer{width:960px;margin:0 auto;}
+#innerContainer{width:972px;margin:0 auto;}
 
-#header{height:150px;background:transparent url(../images/cle2030-skyline.png) no-repeat 100% 85px;}
+#header{height:145px;/*height:150px;background:transparent url(../images/cle2030-skyline.png) no-repeat 100% 85px;*/}
 #header #topHeader{height:20px;text-align:right;}
 #header a.logo{margin:5px 5px 5px 15px;display:block;float:left;width:300px;}
 #header #alertSection{float:left;width:345px;margin:0 5px;padding:8px;}
 #header #loginSection{float:right;width:300px;padding:28px 0 0 0;}
 
-nav {height:45px;padding:0;background:transparent url(../images/cle2030-menu_re.png) repeat-x 0 3px;}
-nav div{overflow:hidden;height:45px;margin:0 auto;padding:0 3px;background:transparent url(../images/cle2030-skyline.png) no-repeat 100% -63px;}
+nav {height:45px;padding:0;background:transparent url(../images/nav-bg.gif) repeat-x 0 3px;}
+nav div{overflow:hidden;height:45px;margin:0 auto;padding:0 3px;/*background:transparent url(../images/cle2030-skyline.png) no-repeat 100% -63px;*/}
 nav ul li{float:left;margin:0 3px;height:42px;}
-nav ul li a{font-size:130%;text-decoration:none;font-weight:bold;color:#fff;display:block;height:42px;padding:14px 10px 0;}
+nav ul li a{font-size:115%;/*font-size:130%;*/text-decoration:none;font-weight:normal;/*font-weight:bold;*/color:#fff;display:block;height:42px;padding:17px 10px 0;/*padding:14px 10px 0;*/}
 nav ul li a:hover{color:#ebebeb;}
 nav ul li.current a{background:transparent url(../images/cle2030-menu_re.png) repeat-x 0 -50px;}
 
@@ -69,14 +69,8 @@ footer{background:#2d2d2d;padding:10px;height:100px;color:#fff;}
 
 /* column styles */
 /* 2 column layout */
-div.twoColumns-0{float:left;width:695px;}
+div.twoColumns-0{float:left;/*width:695px;*/width:670px;}
 div.twoColumns-1{float:right;width:275px;}
-
-/* column styles end*/
-
-/* content styles */
-div.introContainer{position:relative;width:692px;height:240px;margin:0 0 10px 0;}
-div.intro{width:722px;height:240px;background:#044e8f url(../images/cle2030-intro-bg_re.png) repeat-x top left;position:absolute;top:0;left:-30px;}
 div.introContainer .corner{width:18px;height:9px;position:absolute;bottom:-9px;left:-29px;background:transparent url(../images/cle2030-intro-corner.png) no-repeat top left;}
 
 div.miniCalendar{width:274px;height:240px;background:#293239;}
@@ -104,18 +98,18 @@ div.calendar div.month div.weekRow div.day ul li span.networking{background:#ff0
 
 
 div.subintroContainer { margin-bottom: 15px; overflow: hidden;}
-div.subintroColumnLeft, div.subintroColumnRight { float: left; width: 485px; }
+div.subintroColumnLeft, div.subintroColumnRight { float: left;width: 460px; /*width: 485px;*/ }
 div.subintroColumnRight { margin-left: 15px; width: 190px; }
 
 div.membership, div.recentnews, div.sponsor, div.flickr { margin-bottom: 30px; }
 div.membership h3, div.recentnews h3, div.sponsor h3, div.flickr h3 { text-transform: uppercase; font-size: 15px; margin-bottom: 5px; }
 
-div.membershipBody { background: #ebebeb; border: 5px solid #ebebeb; -moz-border-radius: 5px; -webkit-border-radius: 5px; width: 469px; overflow: hidden; padding: 3px; }
+div.membershipBody { background: #ebebeb; border: 5px solid #ebebeb; -moz-border-radius: 5px; -webkit-border-radius: 5px; /*width: 469px;*/ overflow: hidden; padding: 3px; }
 	div.register { float: left; padding-right: 10px; text-align: center; }
 		div.register p a { color: #336799; font-family: Arial; }
 			p.becomeMember { margin: 24px 0 5px 0; }
 			p.becomeMember a { background: url('/images/becomeamember.jpg') no-repeat 0 0; display: block; height: 48px; text-indent: -9999px; width: 195px; }
-	div.testimonials { border-left: 5px solid #ccc; float: left; padding-left: 10px; width: 245px; }
+	div.testimonials { border-left: 5px solid #ccc; float: left; padding-left: 10px; /*width: 245px;*/ }
 			div.testimonials h4 { float: left; margin-bottom:3px; }
 			div.testimonials a { background: #999 url('/images/testimonialsrightarrow.jpg') no-repeat 100% 0; color: #fff; display: block; float: right; font-size: 11px; font-weight: normal; line-height: 12px; margin-top:2px; padding-left: 6px; text-decoration: none; width: 34px; }
 		div.testimonialBody { border-top:1px solid #D4D8DB; padding: 8px; clear: both; }
@@ -142,12 +136,6 @@ div.flickrImage { width: 380px; text-align: center; }
 /*************************************************/
 /************ begin Jon's Contribution *************/
 /*************************************************/
-
-/* content styles */
-div.introContainer{position:relative;width:692px;height:240px;margin:0 0 10px 0;}
-div.intro
-{
-	width:722px;height:240px;background:#044e8f url(../images/cle2030-intro-bg_re.png) repeat-x top left;position:absolute;top:0;left:-30px;}
 div.intro div{display:none;}
 div.intro div.current
 {
@@ -212,10 +200,6 @@ div.intro div p
 	top: 25px;
 	left: 200px;
 }
-div.introContainer .corner{width:18px;height:9px;position:absolute;bottom:-9px;left:-29px;background:transparent url(../images/cle2030-intro-corner.png) no-repeat top left;}
-
-div.miniCalendar{width:274px;height:240px;background:#293239;}
-
 .event
 {
 	background-color: #0066b6;
@@ -308,4 +292,94 @@ div.miniCalendar{width:274px;height:240px;background:#293239;}
 
 /*************************************************/
 /************ end Jon's Contribution *************/
+/*************************************************/
+
+/*************************************************/
+/************ begin Adam's Contribution *************/
+/*************************************************/
+
+/* forms */
+fieldset {
+	margin: 0 13px;
+	padding: 20px 0;
+}
+fieldset>fieldset {
+	padding: 0; margin: 0;
+}
+fieldset.twoCol {
+	float: left;
+	width: 450px;
+}
+fieldset h2 {
+	font-size: 180%;
+	font-weight: bold;
+}
+fieldset>fieldset h2 {
+	font-size: 160%;
+}
+fieldset h2 a.login {
+	font-size: 50%;	
+}
+fieldset div {
+	margin: 16px 0;
+}
+fieldset label {
+	text-align: right;
+	width: 150px;
+	display: block;
+	float: left;
+	margin: 6px 8px 0 0;
+	text-transform: uppercase;
+	font-size: 90%;
+	color: #6C6C6C;
+}
+
+fieldset ol.checklist label {
+	margin: 0 0 0 50px;
+	padding: 0 0 0 50px;
+}
+fieldset input[type="checkbox"] {
+	margin: 0;
+	padding: 0;
+}
+
+fieldset input[type="text"], fieldset input[type="password"], fieldset input[type="email"], fieldset input:not([type="checkbox"]), fieldset select {
+	width: 200px;
+	display: block;
+	border: 1px solid #6c6c6c;
+	margin: 6px 8px 0 0;
+	padding: 4px 0 4px 4px;
+}
+fieldset div.formAction {
+	border-top: 3px solid #6c6c6c;
+	margin: 0 106px 0 0;
+	padding: 13px 0;
+	background-color: #ebebeb;
+	overflow: auto;
+}
+fieldset div.formAction a {/* FORM BUTTON */
+	float: right;
+	margin: 0 13px 0 13px;
+}
+fieldset div.formAction a, fieldset div.formAction a:visited {
+	background-color: #2799e9;
+	display: inline-block; 
+	padding: 5px 10px 6px; 
+	color: #fff; 
+	text-decoration: none;
+	-moz-border-radius: 5px; 
+	-webkit-border-radius: 5px;
+	-moz-box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+	-webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+	text-shadow: 0 -1px 1px rgba(0,0,0,0.25);
+	border-bottom: 1px solid rgba(0,0,0,0.25);
+	position: relative;
+	cursor: pointer;
+	font-size: 140%;
+}
+fieldset div.formAction a:hover { background-color: #2181c3; color: #fff; }
+fieldset div.formAction a:active { top: 1px; }
+
+/*************************************************/
+/************ end Adam's Contribution *************/
 /*************************************************/
