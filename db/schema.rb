@@ -60,6 +60,15 @@ ActiveRecord::Schema.define(:version => 20100227225254) do
 
   add_index "email_address_types", ["title"], :name => "index_email_address_types_on_title", :unique => true
 
+  create_table "email_addresses", :force => true do |t|
+    t.string   "address"
+    t.integer  "user_id"
+    t.integer  "email_address_type_id"
+    t.boolean  "primary",               :default => true
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "events", :force => true do |t|
     t.string   "name"
     t.string   "summary"
@@ -124,5 +133,13 @@ ActiveRecord::Schema.define(:version => 20100227225254) do
   end
 
   add_index "user_profiles", ["user_id"], :name => "index_user_profiles_on_user_id", :unique => true
+
+  create_table "users", :force => true do |t|
+    t.string   "first_name"
+    t.string   "last_name"
+    t.integer  "user_profiles_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
 end
