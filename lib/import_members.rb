@@ -32,6 +32,16 @@ class ImportMembers
       klass = self.new
       klass.companies
     end
+    
+    def titles
+      klass = self.new
+      klass.titles
+    end
+    
+    def suffixes
+      klass = self.new
+      klass.suffixes
+    end
   end
   
   def filename
@@ -92,6 +102,22 @@ class ImportMembers
   
   def member_statuses
     @member_statuses ||= self.unique_member_statuses.inject([]) { |arr,attrs| arr << Import::MemberStatus.new(attrs); arr }
+  end
+  
+  def unique_suffixes
+    @unique_suffixes ||= (self.first_row).upto(self.last_row).inject([]) { |arr,val| arr << self.value_for_column(val, :member_title); arr }.compact.map(&:downcase).map(&:strip).map { |r| r.gsub('.', '') }.uniq.sort
+  end
+  
+  def suffixes
+    @suffixes ||= self.unique_suffixes.inject([]) { |arr,val| arr << Import::Suffix.new(:title => val); arr }
+  end
+  
+  def unique_titles
+    @unique_titles ||= (self.first_row).upto(self.last_row).inject([]) { |arr,val| arr << self.value_for_column(val, :member_suffix); arr }.compact.map(&:downcase).map(&:strip).map { |r| r.gsub('.', '') }.uniq.sort
+  end
+  
+  def titles
+    @titles ||= self.unique_titles.inject([]) { |arr,val| arr << Import::Title.new(:title => val); arr }
   end
   
   def members
@@ -160,12 +186,22 @@ class ImportMembers
       }
       account = Import::Account.new(account_attributes)
       
+      title_attributes = {
+        :title => self.value_for_column(val, :member_title)
+      }
+      title = Import::Title.new(title_attributes)
+      
+      suffix_attributes = {
+        :title => self.value_for_column(val, :member_suffix)
+      }
+      suffix = Import::Suffix.new(suffix_attributes)
+      
       member_attributes = {
-        :title => self.value_for_column(val, :member_title),
+        :title => title,
         :first_name => self.value_for_column(val, :member_firstname),
         :middle_name => self.value_for_column(val, :member_middlename),
         :last_name => self.value_for_column(val, :member_lastname),
-        :suffix => self.value_for_column(val, :member_suffix),
+        :suffix => suffix,
         :birthdate => self.value_for_column(val, :member_birthdate),
         :gender => self.value_for_column(val, :member_gender),
         :addresses => addresses,
