@@ -1,11 +1,11 @@
 require File.expand_path(File.dirname(__FILE__) + '/../spec_helper')
 
-describe UserTitle do
+describe Suffix do
   before(:each) do
-    @user_title = Factory.build(:user_title)
+    @suffix = Factory.build(:suffix)
   end
 
   it "should create a new instance given valid attributes" do
-    @user_title.should be_valid
+    @suffix.should be_valid
   end
 end

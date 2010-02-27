@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100227224249) do
+ActiveRecord::Schema.define(:version => 20100227225254) do
 
   create_table "accounts", :force => true do |t|
     t.string   "login",                              :null => false
@@ -99,6 +99,18 @@ ActiveRecord::Schema.define(:version => 20100227224249) do
   add_index "states", ["code"], :name => "index_states_on_code", :unique => true
   add_index "states", ["title"], :name => "index_states_on_title", :unique => true
 
+  create_table "suffixes", :force => true do |t|
+    t.string "title", :limit => 20, :null => false
+  end
+
+  add_index "suffixes", ["title"], :name => "index_suffixes_on_title", :unique => true
+
+  create_table "surnames", :force => true do |t|
+    t.string "title", :limit => 15, :null => false
+  end
+
+  add_index "surnames", ["title"], :name => "index_surnames_on_title", :unique => true
+
   create_table "user_profiles", :force => true do |t|
     t.integer  "user_id",             :null => false
     t.date     "birthdate"
@@ -112,11 +124,5 @@ ActiveRecord::Schema.define(:version => 20100227224249) do
   end
 
   add_index "user_profiles", ["user_id"], :name => "index_user_profiles_on_user_id", :unique => true
-
-  create_table "user_titles", :force => true do |t|
-    t.string "title", :limit => 15, :null => false
-  end
-
-  add_index "user_titles", ["title"], :name => "index_user_titles_on_title", :unique => true
 
 end
