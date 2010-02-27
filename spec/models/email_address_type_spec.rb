@@ -1,6 +1,6 @@
 require File.expand_path(File.dirname(__FILE__) + '/../spec_helper')
 
-describe EmailAddressTypes do
+describe EmailAddressType do
   before(:each) do
     @email_address_type = Factory.build(:email_address_type)
   end
