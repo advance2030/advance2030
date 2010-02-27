@@ -38,6 +38,13 @@ ActiveRecord::Schema.define(:version => 20100227225254) do
 
   add_index "address_types", ["title"], :name => "index_address_types_on_title", :unique => true
 
+  create_table "categories", :force => true do |t|
+    t.string "name",        :limit => 20, :null => false
+    t.string "description",               :null => false
+  end
+
+  add_index "categories", ["name"], :name => "index_categories_on_name", :unique => true
+
   create_table "cities", :force => true do |t|
     t.string "title",        :limit => 75, :null => false
     t.string "url_friendly", :limit => 75, :null => false
