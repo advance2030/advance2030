@@ -8,7 +8,7 @@ class AccountsController < ApplicationController
   end
   
   def create
-    @account = Account.new(params[:user])
+    @account = Account.new(params[:account])
     if @account.save
       redirect_back_or_default account_url
     else
