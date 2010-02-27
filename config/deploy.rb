@@ -47,6 +47,7 @@ end
 # Don't change unless you know what you are doing!
 
 after "deploy", "deploy:cleanup"
+after "deploy", "bundle:install"
 after "deploy:migrations", "deploy:cleanup"
 after "deploy:update_code","deploy:symlink_configs"
 
@@ -57,6 +58,12 @@ namespace :nginx do
 
   task :restart, :roles => :app do
     sudo "nohup /etc/init.d/nginx restart > /dev/null"
+  end
+end
+
+namespace :bundle do
+  task :install, :roles => :app do
+    run "cd #{current_release} && bundle install"
   end
 end
 
