@@ -21,8 +21,12 @@
             <div id="alertSection">
             </div>
             <div id="loginSection">
-              <a href="#" title="login" class="login">LOGIN</a> | NEW HERE?
-              <a href="#" title="register">REGISTER</a>
+			<% if !@current_user.nil? and @current_user.logged_in? %>
+				<%= link_to "Sign out", user_session_url(@current_user), :method => :delete  %>
+			<% else %>
+            	<a href="/user_sessions/new/" title="login" class="login">LOGIN</a> | NEW HERE?
+            	<a href="/accounts/new/" title="register">REGISTER</a>			
+			<% end %>
             </div>
           </div>
           <nav>
