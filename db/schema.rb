@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100227220220) do
+ActiveRecord::Schema.define(:version => 20100227220605) do
 
   create_table "accounts", :force => true do |t|
     t.string   "login",                              :null => false
@@ -37,6 +37,14 @@ ActiveRecord::Schema.define(:version => 20100227220220) do
   end
 
   add_index "address_types", ["title"], :name => "index_address_types_on_title", :unique => true
+
+  create_table "cities", :force => true do |t|
+    t.string "title",        :limit => 75, :null => false
+    t.string "url_friendly", :limit => 75, :null => false
+  end
+
+  add_index "cities", ["title"], :name => "index_cities_on_title", :unique => true
+  add_index "cities", ["url_friendly"], :name => "index_cities_on_url_friendly", :unique => true
 
   create_table "email_address_types", :force => true do |t|
     t.string "title",       :null => false
