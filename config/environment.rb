@@ -39,4 +39,6 @@ end
 
 require 'bundler'
 Bundler.setup
+require 'authlogic'
+require 'urligence'
 Bundler.require :default, Rails.env
