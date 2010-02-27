@@ -8,3 +8,4 @@ public/cache/**/*
 public/system/**/*
 *.tmproj
 rerun.txt
+nbproject
