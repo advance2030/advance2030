@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100227221830) do
+ActiveRecord::Schema.define(:version => 20100227223104) do
 
   create_table "accounts", :force => true do |t|
     t.string   "login",                              :null => false
@@ -38,6 +38,13 @@ ActiveRecord::Schema.define(:version => 20100227221830) do
 
   add_index "address_types", ["title"], :name => "index_address_types_on_title", :unique => true
 
+  create_table "categories", :force => true do |t|
+    t.string "name",        :limit => 20, :null => false
+    t.string "description",               :null => false
+  end
+
+  add_index "categories", ["name"], :name => "index_categories_on_name", :unique => true
+
   create_table "cities", :force => true do |t|
     t.string "title",        :limit => 75, :null => false
     t.string "url_friendly", :limit => 75, :null => false
@@ -47,7 +54,7 @@ ActiveRecord::Schema.define(:version => 20100227221830) do
   add_index "cities", ["url_friendly"], :name => "index_cities_on_url_friendly", :unique => true
 
   create_table "email_address_types", :force => true do |t|
-    t.string "title",       :null => false
+    t.string "title",       :limit => 50, :null => false
     t.text   "description"
   end
 
@@ -70,7 +77,7 @@ ActiveRecord::Schema.define(:version => 20100227221830) do
   end
 
   create_table "phone_number_types", :force => true do |t|
-    t.string "title",       :null => false
+    t.string "title",       :limit => 50, :null => false
     t.text   "description"
   end
 
