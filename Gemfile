@@ -8,6 +8,7 @@ gem "sqlite3-ruby",           "1.2.5"
 gem "roo",                "1.3.11"
 gem "newrelic_rpm",           "2.10.5"
 gem "roo",                    "1.3.11"
+gem "paperclip",              "2.3.1.1"
 
 group :test do
   gem "rspec",                          "1.3.0"

@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100227221017) do
+ActiveRecord::Schema.define(:version => 20100227221830) do
 
   create_table "accounts", :force => true do |t|
     t.string   "login",                              :null => false
@@ -47,7 +47,7 @@ ActiveRecord::Schema.define(:version => 20100227221017) do
   add_index "cities", ["url_friendly"], :name => "index_cities_on_url_friendly", :unique => true
 
   create_table "email_address_types", :force => true do |t|
-    t.string "title",       :null => false
+    t.string "title",       :limit => 50, :null => false
     t.text   "description"
   end
 
@@ -70,11 +70,19 @@ ActiveRecord::Schema.define(:version => 20100227221017) do
   end
 
   create_table "phone_number_types", :force => true do |t|
-    t.string "title",       :null => false
+    t.string "title",       :limit => 50, :null => false
     t.text   "description"
   end
 
   add_index "phone_number_types", ["title"], :name => "index_phone_number_types_on_title", :unique => true
+
+  create_table "postal_codes", :force => true do |t|
+    t.string   "code"
+    t.integer  "city_id"
+    t.integer  "state_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "states", :force => true do |t|
     t.string "title", :limit => 50, :null => false
@@ -85,11 +93,17 @@ ActiveRecord::Schema.define(:version => 20100227221017) do
   add_index "states", ["title"], :name => "index_states_on_title", :unique => true
 
   create_table "user_profiles", :force => true do |t|
-    t.integer  "user_id"
+    t.integer  "user_id",             :null => false
     t.date     "birthdate"
     t.text     "bio"
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.string   "avatar_file_size"
+    t.datetime "avatar_updated_at"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "user_profiles", ["user_id"], :name => "index_user_profiles_on_user_id", :unique => true
 
 end
