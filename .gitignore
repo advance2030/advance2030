@@ -5,3 +5,4 @@ db/*.db
 log/*.log
 tmp/*
 rerun.txt
+nbproject
