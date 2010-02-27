@@ -1,6 +1,6 @@
 require File.expand_path(File.dirname(__FILE__) + '/../spec_helper')
 
-describe PhoneNumberTypes do
+describe PhoneNumberType do
   before(:each) do
     @phone_number_type = Factory.build(:phone_number_type)
   end
