@@ -41,8 +41,6 @@ end
 require 'bundler'
 Bundler.setup
 
-require 'import_members'
-
 require 'newrelic_rpm'
 require 'authlogic'
 
