@@ -68,6 +68,7 @@ footer{background:#2d2d2d;padding:10px;height:100px;color:#fff;}
 /* 2 column layout */
 div.twoColumns-0{float:left;width:695px;}
 div.twoColumns-1{float:right;width:275px;}
+
 /* column styles end*/
 
 
@@ -77,3 +78,56 @@ div.intro{width:722px;height:240px;background:#044e8f url(/images/cle2030-intro-
 div.introContainer .corner{width:18px;height:9px;position:absolute;bottom:-9px;left:-29px;background:transparent url(/images/cle2030-intro-corner.png) no-repeat top left;}
 
 div.miniCalendar{width:274px;height:240px;background:#293239;}
+
+div.calendarHeader{overflow:hidden;}
+div.calendarHeader form{float:left;width:45%;height:40px;}
+div.calendarHeader div{float:right;width:45%;text-align:right;height:40px;}
+div.calendarHeader div span.daySelected{padding:0 5px;font-weight:bold;background:#0099ff;color:#fff;}
+div.calendar{}
+div.calendar div.month {width:692px;overflow:hidden;border:1px solid #ccc;}
+div.calendar div.month div.weekTitles{height:30px;background:#000;}
+
+div.calendar div.month div.weekTitles div{width:98px;float:left;color:#fff;text-align:center;padding:8px 0;border-right:1px solid #ccc;font-weight:bold;}
+div.calendar div.month div.weekRow{overflow:hidden;border-bottom:1px solid #ccc;}
+div.calendar div.month div.weekRow div.day{height:64px;border-right:1px solid #ccc;float:left;width:98px;}
+div.calendar div.month div.weekTitles div.last,
+div.calendar div.month div.weekRow div.last{border-right:none;}
+div.calendar div.month div.weekRow div.day span.date{display:block;background:#c0e0ff;padding:1px 3px;}
+div.calendar div.month div.weekRow div.day span.blank{background:#ebebeb;}
+div.calendar div.month div.weekRow div.day ul{list-style:none;}
+div.calendar div.month div.weekRow div.day ul li{padding:2px 0 1px 2px;overflow:hidden;}
+div.calendar div.month div.weekRow div.day ul li a{font-size:82%;padding:0 0 0 2px;white-space:nowrap;display:block;float:left;}
+div.calendar div.month div.weekRow div.day ul li span{width:5px;height:10px;margin:0 2px 0 0;float:left;}
+div.calendar div.month div.weekRow div.day ul li span.networking{background:#ff0000;}
+
+
+div.subintroContainer { margin-bottom: 15px; overflow: hidden;}
+div.subintroColumnLeft, div.subintroColumnRight { float: left; width: 485px; }
+div.subintroColumnRight { margin-left: 15px; width: 190px; }
+
+div.membership, div.recentnews, div.sponsor, div.flickr { margin-bottom: 30px; }
+div.membership h3, div.recentnews h3, div.sponsor h3, div.flickr h3 { text-transform: uppercase; font-size: 15px; margin-bottom: 5px; }
+
+div.membershipBody { background: #ebebeb; border: 5px solid #ebebeb; -moz-border-radius: 5px; -webkit-border-radius: 5px; width: 469px; overflow: hidden; padding: 3px; }
+	div.register { float: left; padding-right: 10px; text-align: center; }
+		div.register p a { color: #336799; font-family: Arial; }
+			p.becomeMember { margin: 24px 0 5px 0; }
+			p.becomeMember a { background: url('/images/becomeamember.jpg') no-repeat 0 0; display: block; height: 48px; text-indent: -9999px; width: 195px; }
+	div.testimonials { border-left: 5px solid #ccc; float: left; padding-left: 10px; width: 245px; }
+			div.testimonials h4 { float: left; margin-bottom:3px; }
+			div.testimonials a { background: #999 url('/images/testimonialsrightarrow.jpg') no-repeat 100% 0; color: #fff; display: block; float: right; font-size: 11px; font-weight: normal; line-height: 12px; margin-top:2px; padding-left: 6px; text-decoration: none; width: 34px; }
+		div.testimonialBody { border-top:1px solid #D4D8DB; padding: 8px; clear: both; }
+			div.testimonialBody p { font-size: 12px; }
+			div.testimonialBody p.testimonialAuthor { color: #666; margin-top: 30px; }
+			
+div.recentnewsBody ul { list-style: square; margin-left:20px; }
+	div.recentnewsBody ul li { font-size: 12px; line-height: 15px; padding-bottom:5px; }
+		div.recentnewsBody ul li a { color: #2c83b0; }
+		div.recentnewsBody ul li.recentnewsMore { list-style: none; padding-left: 5px; }
+			div.recentnewsBody ul li.recentnewsMore a { color: #676767; font-size: 10px; }
+
+div.flickrBody { margin-top: 8px; }
+div.flickrLeft, div.flickrImage, div.flickrRight { float: left; height: 145px; }
+div.flickrLeft a { display: block; background: url('/images/flickrLeft.jpg') no-repeat 0 0; width: 30px; height: 85px; margin: 32px 10px; }
+div.flickrRight a { display: block; background: url('/images/flickrRight.jpg') no-repeat 0 0; width: 30px; height: 85px; margin: 32px 10px; }
+div.flickrImage { width: 380px; text-align: center; }
