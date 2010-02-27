@@ -37,13 +37,14 @@ Rails::Initializer.run do |config|
   # config.i18n.default_locale = :de
 end
 
-require 'newrelic_rpm'
 
 require 'bundler'
 Bundler.setup
 
-require 'newrelic_rpm'
 require 'import_members'
+
+require 'newrelic_rpm'
+require 'authlogic'
 
 require 'urligence'
 Bundler.require :default, Rails.env
