@@ -1,7 +1,7 @@
 class CreatePhoneNumberTypes < ActiveRecord::Migration
   def self.up
     create_table :phone_number_types do |t|
-      t.string :title, :null => false, :length => 50
+      t.string :title, :null => false, :limit => 50
       t.text :description
     end
     

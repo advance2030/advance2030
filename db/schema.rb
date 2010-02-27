@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100227211223) do
+ActiveRecord::Schema.define(:version => 20100227221017) do
 
   create_table "accounts", :force => true do |t|
     t.string   "login",                              :null => false
@@ -30,6 +30,21 @@ ActiveRecord::Schema.define(:version => 20100227211223) do
     t.datetime "joined_at"
     t.datetime "expired_at"
   end
+
+  create_table "address_types", :force => true do |t|
+    t.string "title",       :limit => 50, :null => false
+    t.text   "description"
+  end
+
+  add_index "address_types", ["title"], :name => "index_address_types_on_title", :unique => true
+
+  create_table "cities", :force => true do |t|
+    t.string "title",        :limit => 75, :null => false
+    t.string "url_friendly", :limit => 75, :null => false
+  end
+
+  add_index "cities", ["title"], :name => "index_cities_on_title", :unique => true
+  add_index "cities", ["url_friendly"], :name => "index_cities_on_url_friendly", :unique => true
 
   create_table "email_address_types", :force => true do |t|
     t.string "title",       :null => false
@@ -60,6 +75,14 @@ ActiveRecord::Schema.define(:version => 20100227211223) do
   end
 
   add_index "phone_number_types", ["title"], :name => "index_phone_number_types_on_title", :unique => true
+
+  create_table "states", :force => true do |t|
+    t.string "title", :limit => 50, :null => false
+    t.string "code",  :limit => 10, :null => false
+  end
+
+  add_index "states", ["code"], :name => "index_states_on_code", :unique => true
+  add_index "states", ["title"], :name => "index_states_on_title", :unique => true
 
   create_table "user_profiles", :force => true do |t|
     t.integer  "user_id"
