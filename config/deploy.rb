@@ -43,6 +43,19 @@ task :advance2030_development do
 end
 
 
+task :QA do
+  role :web, '184.73.224.112'
+  role :app, '184.73.224.112'
+  role :db,  '184.73.224.112', :primary => true
+  set :environment_database, Proc.new { production_database }
+  set :dbuser,        'deploy'
+  set :dbpass,        'bsNyATbdFY'
+  set :user,          'deploy'
+  set :password,      'bsNyATbdFY'
+  set :runner,        'deploy'
+  set :rails_env,     'staging'
+end
+
 # TASKS
 # Don't change unless you know what you are doing!
 
