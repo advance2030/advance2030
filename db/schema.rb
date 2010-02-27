@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100227210031) do
+ActiveRecord::Schema.define(:version => 20100227211223) do
 
   create_table "accounts", :force => true do |t|
     t.string   "login",                              :null => false
@@ -31,6 +31,13 @@ ActiveRecord::Schema.define(:version => 20100227210031) do
     t.datetime "expired_at"
   end
 
+  create_table "email_address_types", :force => true do |t|
+    t.string "title",       :null => false
+    t.text   "description"
+  end
+
+  add_index "email_address_types", ["title"], :name => "index_email_address_types_on_title", :unique => true
+
   create_table "events", :force => true do |t|
     t.string   "name"
     t.string   "summary"
@@ -46,6 +53,13 @@ ActiveRecord::Schema.define(:version => 20100227210031) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "phone_number_types", :force => true do |t|
+    t.string "title",       :null => false
+    t.text   "description"
+  end
+
+  add_index "phone_number_types", ["title"], :name => "index_phone_number_types_on_title", :unique => true
 
   create_table "user_profiles", :force => true do |t|
     t.integer  "user_id"
