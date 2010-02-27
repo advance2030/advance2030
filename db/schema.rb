@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100227211223) do
+ActiveRecord::Schema.define(:version => 20100227220220) do
 
   create_table "accounts", :force => true do |t|
     t.string   "login",                              :null => false
@@ -30,6 +30,13 @@ ActiveRecord::Schema.define(:version => 20100227211223) do
     t.datetime "joined_at"
     t.datetime "expired_at"
   end
+
+  create_table "address_types", :force => true do |t|
+    t.string "title",       :limit => 50, :null => false
+    t.text   "description"
+  end
+
+  add_index "address_types", ["title"], :name => "index_address_types_on_title", :unique => true
 
   create_table "email_address_types", :force => true do |t|
     t.string "title",       :null => false
