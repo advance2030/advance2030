@@ -48,7 +48,7 @@ class Import::Member
   end
   
   def full_name
-    @full_name ||= ("%s %s %s %s" % [self.title, self.first_name, self.last_name, self.suffix]).strip.squeeze
+    @full_name ||= ("%s %s %s %s" % [self.title.to_s, self.first_name, self.last_name, self.suffix.to_s]).strip.squeeze
   end
   
   def addresses
