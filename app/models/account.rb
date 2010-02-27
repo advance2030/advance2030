@@ -1,5 +1,7 @@
 class Account < ActiveRecord::Base
 
+  belongs_to :user
+
   acts_as_authentic do |c|
     c.session_class = UserSession
     c.logged_in_timeout = 4.hours
