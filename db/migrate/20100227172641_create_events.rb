@@ -4,10 +4,10 @@ class CreateEvents < ActiveRecord::Migration
       t.string :name
       t.string :summary
       t.text :description
-      t.date_time :start_date_time
-      t.date_time :end_date_time
-      t.date_time :registration_start_date_time
-      t.date_time :registration_end_date_time
+      t.datetime :start_date_time
+      t.datetime :end_date_time
+      t.datetime :registration_start_date_time
+      t.datetime :registration_end_date_time
       t.integer :attendee_target_count
       t.integer :attendee_limit
       t.text :notes
