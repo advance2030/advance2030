@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100227172641) do
+ActiveRecord::Schema.define(:version => 20100227202509) do
 
   create_table "events", :force => true do |t|
     t.string   "name"
@@ -23,6 +23,14 @@ ActiveRecord::Schema.define(:version => 20100227172641) do
     t.integer  "attendee_limit"
     t.text     "notes"
     t.text     "venue_notes"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "user_profiles", :force => true do |t|
+    t.integer  "user_id"
+    t.date     "birthdate"
+    t.text     "bio"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
