@@ -28,3 +28,7 @@ rake db:migrate
 ruby script/server
 
 * For an introduction to Git please see "this tutorial":http://git-scm.com/course/svn.html (or if you need extra help check out "http://www.gitready.com/":http://www.gitready.com/)
+
+h3. Workflow Details
+
+After you have finished making changes and are ready for them to go public, follow the instructions under "Pushing your Changes" at "http://help.github.com/forking/":http://help.github.com/forking/. The build master will be alerted of your request and eventually merge your changes into the mainline codebase. To keep your copy of the application up to date with the mainline see the instructions under "Pulling in Upstream Changes" at "http://help.github.com/forking/":http://help.github.com/forking/.
