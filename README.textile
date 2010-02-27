@@ -1,1 +1,25 @@
-Advance 20/30. Boo yah.
+Welcome to Advance2030!
+
+h3. Developer Instructions
+
+# If you do not have Ruby setup, please see our "getting started instructions":http://advance2030.wordpress.com/2010/02/25/ruby-on-rails-101/
+# If you do not have Git installed, you can download it for your system at "http://git-scm.com":http://git-scm.com
+# If you are running Windows or Linux, install sqlite3 by following "these instructions":http://mislav.uniqpath.com/rails/install-sqlite3/
+# After you have Ruby setup and a development environment ready, install Bundler for managing gem dependencies by running:
+@gem install bundler@
+# Fork the "advance2030 repository on Github":http://github.com/advance2030/advance2030/ by logging in with your account and clicking the "Fork" button (see "http://help.github.com/forking/":http://help.github.com/forking/ for help)
+# Clone the repository by running the following command in a command line terminal:
+<code>git clone git@github.com:<YOUR GITHUB USERNAME>/advance2030</code>
+# Switch to the advance2030 directory (cd advance2030)
+# Install all bundled gems by running
+@bundle install@
+# Setup the database by running
+@rake db:migrate@
+# Fire up the server by running
+@ruby script/server@
+
+* For an introduction to Git please see "this tutorial":http://git-scm.com/course/svn.html (or if you need extra help check out "http://www.gitready.com/":http://www.gitready.com/)
+
+h3. Workflow Details
+
+After you have finished making changes and are ready for them to go public, follow the instructions under "Pushing your Changes" at "http://help.github.com/forking/":http://help.github.com/forking/. The build master will be alerted of your request and eventually merge your changes into the mainline codebase. To keep your copy of the application up to date with the mainline see the instructions under "Pulling in Upstream Changes" at "http://help.github.com/forking/":http://help.github.com/forking/.

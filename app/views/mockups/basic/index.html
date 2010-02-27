@@ -3,11 +3,36 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 		<title>Cleveland 2030</title>
-		<link rel="stylesheet" type="text/css" href="/stylesheets/main.css">
-		<script type="text/javascript" src="js/jquery-1.4.2.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="../../../../public/stylesheets/main.css">
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
 		<!--[if lte IE 8]>			
-			<script src="js/html5.js" type="text/javascript"></script>
+			<script src="../../../../public/javascripts/html5.js" type="text/javascript"></script>
 		<![endif]-->
+		<script type="text/javascript">
+		$(document).ready(function()
+		{
+			$("#link-featured,#link-social,#link-networking,#link-philanthopic,#link-educational").click(introLinkClicked);
+			$(".more a").click(moreLinkClicked);
+		});
+
+		function introLinkClicked()
+		{
+			var lbl = $(this).attr("id").substr(5);
+			$("#content .introContainer li").removeClass("current");
+			$(this).parent().addClass("current");
+			$("#content .introContainer .intro div").removeClass("current");
+			$("#content .introContainer .intro div p").hide();
+			$("#content .introContainer .intro div[id='content-"+lbl+"']").addClass("current");
+			$("#content .introContainer .intro div[id='content-"+lbl+"'] p").fadeIn();
+			return false;
+		}
+
+		function moreLinkClicked()
+		{
+			$(this).parent().parent().load("events.php");
+			return false;
+		}
+		</script>
 	</head>
 	<body>
 		<div id="container">
@@ -16,7 +41,7 @@
 					<div id="header">
 						<div id="topHeader"></div>				
 						<a href="" title="The Cleveland 2030 Club home page" class="logo">
-							<img src="/images/Cleveland2030-Logo.png" alt="The Cleveland 2030 Logo" style="width:289px;height:98px;">
+							<img src="../../../../public/images/Cleveland2030-Logo.png" alt="The Cleveland 2030 Logo" style="width:289px;height:98px;">
 						</a>
 						<div id="alertSection">
 						</div>
@@ -40,15 +65,113 @@
 						<div class="twoColumns-0">
 							<div class="introContainer">
 								<div class="intro">
+									<ul>
+										<li><a href="" id="link-featured">Featured</a></li>
+										<li><a href="" id="link-social">Social</a></li>
+										<li class="current"><a href="" id="link-networking">Networking</a></li>
+										<li><a href="" id="link-philanthopic">Philanthopic</a></li>
+										<li><a href="" id="link-educational">Educational</a></li>
+									</ul>
+
+									<div id="content-featured">
+										<p>The Social Committee in The Cleveland 20/30 Club holds social events which include sports, wine socials ...</p>
+										<a class="learn" href="">Learn More</a>
+									</div>
+
+									<div id="content-social">
+										<p>I am text on the social page</p>
+										<a class="learn" href="">Learn More</a>
+									</div>
+
+									<div class="current" id="content-networking">
+										<p>I am text on the networking page</p>
+										<a class="learn" href="">Learn More</a>
+									</div>
+
+									<div id="content-philanthopic">
+										<p>I am text on the philanthopic page</p>
+										<a class="learn" href="">Learn More</a>
+									</div>
+
+									<div id="content-educational">
+										<p>I am text on the educational page</p>
+										<a class="learn" href="">Learn More</a>
+									</div>
 								</div>
 								<div class="corner"></div>
+							
 							</div>
-							<div>
-								<p>Fusce enim metus, gravida nec aliquam sed, facilisis facilisis metus. Cras semper molestie felis, eget aliquet felis mattis id. In commodo, augue in porta rutrum, mi dui bibendum eros, quis accumsan mauris est a tellus. Etiam porttitor, mauris at tempor ullamcorper, velit lorem imperdiet urna, sed dictum nisi quam id diam. Morbi porta felis in risus molestie ac tempor orci scelerisque. Duis commodo libero eget elit facilisis venenatis. Vivamus malesuada elementum arcu et lacinia. Proin urna tortor, faucibus a varius nec, vehicula vitae lorem. Suspendisse potenti. Nullam congue mattis tortor, sit amet mollis sapien cursus at. Etiam odio purus, luctus vel placerat sed, suscipit nec est. Nulla facilisi. Fusce rutrum dignissim arcu a convallis. Ut viverra vehicula libero eget tincidunt. Nullam a lorem a turpis commodo rhoncus. </p>
-							</div>
+							<div class="subintroContainer">
+                                 <div class="subintroColumnLeft">
+                                    <div class="membership">
+                                        <h3>Membership</h3>
+                                        <div class="membershipBody">
+                                            <div class="register">
+                                                <p class="becomeMember"><a href="#">Become A Member</a></p>
+                                                <p><a href="#">Renew Membership</a></p>
+                                            </div>
+                                            <div class="testimonials">
+                                                <h4 class="testimonialsHeader">Testimonials</h4>
+                                                <a href="#">Next</a>
+                                                <div class="testimonialBody">
+                                                    <p>"This club is great!<br />There are always a lot of events and<br />this website is cool!"</p>
+                                                    <p class="testimonialAuthor"><strong>John Smith</strong><br />Sales Representative for Renewal<br />By Andersen</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="flickr">
+                                    	<h3>Photos From Recent Events</h3>
+                                        <div class="flickrBody">
+                                        	<div class="flickrLeft"><a href="#"></a></div>
+                                            <div class="flickrImage"><a href="#"><img src="../../../../public/images/flickrImage.jpg"></a></div>
+                                            <div class="flickrRight"><a href="#"></a></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="subintroColumnRight">
+                                    <div class="recentnews">
+                                        <h3>Recent News</h3>
+                                        <div class="recentnewsBody">
+                                            <ul>
+                                                <li><a href="#">Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah</a></li>
+                                                <li><a href="#">Blah Blah Blah</a></li>
+                                                <li><a href="#">Blah Blah Blah</a></li>
+                                                <li><a href="#">Blah Blah Blah</a></li>
+                                                <li><a href="#">Blah Blah Blah</a></li>
+                                                <li><a href="#">Blah Blah Blah</a></li>
+                                                <li class="recentnewsMore"><a href="#">More Top Stories &raquo;</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="sponsor">
+                                    	<h3>Sponsor</h3>
+                                        <div class="sponsorBody">
+                                        	<div><a href="#"><img src="../../../,,/public/images/sponsorImage.jpg"></a></div>
+                                        </div>
+                                    </div>  
+                                </div>                          
+                            </div>
 						</div>
 						<div class="twoColumns-1">
 							<div class="miniCalendar"></div>
+								<div class="event">
+									<h3 class="date"><span>Feb</span> 18</h3>
+									<ul>
+										<li class="social"><a href="">Movers &amp; Shakers Event and Celebration and this is a really long title so we see what happens</a> 6:00 pm</li>
+										<li class="social"><a href="">Movers &amp; Shakers Event and Celebration</a> 6:00 pm</li>
+										<li class="more"><a href="">4 more</a></li>
+									</ul>
+								</div>
+								<div class="event">
+									<h3 class="date"><span>Feb</span> 18</h3>
+									<ul>
+										<li class="social"><a href="">Movers &amp; Shakers Event and Celebration and this is a really long title so we see what happens</a> 6:00 pm</li>
+										<li class="social"><a href="">Movers &amp; Shakers Event and Celebration</a> 6:00 pm</li>
+										<li class="more"><a href="">4 more</a></li>
+									</ul>
+								</div>
+							</div>
 						</div>
 						<div class="clear"></div>
 					</div>

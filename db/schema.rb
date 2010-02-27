@@ -9,6 +9,22 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 0) do
+ActiveRecord::Schema.define(:version => 20100227172641) do
+
+  create_table "events", :force => true do |t|
+    t.string   "name"
+    t.string   "summary"
+    t.text     "description"
+    t.datetime "start_date_time"
+    t.datetime "end_date_time"
+    t.datetime "registration_start_date_time"
+    t.datetime "registration_end_date_time"
+    t.integer  "attendee_target_count"
+    t.integer  "attendee_limit"
+    t.text     "notes"
+    t.text     "venue_notes"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
 end
