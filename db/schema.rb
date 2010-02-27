@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100227221830) do
+ActiveRecord::Schema.define(:version => 20100227225149) do
 
   create_table "accounts", :force => true do |t|
     t.string   "login",                              :null => false
@@ -47,11 +47,20 @@ ActiveRecord::Schema.define(:version => 20100227221830) do
   add_index "cities", ["url_friendly"], :name => "index_cities_on_url_friendly", :unique => true
 
   create_table "email_address_types", :force => true do |t|
-    t.string "title",       :null => false
+    t.string "title",       :limit => 50, :null => false
     t.text   "description"
   end
 
   add_index "email_address_types", ["title"], :name => "index_email_address_types_on_title", :unique => true
+
+  create_table "email_addresses", :force => true do |t|
+    t.string   "address"
+    t.integer  "user_id"
+    t.integer  "email_address_type_id"
+    t.boolean  "primary",               :default => true
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "events", :force => true do |t|
     t.string   "name"
@@ -70,7 +79,7 @@ ActiveRecord::Schema.define(:version => 20100227221830) do
   end
 
   create_table "phone_number_types", :force => true do |t|
-    t.string "title",       :null => false
+    t.string "title",       :limit => 50, :null => false
     t.text   "description"
   end
 
@@ -96,6 +105,13 @@ ActiveRecord::Schema.define(:version => 20100227221830) do
     t.integer  "user_id"
     t.date     "birthdate"
     t.text     "bio"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "users", :force => true do |t|
+    t.string   "first_name"
+    t.string   "last_name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
