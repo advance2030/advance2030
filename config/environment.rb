@@ -39,3 +39,4 @@ end
 
 require 'bundler'
 Bundler.setup
+Bundler.require :default, Rails.env
