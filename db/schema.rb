@@ -42,7 +42,7 @@ ActiveRecord::Schema.define(:version => 20100227232102) do
     t.string   "asset_file_name"
     t.string   "asset_content_type"
     t.integer  "asset_file_size"
-    t.datetime "asset_update_at"
+    t.datetime "asset_updated_at"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
