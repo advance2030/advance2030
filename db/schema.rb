@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100227225254) do
+ActiveRecord::Schema.define(:version => 20100227232102) do
 
   create_table "accounts", :force => true do |t|
     t.string   "login",                              :null => false
@@ -37,6 +37,15 @@ ActiveRecord::Schema.define(:version => 20100227225254) do
   end
 
   add_index "address_types", ["title"], :name => "index_address_types_on_title", :unique => true
+
+  create_table "assets", :force => true do |t|
+    t.string   "asset_file_name"
+    t.string   "asset_content_type"
+    t.integer  "asset_file_size"
+    t.datetime "asset_update_at"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "categories", :force => true do |t|
     t.string "name",        :limit => 20, :null => false
@@ -117,7 +126,7 @@ ActiveRecord::Schema.define(:version => 20100227225254) do
     t.text     "bio"
     t.string   "avatar_file_name"
     t.string   "avatar_content_type"
-    t.string   "avatar_file_size"
+    t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
     t.datetime "created_at"
     t.datetime "updated_at"
