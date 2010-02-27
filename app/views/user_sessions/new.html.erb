@@ -1,0 +1,15 @@
+ <% form_for @user_session, :url => user_session_path do |f| %>
+  <ul>
+    <li>
+      <%= f.label :login %>
+      <%= f.text_field :login, :class => "text", :tabindex => 1 %>
+    </li>
+    <li id="log_in">
+      <%= f.label :password %>
+      <%= f.password_field :password, :class => "text", :tabinde => 2 %>
+    </li>
+		<li id="log_in">
+		  <%= image_submit_tag "login.png" %>
+		</li>    
+  </ul>
+<% end %>
