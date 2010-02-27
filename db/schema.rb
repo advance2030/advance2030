@@ -8,7 +8,8 @@
 # you'll amass, the slower it'll run and the greater likelihood for issues).
 #
 # It's strongly recommended to check this file into your version control system.
-ActiveRecord::Schema.define(:version => 20100227202509) do
+
+ActiveRecord::Schema.define(:version => 20100227210031) do
 
   create_table "accounts", :force => true do |t|
     t.string   "login",                              :null => false
@@ -26,6 +27,8 @@ ActiveRecord::Schema.define(:version => 20100227202509) do
     t.string   "last_login_ip"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.datetime "joined_at"
+    t.datetime "expired_at"
   end
 
   create_table "events", :force => true do |t|
