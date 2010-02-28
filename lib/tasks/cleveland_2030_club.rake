@@ -55,5 +55,10 @@ namespace :ac do
       avs = ["LCDs", "Projector", "Audio", "Other"]
       avs.each { |a| AvEquipment.create(:title => a) }
     end
+    
+    task :load_parking_options => :environment do
+      options = ["Free Onsite", "Paid Onsite", "Street", "Offsite"]
+      options.each { |o| ParkingOption.create(:title => o) }
+    end
   end
 end
