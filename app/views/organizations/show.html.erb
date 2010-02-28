@@ -1,2 +1,21 @@
-<h1>Organizations#show</h1>
-<p>Find me in app/views/organizations/show.html.erb</p>
+<h1>View <%= @organization.name %></h1>
+<p><%= link_to 'View all Organizations', organizations_path %> or <%= link_to 'Edit', edit_organization_path(@organization) %></p>
+
+<% if @organization.logo? %>
+  <%= image_tag @organization.logo.url(:medium), :class => 'logo' %>
+<% end %>
+
+<% if @organization.roles? %>
+<p>Organization roles include <%= @organization.roles.map(&:role).to_sentence %></p>
+<% end %>
+
+<p><strong>Legal Name</strong>: <%= @organization.legal_name %></p>
+<p><strong>DBA</strong>: <%= @organization.dba %></p>
+<p><strong>Tax Identification Number</strong>: <%= @organization.tax_identification %></p>
+<p><strong>Service Region</strong>: <%= @organization.service_region.title %></p>
+<p><strong>Type</strong>: <%= @organization.organization_type.title %></p>
+
+<p><strong>Mission</strong>: <%= @organization.mission %></p>
+<p><strong>Local Staff Size</strong>: <%= pluralize(@organization.local_staff_size, 'Person') %></p>
+<p><strong>Total Staff Size</strong>: <%= pluralize(@organization.total_staff_size, 'Person') %></p>
+<p><strong>Annual Revenue</strong>: <%= number_to_currency(@organization.annual_revenue) %></p>

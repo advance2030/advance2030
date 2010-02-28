@@ -10,6 +10,10 @@ class Organization < ActiveRecord::Base
   has_attached_file :logo,
                     :styles => { :medium => "80x80>", :thumb => "50x50" }
                     
+  def roles?
+    self.roles.any?
+  end
+  
   def destroy_logo!
     self.update_attributes(:logo => nil)
   end
