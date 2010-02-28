@@ -1,0 +1,15 @@
+<style type="text/css" media="screen">
+	#calendar td {width: 75px;height: 75px;}
+	#calendar td.notmonth {color:#cecece;}
+</style>
+
+
+<% calendar_for(@events, :html => {:id => 'calendar'}) do |t| %>
+  <%= t.head(*@days) %>
+  <% t.day do |day, events| %>
+    <div class="label"><%= day.day %></div>
+    <% events.each do |event| %>
+      <%= h(event.name) %>
+    <% end %>
+  <% end %>
+<% end %>
