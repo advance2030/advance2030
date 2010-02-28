@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100228012547) do
+ActiveRecord::Schema.define(:version => 20100228033249) do
 
   create_table "accounts", :force => true do |t|
     t.string   "login",                              :null => false
@@ -128,18 +128,39 @@ ActiveRecord::Schema.define(:version => 20100228012547) do
     t.datetime "updated_at"
   end
 
+  create_table "event_notes", :force => true do |t|
+    t.integer  "event_id",   :null => false
+    t.text     "note",       :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "event_notes", ["event_id"], :name => "index_event_notes_on_event_id"
+
   create_table "events", :force => true do |t|
-    t.string   "name"
-    t.string   "summary"
+    t.string   "name",                        :null => false
+    t.string   "url_friendly",                :null => false
+    t.text     "summary"
     t.text     "description"
-    t.datetime "start_date_time"
-    t.datetime "end_date_time"
-    t.datetime "registration_start_date_time"
-    t.datetime "registration_end_date_time"
+    t.datetime "start_datetime"
+    t.datetime "end_datetime"
+    t.datetime "registration_start_datetime"
+    t.datetime "registration_end_datetime"
     t.integer  "attendee_target_count"
     t.integer  "attendee_limit"
-    t.text     "notes"
-    t.text     "venue_notes"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "industries", :force => true do |t|
+    t.string   "title",       :limit => 100, :null => false
+    t.text     "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "organization_types", :force => true do |t|
+    t.string   "title",      :limit => 150, :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -161,14 +182,20 @@ ActiveRecord::Schema.define(:version => 20100228012547) do
   add_index "postal_code_types", ["url_friendly"], :name => "index_postal_code_types_on_url_friendly", :unique => true
 
   create_table "postal_codes", :force => true do |t|
-    t.string   "code"
-    t.integer  "city_id"
-    t.integer  "state_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.float    "latitude"
-    t.float    "longitude"
-    t.integer  "postal_code_type_id"
+    t.string  "code"
+    t.integer "city_id"
+    t.integer "state_id"
+    t.float   "latitude"
+    t.float   "longitude"
+    t.integer "postal_code_type_id"
+  end
+
+  add_index "postal_codes", ["city_id"], :name => "index_postal_codes_on_city_id"
+  add_index "postal_codes", ["code"], :name => "index_postal_codes_on_code", :unique => true
+  add_index "postal_codes", ["state_id"], :name => "index_postal_codes_on_state_id"
+
+  create_table "service_regions", :force => true do |t|
+    t.string "title", :limit => 100, :null => false
   end
 
   create_table "states", :force => true do |t|
