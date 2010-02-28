@@ -1,0 +1,18 @@
+<h1>Listing committees</h1>
+
+<table>
+  <tr>
+  </tr>
+
+<% @committees.each do |committee| %>
+  <tr>
+    <td><%= link_to 'Show', committee %></td>
+    <td><%= link_to 'Edit', edit_committee_path(committee) %></td>
+    <td><%= link_to 'Destroy', committee, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New committee', new_committee_path %>

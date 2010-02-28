@@ -31,6 +31,34 @@ ActiveRecord::Schema.define(:version => 20100228003549) do
     t.datetime "expired_at"
   end
 
+  create_table "committee_assets", :force => true do |t|
+    t.integer "asset_id",     :null => false
+    t.integer "committee_id", :null => false
+  end
+
+  create_table "committee_events", :force => true do |t|
+    t.integer "event_id",     :null => false
+    t.integer "committee_id", :null => false
+  end
+
+  create_table "committee_members", :force => true do |t|
+    t.integer "member_id",                       :null => false
+    t.integer "committee_id",                    :null => false
+    t.boolean "lead",         :default => false, :null => false
+  end
+
+  create_table "committee_posts", :force => true do |t|
+    t.string  "title",   :null => false
+    t.integer "user_id", :null => false
+    t.string  "text",    :null => false
+  end
+
+  create_table "committees", :force => true do |t|
+    t.string  "name",        :null => false
+    t.string  "description", :null => false
+    t.boolean "active"
+  end
+
   create_table "address_types", :force => true do |t|
     t.string "title",       :limit => 50, :null => false
     t.text   "description"
