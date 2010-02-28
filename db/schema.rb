@@ -63,6 +63,13 @@ ActiveRecord::Schema.define(:version => 20100228012547) do
 
   add_index "categories", ["name"], :name => "index_categories_on_name", :unique => true
 
+  create_table "categorizations", :force => true do |t|
+    t.integer "category_id", :null => false
+    t.integer "item_id",     :null => false
+  end
+
+  add_index "categorizations", ["item_id", "category_id"], :name => "index_categorizations_on_item_id_and_category_id", :unique => true
+
   create_table "cities", :force => true do |t|
     t.string "title",        :limit => 75, :null => false
     t.string "url_friendly", :limit => 75, :null => false
