@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100227211223) do
+ActiveRecord::Schema.define(:version => 20100227223248) do
 
   create_table "accounts", :force => true do |t|
     t.string   "login",                              :null => false
@@ -29,6 +29,34 @@ ActiveRecord::Schema.define(:version => 20100227211223) do
     t.datetime "updated_at"
     t.datetime "joined_at"
     t.datetime "expired_at"
+  end
+
+  create_table "committee_assets", :force => true do |t|
+    t.integer "asset_id",     :null => false
+    t.integer "committee_id", :null => false
+  end
+
+  create_table "committee_events", :force => true do |t|
+    t.integer "event_id",     :null => false
+    t.integer "committee_id", :null => false
+  end
+
+  create_table "committee_members", :force => true do |t|
+    t.integer "member_id",                       :null => false
+    t.integer "committee_id",                    :null => false
+    t.boolean "lead",         :default => false, :null => false
+  end
+
+  create_table "committee_posts", :force => true do |t|
+    t.string  "title",   :null => false
+    t.integer "user_id", :null => false
+    t.string  "text",    :null => false
+  end
+
+  create_table "committees", :force => true do |t|
+    t.string  "name",        :null => false
+    t.string  "description", :null => false
+    t.boolean "active"
   end
 
   create_table "email_address_types", :force => true do |t|

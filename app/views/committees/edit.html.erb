@@ -1,0 +1,12 @@
+<h1>Editing committee</h1>
+
+<% form_for(@committee) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @committee %> |
+<%= link_to 'Back', committees_path %>
