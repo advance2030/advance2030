@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100228043053) do
+ActiveRecord::Schema.define(:version => 20100228043726) do
 
   create_table "accounts", :force => true do |t|
     t.string   "login",                              :null => false
@@ -294,6 +294,15 @@ ActiveRecord::Schema.define(:version => 20100228043053) do
   add_index "users_roles", ["user_id", "user_role_id"], :name => "by_user", :unique => true
   add_index "users_roles", ["user_id"], :name => "index_users_roles_on_user_id"
   add_index "users_roles", ["user_role_id"], :name => "index_users_roles_on_user_role_id"
+
+  create_table "venue_av_equipments", :force => true do |t|
+    t.integer "venue_id",        :null => false
+    t.integer "av_equipment_id", :null => false
+  end
+
+  add_index "venue_av_equipments", ["av_equipment_id"], :name => "index_venue_av_equipments_on_av_equipment_id"
+  add_index "venue_av_equipments", ["venue_id", "av_equipment_id"], :name => "by_venue", :unique => true
+  add_index "venue_av_equipments", ["venue_id"], :name => "index_venue_av_equipments_on_venue_id"
 
   create_table "venue_types", :force => true do |t|
     t.string "title",       :limit => 50, :null => false
