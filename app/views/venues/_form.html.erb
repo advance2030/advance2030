@@ -53,7 +53,7 @@
       <% if venue.avatar? %>
         <div class="current-avatar">
           <%= image_tag venue.avatar.url(:thumb), :class => 'avatar' %>
-          <%= link_to 'Delete Photo', destroy_avatar_venue_path(venue), :class => 'destroy-avatar' %>
+          <%= link_to 'Delete Photo', destroy_avatar_venue_path(venue.url_friendly), :class => 'destroy-avatar' %>
         </div>
       <% end %>
 

@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100228171449) do
+ActiveRecord::Schema.define(:version => 20100228173422) do
 
   create_table "accounts", :force => true do |t|
     t.string   "login",                              :null => false
@@ -188,6 +188,21 @@ ActiveRecord::Schema.define(:version => 20100228171449) do
   end
 
   add_index "links", ["url"], :name => "index_links_on_url", :unique => true
+
+  create_table "organization_addresses", :force => true do |t|
+    t.integer  "address_type_id", :null => false
+    t.integer  "organization_id", :null => false
+    t.text     "street"
+    t.integer  "postal_code_id",  :null => false
+    t.boolean  "is_primary"
+    t.integer  "sort_order"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "organization_addresses", ["address_type_id"], :name => "index_organization_addresses_on_address_type_id"
+  add_index "organization_addresses", ["organization_id"], :name => "index_organization_addresses_on_organization_id"
+  add_index "organization_addresses", ["postal_code_id"], :name => "index_organization_addresses_on_postal_code_id"
 
   create_table "organization_links", :force => true do |t|
     t.integer "link_type_id",    :null => false
