@@ -10,6 +10,11 @@ class User < ActiveRecord::Base
     :conditions => ["users_roles.user_role_id = ?", UserRole.event_manager]
   }}
 
+  named_scope :supervisors, lambda {{
+    :joins => :users_roles,
+    :conditions => ["users_roles.user_role_id = ?", UserRole.event_supervisor]
+  }}
+
   def display_name
     "%s %s" % [first_name, last_name]
   end

@@ -27,23 +27,13 @@
       </div>
 
       <div class="form-node">
-        <label for="eventSupervisor">
-          Event Supervisor
-        </label>
-        <select name="" id="eventSUpervisor">
-          <option selected="selected">Select a Supervisorr</option>
-          <option value="JohnDoe">john Doe</option>
-        </select>
+        <%= f.label :supervisor, "Event Supervisor" %>
+        <%= f.collection_select :supervisor, presenter.supervisors, :id, :name, :prompt => presenter.supervisor_prompt %>
       </div>
 
       <div class="form-node">
-        <label for="committe">
-          Committee Sponsor
-        </label>
-        <select name="" id="committee">
-          <option selected="selected">Select a Committee</option>
-          <option value="CommitteeName">CommitteeName</option>
-        </select>
+        <%= f.label :committee_sponsor, "Committee Sponsor" %>
+        <%= f.collection_select :committee_sponsor, presenter.committee_sponsors, :id, :name, :prompt => presenter.committee_sponsor_prompt %>
       </div>
     </fieldset>
     <fieldset class="twoCol">

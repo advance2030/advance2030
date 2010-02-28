@@ -5,7 +5,7 @@ module Presenters
     include Helper::SelectList
 
     attr_reader :event
-    delegate :venue, :manager, :to => :event
+    delegate :venue, :manager, :supervisor, :committee_sponsor, :name, :summary, :description, :to => :event
 
     def initialize(event)
       @event = event
@@ -19,12 +19,28 @@ module Presenters
       select_list(User.managers, :id, :display_name)
     end
 
+    def supervisors
+      select_list(User.supervisors, :id, :display_name)
+    end
+
+    def committee_sponsors
+      Committee.list
+    end
+
+    def committee_sponsor_prompt
+      "Select a Sponsor"
+    end
+
     def venue_prompt
       "Select a Venue"
     end
 
     def manager_prompt
       "Select a Manager"
+    end
+
+    def supervisor_prompt
+      "Select a Supervisor"
     end
 
   end
