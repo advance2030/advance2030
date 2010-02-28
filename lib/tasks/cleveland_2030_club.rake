@@ -35,5 +35,20 @@ namespace :ac do
       types = ["Bar", "Restaurant", "Bar/Restaurant", "Hall", "Theater", "Private Club", "Museum", "Outdoor", "Other"]
       types.each { |t| VenueType.create(:title => t) }
     end
+    
+    task :load_address_types => :environment do
+      types = ["Home", "Work", "Other"]
+      types.each { |t| AddressType.create(:title => t) }
+    end
+    
+    task :load_email_address_types => :environment do
+      types = ["Home", "Work", "Other"]
+      types.each { |t| EmailAddressType.create(:title => t) }
+    end
+    
+    task :load_phone_number_types => :environment do
+      types = ["Home", "Work", "Mobile", "Other"]
+      types.each { |t| PhoneNumberType.create(:title => t) }
+    end
   end
 end
