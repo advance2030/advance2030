@@ -25,5 +25,10 @@ namespace :ac do
       roles = ["Employer", "Venue", "Corporate Member", "Sponsor", "Donor", "Civic Partner", "YP Group"]
       roles.each { |r| OrganizationRole.create(:role => r) }
     end
+    
+    task :load_venue_types => :environment do
+      types = ["Bar", "Restaurant", "Bar/Restaurant", "Hall", "Theater", "Private Club", "Museum", "Outdoor", "Other"]
+      types.each { |t| VenueType.create(:title => t) }
+    end
   end
 end
