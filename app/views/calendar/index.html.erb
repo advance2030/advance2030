@@ -1,6 +1,6 @@
 <div class="twoColumns-0">
-	<h1>Calendar</h1>		
-	
+	<h1>Calendar</h1>
+
 	<div class="calendarHeader">
 		<form action="<%=calendar_redirect_url %>" style="width:400px" method="get">
 			<fieldset>
@@ -8,24 +8,24 @@
 				<%= select_year @date, {:start_year => @min.year, :end_year => @max.year}, {:style => 'width:75px;display:inline;'} %>
 				<%= hidden_field :date, :day %>
 				<%= submit_tag 'Submit' %>
-				
+
 				<%=link_to "Today", current_calendar_url%>
-			</fieldset>									
+			</fieldset>
 		</form>
 		<div style="width:275px;">
 			<%=link_to "&rsaquo;", previous_calendar_url(@date), :class => 'leftArrow' %>
-			<%=link_to "&lsaquo;", next_calendar_url(@date), :class => 'rightArrow' %>		
+			<%=link_to "&lsaquo;", next_calendar_url(@date), :class => 'rightArrow' %>
 			<span class="daySelected"><%=h @date.strftime('%A %B %d, %Y') %></span>
 		</div>
 	</div>
 
-	<% calendar_for(@events, 
+	<% calendar_for(@events,
 		:year => @date.year,
 		:month => @date.month,
 		:day => @date.day,
 		:html => {
 			:id => 'calendar',
-			:cellpadding => 0, 
+			:cellpadding => 0,
 			:cellspacing => 0
 			}) do |t| %>
 	  <%= t.head(*@days) %>
@@ -82,7 +82,7 @@
 				</ul>
 			</div>
 		</fieldset>
-		
+
 		<fieldset>
 			<label>Filter By Community</label>
 			<div class="eventTypesContainer">
@@ -138,7 +138,7 @@
 							</ul>
 						</div>
 					</div>
-				</li>									
+				</li>
 			</ul>
 		</div>
 		<div class="event">
@@ -150,7 +150,7 @@
 					</div>
 				</li>
 			</ul>
-		</div> 
+		</div>
 	</div>
 </div>
 
@@ -164,7 +164,7 @@
 					<a href="">Movers &amp; Shakers Event and Celebration and this is a </a>												<div class="details">
 						<p>February 27th at 6:00 pm</p>
 					</div>
-				</li>									
+				</li>
 			</ul>
 		</div>
 		<div class="event sponsored">
@@ -177,7 +177,7 @@
 					</div>
 				</li>
 			</ul>
-		</div> 
+		</div>
 	</div>
 </div>
 <div class="clear"></div>
