@@ -1,4 +1,4 @@
-Factory.define :events do |f|
+Factory.define :event do |f|
   f.name "value for name"
   f.summary "value for summary"
   f.description "value for description"
@@ -11,4 +11,3 @@ Factory.define :events do |f|
   f.notes "value for notes"
   f.venue_notes "value for venue_notes"
 end
-

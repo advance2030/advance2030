@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100227232102) do
+ActiveRecord::Schema.define(:version => 20100228002529) do
 
   create_table "accounts", :force => true do |t|
     t.string   "login",                              :null => false
@@ -38,6 +38,15 @@ ActiveRecord::Schema.define(:version => 20100227232102) do
 
   add_index "address_types", ["title"], :name => "index_address_types_on_title", :unique => true
 
+  create_table "alerts", :force => true do |t|
+    t.string   "name"
+    t.string   "alerttext"
+    t.datetime "start_date_time"
+    t.datetime "end_date_time"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "assets", :force => true do |t|
     t.string   "asset_file_name"
     t.string   "asset_content_type"
@@ -53,6 +62,13 @@ ActiveRecord::Schema.define(:version => 20100227232102) do
   end
 
   add_index "categories", ["name"], :name => "index_categories_on_name", :unique => true
+
+  create_table "categorizations", :force => true do |t|
+    t.integer "category_id", :null => false
+    t.integer "item_id",     :null => false
+  end
+
+  add_index "categorizations", ["item_id", "category_id"], :name => "index_categorizations_on_item_id_and_category_id", :unique => true
 
   create_table "cities", :force => true do |t|
     t.string "title",        :limit => 75, :null => false
@@ -74,15 +90,6 @@ ActiveRecord::Schema.define(:version => 20100227232102) do
     t.integer  "user_id"
     t.integer  "email_address_type_id"
     t.boolean  "primary",               :default => true
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "alerts", :force => true do |t|
-    t.string   "name"
-    t.string   "alerttext"
-    t.datetime "start_date_time"
-    t.datetime "end_date_time"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
