@@ -50,7 +50,7 @@
   </div>
   
   <div id="<%= dom_id(organization, :logo) %>">
-    <% if organization.logo? %>
+    <% if organization.logo? && organization.logo.valid? %>
       <div class="current-logo">
         <%= image_tag organization.logo.url(:thumb), :class => 'logo' %>
         <%= link_to 'Delete Logo', destroy_logo_organization_path(organization), :class => 'destroy-logo' %>
