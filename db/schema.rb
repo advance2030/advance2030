@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100228003549) do
+ActiveRecord::Schema.define(:version => 20100228004037) do
 
   create_table "accounts", :force => true do |t|
     t.string   "login",                              :null => false
@@ -29,34 +29,6 @@ ActiveRecord::Schema.define(:version => 20100228003549) do
     t.datetime "updated_at"
     t.datetime "joined_at"
     t.datetime "expired_at"
-  end
-
-  create_table "committee_assets", :force => true do |t|
-    t.integer "asset_id",     :null => false
-    t.integer "committee_id", :null => false
-  end
-
-  create_table "committee_events", :force => true do |t|
-    t.integer "event_id",     :null => false
-    t.integer "committee_id", :null => false
-  end
-
-  create_table "committee_members", :force => true do |t|
-    t.integer "member_id",                       :null => false
-    t.integer "committee_id",                    :null => false
-    t.boolean "lead",         :default => false, :null => false
-  end
-
-  create_table "committee_posts", :force => true do |t|
-    t.string  "title",   :null => false
-    t.integer "user_id", :null => false
-    t.string  "text",    :null => false
-  end
-
-  create_table "committees", :force => true do |t|
-    t.string  "name",        :null => false
-    t.string  "description", :null => false
-    t.boolean "active"
   end
 
   create_table "address_types", :force => true do |t|
@@ -98,6 +70,34 @@ ActiveRecord::Schema.define(:version => 20100228003549) do
 
   add_index "cities", ["title"], :name => "index_cities_on_title", :unique => true
   add_index "cities", ["url_friendly"], :name => "index_cities_on_url_friendly", :unique => true
+
+  create_table "committee_assets", :force => true do |t|
+    t.integer "asset_id",     :null => false
+    t.integer "committee_id", :null => false
+  end
+
+  create_table "committee_events", :force => true do |t|
+    t.integer "event_id",     :null => false
+    t.integer "committee_id", :null => false
+  end
+
+  create_table "committee_members", :force => true do |t|
+    t.integer "member_id",                       :null => false
+    t.integer "committee_id",                    :null => false
+    t.boolean "lead",         :default => false, :null => false
+  end
+
+  create_table "committee_posts", :force => true do |t|
+    t.string  "title",   :null => false
+    t.integer "user_id", :null => false
+    t.string  "text",    :null => false
+  end
+
+  create_table "committees", :force => true do |t|
+    t.string  "name",        :null => false
+    t.string  "description", :null => false
+    t.boolean "active"
+  end
 
   create_table "email_address_types", :force => true do |t|
     t.string "title",       :limit => 50, :null => false
@@ -203,5 +203,14 @@ ActiveRecord::Schema.define(:version => 20100228003549) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "users_roles", :force => true do |t|
+    t.integer "user_id",      :null => false
+    t.integer "user_role_id", :null => false
+  end
+
+  add_index "users_roles", ["user_id", "user_role_id"], :name => "by_user", :unique => true
+  add_index "users_roles", ["user_id"], :name => "index_users_roles_on_user_id"
+  add_index "users_roles", ["user_role_id"], :name => "index_users_roles_on_user_role_id"
 
 end
