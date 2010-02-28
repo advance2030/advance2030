@@ -56,6 +56,7 @@
 							<form class="allPurposeForm">
 								
 								<fieldset>
+								<h2>Where Will Your Event Be?</h2>
 									<div class="form-node">
 										<label for="venue">
 											Venue <span class="aside-label">(If you do not see your venue you can <a href="#">add a new venue here</a>)</span>
@@ -67,8 +68,8 @@
 									</div>
 								</fieldset>	
 								
-								<fieldset class="twoCol">
-									
+								<fieldset class="oneCol">
+								<h2>Who is putting on the Event?</h2>									
 									<div class="form-node">
 										<label for="eventManager">
 											Event Manager
@@ -99,7 +100,9 @@
 										</select>
 									</div>
 								</fieldset>	
-								<fieldset class="twoCol">
+								
+								<fieldset class="oneCol">
+								<h2>Event Details</h2>
 									<div class="form-node">
 										<label for="eventTitle">
 											Event Title
@@ -135,12 +138,14 @@
 										<div class="label-like">
 											<span class="aside-label">(Uploaded Logo)</span>
 										</div>
-										<a href="#" class="small">Remove image</a>
 										<img src="/images/logo.gif" class="uploadedEventLogo" border="0">
+										<a href="#" class="remove">Remove</a>
 									</div>
 
 								</fieldset>
-								<fieldset class="twoCol">	
+								
+								<fieldset class="oneCol">	
+	   							<h2>Event Date</h2>								
 	   								<script type="text/javascript">
 									$(function() {
 										$("#startDate").datepicker();
@@ -148,60 +153,148 @@
 									</script>
 									<div class="form-node">
 										<label for="startDate">
-											Event Start Date
+											Start Date
 										</label>
 										<input type="text" name="" id="startDate">
 									</div>
+									<div>
+										<label id="" for="">Start Time</label>
+										<select class="time" id="mondayStartTime" name="mondayStartTime">
+											<option value="">12:00 am</option>
+											<option value="">12:30 am</option>
+											<option value="">1:00 am</option>
+											<option value="">1:30 am</option>
+											<option value="">2:00 am</option>
+											<option value="">2:30 am</option>
+											<option value="">3:00 am</option>
+											<option value="">3:30 am</option>
+											<option value="">4:00 am</option>
+											<option value="">4:30 am</option>
+											<option value="">5:00 am</option>
+											<option value="">5:30 am</option>
+											<option value="">6:00 am</option>
+											<option value="">6:30 am</option>
+											<option value="">7:00 am</option>
+											<option value="">7:30 am</option>
+											<option value="">8:00 am</option>
+											<option value="">8:30 am</option>
+											<option selected="selected" value="">9:00 am</option>
+											<option value="">9:30 am</option>
+											<option value="">10:00 am</option>
+											<option value="">10:30 am</option>
+											<option value="">11:00 am</option>
+											<option value="">11:30 am</option>
+											<option value="">12:00 pm</option>
+											<option value="">12:30 pm</option>
+											<option value="">1:00 pm</option>
+											<option value="">1:30 pm</option>
+											<option value="">2:00 pm</option>
+											<option value="">2:30 pm</option>
+											<option value="">3:00 pm</option>
+											<option value="">3:30 pm</option>
+											<option value="">4:00 pm</option>
+											<option value="">4:30 pm</option>
+											<option value="">5:00 pm</option>
+											<option value="">5:30 pm</option>
+											<option value="">6:00 pm</option>
+											<option value="">6:30 pm</option>
+											<option value="">7:00 pm</option>
+											<option value="">7:30 pm</option>
+											<option value="">8:00 pm</option>
+											<option value="">9:30 pm</option>
+											<option value="">10:00 pm</option>
+											<option value="">11:30 pm</option>
+											<option value="">12:00 am</option>
+										</select>
+									</div>
 									<div class="form-node">
 										<label for="endDate">
-											Event End Date
+											End Date
 										</label>
 										<input type="text" name="" id="endDate">
 									</div>
-								</fieldset>								
-								<fieldset class="twoCol">
+									<div>
+										<label id="" for="">End Time</label>
+										<select class="time" id="mondayStartTime" name="mondayStartTime">
+											<option value="">12:00 am</option>
+											<option value="">12:30 am</option>
+											<option value="">1:00 am</option>
+											<option value="">1:30 am</option>
+											<option value="">2:00 am</option>
+											<option value="">2:30 am</option>
+											<option value="">3:00 am</option>
+											<option value="">3:30 am</option>
+											<option value="">4:00 am</option>
+											<option value="">4:30 am</option>
+											<option value="">5:00 am</option>
+											<option value="">5:30 am</option>
+											<option value="">6:00 am</option>
+											<option value="">6:30 am</option>
+											<option value="">7:00 am</option>
+											<option value="">7:30 am</option>
+											<option value="">8:00 am</option>
+											<option value="">8:30 am</option>
+											<option selected="selected" value="">9:00 am</option>
+											<option value="">9:30 am</option>
+											<option value="">10:00 am</option>
+											<option value="">10:30 am</option>
+											<option value="">11:00 am</option>
+											<option value="">11:30 am</option>
+											<option value="">12:00 pm</option>
+											<option value="">12:30 pm</option>
+											<option value="">1:00 pm</option>
+											<option value="">1:30 pm</option>
+											<option value="">2:00 pm</option>
+											<option value="">2:30 pm</option>
+											<option value="">3:00 pm</option>
+											<option value="">3:30 pm</option>
+											<option value="">4:00 pm</option>
+											<option value="">4:30 pm</option>
+											<option value="">5:00 pm</option>
+											<option value="">5:30 pm</option>
+											<option value="">6:00 pm</option>
+											<option value="">6:30 pm</option>
+											<option value="">7:00 pm</option>
+											<option value="">7:30 pm</option>
+											<option value="">8:00 pm</option>
+											<option value="">9:30 pm</option>
+											<option value="">10:00 pm</option>
+											<option value="">11:30 pm</option>
+											<option value="">12:00 am</option>
+										</select>
+									</div>
+								</fieldset>
+								
+								<fieldset class="oneCol">
+								<h2>Event Cost and Pricing</h2>								
 									<div class="form-node">
 										<label for="eventCostEstimate">
 											Event Total Cost Estimate
 										</label>
 										<input type="text" name="" class="twoFieldsinline" id="eventCostEstimate" value="$">
 									</div>
-								</fieldset>								
-								<fieldset class="twoCol">
 									<div class="form-node">
 										<div class="label-like">&nbsp;</div>
-										<input type="checkbox" name="" class="checkbox" id="attendeePrice" value="$">
+										<input type="checkbox" checked="checked" name="" class="checkbox" id="attendeePrice" value="$" >
 										<label for="attendeeCharge" class="checkbox">
 											Will attenttee's be charged for this event?
 										</label>
 										
 									</div>
 									<div class="form-node">
-										<div class="label-like">&nbsp;</div>
-										<a href="#" >Add a discount price</a>
-									</div>
-									<div class="form-node">
 										<label for="attendeeNonMemberPrice">
-											Discount</span>
+											Price <span class="aside-label">(Add the name then price)</span>
 										</label>
-										<input type="text" class="twoFieldsinline" value="Member">
-										<input type="text" class="twoFieldsinline" value="$75">
+										<input type="text" class="twoFieldsinline" value="">
+										<input type="text" class="twoFieldsinline" value="$">
 										<a href="#" class="remove">Remove</a>
 									</div>
 									<div class="form-node">
-										<label for="attendeeNonMemberPrice">
-											Discount <span class="aside-label">(Add the Discount price and Price)</span></span>
-										</label>
-										<input type="text" class="twoFieldsinline" value="">
-										<select class="twoFieldsinline">
-											<option selected="selected">Discount</option>
-											<option>minus computed value</option>
-											<option>minus computed value</option>
-											<option>minus computed value</option>																						
-										</select>
+										<div class="label-like">&nbsp;</div>
+										<a href="#" class="addPrice">Add another price point</a>
 									</div>
 								</fieldset>
-								<fieldset class="twoCol">	
+								<fieldset class="oneCol">	
 	   								<div class="form-node">
 										<label for="eventConfirmationEmail">
 											Event Confirmation Email
@@ -211,7 +304,7 @@
 									</div>
 								</fieldset>
 
-								<fieldset class="twoCol">						
+								<fieldset class="oneCol">						
 									<div class="formAction">
 										<a href="register_3.html" class="button">Create Event</a>
 									</div>
