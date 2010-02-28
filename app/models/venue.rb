@@ -47,6 +47,10 @@ class Venue < ActiveRecord::Base
     self.is_blacklisted
   end
   
+  def destroy_avatar!
+    self.update_attributes(:avatar => nil)
+  end
+  
   def before_save
     self.url_friendly = self.title.extend(Helper::String).to_url_friendly unless self.url_friendly?
   end

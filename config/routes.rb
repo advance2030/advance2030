@@ -1,6 +1,6 @@
 ActionController::Routing::Routes.draw do |map|
   map.resources :committees
-  map.resources :venues
+  map.resources :venues, :member => { :destroy_avatar => :delete }
 
 
   map.root :controller => 'home'

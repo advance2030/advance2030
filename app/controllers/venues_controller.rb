@@ -1,5 +1,5 @@
 class VenuesController < ApplicationController
-  before_filter :find_venue, :only => [:show, :edit, :update, :destroy]
+  before_filter :find_venue, :only => [:show, :edit, :update, :destroy, :destroy_avatar]
   before_filter :find_venue_options, :find_parking_options, :find_fee_options, :find_food_service_options, :find_av_equipment_options, :only => [:new, :edit, :update, :create]
   
   def index
@@ -32,6 +32,15 @@ class VenuesController < ApplicationController
   def destroy
     @venue.destroy
     flash_and_redirect(venues_path, 'Venue has been removed!')
+  end
+  
+  def destroy_avatar
+    @venue.destroy_avatar!
+    
+    respond_to do |wants|
+      wants.html { flash_and_redirect(venues_path, 'Avatar has been removed') }
+      wants.js { render :layout => false }
+    end
   end
   
 private
