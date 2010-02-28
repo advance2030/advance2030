@@ -44,6 +44,12 @@ h3{font-size:140%;}
 h4{font-size:120%;}
 h5{font-size:100%;}
 
+.small{font-size:84%;}
+
+/*generic formatting*/
+.right{float:right;}
+.left{float:left;}
+
 /* Structure Styles */
 body{font-family: Helvetica, Tahoma, Verdana, sans-serif;font-size:80%;position:relative;background:#fff url(../images/bg-strech.jpg) repeat-x top left;color:#333;}
 #container{width:100%;margin:0 auto;background:transparent url(../images/bg.jpg) no-repeat top center;}
@@ -282,6 +288,7 @@ div.dayEvents .event{width: 690px;}
 div.dayEvents .sponsored{width: 240px;}
 div.flickrImage { width: 360px; text-align: center; }
 
+.uploadedEventLogo{width:200px; background-color:#eee;}
 
 /*************************************************/
 /************ end Parag's Contribution *************/
@@ -360,31 +367,38 @@ div.intro div p
 /*************************************************/
 
 /* forms */
-.userReg fieldset {
+.allPurposeForm fieldset {
 	margin: 0 40px 0 0;
 	padding: 20px 0;
 }
-.userReg fieldset>fieldset {
+.allPurposeForm fieldset>fieldset {
 	padding: 0; margin: 0;
 }
-.userReg fieldset.twoCol {
+.allPurposeForm fieldset.twoCol {
 	float: left;
 	width: 400px;
 }
-.userReg fieldset h2 {
+.allPurposeForm fieldset.oneCol {
+	float: left;
+	width: 500px;
+}
+.allPurposeForm fieldset h2 {
 	font-size: 180%;
 	font-weight: bold;
 }
-.userReg fieldset>fieldset h2 {
+.allPurposeForm fieldset>fieldset h2 {
 	font-size: 160%;
 }
-.userReg fieldset h2 a.login {
+.allPurposeForm fieldset h2 a.login {
 	font-size: 50%;	
 }
-.userReg fieldset div {
+.allPurposeForm fieldset div {
 	margin: 16px 0;
 }
-.userReg fieldset label {
+.allPurposeForm fieldset div.form-node {
+	clear:left;
+}
+.allPurposeForm fieldset label, .allPurposeForm fieldset .label-like {
 	text-align: right;
 	width: 170px;
 	display: block;
@@ -394,56 +408,94 @@ div.intro div p
 	font-size: 90%;
 	color: #6C6C6C;
 }
-
-.userReg fieldset.checklist div {
+.allPurposeForm fieldset .aside-label {
+	font-size:84%;
+	color:#a1a1a1;
+	display: block;
+}
+.allPurposeForm fieldset.checklist div {
 	margin: 5px 0;
 	padding: 0;	
 }
-.userReg fieldset.checklist label {
+.allPurposeForm fieldset.checklist label {
 	margin: 4px 8px 0 0;
 	padding: 0;
 }
-.userReg fieldset.checklist input[type="checkbox"] {
+.allPurposeForm fieldset.checklist input[type="checkbox"] {
 	margin: 0;
 	padding: 4px 0 4px 4px;
 }
+.allPurposeForm fieldset label.checkbox {
+	text-align:left;
+}
+.allPurposeForm fieldset input[type="checkbox"].checkbox {
+	float:left;
+}
 
-.userReg fieldset input[type="text"], .userReg fieldset input[type="password"], .userReg fieldset input[type="email"], .userReg fieldset select {
+
+.allPurposeForm fieldset input[type="text"], .allPurposeForm fieldset input[type="password"], .allPurposeForm fieldset input[type="email"], .allPurposeForm fieldset select, .allPurposeForm fieldset textarea {
 	width: 200px;
 	display: block;
 	border: 1px solid #6c6c6c;
 	margin: 6px 8px 0 0;
 	padding: 4px 0 4px 4px;
 }
-.userReg fieldset input[name="address2"] {
+.allPurposeForm fieldset input[type="file"]{
+	width: 200px;
+	margin: 6px 8px 0 0;
+	padding: 4px 0 4px 4px;
+}
+.allPurposeForm fieldset textarea.tall {
+	height:200px;
+}
+.allPurposeForm fieldset input[type="text"].twoFieldsinline, .allPurposeForm fieldset select.twoFieldsinline{
+	float:left;
+	width:95px;
+}
+.allPurposeForm fieldset input[name="address2"],
+.allPurposeForm fieldset input[name="localAddress2"],
+.allPurposeForm fieldset input[name="hqAddress2"] {
 	margin: 7px 0 0 178px;
 }
-.userReg fieldset input[name="zip"] {
+.allPurposeForm fieldset input[name="zip"] {
 	width: 50px;
 }
-.userReg fieldset input[name="phone1"], .userReg fieldset input[name="phone2"] {
+.allPurposeForm fieldset select.time
+{
+	width: 80px;
+	display: inline;
+	margin: 0;
+}
+
+.allPurposeForm fieldset input[name="phone1"], .allPurposeForm fieldset input[name="phone2"],
+.allPurposeForm fieldset input[name="taxID1"]{
 	width: 30px;
 	display: inline;
 	margin: 0;
 }
-.userReg fieldset input[name="phone3"] {
+.allPurposeForm fieldset input[name="taxID2"] {
+	width: 70px;
+	display: inline;
+	margin: 0;
+}
+.allPurposeForm fieldset input[name="phone3"] {
 	width: 40px;
 	float: none;
 	display: inline;
 	margin: 0;
 }
-.userReg fieldset div.formAction {
+.allPurposeForm fieldset div.formAction {
 	border-top: 3px solid #6c6c6c;
 	margin: 26px 0 0 0;
 	padding: 13px 0;
 	background-color: #ebebeb;
 	overflow: auto;
 }
-.userReg fieldset a.button {/* FORM BUTTON */
+.allPurposeForm fieldset a.button {/* FORM BUTTON */
 	float: right;
 	margin: 0 13px 0 13px;
 }
-.userReg fieldset a.button, .userReg fieldset a.button:visited {
+.allPurposeForm fieldset a.button, .allPurposeForm fieldset a.button:visited {
 	background-color: #2799e9;
 	display: inline-block; 
 	padding: 5px 10px 6px; 
@@ -459,8 +511,22 @@ div.intro div p
 	cursor: pointer;
 	font-size: 140%;
 }
-.userReg fieldset a.button:hover { background-color: #2181c3; color: #fff; }
-.userReg fieldset a.button:active { top: 1px; }
+.allPurposeForm fieldset a.button:hover { background-color: #2181c3; color: #fff; }
+.allPurposeForm fieldset a.button:active { top: 1px; }
+.allPurposeForm fieldset .remove {
+	float:left;
+	display:block;
+	border:1px solid red;
+}
+.allPurposeForm fieldset div.no-logo
+{
+	border: 1px dashed #ccc;
+	height: 100px;
+	margin-left: 178px;
+	width: 300px;
+
+}
+
 
 /*************************************************/
 /************ end Adam's Contribution *************/

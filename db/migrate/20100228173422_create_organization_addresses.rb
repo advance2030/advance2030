@@ -9,7 +9,7 @@ class CreateOrganizationAddresses < ActiveRecord::Migration
       t.integer :sort_order
       t.timestamps
     end
-    
+
     add_index :organization_addresses, :address_type_id
     add_index :organization_addresses, :organization_id
     add_index :organization_addresses, :postal_code_id
