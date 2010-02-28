@@ -74,22 +74,13 @@
 
     </fieldset>
     <fieldset class="twoCol">
-         <script type="text/javascript">
-      $(function() {
-        $("#startDate").datepicker();
-      });
-      </script>
       <div class="form-node">
-        <label for="startDate">
-          Event Start Date
-        </label>
-        <input type="text" name="" id="startDate">
+        <%= f.label :start_datetime %>
+        <%= f.text_field :start_datetime, :class => 'datepicker' %>
       </div>
       <div class="form-node">
-        <label for="endDate">
-          Event End Date
-        </label>
-        <input type="text" name="" id="endDate">
+        <%= f.label :end_datetime %>
+        <%= f.text_field :end_datetime, :class => 'datepicker' %>
       </div>
     </fieldset>
     <fieldset class="twoCol">

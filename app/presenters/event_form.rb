@@ -7,7 +7,7 @@ module Presenters
     attr_reader :event
     delegate :venue, :manager, :supervisor, :committee_sponsor,
              :name, :summary, :description, :tag_list,
-             :logo, :to => :event
+             :logo, :start_datetime, :end_datetime, :to => :event
 
     def initialize(event)
       @event = event
