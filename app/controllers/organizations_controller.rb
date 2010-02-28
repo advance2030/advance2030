@@ -1,6 +1,6 @@
 class OrganizationsController < ApplicationController
   before_filter :find_organization, :only => [:show, :edit, :update, :destroy, :destroy_logo]
-  before_filter :find_service_regions, :find_organization_type_options, :find_roles, :find_industries, :only => [:new, :create, :edit, :update]
+  before_filter :find_service_regions, :find_organization_type_options, :find_roles, :find_industries, :find_state_options, :only => [:new, :create, :edit, :update]
   
   def index
     @organizations = Organization.list
@@ -66,5 +66,9 @@ private
   
   def find_industries
     @industries = Industry.list
+  end
+  
+  def find_state_options
+    @state_options = State.options
   end
 end
