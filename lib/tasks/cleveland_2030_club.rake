@@ -60,5 +60,10 @@ namespace :ac do
       options = ["Free Onsite", "Paid Onsite", "Street", "Offsite"]
       options.each { |o| ParkingOption.create(:title => o) }
     end
+    
+    task :load_fee_options => :environment do
+      options = ["Food", "Space", "Equipment"]
+      options.each { |o| FeeOption.create(:title => o) }
+    end
   end
 end

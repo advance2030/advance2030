@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100228044435) do
+ActiveRecord::Schema.define(:version => 20100228050228) do
 
   create_table "accounts", :force => true do |t|
     t.string   "login",                              :null => false
@@ -154,6 +154,11 @@ ActiveRecord::Schema.define(:version => 20100228044435) do
     t.integer  "attendee_limit"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "fee_options", :force => true do |t|
+    t.string "title",       :limit => 50, :null => false
+    t.text   "description"
   end
 
   create_table "industries", :force => true do |t|
@@ -308,6 +313,15 @@ ActiveRecord::Schema.define(:version => 20100228044435) do
   add_index "venue_av_equipments", ["av_equipment_id"], :name => "index_venue_av_equipments_on_av_equipment_id"
   add_index "venue_av_equipments", ["venue_id", "av_equipment_id"], :name => "by_venue", :unique => true
   add_index "venue_av_equipments", ["venue_id"], :name => "index_venue_av_equipments_on_venue_id"
+
+  create_table "venue_fee_options", :force => true do |t|
+    t.integer "venue_id",      :null => false
+    t.integer "fee_option_id", :null => false
+  end
+
+  add_index "venue_fee_options", ["fee_option_id"], :name => "index_venue_fee_options_on_fee_option_id"
+  add_index "venue_fee_options", ["venue_id", "fee_option_id"], :name => "by_venue", :unique => true
+  add_index "venue_fee_options", ["venue_id"], :name => "index_venue_fee_options_on_venue_id"
 
   create_table "venue_parking_options", :force => true do |t|
     t.integer "venue_id",          :null => false
