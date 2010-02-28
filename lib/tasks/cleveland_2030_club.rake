@@ -9,6 +9,7 @@ namespace :ac do
     task :load_categories => :environment do
       categories = ["Education", "Social", "Networking", "Philanthropy", "Technology", "Membership", "Communications"]
       categories.each { |c| Category.create( :name => c, :description => c ) }
+    end
 
     task :load_industries => :environment do
       industries = ["Accounting", "Advertising/Marketing", "Aerospace", "Architecture", "Banking", "Biotechnology", "Construction/Development", "Distribution", "Education", "Engineering", "Entertainment", "Financial Services", "Government", "Healthcare", "Hospitality", "Human Resources", "Insurance", "Legal", "Manufacturing", "Media", "Nonprofit", "Public Relations", "Real Estate", "Restaurant/Food and Beverage", "Retail", "Sales", "Software", "Technology/IT", "Telecommunications", "Transportation", "Utilities", "Other"]
