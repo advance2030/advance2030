@@ -1,6 +1,8 @@
 ActionController::Routing::Routes.draw do |map|
   map.resources :committees
-
+  map.resources :venues, :member => { :destroy_avatar => :delete } do |venue|
+    venue.resources :venue_notes, :as => :notes
+  end
 
   map.root :controller => 'home'
   # The priority is based upon order of creation: first created -> highest priority.

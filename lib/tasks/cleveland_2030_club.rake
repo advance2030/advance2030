@@ -25,5 +25,50 @@ namespace :ac do
       types = ["Corporation", "Nonprofit", "Media", "Government", "Political", "Other"]
       types.each { |t| OrganizationType.create(:title => t) }
     end
+
+    task :load_organization_roles => :environment do
+      roles = ["Employer", "Venue", "Corporate Member", "Sponsor", "Donor", "Civic Partner", "YP Group"]
+      roles.each { |r| OrganizationRole.create(:role => r) }
+    end
+
+    task :load_venue_types => :environment do
+      types = ["Bar", "Restaurant", "Bar/Restaurant", "Hall", "Theater", "Private Club", "Museum", "Outdoor", "Other"]
+      types.each { |t| VenueType.create(:title => t) }
+    end
+
+    task :load_address_types => :environment do
+      types = ["Home", "Work", "Other"]
+      types.each { |t| AddressType.create(:title => t) }
+    end
+
+    task :load_email_address_types => :environment do
+      types = ["Home", "Work", "Other"]
+      types.each { |t| EmailAddressType.create(:title => t) }
+    end
+
+    task :load_phone_number_types => :environment do
+      types = ["Home", "Work", "Mobile", "Other"]
+      types.each { |t| PhoneNumberType.create(:title => t) }
+    end
+
+    task :load_av_equipment_options => :environment do
+      avs = ["LCDs", "Projector", "Audio", "Other"]
+      avs.each { |a| AvEquipmentOption.create(:title => a) }
+    end
+
+    task :load_parking_options => :environment do
+      options = ["Free Onsite", "Paid Onsite", "Street", "Offsite"]
+      options.each { |o| ParkingOption.create(:title => o) }
+    end
+
+    task :load_fee_options => :environment do
+      options = ["Food", "Space", "Equipment"]
+      options.each { |o| FeeOption.create(:title => o) }
+    end
+
+    task :load_food_service_options => :environment do
+      options = ["Food and Alcohol", "Alcohol Only", "Food Only", "Catering", "None"]
+      options.each { |o| FoodServiceOption.create(:title => o) }
+    end
   end
 end

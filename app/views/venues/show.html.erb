@@ -1,0 +1,39 @@
+<h1><%= @venue.title %></h1>
+<p><%= link_to "&larr; View other Venues", venues_path %> or <%= link_to 'Edit', edit_venue_path(@venue.url_friendly) %></p>
+
+<% if @venue.avatar? %>
+<%= image_tag @venue.avatar.url(:medium) %>
+<% end %>
+
+<% if @venue.notes? %>
+<h2>Notes</h2>
+<ol>
+  <% @venue.notes.each do |n| %>
+  <li><%= n.note %></li>
+  <% end %>
+</ol>
+<% end %>
+
+<% if @venue.av_equipment_options? %>
+<p>AudioVideo equipment options include <%= @venue.av_equipment_options.map(&:title).to_sentence %></p>
+<% end %>
+
+<% if @venue.fee_options? %>
+<p>Fees for this venue include <%= @venue.fee_options.map(&:title).to_sentence %></p>
+<% end %>
+
+<% if @venue.parking_options? %>
+<p>Parking options include <%= @venue.parking_options.map(&:title).to_sentence %></p>
+<% end %>
+
+<% if @venue.food_service_options? %>
+<p><strong>Food Service Options</strong>: <%= @venue.food_service_options.map(&:title).to_sentence %></p>
+<% end %>
+
+<p><strong>Venue Type</strong>: <%= @venue.venue_type.title %></p>
+<p><strong>Capacity</strong>: <%= pluralize(@venue.capacity, 'Person') %></p>
+<p><strong>Full Capacity</strong>: <%= pluralize(@venue.full_capacity, 'Person') %></p>
+
+<% if @venue.has_internet? %>
+<p>This venue is Internet ready!</p>
+<% end %>

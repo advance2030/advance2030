@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100228035118) do
+ActiveRecord::Schema.define(:version => 20100228053526) do
 
   create_table "accounts", :force => true do |t|
     t.string   "login",                              :null => false
@@ -54,6 +54,10 @@ ActiveRecord::Schema.define(:version => 20100228035118) do
     t.datetime "asset_updated_at"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "av_equipment_options", :force => true do |t|
+    t.string "title", :limit => 100, :null => false
   end
 
   create_table "categories", :force => true do |t|
@@ -152,6 +156,16 @@ ActiveRecord::Schema.define(:version => 20100228035118) do
     t.datetime "updated_at"
   end
 
+  create_table "fee_options", :force => true do |t|
+    t.string "title",       :limit => 50, :null => false
+    t.text   "description"
+  end
+
+  create_table "food_service_options", :force => true do |t|
+    t.string "title",       :limit => 100, :null => false
+    t.text   "description"
+  end
+
   create_table "industries", :force => true do |t|
     t.string   "title",       :limit => 100, :null => false
     t.text     "description"
@@ -170,6 +184,11 @@ ActiveRecord::Schema.define(:version => 20100228035118) do
     t.string   "title",      :limit => 150, :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "parking_options", :force => true do |t|
+    t.string "title",       :limit => 100, :null => false
+    t.text   "description"
   end
 
   create_table "phone_number_types", :force => true do |t|
@@ -290,5 +309,73 @@ ActiveRecord::Schema.define(:version => 20100228035118) do
   add_index "users_roles", ["user_id", "user_role_id"], :name => "by_user", :unique => true
   add_index "users_roles", ["user_id"], :name => "index_users_roles_on_user_id"
   add_index "users_roles", ["user_role_id"], :name => "index_users_roles_on_user_role_id"
+
+  create_table "venue_av_equipment_options", :force => true do |t|
+    t.integer "venue_id",               :null => false
+    t.integer "av_equipment_option_id", :null => false
+  end
+
+  add_index "venue_av_equipment_options", ["av_equipment_option_id"], :name => "index_venue_av_equipment_options_on_av_equipment_option_id"
+  add_index "venue_av_equipment_options", ["venue_id", "av_equipment_option_id"], :name => "by_venue", :unique => true
+  add_index "venue_av_equipment_options", ["venue_id"], :name => "index_venue_av_equipment_options_on_venue_id"
+
+  create_table "venue_fee_options", :force => true do |t|
+    t.integer "venue_id",      :null => false
+    t.integer "fee_option_id", :null => false
+  end
+
+  add_index "venue_fee_options", ["fee_option_id"], :name => "index_venue_fee_options_on_fee_option_id"
+  add_index "venue_fee_options", ["venue_id", "fee_option_id"], :name => "by_venue", :unique => true
+  add_index "venue_fee_options", ["venue_id"], :name => "index_venue_fee_options_on_venue_id"
+
+  create_table "venue_food_service_options", :force => true do |t|
+    t.integer  "venue_id"
+    t.integer  "food_service_option_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "venue_notes", :force => true do |t|
+    t.integer  "venue_id",   :null => false
+    t.text     "note",       :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "venue_notes", ["venue_id"], :name => "index_venue_notes_on_venue_id"
+
+  create_table "venue_parking_options", :force => true do |t|
+    t.integer "venue_id",          :null => false
+    t.integer "parking_option_id", :null => false
+  end
+
+  add_index "venue_parking_options", ["parking_option_id"], :name => "index_venue_parking_options_on_parking_option_id"
+  add_index "venue_parking_options", ["venue_id", "parking_option_id"], :name => "by_venue", :unique => true
+  add_index "venue_parking_options", ["venue_id"], :name => "index_venue_parking_options_on_venue_id"
+
+  create_table "venue_types", :force => true do |t|
+    t.string "title",       :limit => 50, :null => false
+    t.text   "description"
+  end
+
+  create_table "venues", :force => true do |t|
+    t.string   "title",                                  :null => false
+    t.string   "url_friendly",                           :null => false
+    t.integer  "venue_type_id",                          :null => false
+    t.integer  "capacity",            :default => 0
+    t.integer  "full_capacity",       :default => 0
+    t.boolean  "has_internet",        :default => false
+    t.boolean  "is_blacklisted",      :default => false
+    t.text     "blacklist_note"
+    t.string   "avatar_file_name"
+    t.integer  "avatar_file_size"
+    t.string   "avatar_content_type"
+    t.datetime "avatar_updated_at"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "venues", ["url_friendly"], :name => "index_venues_on_url_friendly", :unique => true
+  add_index "venues", ["venue_type_id"], :name => "index_venues_on_venue_type_id"
 
 end
