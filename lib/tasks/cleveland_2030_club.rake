@@ -1,9 +1,19 @@
 namespace :ac do
   namespace :db do
+
+    task :load => [:load_categories, :load_industries,
+                    :load_service_regions, :load_organization_roles, :load_organization_types,
+                    :load_venue_types, :load_address_types, :load_email_address_types,
+                    :load_phone_number_types, :load_av_equipment_options, :load_parking_options,
+                    :load_fee_options, :load_food_service_options]
+
     task :load_postal_codes => :environment do
       local_settings = YAML::load_file("config/database.yml")[RAILS_ENV]
       postal_codes = File.join(Rails.root, 'db', 'sql', 'postal_codes.sql')
+      puts "loading..."
+      puts local_settings.inspect
       system "mysql -u#{local_settings["username"]} #{"-p#{local_settings["password"]}" if local_settings["password"]} #{local_settings["database"]} < #{postal_codes}"
+      puts "loaded."
     end
 
     task :load_categories => :environment do
