@@ -6,7 +6,8 @@ gem "authlogic",              "2.1.3"
 gem "sqlite3-ruby",           "1.2.5"
 gem "newrelic_rpm",           "2.10.5"
 gem "paperclip",              "2.3.1.1"
-gem "activemerchant",		  "1.5.1", :require => 'active_merchant'
+gem "activemerchant",         "1.5.1", :require => 'active_merchant'
+gem "is_taggable",            "0.1.0"
 
 group :development do
   gem "roo",                            "1.3.11"

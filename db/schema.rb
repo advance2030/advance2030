@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100228212040) do
+ActiveRecord::Schema.define(:version => 20100228230609) do
 
   create_table "accounts", :force => true do |t|
     t.string   "login",                              :null => false
@@ -25,7 +25,6 @@ ActiveRecord::Schema.define(:version => 20100228212040) do
     t.datetime "last_login_at"
     t.string   "current_login_ip"
     t.string   "last_login_ip"
-    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.datetime "joined_at"
@@ -409,6 +408,22 @@ ActiveRecord::Schema.define(:version => 20100228212040) do
   end
 
   add_index "surnames", ["title"], :name => "index_surnames_on_title", :unique => true
+
+  create_table "taggings", :force => true do |t|
+    t.integer "tag_id"
+    t.string  "taggable_type", :default => ""
+    t.integer "taggable_id"
+  end
+
+  add_index "taggings", ["tag_id"], :name => "index_taggings_on_tag_id"
+  add_index "taggings", ["taggable_id", "taggable_type"], :name => "index_taggings_on_taggable_id_and_taggable_type"
+
+  create_table "tags", :force => true do |t|
+    t.string "name", :default => ""
+    t.string "kind", :default => ""
+  end
+
+  add_index "tags", ["name", "kind"], :name => "index_tags_on_name_and_kind"
 
   create_table "user_addresses", :force => true do |t|
     t.integer  "user_id",                            :null => false
