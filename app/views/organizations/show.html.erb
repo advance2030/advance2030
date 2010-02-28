@@ -9,6 +9,10 @@
 <p>Organization roles include <%= @organization.roles.map(&:role).to_sentence %></p>
 <% end %>
 
+<% if @organization.industries? %>
+<p>Organization industries include <%= @organization.industries.map(&:title).to_sentence %></p>
+<% end %>
+
 <p><strong>Legal Name</strong>: <%= @organization.legal_name %></p>
 <p><strong>DBA</strong>: <%= @organization.dba %></p>
 <p><strong>Tax Identification Number</strong>: <%= @organization.tax_identification %></p>
