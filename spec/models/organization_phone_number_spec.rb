@@ -6,6 +6,6 @@ describe OrganizationPhoneNumber do
   end
 
   it "should create a new instance given valid attributes" do
-    organization_phone_number.should be_valid
+    @organization_phone_number.should be_valid
   end
 end
