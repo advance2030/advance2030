@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100228052258) do
+ActiveRecord::Schema.define(:version => 20100228053013) do
 
   create_table "accounts", :force => true do |t|
     t.string   "login",                              :null => false
@@ -348,5 +348,25 @@ ActiveRecord::Schema.define(:version => 20100228052258) do
     t.string "title",       :limit => 50, :null => false
     t.text   "description"
   end
+
+  create_table "venues", :force => true do |t|
+    t.string   "title",                                  :null => false
+    t.string   "url_friendly",                           :null => false
+    t.integer  "venue_type_id",                          :null => false
+    t.integer  "capacity",            :default => 0
+    t.integer  "full_capacity",       :default => 0
+    t.boolean  "has_internet",        :default => false
+    t.boolean  "is_blacklisted",      :default => false
+    t.text     "blacklist_note"
+    t.string   "avatar_file_name"
+    t.integer  "avatar_file_size"
+    t.string   "avatar_content_type"
+    t.datetime "avatar_updated_at"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "venues", ["url_friendly"], :name => "index_venues_on_url_friendly", :unique => true
+  add_index "venues", ["venue_type_id"], :name => "index_venues_on_venue_type_id"
 
 end
