@@ -22,13 +22,8 @@
     <fieldset class="twoCol">
 
       <div class="form-node">
-        <label for="eventManager">
-          Event Manager
-        </label>
-        <select name="" id="eventManager">
-          <option selected="selected">Select a Manager</option>
-          <option value="JohnDoe">john Doe</option>
-        </select>
+        <%= f.label :manager, "Event Manager" %>
+        <%= f.collection_select :manager, presenter.managers, :id, :name, :prompt => presenter.manager_prompt %>
       </div>
 
       <div class="form-node">

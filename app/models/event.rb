@@ -1,6 +1,7 @@
 class Event < ActiveRecord::Base
   has_many :categorizations
   has_many :categories, :through => :categorizations
+  has_one :manager, :class_name => "User"
   has_one :venue
 
   class << self
