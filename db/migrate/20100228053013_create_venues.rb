@@ -15,7 +15,7 @@ class CreateVenues < ActiveRecord::Migration
       t.datetime :avatar_updated_at
       t.timestamps
     end
-    
+
     add_index :venues, :url_friendly, :unique => true
     add_index :venues, :venue_type_id
   end

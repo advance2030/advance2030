@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100228170913) do
+ActiveRecord::Schema.define(:version => 20100228173422) do
 
   create_table "accounts", :force => true do |t|
     t.string   "login",                              :null => false
@@ -190,6 +190,21 @@ ActiveRecord::Schema.define(:version => 20100228170913) do
 
   add_index "links", ["url"], :name => "index_links_on_url", :unique => true
 
+  create_table "organization_addresses", :force => true do |t|
+    t.integer  "address_type_id", :null => false
+    t.integer  "organization_id", :null => false
+    t.text     "street"
+    t.integer  "postal_code_id",  :null => false
+    t.boolean  "is_primary"
+    t.integer  "sort_order"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "organization_addresses", ["address_type_id"], :name => "index_organization_addresses_on_address_type_id"
+  add_index "organization_addresses", ["organization_id"], :name => "index_organization_addresses_on_organization_id"
+  add_index "organization_addresses", ["postal_code_id"], :name => "index_organization_addresses_on_postal_code_id"
+
   create_table "organization_links", :force => true do |t|
     t.integer "link_type_id",    :null => false
     t.integer "organization_id", :null => false
@@ -214,6 +229,15 @@ ActiveRecord::Schema.define(:version => 20100228170913) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "organizations_roles", :force => true do |t|
+    t.integer "organization_role_id", :null => false
+    t.integer "organization_id",      :null => false
+  end
+
+  add_index "organizations_roles", ["organization_id"], :name => "index_organizations_roles_on_organization_id"
+  add_index "organizations_roles", ["organization_role_id", "organization_id"], :name => "by_org", :unique => true
+  add_index "organizations_roles", ["organization_role_id"], :name => "index_organizations_roles_on_organization_role_id"
 
   create_table "parking_options", :force => true do |t|
     t.string "title",       :limit => 100, :null => false

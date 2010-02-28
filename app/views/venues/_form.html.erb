@@ -2,7 +2,7 @@
   $(document).ready(function() {
     $('a.destroy-avatar').click(function(e) {
       var containerElement = $('div.current-avatar');
-      
+
       if (confirm('Are you sure you want to delete this photo?')) {
         $.ajax({
           type: 'DELETE',
@@ -13,7 +13,7 @@
           }
         })
       };
-      
+
       e.preventDefault();
     })
   })
@@ -30,142 +30,142 @@
 <% form_for venue, :html => { :multipart => true } do |f| %>
   <fieldset>
     <legend>Venue Information</legend>
-    
+
     <div>
       <%= f.error_message_on :title %>
       <%= f.label :title, 'Title' %>
       <%= f.text_field :title %>
     </div>
-    
+
     <div>
       <%= f.error_message_on :url_friendly %>
       <%= f.label :url_friendly, 'Permalink Title' %>
       <%= f.text_field :url_friendly %>
     </div>
-    
+
     <div>
       <%= f.error_message_on :venue_type_id %>
       <%= f.label :venue_type_id, 'Venue Type' %>
       <%= f.select :venue_type_id, @venue_options %>
     </div>
     
-    <div id="<%= dom_id(@venue, :avatar) %>">
-      <% if @venue.avatar? %>
+    <div id="<%= dom_id(venue, :avatar) %>">
+      <% if venue.avatar? %>
         <div class="current-avatar">
-          <%= image_tag @venue.avatar.url(:thumb), :class => 'avatar' %>
-          <%= link_to 'Delete Photo', destroy_avatar_venue_path(@venue), :class => 'destroy-avatar' %>
+          <%= image_tag venue.avatar.url(:thumb), :class => 'avatar' %>
+          <%= link_to 'Delete Photo', destroy_avatar_venue_path(venue.url_friendly), :class => 'destroy-avatar' %>
         </div>
       <% end %>
-      
+
       <%= f.error_message_on :avatar %>
       <%= f.label :avatar, 'Logo' %>
       <%= f.file_field :avatar %>
     </div>
   </fieldset>
-  
+
   <div class="notes">
     <p><%= link_to 'Add a Note', new_venue_venue_note_path(venue) %></p>
-    <% if @venue.notes? %>
+    <% if venue.notes? %>
     <ol>
-      <% @venue.notes.each do |n| %>
+      <% venue.notes.each do |n| %>
         <li><%= n.note %></li>
       <% end %>
     </ol>
     <% end %>
   </div>
-  
+
   <% if @parking_options.any? %>
   <fieldset>
-  	<legend>Parking Options</legend>
-  	<p>This venue has the following available parking options.</p>
-  	<%= hidden_field_tag "venue[parking_option_ids][]", '' %>
-  	<% content_tag :div, :class => 'authors' do -%>
-  		<% @parking_options.each do |s| -%>
-  			<% div_for s do %>
-  				<label>
-  					<%= check_box_tag "venue[parking_option_ids][]", s.id, venue.parking_options.include?(s) %>
-  					<%= s.title %>
-  				</label>
-  			<% end -%>
-  		<% end -%>
-  	<% end -%>
+    <legend>Parking Options</legend>
+    <p>This venue has the following available parking options.</p>
+    <%= hidden_field_tag "venue[parking_option_ids][]", '' %>
+    <% content_tag :div, :class => 'authors' do -%>
+      <% @parking_options.each do |s| -%>
+        <% div_for s do %>
+          <label>
+            <%= check_box_tag "venue[parking_option_ids][]", s.id, venue.parking_options.include?(s) %>
+            <%= s.title %>
+          </label>
+        <% end -%>
+      <% end -%>
+    <% end -%>
   </fieldset>
   <% end %>
-  
+
   <% if @fee_options.any? %>
   <fieldset>
-  	<legend>Fee Options</legend>
-  	<p>This venue has the following associated fees.</p>
-  	<%= hidden_field_tag "venue[fee_option_ids][]", '' %>
-  	<% content_tag :div, :class => 'authors' do -%>
-  		<% @fee_options.each do |s| -%>
-  			<% div_for s do %>
-  				<label>
-  					<%= check_box_tag "venue[fee_option_ids][]", s.id, venue.fee_options.include?(s) %>
-  					<%= s.title %>
-  				</label>
-  			<% end -%>
-  		<% end -%>
-  	<% end -%>
+    <legend>Fee Options</legend>
+    <p>This venue has the following associated fees.</p>
+    <%= hidden_field_tag "venue[fee_option_ids][]", '' %>
+    <% content_tag :div, :class => 'authors' do -%>
+      <% @fee_options.each do |s| -%>
+        <% div_for s do %>
+          <label>
+            <%= check_box_tag "venue[fee_option_ids][]", s.id, venue.fee_options.include?(s) %>
+            <%= s.title %>
+          </label>
+        <% end -%>
+      <% end -%>
+    <% end -%>
   </fieldset>
   <% end %>
-  
+
   <% if @food_service_options.any? %>
   <fieldset>
-  	<legend>Food Service Options</legend>
-  	<p>This venue has the following food service options.</p>
-  	<%= hidden_field_tag "venue[food_service_option_ids][]", '' %>
-  	<% content_tag :div, :class => 'authors' do -%>
-  		<% @food_service_options.each do |s| -%>
-  			<% div_for s do %>
-  				<label>
-  					<%= radio_button_tag "venue[food_service_option_ids][]", s.id, venue.food_service_options.include?(s) %>
-  					<%= s.title %>
-  				</label>
-  			<% end -%>
-  		<% end -%>
-  	<% end -%>
+    <legend>Food Service Options</legend>
+    <p>This venue has the following food service options.</p>
+    <%= hidden_field_tag "venue[food_service_option_ids][]", '' %>
+    <% content_tag :div, :class => 'authors' do -%>
+      <% @food_service_options.each do |s| -%>
+        <% div_for s do %>
+          <label>
+            <%= radio_button_tag "venue[food_service_option_ids][]", s.id, venue.food_service_options.include?(s) %>
+            <%= s.title %>
+          </label>
+        <% end -%>
+      <% end -%>
+    <% end -%>
   </fieldset>
   <% end %>
-  
+
   <% if @av_equipment_options.any? %>
   <fieldset>
-  	<legend>AV Equipment Options</legend>
-  	<p>This venue has the following audio/video equipment options.</p>
-  	<%= hidden_field_tag "venue[av_equipment_option_ids][]", '' %>
-  	<% content_tag :div, :class => 'authors' do -%>
-  		<% @av_equipment_options.each do |s| -%>
-  			<% div_for s do %>
-  				<label>
-  					<%= check_box_tag "venue[av_equipment_option_ids][]", s.id, venue.av_equipment_options.include?(s) %>
-  					<%= s.title %>
-  				</label>
-  			<% end -%>
-  		<% end -%>
-  	<% end -%>
+    <legend>AV Equipment Options</legend>
+    <p>This venue has the following audio/video equipment options.</p>
+    <%= hidden_field_tag "venue[av_equipment_option_ids][]", '' %>
+    <% content_tag :div, :class => 'authors' do -%>
+      <% @av_equipment_options.each do |s| -%>
+        <% div_for s do %>
+          <label>
+            <%= check_box_tag "venue[av_equipment_option_ids][]", s.id, venue.av_equipment_options.include?(s) %>
+            <%= s.title %>
+          </label>
+        <% end -%>
+      <% end -%>
+    <% end -%>
   </fieldset>
   <% end %>
-  
+
   <fieldset>
     <legend>Venue Capacity</legend>
-    
+
     <div>
       <%= f.error_message_on :capacity %>
       <%= f.label :capacity, 'Attendee Size' %>
       <%= f.text_field :capacity, :size => 4 %>
     </div>
-    
+
     <div>
       <%= f.error_message_on :full_capacity %>
       <%= f.label :full_capacity, 'Maximum Capacity' %>
       <%= f.text_field :full_capacity, :size => 4 %>
     </div>
-    
+
   </fieldset>
-  
+
   <fieldset>
     <legend>Amenities</legend>
-    
+
     <div>
       <%= f.check_box :has_internet %>
       <%= f.label :has_internet, 'Internet available?' %>

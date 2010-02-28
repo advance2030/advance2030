@@ -5,7 +5,7 @@ class CreateVenueNotes < ActiveRecord::Migration
       t.text :note, :null => false
       t.timestamps
     end
-    
+
     add_index :venue_notes, :venue_id
   end
 

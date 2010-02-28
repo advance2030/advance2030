@@ -21,4 +21,7 @@ group :test do
   gem "cucumber-rails",                 "0.3.0"
   gem "capybara",                       "0.3.5"
   gem 'database_cleaner',               "0.5.0"
+	if RUBY_VERSION > "1.9"
+		gem 'test-unit',										"1.2.3"
+	end
 end

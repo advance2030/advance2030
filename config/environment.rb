@@ -6,6 +6,9 @@ RAILS_GEM_VERSION = '2.3.5' unless defined? RAILS_GEM_VERSION
 # Bootstrap the Rails environment, frameworks, and default configuration
 require File.join(File.dirname(__FILE__), 'boot')
 
+require 'bundler'
+Bundler.setup
+
 Rails::Initializer.run do |config|
   # Settings in config/environments/* take precedence over those specified here.
   # Application configuration should go into files in config/initializers
@@ -37,9 +40,6 @@ Rails::Initializer.run do |config|
   # config.i18n.default_locale = :de
 end
 
-
-require 'bundler'
-Bundler.setup
 
 require 'newrelic_rpm'
 
