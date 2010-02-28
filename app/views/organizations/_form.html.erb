@@ -1,0 +1,128 @@
+<script type="text/javascript" charset="utf-8">
+  $(document).ready(function() {
+    $('a.destroy-logo').click(function(e) {
+      var containerElement = $('div.current-logo');
+
+      if (confirm('Are you sure you want to delete this photo?')) {
+        $.ajax({
+          type: 'DELETE',
+          url: $(this).attr('href'),
+          dataType: 'script',
+          success : function(resp) {
+            containerElement.fadeOut('slow');
+          }
+        })
+      };
+
+      e.preventDefault();
+    })
+  })
+</script>
+<style type="text/css" media="screen">
+  label {
+    display: block;
+    font-weight: bold;
+  }
+  form legend {
+    display: none;
+  }
+</style>
+<% form_for organization, :html => { :multipart => true } do |f| %>
+<fieldset>
+  <legend>Information</legend>
+  
+  <div>
+    <%= f.error_message_on :name %>
+    <%= f.label :name, 'Name' %>
+    <%= f.text_field :name %>
+  </div>
+  
+  <div>
+    <%= f.error_message_on :legal_name %>
+    <%= f.label :legal_name, 'Legal Name' %>
+    <%= f.text_field :legal_name %>
+  </div>
+  
+  <div>
+    <%= f.error_message_on :dba %>
+    <%= f.label :dba, 'DBA' %>
+    <%= f.text_field :dba %>
+  </div>
+  
+  <div id="<%= dom_id(organization, :logo) %>">
+    <% if organization.logo? %>
+      <div class="current-logo">
+        <%= image_tag organization.logo.url(:thumb), :class => 'logo' %>
+        <%= link_to 'Delete Logo', destroy_logo_organization_path(organization), :class => 'destroy-logo' %>
+      </div>
+    <% end %>
+
+    <%= f.error_message_on :logo %>
+    <%= f.label :logo, 'Logo' %>
+    <%= f.file_field :logo %>
+  </div>
+  
+  <% if @roles.any? %>
+  <fieldset>
+    <legend>Roles</legend>
+    <p>This organization has the following roles.</p>
+    <%= hidden_field_tag "organization[role_ids][]", '' %>
+    <% content_tag :div, :class => 'authors' do -%>
+      <% @roles.each do |s| -%>
+        <% div_for s do %>
+          <label>
+            <%= check_box_tag "organization[role_ids][]", s.id, organization.roles.include?(s) %>
+            <%= s.role %>
+          </label>
+        <% end -%>
+      <% end -%>
+    <% end -%>
+  </fieldset>
+  <% end %>
+  
+  <div>
+    <%= f.error_message_on :tax_identification %>
+    <%= f.label :tax_identification, 'Tax Identification Number' %>
+    <%= f.text_field :tax_identification %>
+  </div>
+  
+  <div>
+    <%= f.error_message_on :local_staff_size %>
+    <%= f.label :local_staff_size, "Local Staff Size" %>
+    <%= f.text_field :local_staff_size, :size => 4 %>
+  </div>
+  
+  <div>
+    <%= f.error_message_on :total_staff_size %>
+    <%= f.label :total_staff_size, 'Global Staff Size' %>
+    <%= f.text_field :total_staff_size, :size => 4 %>
+  </div>
+  
+  <div>
+    <%= f.error_message_on :annual_revenue %>
+    <%= f.label :annual_revenue, 'Annual Revenue' %>
+    <%= f.text_field :annual_revenue %>
+  </div>
+  
+  <div>
+    <%= f.error_message_on :service_region_id %>
+    <%= f.label :service_region_id, 'Service Region' %>
+    <%= f.select :service_region_id, @service_region_options %>
+  </div>
+  
+  <div>
+    <%= f.error_message_on :organization_type_id %>
+    <%= f.label :organization_type_id, 'Organization Type' %>
+    <%= f.select :organization_type_id, @organization_type_options %>
+  </div>
+  
+  <div>
+    <%= f.error_message_on :mission %>
+    <%= f.label :mission, 'Mission' %>
+    <%= f.text_area :mission, :size => '50x20' %>
+  </div>
+</fieldset>
+<fieldset class="submit">
+  <p><%= f.submit 'Save' %> or <%= link_to 'Cancel', organizations_path, :class => 'cancel' %></p>
+</fieldset>
+<% end %>

@@ -14,7 +14,6 @@ class ApplicationController < ActionController::Base
 
   def render_404
     render :file => File.join(Rails.root, 'public', '404.html')
-    #render :template => 'pages/404', :status => 404
   end
 
   def render_edit
