@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100228173422) do
+ActiveRecord::Schema.define(:version => 20100228180341) do
 
   create_table "accounts", :force => true do |t|
     t.string   "login",                              :null => false
@@ -215,6 +215,19 @@ ActiveRecord::Schema.define(:version => 20100228173422) do
   add_index "organization_links", ["link_id"], :name => "index_organization_links_on_link_id"
   add_index "organization_links", ["link_type_id"], :name => "index_organization_links_on_link_type_id"
   add_index "organization_links", ["organization_id"], :name => "index_organization_links_on_organization_id"
+
+  create_table "organization_phone_numbers", :force => true do |t|
+    t.integer  "phone_number_type_id", :null => false
+    t.integer  "organization_id",      :null => false
+    t.string   "number",               :null => false
+    t.boolean  "is_primary"
+    t.integer  "sort_order"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "organization_phone_numbers", ["organization_id"], :name => "index_organization_phone_numbers_on_organization_id"
+  add_index "organization_phone_numbers", ["phone_number_type_id"], :name => "index_organization_phone_numbers_on_phone_number_type_id"
 
   create_table "organization_roles", :force => true do |t|
     t.string "role",        :limit => 50, :null => false
