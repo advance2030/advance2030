@@ -35,25 +35,21 @@
         <%= f.label :committee_sponsor, "Committee Sponsor" %>
         <%= f.collection_select :committee_sponsor, presenter.committee_sponsors, :id, :name, :prompt => presenter.committee_sponsor_prompt %>
       </div>
+
     </fieldset>
+
     <fieldset class="twoCol">
       <div class="form-node">
-        <label for="eventTitle">
-          Event Title
-        </label>
-        <input type="text" name="" id="eventTitle">
+        <%= f.label :name, "Event Title" %>
+        <%= f.text_field :name %>
       </div>
       <div class="form-node">
-        <label for="eventSummary">
-          Event Summary
-        </label>
-        <textarea name="" id="eventSummary"></textarea>
+        <%= f.label :summary, "Event Summary" %>
+        <%= f.text_area :summary %>
       </div>
       <div class="form-node">
-        <label for="eventDiscription">
-          Event Discription
-        </label>
-        <textarea name="" id="eventDiscription"></textarea>
+        <%= f.label :description %>
+        <%= f.text_area :description %>
       </div>
       <div class="form-node">
         <label for="eventDiscription">
