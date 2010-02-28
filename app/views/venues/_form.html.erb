@@ -49,11 +49,11 @@
       <%= f.select :venue_type_id, @venue_options %>
     </div>
     
-    <div id="<%= dom_id(@venue, :avatar) %>">
-      <% if @venue.avatar? %>
+    <div id="<%= dom_id(venue, :avatar) %>">
+      <% if venue.avatar? %>
         <div class="current-avatar">
-          <%= image_tag @venue.avatar.url(:thumb), :class => 'avatar' %>
-          <%= link_to 'Delete Photo', destroy_avatar_venue_path(@venue), :class => 'destroy-avatar' %>
+          <%= image_tag venue.avatar.url(:thumb), :class => 'avatar' %>
+          <%= link_to 'Delete Photo', destroy_avatar_venue_path(venue), :class => 'destroy-avatar' %>
         </div>
       <% end %>
       
@@ -65,9 +65,9 @@
   
   <div class="notes">
     <p><%= link_to 'Add a Note', new_venue_venue_note_path(venue) %></p>
-    <% if @venue.notes? %>
+    <% if venue.notes? %>
     <ol>
-      <% @venue.notes.each do |n| %>
+      <% venue.notes.each do |n| %>
         <li><%= n.note %></li>
       <% end %>
     </ol>

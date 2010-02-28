@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100228170913) do
+ActiveRecord::Schema.define(:version => 20100228171449) do
 
   create_table "accounts", :force => true do |t|
     t.string   "login",                              :null => false
@@ -214,6 +214,15 @@ ActiveRecord::Schema.define(:version => 20100228170913) do
     t.datetime "updated_at"
   end
 
+  create_table "organizations_roles", :force => true do |t|
+    t.integer "organization_role_id", :null => false
+    t.integer "organization_id",      :null => false
+  end
+
+  add_index "organizations_roles", ["organization_id"], :name => "index_organizations_roles_on_organization_id"
+  add_index "organizations_roles", ["organization_role_id", "organization_id"], :name => "by_org", :unique => true
+  add_index "organizations_roles", ["organization_role_id"], :name => "index_organizations_roles_on_organization_role_id"
+
   create_table "parking_options", :force => true do |t|
     t.string "title",       :limit => 100, :null => false
     t.text   "description"
@@ -349,7 +358,6 @@ ActiveRecord::Schema.define(:version => 20100228170913) do
   end
 
   add_index "venue_av_equipment_options", ["av_equipment_option_id"], :name => "index_venue_av_equipment_options_on_av_equipment_option_id"
-  add_index "venue_av_equipment_options", ["venue_id", "av_equipment_option_id"], :name => "by_venue", :unique => true
   add_index "venue_av_equipment_options", ["venue_id"], :name => "index_venue_av_equipment_options_on_venue_id"
 
   create_table "venue_fee_options", :force => true do |t|
@@ -358,14 +366,11 @@ ActiveRecord::Schema.define(:version => 20100228170913) do
   end
 
   add_index "venue_fee_options", ["fee_option_id"], :name => "index_venue_fee_options_on_fee_option_id"
-  add_index "venue_fee_options", ["venue_id", "fee_option_id"], :name => "by_venue", :unique => true
   add_index "venue_fee_options", ["venue_id"], :name => "index_venue_fee_options_on_venue_id"
 
   create_table "venue_food_service_options", :force => true do |t|
-    t.integer  "venue_id"
-    t.integer  "food_service_option_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.integer "venue_id"
+    t.integer "food_service_option_id"
   end
 
   create_table "venue_notes", :force => true do |t|
@@ -383,7 +388,6 @@ ActiveRecord::Schema.define(:version => 20100228170913) do
   end
 
   add_index "venue_parking_options", ["parking_option_id"], :name => "index_venue_parking_options_on_parking_option_id"
-  add_index "venue_parking_options", ["venue_id", "parking_option_id"], :name => "by_venue", :unique => true
   add_index "venue_parking_options", ["venue_id"], :name => "index_venue_parking_options_on_venue_id"
 
   create_table "venue_types", :force => true do |t|
