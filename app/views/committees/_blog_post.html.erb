@@ -6,5 +6,6 @@
 	Organizer <%=h committee_members.lead %>
 </div>
 <% 3.times do -%>
-	<%= render(:partial => "_blogComment", :collection => @blog.comments) %>
+  <%= render(:partial => "_blog_comment", :collection => @blog.comments) %>
+
 <% end -%>
