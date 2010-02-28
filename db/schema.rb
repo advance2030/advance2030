@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100227232102) do
+ActiveRecord::Schema.define(:version => 20100227235208) do
 
   create_table "accounts", :force => true do |t|
     t.string   "login",                              :null => false
@@ -128,6 +128,15 @@ ActiveRecord::Schema.define(:version => 20100227232102) do
   end
 
   add_index "surnames", ["title"], :name => "index_surnames_on_title", :unique => true
+
+  create_table "user_phone_numbers", :force => true do |t|
+    t.integer  "user_id",              :null => false
+    t.integer  "phone_number_type_id", :null => false
+    t.string   "number",               :null => false
+    t.integer  "sort_order"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "user_profiles", :force => true do |t|
     t.integer  "user_id",             :null => false
