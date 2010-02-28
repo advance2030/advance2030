@@ -29,14 +29,8 @@ class MockupsController < ApplicationController
     session[:template_name] = params[:template_name]
     session[:parent_dir]    = params[:parent_dir]
     template_path = File.join(['mockups', params[:parent_dir], params[:template_name]].compact)
-    render :template => template_path, :layout => determine_layout
+    logger.debug template_path
+    render :template => template_path, :layout => false
   end
-
-  private
-
-    def determine_layout
-      directory = params[:parent_dir].to_s.downcase
-      LAYOUTS.include?(directory) ? directory : true
-    end
 
 end
