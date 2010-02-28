@@ -65,5 +65,10 @@ namespace :ac do
       options = ["Food", "Space", "Equipment"]
       options.each { |o| FeeOption.create(:title => o) }
     end
+    
+    task :load_food_service_options => :environment do
+      options = ["Food and Alcohol", "Alcohol Only", "Food Only", "Catering", "None"]
+      options.each { |o| FoodServiceOption.create(:title => o) }
+    end
   end
 end

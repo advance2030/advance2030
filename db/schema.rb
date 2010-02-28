@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100228050228) do
+ActiveRecord::Schema.define(:version => 20100228052258) do
 
   create_table "accounts", :force => true do |t|
     t.string   "login",                              :null => false
@@ -158,6 +158,11 @@ ActiveRecord::Schema.define(:version => 20100228050228) do
 
   create_table "fee_options", :force => true do |t|
     t.string "title",       :limit => 50, :null => false
+    t.text   "description"
+  end
+
+  create_table "food_service_options", :force => true do |t|
+    t.string "title",       :limit => 100, :null => false
     t.text   "description"
   end
 
@@ -322,6 +327,13 @@ ActiveRecord::Schema.define(:version => 20100228050228) do
   add_index "venue_fee_options", ["fee_option_id"], :name => "index_venue_fee_options_on_fee_option_id"
   add_index "venue_fee_options", ["venue_id", "fee_option_id"], :name => "by_venue", :unique => true
   add_index "venue_fee_options", ["venue_id"], :name => "index_venue_fee_options_on_venue_id"
+
+  create_table "venue_food_service_options", :force => true do |t|
+    t.integer  "venue_id"
+    t.integer  "food_service_option_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "venue_parking_options", :force => true do |t|
     t.integer "venue_id",          :null => false
