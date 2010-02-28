@@ -1,5 +1,5 @@
 class PaymentsController < ApplicationController
-  include ActiveMerchant::Billing
+  #include ActiveMerchant::Billing
   
   def index
   end
