@@ -14,13 +14,16 @@ class Organization < ActiveRecord::Base
   has_many :addresses, :class_name => 'OrganizationAddress'
   has_many :email_addresses, :class_name => 'OrganizationEmailAddress'
   
-  has_one :headquarters_address, :class_name => 'OrganizationAddress', :conditions => ["organization_addresses.address_type_id = ?", AddressType.headquarters]
-  has_one :local_address, :class_name => 'OrganizationAddress', :conditions => ["organization_addresses.address_type_id = ?", AddressType.work]
+  #has_one :headquarters_address, :class_name => 'OrganizationAddress', :conditions => ["organization_addresses.address_type_id = ?", AddressType.headquarters]
+  #has_one :local_address, :class_name => 'OrganizationAddress', :conditions => ["organization_addresses.address_type_id = ?", AddressType.work]
   
   named_scope :list
   
   has_attached_file :logo,
                     :styles => { :medium => "80x80>", :thumb => "50x50" }
+  
+  validates_attachment_size :logo, :less_than => 5.megabytes
+  validates_attachment_content_type :logo, :content_type => []
                     
   def validate
     errors.add(:name, 'Please provide a name') unless self.name?
