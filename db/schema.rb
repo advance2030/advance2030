@@ -155,6 +155,10 @@ ActiveRecord::Schema.define(:version => 20100228212040) do
     t.integer  "attendee_limit"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "venue_id"
+    t.integer  "manager_id"
+    t.integer  "supervisor_id"
+    t.integer  "committee_id"
   end
 
   create_table "fee_options", :force => true do |t|
