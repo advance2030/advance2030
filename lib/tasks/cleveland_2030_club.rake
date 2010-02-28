@@ -50,5 +50,10 @@ namespace :ac do
       types = ["Home", "Work", "Mobile", "Other"]
       types.each { |t| PhoneNumberType.create(:title => t) }
     end
+    
+    task :load_av_equipments => :environment do
+      avs = ["LCDs", "Projector", "Audio", "Other"]
+      avs.each { |a| AvEquipment.create(:title => a) }
+    end
   end
 end
