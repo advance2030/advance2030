@@ -43,7 +43,7 @@ namespace :ac do
     
     task :load_link_types => :environment do
       types = ["Home", "Work", "Headquarters", "Other"]
-      types.each { |t| Linktype.create(:title => t) }
+      types.each { |t| LinkType.create(:title => t) }
     end
     
     task :load_social_media_types => :environment do
