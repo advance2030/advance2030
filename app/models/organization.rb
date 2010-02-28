@@ -10,6 +10,10 @@ class Organization < ActiveRecord::Base
   has_attached_file :logo,
                     :styles => { :medium => "80x80>", :thumb => "50x50" }
                     
+  def validate
+    errors.add(:name, 'Please provide a name') unless self.name?
+  end
+  
   def roles?
     self.roles.any?
   end

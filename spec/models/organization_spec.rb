@@ -8,4 +8,9 @@ describe Organization do
   it "should create a new instance given valid attributes" do
     @organization.should be_valid
   end
+  
+  it "should ensure there is a name" do
+    @organization.name = nil
+    @organization.should_not be_valid
+  end
 end
