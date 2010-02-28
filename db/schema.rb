@@ -316,7 +316,6 @@ ActiveRecord::Schema.define(:version => 20100228053526) do
   end
 
   add_index "venue_av_equipment_options", ["av_equipment_option_id"], :name => "index_venue_av_equipment_options_on_av_equipment_option_id"
-  add_index "venue_av_equipment_options", ["venue_id", "av_equipment_option_id"], :name => "by_venue", :unique => true
   add_index "venue_av_equipment_options", ["venue_id"], :name => "index_venue_av_equipment_options_on_venue_id"
 
   create_table "venue_fee_options", :force => true do |t|
@@ -325,7 +324,6 @@ ActiveRecord::Schema.define(:version => 20100228053526) do
   end
 
   add_index "venue_fee_options", ["fee_option_id"], :name => "index_venue_fee_options_on_fee_option_id"
-  add_index "venue_fee_options", ["venue_id", "fee_option_id"], :name => "by_venue", :unique => true
   add_index "venue_fee_options", ["venue_id"], :name => "index_venue_fee_options_on_venue_id"
 
   create_table "venue_food_service_options", :force => true do |t|
@@ -350,7 +348,6 @@ ActiveRecord::Schema.define(:version => 20100228053526) do
   end
 
   add_index "venue_parking_options", ["parking_option_id"], :name => "index_venue_parking_options_on_parking_option_id"
-  add_index "venue_parking_options", ["venue_id", "parking_option_id"], :name => "by_venue", :unique => true
   add_index "venue_parking_options", ["venue_id"], :name => "index_venue_parking_options_on_venue_id"
 
   create_table "venue_types", :force => true do |t|
