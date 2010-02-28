@@ -1,0 +1,9 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  organization_id: 1
+  industry_id: 1
+
+two:
+  organization_id: 1
+  industry_id: 1

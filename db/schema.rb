@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100228183813) do
+ActiveRecord::Schema.define(:version => 20100228184514) do
 
   create_table "accounts", :force => true do |t|
     t.string   "login",                              :null => false
@@ -294,6 +294,15 @@ ActiveRecord::Schema.define(:version => 20100228183813) do
   add_index "organizations", ["organization_type_id"], :name => "index_organizations_on_organization_type_id"
   add_index "organizations", ["service_region_id"], :name => "index_organizations_on_service_region_id"
   add_index "organizations", ["user_id"], :name => "index_organizations_on_user_id"
+
+  create_table "organizations_industries", :force => true do |t|
+    t.integer "organization_id", :null => false
+    t.integer "industry_id",     :null => false
+  end
+
+  add_index "organizations_industries", ["industry_id"], :name => "index_organizations_industries_on_industry_id"
+  add_index "organizations_industries", ["organization_id", "industry_id"], :name => "by_industry", :unique => true
+  add_index "organizations_industries", ["organization_id"], :name => "index_organizations_industries_on_organization_id"
 
   create_table "organizations_roles", :force => true do |t|
     t.integer "organization_role_id", :null => false
