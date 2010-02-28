@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100228012547) do
+ActiveRecord::Schema.define(:version => 20100228024222) do
 
   create_table "accounts", :force => true do |t|
     t.string   "login",                              :null => false
@@ -128,18 +128,26 @@ ActiveRecord::Schema.define(:version => 20100228012547) do
     t.datetime "updated_at"
   end
 
+  create_table "event_notes", :force => true do |t|
+    t.integer  "event_id",   :null => false
+    t.text     "note",       :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "event_notes", ["event_id"], :name => "index_event_notes_on_event_id"
+
   create_table "events", :force => true do |t|
-    t.string   "name"
-    t.string   "summary"
+    t.string   "name",                        :null => false
+    t.string   "url_friendly",                :null => false
+    t.text     "summary"
     t.text     "description"
-    t.datetime "start_date_time"
-    t.datetime "end_date_time"
-    t.datetime "registration_start_date_time"
-    t.datetime "registration_end_date_time"
+    t.datetime "start_datetime"
+    t.datetime "end_datetime"
+    t.datetime "registration_start_datetime"
+    t.datetime "registration_end_datetime"
     t.integer  "attendee_target_count"
     t.integer  "attendee_limit"
-    t.text     "notes"
-    t.text     "venue_notes"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
