@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100228194033) do
+ActiveRecord::Schema.define(:version => 20100228212040) do
 
   create_table "accounts", :force => true do |t|
     t.string   "login",                              :null => false
@@ -76,12 +76,13 @@ ActiveRecord::Schema.define(:version => 20100228194033) do
   add_index "categorizations", ["item_id", "category_id"], :name => "index_categorizations_on_item_id_and_category_id", :unique => true
 
   create_table "cities", :force => true do |t|
-    t.string "title",        :limit => 75, :null => false
-    t.string "url_friendly", :limit => 75, :null => false
+    t.string   "title",        :null => false
+    t.string   "url_friendly", :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
-  add_index "cities", ["title"], :name => "index_cities_on_title", :unique => true
-  add_index "cities", ["url_friendly"], :name => "index_cities_on_url_friendly", :unique => true
+  add_index "cities", ["url_friendly"], :name => "index_cities_on_url_friendly"
 
   create_table "committee_assets", :force => true do |t|
     t.integer "asset_id",     :null => false
@@ -275,7 +276,7 @@ ActiveRecord::Schema.define(:version => 20100228194033) do
   create_table "organization_social_medias", :force => true do |t|
     t.integer  "social_media_type_id", :null => false
     t.integer  "organization_id",      :null => false
-    t.string   "username",             :null => false
+    t.string   "url",                  :null => false
     t.integer  "sort_order"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -283,7 +284,7 @@ ActiveRecord::Schema.define(:version => 20100228194033) do
 
   add_index "organization_social_medias", ["organization_id"], :name => "index_organization_social_medias_on_organization_id"
   add_index "organization_social_medias", ["social_media_type_id"], :name => "index_organization_social_medias_on_social_media_type_id"
-  add_index "organization_social_medias", ["username"], :name => "index_organization_social_medias_on_username", :unique => true
+  add_index "organization_social_medias", ["url"], :name => "index_organization_social_medias_on_username", :unique => true
 
   create_table "organization_types", :force => true do |t|
     t.string   "title",      :limit => 150, :null => false
@@ -346,25 +347,27 @@ ActiveRecord::Schema.define(:version => 20100228194033) do
   add_index "phone_number_types", ["title"], :name => "index_phone_number_types_on_title", :unique => true
 
   create_table "postal_code_types", :force => true do |t|
-    t.string   "title",        :limit => 50, :null => false
-    t.string   "url_friendly", :limit => 50, :null => false
+    t.string   "title",        :null => false
+    t.string   "url_friendly", :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "postal_code_types", ["url_friendly"], :name => "index_postal_code_types_on_url_friendly", :unique => true
+  add_index "postal_code_types", ["url_friendly"], :name => "index_postal_code_types_on_url_friendly"
 
   create_table "postal_codes", :force => true do |t|
-    t.string  "code"
-    t.integer "city_id"
-    t.integer "state_id"
-    t.float   "latitude"
-    t.float   "longitude"
-    t.integer "postal_code_type_id"
+    t.string   "code",                :null => false
+    t.integer  "city_id",             :null => false
+    t.integer  "state_id",            :null => false
+    t.integer  "postal_code_type_id", :null => false
+    t.float    "latitude",            :null => false
+    t.float    "longitude",           :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   add_index "postal_codes", ["city_id"], :name => "index_postal_codes_on_city_id"
-  add_index "postal_codes", ["code"], :name => "index_postal_codes_on_code", :unique => true
+  add_index "postal_codes", ["postal_code_type_id"], :name => "index_postal_codes_on_postal_code_type_id"
   add_index "postal_codes", ["state_id"], :name => "index_postal_codes_on_state_id"
 
   create_table "registrations", :force => true do |t|
@@ -387,12 +390,15 @@ ActiveRecord::Schema.define(:version => 20100228194033) do
   end
 
   create_table "states", :force => true do |t|
-    t.string "title", :limit => 50, :null => false
-    t.string "code",  :limit => 10, :null => false
+    t.string   "title",        :limit => 75, :null => false
+    t.string   "url_friendly",               :null => false
+    t.string   "code",         :limit => 10, :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
-  add_index "states", ["code"], :name => "index_states_on_code", :unique => true
-  add_index "states", ["title"], :name => "index_states_on_title", :unique => true
+  add_index "states", ["code"], :name => "index_states_on_code"
+  add_index "states", ["url_friendly"], :name => "index_states_on_url_friendly"
 
   create_table "suffixes", :force => true do |t|
     t.string "title", :limit => 20, :null => false
