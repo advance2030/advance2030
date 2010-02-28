@@ -5,9 +5,9 @@ class PaymentsController < ApplicationController
   end
   
   def checkout
-    ActiveMerchant::Billing::Base.mode = :test
+    ActiveMerchant::Billing::Base.mode = :test    
     
-    setup_response = gateway.setup_purchase(5000,
+    setup_response = gateway.setup_purchase(50000,
         :ip                => request.remote_ip,
         :return_url        => url_for(:action => 'confirm', :only_path => false),
         :cancel_return_url => url_for(:action => 'index', :only_path => false)
