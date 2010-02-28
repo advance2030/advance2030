@@ -1,5 +1,7 @@
 class Account < ActiveRecord::Base
 
+  belongs_to :user
+
   acts_as_authentic do |c|
     c.session_class = UserSession
     c.logged_in_timeout = 4.hours
@@ -7,6 +9,6 @@ class Account < ActiveRecord::Base
     c.validate_password_field = true
     c.perishable_token_valid_for = 5.minutes
   end   
-
+  
 end
 

@@ -1,7 +1,11 @@
 .DS_Store
 .bundle
 db/*.sqlite3
-db/*.db
 log/*.log
-tmp/*
+tmp/**/*
+config/database.yml
+public/cache/**/*
+public/system/**/*
+*.tmproj
 rerun.txt
+nbproject
