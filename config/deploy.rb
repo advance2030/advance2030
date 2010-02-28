@@ -80,6 +80,12 @@ namespace :bundle do
   end
 end
 
+namespace :ac do
+    task :db_load, :roles => :app do
+      run "cd #{current_release} && rake ac:db:load"
+    end
+end
+
 namespace :deploy do
   task :start, :roles => :app do
     run "touch #{current_release}/tmp/restart.txt"

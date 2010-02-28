@@ -1,7 +1,7 @@
 class VenueNotesController < ApplicationController
   before_filter :find_venue
   before_filter :find_note, :only => [:show, :edit, :update, :destroy]
-  
+
   def new
     @venue_note = @venue.notes.build
   end
