@@ -4,6 +4,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <title>Cleveland 2030</title>
     <link rel="stylesheet" type="text/css" href="/stylesheets/main.css">
+    <%= yield :stylesheets %>
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
     <!--[if lte IE 8]>
       <script src="/javascripts/html5.js" type="text/javascript"></script>
@@ -21,12 +22,12 @@
             <div id="alertSection">
             </div>
             <div id="loginSection">
-			<% if !@current_user.nil? and @current_user.logged_in? %>
-				<%= link_to "Sign out", user_session_url(@current_user), :method => :delete  %>
-			<% else %>
-            	<a href="/user_sessions/new/" title="login" class="login">LOGIN</a> | NEW HERE?
-            	<a href="/registrations/new/" title="register">REGISTER</a>			
-			<% end %>
+            <% if !@current_user.nil? and @current_user.logged_in? %>
+              <%= link_to "Sign out", user_session_url(@current_user), :method => :delete  %>
+            <% else %>
+              <a href="/user_sessions/new/" title="login" class="login">LOGIN</a> | NEW HERE?
+              <a href="/registrations/new/" title="register">REGISTER</a>			
+            <% end %>
             </div>
           </div>
           <nav>

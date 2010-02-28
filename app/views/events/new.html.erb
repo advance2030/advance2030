@@ -1,3 +1,7 @@
+<% content_for :stylesheets do %>
+  <link rel="stylesheet" type="text/css" href="/stylesheets/three-col.css">
+  <link rel="stylesheet" type="text/css" href="/stylesheets/about.css">
+<% end %>
 <div class="threeColumns-0">
   <div class="section">
     <ul>
@@ -10,7 +14,7 @@
 </div>
 <div class="threeColumns-1">
   <h1>Create an Event</h1>
-  <% form_for presenter, :url => events_path do |f| %>
+  <% form_for presenter, :url => events_path, :html => { :class => "allPurposeForm" } do |f| %>
 
     <fieldset>
       <div class="form-node">
