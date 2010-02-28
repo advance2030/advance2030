@@ -45,22 +45,22 @@ h4{font-size:120%;}
 h5{font-size:100%;}
 
 /* Structure Styles */
-body{font-family: Helvetica, Tahoma, Verdana, sans-serif;font-size:80%;position:relative;background:#fff url(/images/bg-strech.jpg) repeat-x top left;color:#333;}
-#container{width:100%;margin:0 auto;background:transparent url(/images/bg.jpg) no-repeat top center;}
+body{font-family: Helvetica, Tahoma, Verdana, sans-serif;font-size:80%;position:relative;background:#fff url(../images/bg-strech.jpg) repeat-x top left;color:#333;}
+#container{width:100%;margin:0 auto;background:transparent url(../images/bg.jpg) no-repeat top center;}
 #container img.skyline{position:absolute;right:140px;top:107px;}
 #shadowContainer{width:960px;margin:0 auto;}
 #innerContainer{width:972px;margin:0 auto;}
 
 #header{height:145px;/*height:150px;background:transparent url(../images/cle2030-skyline.png) no-repeat 100% 85px;*/}
-#header #topHeader{height:20px;text-align:right;}
-#header a.logo{margin:5px 5px 5px 15px;display:block;float:left;width:300px;}
+#header #topHeader{/*height:20px;text-align:right;*/}
+#header a.logo{margin:0 0 0 15px;/*margin:5px 5px 5px 15px;*/display:block;float:left;/*width:300px;*/}
 #header #alertSection{float:left;width:345px;margin:0 5px;padding:8px;}
 #header #loginSection{float:right;width:300px;padding:28px 0 0 0;}
 
-nav {height:45px;padding:0;background:transparent url(../images/nav-bg.gif) repeat-x 0 3px;}
+nav {height:40px;padding:0;background:transparent url(../images/nav-bg.gif) repeat-x 0 3px;border-bottom:3px solid #2c2d2d;}
 nav div{overflow:hidden;height:45px;margin:0 auto;padding:0 3px;/*background:transparent url(../images/cle2030-skyline.png) no-repeat 100% -63px;*/}
 nav ul li{float:left;margin:0 3px;height:42px;}
-nav ul li a{font-size:115%;/*font-size:130%;*/text-decoration:none;font-weight:normal;/*font-weight:bold;*/color:#fff;display:block;height:42px;padding:17px 10px 0;/*padding:14px 10px 0;*/}
+nav ul li a{font-size:115%;/*font-size:130%;*/text-decoration:none;font-weight:normal;/*font-weight:bold;*/color:#fff;display:block;height:24px;/*height:42px;*/padding:17px 5px 0;/*padding:14px 10px 0;*/}
 nav ul li a:hover{color:#ebebeb;}
 nav ul li.current a{background:transparent url(../images/cle2030-menu_re.png) repeat-x 0 -50px;}
 
@@ -71,47 +71,79 @@ footer{background:#2d2d2d;padding:10px;height:100px;color:#fff;}
 /* 2 column layout */
 div.twoColumns-0{float:left;/*width:695px;*/width:670px;}
 div.twoColumns-1{float:right;width:275px;}
+
+/* column styles end*/
+
+/* content styles */
+div.introContainer{position:relative;/*width:692px;*/height:240px;margin:0 0 10px 0;}
+div.intro{/*width:722px;*/ width:700px; height:240px;background:#044e8f url(../images/cle2030-intro-bg_re.png) repeat-x top left;position:absolute;top:0;left:-30px;}
 div.introContainer .corner{width:18px;height:9px;position:absolute;bottom:-9px;left:-29px;background:transparent url(../images/cle2030-intro-corner.png) no-repeat top left;}
 
 div.miniCalendar{width:274px;height:240px;background:#293239;}
 
-div.calendarHeader{overflow:hidden;}
-div.calendarHeader form{float:left;width:45%;height:40px;}
-div.calendarHeader div{float:right;width:45%;text-align:right;height:40px;}
-div.calendarHeader div span.daySelected{padding:0 5px;font-weight:bold;background:#0099ff;color:#fff;}
-div.calendar{}
-div.calendar div.month {width:692px;overflow:hidden;border:1px solid #ccc;}
+div.calendarHeader{overflow:hidden;height:30px;}
+div.calendarHeader form{float:left;width:360px;height:40px;}
+div.calendarHeader form select{width:200px;}
+div.calendarHeader div{float:right;width:45%;text-align:right;height:40px;padding:0 6px 0 0;}
+div.calendarHeader div span.daySelected{display:block;float:right;padding:2px 5px;font-weight:bold;background:#0099ff;color:#fff;margin:4px;}
+div.calendarHeader div a{-moz-border-radius: 3px; -webkit-border-radius: 3px;text-decoration:none;font-size:130%;display:block;height:21px;width:32px;line-height:21px;padding:0 0 0 0;background:#000;color:#fff;float:right;margin:2px;text-align:center;}
+div.calendarHeader div a:hover{background:#666;}
+
+div.calendar{margin:10px 0 0 0;}
+div.calendar div.month {width:686px;overflow:hidden;border:1px solid #ccc;}
 div.calendar div.month div.weekTitles{height:30px;background:#000;}
 
-div.calendar div.month div.weekTitles div{width:98px;float:left;color:#fff;text-align:center;padding:8px 0;border-right:1px solid #ccc;font-weight:bold;}
-div.calendar div.month div.weekRow{overflow:hidden;border-bottom:1px solid #ccc;}
-div.calendar div.month div.weekRow div.day{height:64px;border-right:1px solid #ccc;float:left;width:98px;}
+div.calendar div.month div.weekTitles div{width:96px;float:left;color:#fff;text-align:center;padding:8px 0;border:1px solid #000;border-right:1px solid #ccc;font-weight:bold;}
+div.calendar div.month div.weekRow{overflow:hidden;border-bottom:1px solid #ccc;clear:both;}
+div.calendar div.month div.weekRow div.day{height:64px;border:1px solid #fff;border-right:1px solid #ccc;float:left;width:96px;}
 div.calendar div.month div.weekTitles div.last,
 div.calendar div.month div.weekRow div.last{border-right:none;}
-div.calendar div.month div.weekRow div.day span.date{display:block;background:#c0e0ff;padding:1px 3px;}
-div.calendar div.month div.weekRow div.day span.blank{background:#ebebeb;}
+div.calendar div.month div.weekRow div.day a.date{display:block;background:#c0e0ff;padding:1px 3px;font-size:85%;}
+div.calendar div.month div.weekRow div.day span.blank{background:#ebebeb;display:block;padding:1px 3px;font-size:85%;}
 div.calendar div.month div.weekRow div.day ul{list-style:none;}
 div.calendar div.month div.weekRow div.day ul li{padding:2px 0 1px 2px;overflow:hidden;}
 div.calendar div.month div.weekRow div.day ul li a{font-size:82%;padding:0 0 0 2px;white-space:nowrap;display:block;float:left;}
-div.calendar div.month div.weekRow div.day ul li span{width:5px;height:10px;margin:0 2px 0 0;float:left;}
-div.calendar div.month div.weekRow div.day ul li span.networking{background:#ff0000;}
+div.calendar div.month div.weekRow div.day ul li span{width:5px;height:10px;margin:0 2px 1px 0;float:left;}
+div.calendar div.month div.weekRow div.current {border:1px solid #0099ff;}
+div.calendar div.month div.weekRow div.current a.date{background:#0099ff;color:#fff;}
 
+ul li span.coupons{background:#cc66ff;}
+ul li span.social{background:#ff9933;}
+ul li span.networking{background:#cc3333;}
+ul li span.philanthopic{background:#00a651;}
+ul li span.educational{background:#66ccff;}
+
+div.dayEvents{margin:20px 0 0 0;}
+div.dayEvents h2{border-bottom:5px solid #ccc;padding:4px;}
+div.dayEvents span{color:#0a4d8f;}
+
+form.filters {margin:60px 0 0 0;}
+form.filters fieldset{width:248px;padding:0 0 20px 0;}
+form.filters fieldset label{font-weight:bold;clear:both;}
+form.filters fieldset ul{list-style:none;overflow:hidden;}
+form.filters fieldset ul li{overflow:hidden;width:240px;}
+form.filters fieldset ul li input{vertical-align:baseline;}
+form.filters fieldset ul li label{font-weight:normal;vertical-align:baseline;}
+form.filters fieldset ul li span{width:5px;height:12px;margin:0 2px 1px 0;display:block;float:left;margin:4px 0 0 0;}		
+form.filters fieldset input{margin:2px;}
+
+div.eventTypesContainer{height:120px;padding:3px;overflow:auto;border:1px solid #ccc;}
 
 div.subintroContainer { margin-bottom: 15px; overflow: hidden;}
-div.subintroColumnLeft, div.subintroColumnRight { float: left;width: 460px; /*width: 485px;*/ }
+div.subintroColumnLeft, div.subintroColumnRight { float: left; width: 460px; }
 div.subintroColumnRight { margin-left: 15px; width: 190px; }
 
 div.membership, div.recentnews, div.sponsor, div.flickr { margin-bottom: 30px; }
 div.membership h3, div.recentnews h3, div.sponsor h3, div.flickr h3 { text-transform: uppercase; font-size: 15px; margin-bottom: 5px; }
 
-div.membershipBody { background: #ebebeb; border: 5px solid #ebebeb; -moz-border-radius: 5px; -webkit-border-radius: 5px; /*width: 469px;*/ overflow: hidden; padding: 3px; }
+div.membershipBody { background: #ebebeb; border: 5px solid #ebebeb; -moz-border-radius: 5px; -webkit-border-radius: 5px; overflow: hidden; padding: 3px; }
 	div.register { float: left; padding-right: 10px; text-align: center; }
 		div.register p a { color: #336799; font-family: Arial; }
 			p.becomeMember { margin: 24px 0 5px 0; }
-			p.becomeMember a { background: url('/images/becomeamember.jpg') no-repeat 0 0; display: block; height: 48px; text-indent: -9999px; width: 195px; }
-	div.testimonials { border-left: 5px solid #ccc; float: left; padding-left: 10px; /*width: 245px;*/ }
+			p.becomeMember a { background: url(../images/becomeamember.jpg) no-repeat 0 0; display: block; height: 48px; text-indent: -9999px; width: 195px; }
+	div.testimonials { border-left: 5px solid #ccc; float: left; padding-left: 10px;}
 			div.testimonials h4 { float: left; margin-bottom:3px; }
-			div.testimonials a { background: #999 url('/images/testimonialsrightarrow.jpg') no-repeat 100% 0; color: #fff; display: block; float: right; font-size: 11px; font-weight: normal; line-height: 12px; margin-top:2px; padding-left: 6px; text-decoration: none; width: 34px; }
+			div.testimonials a { background: #999 url(../images/testimonialsrightarrow.jpg) no-repeat 100% 0; color: #fff; display: block; float: right; font-size: 11px; font-weight: normal; line-height: 12px; margin-top:2px; padding-left: 6px; text-decoration: none; width: 34px; }
 		div.testimonialBody { border-top:1px solid #D4D8DB; padding: 8px; clear: both; }
 			div.testimonialBody p { font-size: 12px; }
 			div.testimonialBody p.testimonialAuthor { color: #666; margin-top: 30px; }
@@ -124,82 +156,10 @@ div.recentnewsBody ul { list-style: square; margin-left:20px; }
 
 div.flickrBody { margin-top: 8px; }
 div.flickrLeft, div.flickrImage, div.flickrRight { float: left; height: 145px; }
-div.flickrLeft a { display: block; background: url('/images/flickrLeft.jpg') no-repeat 0 0; width: 30px; height: 85px; margin: 32px 10px; }
-div.flickrRight a { display: block; background: url('/images/flickrRight.jpg') no-repeat 0 0; width: 30px; height: 85px; margin: 32px 10px; }
-div.flickrImage { width: 380px; text-align: center; }
+div.flickrLeft a { display: block; background: url(../images/flickrLeft.jpg) no-repeat 0 0; width: 30px; height: 85px; margin: 32px 10px; }
+div.flickrRight a { display: block; background: url(../images/flickrRight.jpg) no-repeat 0 0; width: 30px; height: 85px; margin: 32px 10px; }
 
-
-/*************************************************/
-/************ end Parag's Contribution *************/
-/*************************************************/
-
-/*************************************************/
-/************ begin Jon's Contribution *************/
-/*************************************************/
-div.intro div{display:none;}
-div.intro div.current
-{
-	display:block;
-}
-div.intro a.learn
-{
-	background:#FFF url('../images/learn-more-background.jpg') 0 0 repeat-x;
-	border-radius:5px;
-	color:#294558;
-	display:block;
-	position:absolute;
-	bottom:20px;
-	right:20px;
-	font-size: 160%;
-	padding: 10px 15px;
-	text-decoration:none;
-	text-shadow:rgba(10, 10, 10, 0.2) 1px 2px 2px;
-	-moz-border-radius:5px;
-	-webkit-border-radius:5px;
-}
-div.intro a.learn:hover{text-decoration:underline;}
-div.intro ul
-{
-	margin-top:14px;
-	margin-left:18px;
-	width:165px;
-}
-div.intro ul li
-{
-	display:block;height:100%;font-size:140%;line-height:230%;list-style:none;margin:4px 15px 4px 0;padding-right:15px;width:100%;
-}
-div.intro ul li a
-{
-	background-color:#1082e1;
-	color:#fff;
-	display:block;
-	height:38px;
-	margin-right: 15px;
-	padding-left: 20px;
-	text-decoration:none;
-}
-div.intro ul li.current, div.intro ul li:hover
-{
-	color:#000;
-}
-div.intro ul li.current
-{
-	background:transparent url('../images/intro-li-background.png') 0 0 no-repeat;
-}
-div.intro ul li:hover a, div.intro ul li.current a
-{
-	background-color:#fff;
-	color:#000;
-}
-div.intro div p
-{
-	color: #fff;
-	font-size: 240%;
-	position: absolute;
-	margin-right: 20px;
-	top: 25px;
-	left: 200px;
-}
+/* Jon's Event */
 .event
 {
 	background-color: #0066b6;
@@ -294,38 +254,139 @@ div.intro div p
 /************ end Jon's Contribution *************/
 /*************************************************/
 
+
+div.dayEvents .event
+{
+	background-color: transparent !important;
+	border-bottom-left-radius: 10px;
+	border-top-left-radius: 10px;
+	margin: 3px 0 !important;
+	position: relative;
+	text-align: center;
+}
+
+div.dayEvents .event ul{margin: 0;}
+div.dayEvents .event ul li div.details {color:#666;padding:4px;overflow:hidden;}
+div.dayEvents .event ul li div.details a{display:inline;padding:1px 0 0 2px;}
+div.dayEvents .event ul li div.details span{display:inline;padding:1px 0 0 2px;color:#000;}
+div.dayEvents .event ul li div.details div.columns{background:transparent;width:150px;float:left;padding:3px;}
+div.dayEvents .event ul li div.details div.columns ul{list-style:none;background:transparent;border:0;}
+div.dayEvents .event ul li div.details div.columns ul li{padding:2px 2px 0 15px;color:#666;margin:0;border:0;background:transparent url(../images/check_icon.png) no-repeat 0 5px;}
+div.dayEvents .sponsored ul li{border:0!important;overflow:hidden;}
+div.dayEvents .sponsored ul li img{display:block;float:left;margin:0 5px 0 0;}
+div.dayEvents .sponsored ul li div.details,
+div.dayEvents .sponsored ul li a{display:block;width:126px;float:right;}
+div.dayEvents .sponsored ul li div{padding:0!important;}
+
+div.dayEvents .event{width: 690px;}
+div.dayEvents .sponsored{width: 240px;}
+div.flickrImage { width: 360px; text-align: center; }
+
+
+/*************************************************/
+/************ end Parag's Contribution *************/
+/*************************************************/
+
+/*************************************************/
+/************ begin Jon's Contribution *************/
+/*************************************************/
+div.intro div{display:none;}
+div.intro div.current
+{
+	display:block;
+}
+div.intro a.learn
+{
+	background:#FFF url('../images/learn-more-background.jpg') 0 0 repeat-x;
+	border-radius:5px;
+	color:#294558;
+	display:block;
+	position:absolute;
+	bottom:20px;
+	right:20px;
+	font-size: 160%;
+	padding: 10px 15px;
+	text-decoration:none;
+	text-shadow:rgba(10, 10, 10, 0.2) 1px 2px 2px;
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
+}
+div.intro a.learn:hover{text-decoration:underline;}
+div.intro ul
+{
+	margin-top:14px;
+	margin-left:18px;
+	width:165px;
+}
+div.intro ul li
+{
+	display:block;height:100%;font-size:140%;line-height:230%;list-style:none;margin:4px 15px 4px 0;padding-right:15px;width:100%;
+}
+div.intro ul li a
+{
+	background-color:#1082e1;
+	color:#fff;
+	display:block;
+	height:38px;
+	margin-right: 15px;
+	padding-left: 20px;
+	text-decoration:none;
+}
+div.intro ul li.current, div.intro ul li:hover
+{
+	color:#000;
+}
+div.intro ul li.current
+{
+	background:transparent url('../images/intro-li-background.png') 0 0 no-repeat;
+}
+div.intro ul li:hover a, div.intro ul li.current a
+{
+	background-color:#fff;
+	color:#000;
+}
+div.intro div p
+{
+	color: #fff;
+	font-size: 240%;
+	position: absolute;
+	margin-right: 20px;
+	top: 25px;
+	left: 200px;
+}
+
 /*************************************************/
 /************ begin Adam's Contribution *************/
 /*************************************************/
 
 /* forms */
-fieldset {
-	margin: 0 13px;
+.userReg fieldset {
+	margin: 0 40px 0 0;
 	padding: 20px 0;
 }
-fieldset>fieldset {
+.userReg fieldset>fieldset {
 	padding: 0; margin: 0;
 }
-fieldset.twoCol {
+.userReg fieldset.twoCol {
 	float: left;
-	width: 450px;
+	width: 400px;
 }
-fieldset h2 {
+.userReg fieldset h2 {
 	font-size: 180%;
 	font-weight: bold;
 }
-fieldset>fieldset h2 {
+.userReg fieldset>fieldset h2 {
 	font-size: 160%;
 }
-fieldset h2 a.login {
+.userReg fieldset h2 a.login {
 	font-size: 50%;	
 }
-fieldset div {
+.userReg fieldset div {
 	margin: 16px 0;
 }
-fieldset label {
+.userReg fieldset label {
 	text-align: right;
-	width: 150px;
+	width: 170px;
 	display: block;
 	float: left;
 	margin: 6px 8px 0 0;
@@ -334,38 +395,59 @@ fieldset label {
 	color: #6C6C6C;
 }
 
-fieldset ol.checklist label {
-	margin: 0 0 0 50px;
-	padding: 0 0 0 50px;
+.userReg fieldset.checklist div {
+	margin: 5px 0;
+	padding: 0;	
 }
-fieldset input[type="checkbox"] {
-	margin: 0;
+.userReg fieldset.checklist label {
+	margin: 4px 8px 0 0;
 	padding: 0;
 }
+.userReg fieldset.checklist input[type="checkbox"] {
+	margin: 0;
+	padding: 4px 0 4px 4px;
+}
 
-fieldset input[type="text"], fieldset input[type="password"], fieldset input[type="email"], fieldset input:not([type="checkbox"]), fieldset select {
+.userReg fieldset input[type="text"], .userReg fieldset input[type="password"], .userReg fieldset input[type="email"], .userReg fieldset select {
 	width: 200px;
 	display: block;
 	border: 1px solid #6c6c6c;
 	margin: 6px 8px 0 0;
 	padding: 4px 0 4px 4px;
 }
-fieldset div.formAction {
+.userReg fieldset input[name="address2"] {
+	margin: 7px 0 0 178px;
+}
+.userReg fieldset input[name="zip"] {
+	width: 50px;
+}
+.userReg fieldset input[name="phone1"], .userReg fieldset input[name="phone2"] {
+	width: 30px;
+	display: inline;
+	margin: 0;
+}
+.userReg fieldset input[name="phone3"] {
+	width: 40px;
+	float: none;
+	display: inline;
+	margin: 0;
+}
+.userReg fieldset div.formAction {
 	border-top: 3px solid #6c6c6c;
-	margin: 0 106px 0 0;
+	margin: 26px 0 0 0;
 	padding: 13px 0;
 	background-color: #ebebeb;
 	overflow: auto;
 }
-fieldset div.formAction a {/* FORM BUTTON */
+.userReg fieldset a.button {/* FORM BUTTON */
 	float: right;
 	margin: 0 13px 0 13px;
 }
-fieldset div.formAction a, fieldset div.formAction a:visited {
+.userReg fieldset a.button, .userReg fieldset a.button:visited {
 	background-color: #2799e9;
 	display: inline-block; 
 	padding: 5px 10px 6px; 
-	color: #fff; 
+	color: #fff;
 	text-decoration: none;
 	-moz-border-radius: 5px; 
 	-webkit-border-radius: 5px;
@@ -377,8 +459,8 @@ fieldset div.formAction a, fieldset div.formAction a:visited {
 	cursor: pointer;
 	font-size: 140%;
 }
-fieldset div.formAction a:hover { background-color: #2181c3; color: #fff; }
-fieldset div.formAction a:active { top: 1px; }
+.userReg fieldset a.button:hover { background-color: #2181c3; color: #fff; }
+.userReg fieldset a.button:active { top: 1px; }
 
 /*************************************************/
 /************ end Adam's Contribution *************/

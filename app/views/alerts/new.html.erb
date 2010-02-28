@@ -1,0 +1,14 @@
+<h1>New Alert</h1>
+
+
+<% form_for @alert, :url => alert_path do |f| %>
+  <%= f.error_messages %>
+  <%= f.label :name %><br />
+  <%= f.text_field :name %><br />
+  <br />
+  <%= f.label :alerttext %><br />
+  <%= f.text_field :alerttext %><br />
+  <br />
+  <%= f.submit "Alert" %>
+<% end %>
+

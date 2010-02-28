@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en-US">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>Cleveland 2030</title>
+		<link rel="stylesheet" type="text/css" href="/stylesheets/three-col.css">
+		<link rel="stylesheet" type="text/css" href="/stylesheets/main.css">
+		<link rel="stylesheet" type="text/css" href="/stylesheets/committee.css">
+		<script type="text/javascript" src="/javascripts/jquery-1.4.2.min.js"></script>
+		<!--[if lte IE 8]>			
+			<script src="js/html5.js" type="text/javascript"></script>
+		<![endif]-->
+		<script type="text/javascript">
+		$(document).ready(function()
+		{
+			$("#link-featured,#link-social,#link-networking,#link-philanthopic,#link-educational").click(introLinkClicked);
+			$(".more a").click(moreLinkClicked);
+		});
+
+		function introLinkClicked()
+		{
+			var lbl = $(this).attr("id").substr(5);
+			$("#content .introContainer li").removeClass("current");
+			$(this).parent().addClass("current");
+			$("#content .introContainer .intro div").removeClass("current");
+			$("#content .introContainer .intro div p").hide();
+			$("#content .introContainer .intro div[id='content-"+lbl+"']").addClass("current");
+			$("#content .introContainer .intro div[id='content-"+lbl+"'] p").fadeIn();
+			return false;
+		}
+
+		function moreLinkClicked()
+		{
+			$(this).parent().parent().load("events.php");
+			return false;
+		}
+		</script>
+	</head>
+	<body id="page-committee">
+		<div id="container">
+			<div id="shadowContainer">
+				<div id="innerContainer">				
+					<div id="header">
+						<div id="topHeader"></div>				
+						<a href="" title="The Cleveland 2030 Club home page" class="logo">
+							<img src="/images/Cleveland2030-Logo.png" alt="The Cleveland 2030 Logo" style="width:289px;height:98px;">
+						</a>
+						<div id="alertSection">
+						</div>
+						<div id="loginSection">
+							<a href="#" title="login" class="login">LOGIN</a> | NEW HERE?
+							<a href="#" title="register">REGISTER</a>
+						</div>
+					</div>
+					<nav>
+						<div>
+							<ul>
+								<li class="current"><a href="index.html" title="Home">Home</a></li>
+								<li><a href="members.html" title="Member Benefits">Member Benefits</a></li>
+								<li><a href="#" title="Calendar Events">Calendar Events</a></li>
+								<li><a href="#" title="Cleveland Plus">Cleveland Plus</a></li>
+								<li><a href="#" title="About 20/30">About 20/30</a></li>
+							</ul>
+						</div>
+					</nav>
+					<div id="content">
+						<div class="threeColumns-0">
+							<div class="section">
+								<ul>
+									<li><a href="">Page 1</a></li>
+									<li><a href="">Page 2</a></li>
+									<li><a href="">Page 3</a></li>
+									<li><a href="">Page 4</a></li>
+								</ul>
+							</div>
+						</div>
+						<div class="threeColumns-1">
+							<div class="section">
+								<h1>Committee Name</h1>
+								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+							</div>
+
+							<div class="section">
+								<h2>Committee's Upcoming Events</h2>
+								<div class="event">
+									<h3 class="date"><span>Feb</span> 18</h3>
+									<ul>
+										<li class="social">
+											<a href="">Movers &amp; Shakers Event and Celebration and this is a really long title so we see what happens</a>
+											<br />6:00 pm at <a href="">The Leandog Boat</a>
+										</li>
+										<li class="social">
+											<a href="">Movers &amp; Shakers Event and Celebration</a>
+											<br />6:00 pm at <a href="">The Leandog Boat</a>
+											<br />Organizer: <a href="">Jack Sparrow</a>
+											<br />RSVPs: <a href="">23</a></li>
+										<li class="more"><a href="">4 more</a></li>
+									</ul>
+								</div>
+								<div class="event">
+									<h3 class="date"><span>Feb</span> 18</h3>
+									<ul>
+										<li class="social">
+											<a href="">Movers &amp; Shakers Event and Celebration and this is a really long title so we see what happens</a>
+											<br />6:00 pm
+										</li>
+										<li class="social">
+											<a href="">Movers &amp; Shakers Event and Celebration</a>
+											<br />6:00 pm
+										</li>
+										<li class="more"><a href="">4 more</a></li>
+									</ul>
+								</div>
+							</div>
+
+							<div class="section">
+								<h2>Committee Postings</h2>
+								<div class="post">
+									<a href=""><img src="/images/posts/leandog.jpg" style="float:left; height: 80px;margin-right:20px" /></a>
+									<h3><a href="">How much is that doggy in the window?</a></h3>
+									<p class="post-meta">Posted: January 12, 2010 by <a href="">Captain Crunch</a></p>
+									<p>I was swimming around your neighborhood yesterday and noticed that your dog has a slight
+										slant to the left.  I was wondering where you found such an amazing animal.</p>
+								</div>
+								<div class="post">
+									<a href=""><img src="/images/posts/leandog.jpg" style="float:left; height: 80px;margin-right:20px" /></a>
+									<h3><a href="">How much is that doggy in the window?</a></h3>
+									<p class="post-meta">Posted: January 12, 2010 by <a href="">Captain Crunch</a></p>
+									<p>I was swimming around your neighborhood yesterday and noticed that your dog has a slight
+										slant to the left.  I was wondering where you found such an amazing animal.</p>
+								</div>
+								<div class="post">
+									<a href=""><img src="/images/posts/leandog.jpg" style="float:left; height: 80px;margin-right:20px" /></a>
+									<h3><a href="">How much is that doggy in the window?</a></h3>
+									<p class="post-meta">Posted: January 12, 2010 by <a href="">Captain Crunch</a></p>
+									<p>I was swimming around your neighborhood yesterday and noticed that your dog has a slight
+										slant to the left.  I was wondering where you found such an amazing animal.</p>
+								</div>
+								<div class="post">
+									<a href=""><img src="/images/posts/leandog.jpg" style="float:left; height: 80px;margin-right:20px" /></a>
+									<h3><a href="">How much is that doggy in the window?</a></h3>
+									<p class="post-meta">Posted: January 12, 2010 by <a href="">Captain Crunch</a></p>
+									<p>I was swimming around your neighborhood yesterday and noticed that your dog has a slight
+										slant to the left.  I was wondering where you found such an amazing animal.</p>
+								</div>
+							</div>
+						</div>
+						<div class="threeColumns-2">
+							<div class="section">
+								<h2>Committee Lead</h2>
+								<img src="/images/committee-lead.jpg" />
+							</div>
+
+							<div class="section">
+								<h2>Committee Members</h2>
+								<img src="/images/committee-member.jpg" />
+								<img src="/images/committee-member.jpg" />
+								<img src="/images/committee-member.jpg" />
+								<img src="/images/committee-member.jpg" />
+								<img src="/images/committee-member.jpg" />
+							</div>
+
+							<div class="section">
+								<h2>Files</h2>
+								<ul class="files">
+									<li><a href="">doggy.jpg</a> (0.2 MB)</li>
+									<li><a href="">I'm on a boat!.pdf</a> (0.8 MB)</li>
+									<li><a href="">white-paper.pdf</a> (1.7 MB)</li>
+									<li><a href="">new.psd</a> (23.5 MB)</li>
+								</ul>
+							</div>
+						</div>
+						<div class="clear"></div>
+					</div>
+					<footer>
+						footer content
+					</footer>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

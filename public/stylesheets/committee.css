@@ -1,0 +1,87 @@
+#page-committee
+{
+	color: #000;
+}
+
+#page-committee a
+{
+	color: #2c83af;
+	text-decoration: none;
+}
+
+#page-committee a:hover
+{
+	text-decoration: underline;
+}
+
+#page-committee h1
+{
+	color: #255887;
+	padding: 0 0 5px 0;
+}
+
+#page-committee h2
+{
+	font-size: 120%;
+	padding: 0 0 5px 0;
+	text-transform: uppercase;
+}
+
+#page-committee h3
+{
+	font-size: 100%;
+	padding: 5px 0 2px 0;
+}
+
+#page-committee p
+{
+	line-height: 120%;
+}
+
+#page-committee p.post-meta
+{
+	font-size: 80%;
+	margin-bottom: 10px;
+}
+
+#page-committee #content
+{
+
+}
+
+#page-committee .event a
+{
+	display: inline;
+}
+
+#page-committee .files
+{
+	font-size: 80%;
+	margin-left: 15px;
+}
+
+#page-committee .files li
+{
+	padding: 4px 0;
+}
+
+#page-committee .files li a
+{
+	font-size: 150%;
+	padding-right: 5px;
+}
+
+#page-committee .post
+{
+	clear: both;
+	margin: 5px 0 25px 0;
+}
+
+#page-committee .section
+{
+	margin: 0 0 20px 0;
+}
+#page-committee .event
+{
+	width: 480px;
+}
