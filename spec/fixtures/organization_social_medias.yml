@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  social_media_type_id: 1
+  organization_id: 1
+  username: MyString
+  sort_order: 1
+
+two:
+  social_media_type_id: 1
+  organization_id: 1
+  username: MyString
+  sort_order: 1

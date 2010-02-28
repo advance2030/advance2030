@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100228182153) do
+ActiveRecord::Schema.define(:version => 20100228183018) do
 
   create_table "accounts", :force => true do |t|
     t.string   "login",                              :null => false
@@ -251,6 +251,19 @@ ActiveRecord::Schema.define(:version => 20100228182153) do
   end
 
   add_index "organization_roles", ["role"], :name => "index_organization_roles_on_role", :unique => true
+
+  create_table "organization_social_medias", :force => true do |t|
+    t.integer  "social_media_type_id", :null => false
+    t.integer  "organization_id",      :null => false
+    t.string   "username",             :null => false
+    t.integer  "sort_order"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "organization_social_medias", ["organization_id"], :name => "index_organization_social_medias_on_organization_id"
+  add_index "organization_social_medias", ["social_media_type_id"], :name => "index_organization_social_medias_on_social_media_type_id"
+  add_index "organization_social_medias", ["username"], :name => "index_organization_social_medias_on_username", :unique => true
 
   create_table "organization_types", :force => true do |t|
     t.string   "title",      :limit => 150, :null => false
