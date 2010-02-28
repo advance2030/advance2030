@@ -15,7 +15,7 @@
     <fieldset>
       <div class="form-node">
         <%= f.label :venue, venue_label_text %>
-        <%= f.collection_select :venue, presenter.venues, :id, :title %>
+        <%= f.collection_select :venue, presenter.venues, :id, :title, :prompt => presenter.venue_prompt %>
       </div>
     </fieldset>
 

@@ -1,7 +1,7 @@
 module Presenters
   class EventForm
     attr_reader :event
-    delegate :venue, :to => :event
+    delegate :venue, :manager, :to => :event
 
     def initialize(event)
       @event = event
@@ -9,6 +9,10 @@ module Presenters
 
     def venues
       Venue.list
+    end
+
+    def venue_prompt
+      "Select a Venue"
     end
 
   end
