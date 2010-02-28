@@ -3,6 +3,7 @@ require 'authlogic'
 class Account < ActiveRecord::Base
 
   belongs_to :user
+  has_one :registration
 
   acts_as_authentic do |c|
     c.session_class = UserSession

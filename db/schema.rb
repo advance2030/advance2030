@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(:version => 20100228180341) do
     t.datetime "last_login_at"
     t.string   "current_login_ip"
     t.string   "last_login_ip"
+    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.datetime "joined_at"
@@ -284,6 +285,16 @@ ActiveRecord::Schema.define(:version => 20100228180341) do
   add_index "postal_codes", ["city_id"], :name => "index_postal_codes_on_city_id"
   add_index "postal_codes", ["code"], :name => "index_postal_codes_on_code", :unique => true
   add_index "postal_codes", ["state_id"], :name => "index_postal_codes_on_state_id"
+
+  create_table "registrations", :force => true do |t|
+    t.string   "login",         :null => false
+    t.string   "first_name",    :null => false
+    t.string   "last_name",     :null => false
+    t.string   "email_address", :null => false
+    t.integer  "account_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "service_regions", :force => true do |t|
     t.string "title", :limit => 100, :null => false

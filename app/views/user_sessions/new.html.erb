@@ -1,15 +1,22 @@
- <% form_for @user_session, :url => user_session_path do |f| %>
-  <ul>
-    <li>
-      <%= f.label :login %>
-      <%= f.text_field :login, :class => "text", :tabindex => 1 %>
-    </li>
-    <li id="log_in">
-      <%= f.label :password %>
-      <%= f.password_field :password, :class => "text", :tabindex => 2 %>
-    </li>
-		<li id="log_in">
-		  <%= f.submit  "Login" %>
-		</li>    
-  </ul>
+<% form_for @user_session, :url => user_session_path do |f| %>
+	<fieldset class="oneCol">
+		<div>
+			<label for="email">
+				Login
+			</label>
+		    <%= f.text_field :login, :class => "text", :tabindex => 1 %>
+		</div>
+
+		<div>
+			<label for="password">
+				Password
+			</label>
+		    <%= f.password_field :password, :class => "text", :tabindex => 2 %>
+		</div>
+		
+		<div class="formAction ">
+		  <%= f.submit "Register" %>
+		</div>
+	
+	</fieldset>
 <% end %>
