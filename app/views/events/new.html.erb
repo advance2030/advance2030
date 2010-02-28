@@ -15,10 +15,7 @@
     <fieldset>
       <div class="form-node">
         <%= f.label :venue, venue_label_text %>
-        <select name="" id="venue">
-          <option selected="selected">Select a Venue</option>
-          <option value="venueName">Venue Name</option>
-        </select>
+        <%= f.collection_select :venue, presenter.venues, :id, :title %>
       </div>
     </fieldset>
 

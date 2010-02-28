@@ -1,6 +1,7 @@
 class Event < ActiveRecord::Base
   has_many :categorizations
   has_many :categories, :through => :categorizations
+  has_one :venue
 
   class << self
     def min_start_date_time
@@ -11,4 +12,5 @@ class Event < ActiveRecord::Base
       self.maximum(:end_datetime)
     end
   end
+
 end
