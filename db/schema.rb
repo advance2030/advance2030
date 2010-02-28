@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100228165308) do
+ActiveRecord::Schema.define(:version => 20100228170502) do
 
   create_table "accounts", :force => true do |t|
     t.string   "login",                              :null => false
@@ -176,6 +176,18 @@ ActiveRecord::Schema.define(:version => 20100228165308) do
   create_table "link_types", :force => true do |t|
     t.string "title", :limit => 100, :null => false
   end
+
+  create_table "links", :force => true do |t|
+    t.string   "title"
+    t.string   "url",                           :null => false
+    t.text     "description"
+    t.boolean  "is_active",   :default => true
+    t.integer  "hits",        :default => 0
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "links", ["url"], :name => "index_links_on_url", :unique => true
 
   create_table "organization_roles", :force => true do |t|
     t.string "role",        :limit => 50, :null => false
