@@ -5,6 +5,9 @@ class Organization < ActiveRecord::Base
   has_many :organizations_roles, :dependent => :destroy
   has_many :roles, :through => :organizations_roles, :source => :organization_role
   
+  has_many :organizations_industries, :dependent => :destroy
+  has_many :industries, :through => :organizations_industries
+  
   named_scope :list
   
   has_attached_file :logo,
@@ -16,6 +19,10 @@ class Organization < ActiveRecord::Base
   
   def roles?
     self.roles.any?
+  end
+  
+  def industries?
+    self.industries.any?
   end
   
   def destroy_logo!
