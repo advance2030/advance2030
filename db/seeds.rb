@@ -5,12 +5,3 @@
 #   
 #   cities = City.create([{ :name => 'Chicago' }, { :name => 'Copenhagen' }])
 #   Major.create(:name => 'Daley', :city => cities.first)
-Category.create([
-  { :name => "Education", :description => "Education" },
-  { :name => "Social", :description => "Social" },
-  { :name => "Networking", :description => "Networking" },
-  { :name => "Philanthropy", :description => "Philanthropy" },
-  { :name => "Technology", :description => "Technology" },
-  { :name => "Membership", :description => "Membership" },
-  { :name => "Communications", :description => "Communications" }
-])

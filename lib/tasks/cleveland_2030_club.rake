@@ -5,5 +5,10 @@ namespace :ac do
       postal_codes = File.join(Rails.root, 'db', 'sql', 'postal_codes.sql')
       system "mysql -u#{local_settings["username"]} #{"-p#{local_settings["password"]}" if local_settings["password"]} #{local_settings["database"]} < #{postal_codes}"
     end
+
+    task :load_categories => :environment do
+      categories = ["Education", "Social", "Networking", "Philanthropy", "Technology", "Membership", "Communications"]
+      categories.each { |c| Category.create( :name => c, :description => c ) }
+    end
   end
 end
