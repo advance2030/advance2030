@@ -46,18 +46,17 @@ ActionController::Routing::Routes.draw do |map|
   # Install the default routes as the lowest priority.
   # Note: These default routes make all actions in every controller accessible via GET requests. You should
   # consider removing or commenting them out if you're using named routes and resources.
-   map.resource :user_session
-   map.resource :account
-   map.resource :alert
-   map.resource :registration
-   map.calendar 'calendar/:year/:month/:day',
+  map.resource :user_session
+  map.resource :account
+  map.resource :alert
+  map.resource :registration
+  map.calendar 'calendar/:year/:month/:day',
     :controller => 'calendar',
     :action => 'index',
     :year => /\d{4}/,
     :month => /\d{1,2}/,
     :day => /\d{1,2}/
-
-  
+  map.calendar_redirect 'calendar/redirect', :controller => 'calendar', :action => 'redirect'
   map.connect ':controller/:action/:id'
   map.connect ':controller/:action/:id.:format'
 end
