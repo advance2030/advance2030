@@ -45,6 +45,12 @@ ActionController::Routing::Routes.draw do |map|
    map.resource :user_session
    map.resource :account
    map.resource :alert
+   map.calendar 'calendar/:year/:month/:day',
+    :controller => 'calendar',
+    :action => 'index',
+    :year => /\d{4}/,
+    :month => /\d{1,2}/,
+    :day => /\d{1,2}/
   
   map.connect ':controller/:action/:id'
   map.connect ':controller/:action/:id.:format'
