@@ -1,8 +1,16 @@
 <h1><%= @venue.title %></h1>
-<p><%= link_to "&larr; View other Venues", venues_path %></p>
+<p><%= link_to "&larr; View other Venues", venues_path %> or <%= link_to 'Edit', edit_venue_path(@venue.url_friendly) %></p>
 
 <% if @venue.avatar? %>
 <%= image_tag @venue.avatar.url(:medium) %>
+<% end %>
+
+<% if @venue.av_equipment_options? %>
+<p>AudioVideo equipment options include <%= @venue.av_equipment_options.map(&:title).to_sentence %></p>
+<% end %>
+
+<% if @venue.fee_options? %>
+<p>Fees for this venue include <%= @venue.fee_options.map(&:title).to_sentence %></p>
 <% end %>
 
 <% if @venue.parking_options? %>
