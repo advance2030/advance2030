@@ -22,6 +22,11 @@ describe EventsController do
       assigns[:event].should be_new_record
     end
 
+    it "has a presenter" do
+      controller.should respond_to(:presenter)
+      controller.presenter.should be_an_instance_of(Presenters::EventForm)
+    end
+
   end
 
 end
