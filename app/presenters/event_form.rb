@@ -5,7 +5,9 @@ module Presenters
     include Helper::SelectList
 
     attr_reader :event
-    delegate :venue, :manager, :supervisor, :committee_sponsor, :name, :summary, :description, :to => :event
+    delegate :venue, :manager, :supervisor, :committee_sponsor,
+             :name, :summary, :description, :tag_list,
+             :logo, :to => :event
 
     def initialize(event)
       @event = event

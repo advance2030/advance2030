@@ -6,6 +6,8 @@ class Event < ActiveRecord::Base
   has_one :supervisor, :class_name => "User"
   has_one :committee_sponsor, :foreign_key => :committee_id, :class_name => "Committee"
 
+  is_taggable :tags
+
   class << self
     def min_start_date_time
       self.minimum(:start_datetime)
