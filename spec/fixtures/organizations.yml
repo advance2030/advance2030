@@ -1,0 +1,35 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: MyString
+  legal_name: MyString
+  dba: MyString
+  tax_identification: MyString
+  user_id: 1
+  service_region_id: 1
+  organization_type_id: 1
+  mission: MyText
+  local_staff_size: 1
+  total_staff_size: 1
+  annual_revenue: 1.5
+  logo_file_name: MyString
+  logo_file_size: 1
+  logo_content_type: MyString
+  logo_updated_at: 2010-02-28 13:38:13
+
+two:
+  name: MyString
+  legal_name: MyString
+  dba: MyString
+  tax_identification: MyString
+  user_id: 1
+  service_region_id: 1
+  organization_type_id: 1
+  mission: MyText
+  local_staff_size: 1
+  total_staff_size: 1
+  annual_revenue: 1.5
+  logo_file_name: MyString
+  logo_file_size: 1
+  logo_content_type: MyString
+  logo_updated_at: 2010-02-28 13:38:13

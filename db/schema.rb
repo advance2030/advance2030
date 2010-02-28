@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100228183018) do
+ActiveRecord::Schema.define(:version => 20100228183813) do
 
   create_table "accounts", :force => true do |t|
     t.string   "login",                              :null => false
@@ -270,6 +270,30 @@ ActiveRecord::Schema.define(:version => 20100228183018) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "organizations", :force => true do |t|
+    t.string   "name",                 :null => false
+    t.string   "legal_name"
+    t.string   "dba"
+    t.string   "tax_identification"
+    t.integer  "user_id"
+    t.integer  "service_region_id",    :null => false
+    t.integer  "organization_type_id", :null => false
+    t.text     "mission"
+    t.integer  "local_staff_size"
+    t.integer  "total_staff_size"
+    t.float    "annual_revenue"
+    t.string   "logo_file_name"
+    t.integer  "logo_file_size"
+    t.string   "logo_content_type"
+    t.datetime "logo_updated_at"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "organizations", ["organization_type_id"], :name => "index_organizations_on_organization_type_id"
+  add_index "organizations", ["service_region_id"], :name => "index_organizations_on_service_region_id"
+  add_index "organizations", ["user_id"], :name => "index_organizations_on_user_id"
 
   create_table "organizations_roles", :force => true do |t|
     t.integer "organization_role_id", :null => false
