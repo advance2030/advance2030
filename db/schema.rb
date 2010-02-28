@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100228164610) do
+ActiveRecord::Schema.define(:version => 20100228165308) do
 
   create_table "accounts", :force => true do |t|
     t.string   "login",                              :null => false
@@ -226,6 +226,11 @@ ActiveRecord::Schema.define(:version => 20100228164610) do
 
   create_table "service_regions", :force => true do |t|
     t.string "title", :limit => 100, :null => false
+  end
+
+  create_table "social_media_types", :force => true do |t|
+    t.string "title",       :limit => 100, :null => false
+    t.text   "description"
   end
 
   create_table "states", :force => true do |t|
