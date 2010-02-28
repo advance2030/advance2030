@@ -23,7 +23,7 @@ class Organization < ActiveRecord::Base
                     :styles => { :medium => "80x80>", :thumb => "50x50" }
   
   validates_attachment_size :logo, :less_than => 5.megabytes
-  validates_attachment_content_type :logo, :content_type => []
+  validates_attachment_content_type :logo, :content_type => ['image/jpeg', 'image/gif', 'image/jpg', 'image/png']
                     
   def validate
     errors.add(:name, 'Please provide a name') unless self.name?
