@@ -42,7 +42,6 @@ require 'bundler'
 Bundler.setup
 
 require 'newrelic_rpm'
-require 'authlogic'
 
 require 'urligence'
 Bundler.require :default, Rails.env
