@@ -1,0 +1,12 @@
+<% form_for @registration, :url => registration_path do |f| %>
+  <%= f.error_messages %>
+	<fieldset class="twoCol">
+		<h2>Register <a href="/user_sessions/new/" class="login">(I already have an account)</a></h2>
+
+	  	<%= render :partial => "form", :object => f %>
+
+		<div class="formAction clear">
+		  <%= f.submit "Register" %>
+		</div>
+	</fieldset>
+<% end %>

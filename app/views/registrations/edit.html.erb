@@ -1,0 +1,9 @@
+<h1>Edit My Registration</h1>
+ 
+<% form_for @registration, :url => registration_path do |f| %>
+  <%= f.error_messages %>
+  <%= render :partial => "form", :object => f %>
+  <%= f.submit "Update" %>
+<% end %>
+ 
+<br /><%= link_to "My Profile", registration_path %>
