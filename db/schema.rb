@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100228161614) do
+ActiveRecord::Schema.define(:version => 20100228170913) do
 
   create_table "accounts", :force => true do |t|
     t.string   "login",                              :null => false
@@ -174,6 +174,34 @@ ActiveRecord::Schema.define(:version => 20100228161614) do
     t.datetime "updated_at"
   end
 
+  create_table "link_types", :force => true do |t|
+    t.string "title", :limit => 100, :null => false
+  end
+
+  create_table "links", :force => true do |t|
+    t.string   "title"
+    t.string   "url",                           :null => false
+    t.text     "description"
+    t.boolean  "is_active",   :default => true
+    t.integer  "hits",        :default => 0
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "links", ["url"], :name => "index_links_on_url", :unique => true
+
+  create_table "organization_links", :force => true do |t|
+    t.integer "link_type_id",    :null => false
+    t.integer "organization_id", :null => false
+    t.integer "link_id",         :null => false
+    t.boolean "is_primary"
+    t.integer "sort_order"
+  end
+
+  add_index "organization_links", ["link_id"], :name => "index_organization_links_on_link_id"
+  add_index "organization_links", ["link_type_id"], :name => "index_organization_links_on_link_type_id"
+  add_index "organization_links", ["organization_id"], :name => "index_organization_links_on_organization_id"
+
   create_table "organization_roles", :force => true do |t|
     t.string "role",        :limit => 50, :null => false
     t.text   "description"
@@ -233,6 +261,11 @@ ActiveRecord::Schema.define(:version => 20100228161614) do
 
   create_table "service_regions", :force => true do |t|
     t.string "title", :limit => 100, :null => false
+  end
+
+  create_table "social_media_types", :force => true do |t|
+    t.string "title",       :limit => 100, :null => false
+    t.text   "description"
   end
 
   create_table "states", :force => true do |t|
@@ -338,10 +371,8 @@ ActiveRecord::Schema.define(:version => 20100228161614) do
   add_index "venue_fee_options", ["venue_id"], :name => "index_venue_fee_options_on_venue_id"
 
   create_table "venue_food_service_options", :force => true do |t|
-    t.integer  "venue_id"
-    t.integer  "food_service_option_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.integer "venue_id"
+    t.integer "food_service_option_id"
   end
 
   create_table "venue_notes", :force => true do |t|

@@ -37,17 +37,27 @@ namespace :ac do
     end
     
     task :load_address_types => :environment do
-      types = ["Home", "Work", "Other"]
+      types = ["Home", "Work", "Headquarters", "Other"]
       types.each { |t| AddressType.create(:title => t) }
     end
     
+    task :load_link_types => :environment do
+      types = ["Home", "Work", "Headquarters", "Other"]
+      types.each { |t| LinkType.create(:title => t) }
+    end
+    
+    task :load_social_media_types => :environment do
+      types = ["Twitter", "LinkedIn", "Facebook"]
+      types.each { |t| SocialMediaType.create(:title => t) }
+    end
+    
     task :load_email_address_types => :environment do
-      types = ["Home", "Work", "Other"]
+      types = ["Home", "Work", "Headquarters", "Other"]
       types.each { |t| EmailAddressType.create(:title => t) }
     end
     
     task :load_phone_number_types => :environment do
-      types = ["Home", "Work", "Mobile", "Other"]
+      types = ["Home", "Work", "Mobile", "Headquarters", "Other"]
       types.each { |t| PhoneNumberType.create(:title => t) }
     end
     

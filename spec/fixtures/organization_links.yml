@@ -1,0 +1,15 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  link_type_id: 1
+  organization_id: 1
+  link_id: 1
+  is_primary: false
+  sort_order: 1
+
+two:
+  link_type_id: 1
+  organization_id: 1
+  link_id: 1
+  is_primary: false
+  sort_order: 1
