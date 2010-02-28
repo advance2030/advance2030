@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100228004037) do
+ActiveRecord::Schema.define(:version => 20100228005940) do
 
   create_table "accounts", :force => true do |t|
     t.string   "login",                              :null => false
@@ -74,6 +74,12 @@ ActiveRecord::Schema.define(:version => 20100228004037) do
   create_table "committee_assets", :force => true do |t|
     t.integer "asset_id",     :null => false
     t.integer "committee_id", :null => false
+  end
+
+  create_table "committee_blogs", :force => true do |t|
+    t.string  "title",   :null => false
+    t.integer "user_id", :null => false
+    t.string  "text",    :null => false
   end
 
   create_table "committee_events", :force => true do |t|
@@ -165,6 +171,21 @@ ActiveRecord::Schema.define(:version => 20100228004037) do
   end
 
   add_index "surnames", ["title"], :name => "index_surnames_on_title", :unique => true
+
+  create_table "user_addresses", :force => true do |t|
+    t.integer  "user_id",                            :null => false
+    t.text     "street"
+    t.integer  "postal_code_id",                     :null => false
+    t.integer  "address_type_id",                    :null => false
+    t.boolean  "is_primary",      :default => false
+    t.integer  "sort_order"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "user_addresses", ["address_type_id"], :name => "index_user_addresses_on_address_type_id"
+  add_index "user_addresses", ["postal_code_id"], :name => "index_user_addresses_on_postal_code_id"
+  add_index "user_addresses", ["user_id"], :name => "index_user_addresses_on_user_id"
 
   create_table "user_phone_numbers", :force => true do |t|
     t.integer  "user_id",              :null => false
