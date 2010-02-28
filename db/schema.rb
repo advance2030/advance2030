@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100228033249) do
+ActiveRecord::Schema.define(:version => 20100228035118) do
 
   create_table "accounts", :force => true do |t|
     t.string   "login",                              :null => false
@@ -158,6 +158,13 @@ ActiveRecord::Schema.define(:version => 20100228033249) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "organization_roles", :force => true do |t|
+    t.string "role",        :limit => 50, :null => false
+    t.text   "description"
+  end
+
+  add_index "organization_roles", ["role"], :name => "index_organization_roles_on_role", :unique => true
 
   create_table "organization_types", :force => true do |t|
     t.string   "title",      :limit => 150, :null => false
