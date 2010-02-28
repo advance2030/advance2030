@@ -1,0 +1,11 @@
+<div><%= link_to committee_blogs.title  %></div>
+<div>
+	<p><%=h committee_blogs.text %></p>
+</div>
+<div>
+	Organizer <%=h committee_members.lead %>
+</div>
+<% 3.times do -%>
+  <%= render(:partial => "_blog_comment", :collection => @blog.comments) %>
+
+<% end -%>
