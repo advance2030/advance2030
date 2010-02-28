@@ -1,6 +1,6 @@
 class VenuesController < ApplicationController
   before_filter :find_venue, :only => [:show, :edit, :update, :destroy]
-  before_filter :find_venue_options, :only => [:new, :edit, :update, :create]
+  before_filter :find_venue_options, :find_parking_options, :only => [:new, :edit, :update, :create]
   
   def index
     @venues = Venue.list
@@ -41,6 +41,10 @@ private
     rescue ActiveRecord::RecordNotFound
       render_404
     end
+  end
+  
+  def find_parking_options
+    @parking_options = ParkingOption.list
   end
   
   def find_venue_options

@@ -9,7 +9,6 @@
 <p><strong>Capacity</strong>: <%= pluralize(@venue.capacity, 'Person') %></p>
 <p><strong>Full Capacity</strong>: <%= pluralize(@venue.full_capacity, 'Person') %></p>
 
-
 <% if @venue.has_internet? %>
 <p>This venue is Internet ready!</p>
 <% end %>
