@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100227235208) do
+ActiveRecord::Schema.define(:version => 20100228003549) do
 
   create_table "accounts", :force => true do |t|
     t.string   "login",                              :null => false
@@ -37,6 +37,15 @@ ActiveRecord::Schema.define(:version => 20100227235208) do
   end
 
   add_index "address_types", ["title"], :name => "index_address_types_on_title", :unique => true
+
+  create_table "alerts", :force => true do |t|
+    t.string   "name"
+    t.string   "alerttext"
+    t.datetime "start_date_time"
+    t.datetime "end_date_time"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "assets", :force => true do |t|
     t.string   "asset_file_name"
@@ -74,15 +83,6 @@ ActiveRecord::Schema.define(:version => 20100227235208) do
     t.integer  "user_id"
     t.integer  "email_address_type_id"
     t.boolean  "primary",               :default => true
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "alerts", :force => true do |t|
-    t.string   "name"
-    t.string   "alerttext"
-    t.datetime "start_date_time"
-    t.datetime "end_date_time"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -160,6 +160,13 @@ ActiveRecord::Schema.define(:version => 20100227235208) do
   end
 
   add_index "user_profiles", ["user_id"], :name => "index_user_profiles_on_user_id", :unique => true
+
+  create_table "user_roles", :force => true do |t|
+    t.string "role",        :limit => 50, :null => false
+    t.text   "description"
+  end
+
+  add_index "user_roles", ["role"], :name => "index_user_roles_on_role", :unique => true
 
   create_table "users", :force => true do |t|
     t.string   "first_name"
