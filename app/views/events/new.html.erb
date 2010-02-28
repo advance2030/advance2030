@@ -10,7 +10,7 @@
 </div>
 <div class="threeColumns-1">
   <h1>Create an Event</h1>
-  <form class="allPurposeForm">
+  <% form_for presenter, :url => events_path do |f| %>
 
     <fieldset>
       <div class="form-node">
@@ -173,7 +173,7 @@
         <a href="register_3.html" class="button">Create Event</a>
       </div>
     </fieldset>
-  </form>
+  <% end %>
 
 </div>
 <div class="threeColumns-2"></div>
