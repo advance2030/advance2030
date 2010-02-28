@@ -1,3 +1,3 @@
-class Alerts < ActiveRecord::Base
+class Alert < ActiveRecord::Base
   validates_presence_of :name
 end
