@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en-US">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>About 20/30 - Cleveland 2030</title>
+		<link rel="stylesheet" type="text/css" href="../../../../public/stylesheets/main.css">
+		<link rel="stylesheet" type="text/css" href="../../../../public/stylesheets/three-col.css">
+		<link rel="stylesheet" type="text/css" href="../../../../public/stylesheets/about.css">
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+		<script type="text/javascript" src="../../../../public/javascript/jquery-ui-1.8rc2.custom.min.js"></script>
+		<!--[if lte IE 8]>			
+			<script src="../../../../public/javascripts/html5.js" type="text/javascript"></script>
+		<![endif]-->
+	</head>
+	<body id="page-committee">
+		<div id="container">
+			<div id="shadowContainer">
+				<div id="innerContainer">				
+					<div id="header">
+						<div id="topHeader"></div>				
+						<a href="" title="The Cleveland 2030 Club home page" class="logo">
+							<img src="../../../../public/images/logo.gif" alt="The Cleveland 2030 Logo" border="0">
+						</a>
+						<div id="alertSection">
+						</div>
+						<div id="loginSection">
+							<a href="#" title="login" class="login">LOGIN</a> | NEW HERE?
+							<a href="#" title="register">REGISTER</a>
+						</div>
+					</div>
+					<nav>
+						<div>
+							<ul>
+								<li><a href="index.html" title="Home">Home</a></li>
+								<li><a href="#" title="Member Benefits">Member Benefits</a></li>
+								<li><a href="Calendar.html" title="Calendar Events">Calendar Events</a></li>
+								<li><a href="#" title="20/30 Members">20/30 Members</a></li>
+								<li><a href="#" title="Cleveland Plus">Cleveland Plus</a></li>
+								<li><a href="about.html" title="About 20/30">About 20/30</a></li>
+							</ul>
+						</div>
+					</nav>
+					<div id="content">
+						<div class="threeColumns-0">
+							<div class="section">
+								<ul>
+									<li><a href="">Fact Sheet</a></li>
+									<li><a href="">Board of Directors</a></li>
+									<li><a href="">Professional Advisors</a></li>
+									<li><a href="">Corporate Membership / Sponsorship</a></li>
+								</ul>
+							</div>
+						</div>
+						<div class="threeColumns-1">
+							<h1>Create an Event</h1>
+							<form class="allPurposeForm">
+								
+								<fieldset>
+									<div class="form-node">
+										<label for="venue">
+											Venue <span class="aside-label">(If you do not see your venue you can <a href="#">add a new venue here</a>)</span>
+										</label>
+										<select name="" id="venue">
+											<option selected="selected">Select a Venue</option>
+											<option value="venueName">Venue Name</option>
+										</select>
+									</div>
+								</fieldset>	
+								
+								<fieldset class="twoCol">
+									
+									<div class="form-node">
+										<label for="eventManager">
+											Event Manager
+										</label>
+										<select name="" id="eventManager">
+											<option selected="selected">Select a Manager</option>
+											<option value="JohnDoe">john Doe</option>
+										</select>
+									</div>
+									
+									<div class="form-node">
+										<label for="eventSupervisor">
+											Event Supervisor
+										</label>
+										<select name="" id="eventSUpervisor">
+											<option selected="selected">Select a Supervisorr</option>
+											<option value="JohnDoe">john Doe</option>
+										</select>
+									</div>
+									
+									<div class="form-node">
+										<label for="committe">
+											Committee Sponsor
+										</label>
+										<select name="" id="committee">
+											<option selected="selected">Select a Committee</option>
+											<option value="CommitteeName">CommitteeName</option>
+										</select>
+									</div>
+								</fieldset>	
+								<fieldset class="twoCol">
+									<div class="form-node">
+										<label for="eventTitle">
+											Event Title
+										</label>
+										<input type="text" name="" id="eventTitle">
+									</div>
+									<div class="form-node">
+										<label for="eventSummary">
+											Event Summary
+										</label>
+										<textarea name="" id="eventSummary"></textarea>
+									</div>
+									<div class="form-node">
+										<label for="eventDiscription">
+											Event Discription
+										</label>
+										<textarea name="" id="eventDiscription"></textarea>
+									</div>
+									<div class="form-node">
+										<label for="eventDiscription">
+											Event Tags <span class="aside-label">(separate tags with commas)</span>
+										</label>
+										<textarea name="" id="eventDiscription"></textarea>
+									</div>
+									
+									<div class="form-node">
+										<label for="eventLogo">
+											Event Logo
+										</label>
+										<input type="file" name="" id="eventLogo">
+									</div>
+									<div class="form-node">
+										<div class="label-like">
+											<span class="aside-label">(Uploaded Logo)</span>
+										</div>
+										<a href="#" class="small">Remove image</a>
+										<img src="../../../../public/images/logo.gif" class="uploadedEventLogo" border="0">
+									</div>
+
+								</fieldset>
+								<fieldset class="twoCol">	
+	   								<script type="text/javascript">
+									$(function() {
+										$("#startDate").datepicker();
+									});
+									</script>
+									<div class="form-node">
+										<label for="startDate">
+											Event Start Date
+										</label>
+										<input type="text" name="" id="startDate">
+									</div>
+									<div class="form-node">
+										<label for="endDate">
+											Event End Date
+										</label>
+										<input type="text" name="" id="endDate">
+									</div>
+								</fieldset>								
+								<fieldset class="twoCol">
+									<div class="form-node">
+										<label for="eventCostEstimate">
+											Event Total Cost Estimate
+										</label>
+										<input type="text" name="" class="twoFieldsinline" id="eventCostEstimate" value="$">
+									</div>
+								</fieldset>								
+								<fieldset class="twoCol">
+									<div class="form-node">
+										<div class="label-like">&nbsp;</div>
+										<input type="checkbox" name="" class="checkbox" id="attendeePrice" value="$">
+										<label for="attendeeCharge" class="checkbox">
+											Will attenttee's be charged for this event?
+										</label>
+										
+									</div>
+									<div class="form-node">
+										<div class="label-like">&nbsp;</div>
+										<a href="#" >Add a discount price</a>
+									</div>
+									<div class="form-node">
+										<label for="attendeeNonMemberPrice">
+											Discount</span>
+										</label>
+										<input type="text" class="twoFieldsinline" value="Member">
+										<input type="text" class="twoFieldsinline" value="$75">
+										<a href="#" class="remove">Remove</a>
+									</div>
+									<div class="form-node">
+										<label for="attendeeNonMemberPrice">
+											Discount <span class="aside-label">(Add the Discount price and Price)</span></span>
+										</label>
+										<input type="text" class="twoFieldsinline" value="">
+										<select class="twoFieldsinline">
+											<option selected="selected">Discount</option>
+											<option>minus computed value</option>
+											<option>minus computed value</option>
+											<option>minus computed value</option>																						
+										</select>
+									</div>
+								</fieldset>
+								<fieldset class="twoCol">	
+	   								<div class="form-node">
+										<label for="eventConfirmationEmail">
+											Event Confirmation Email
+										</label>
+										<textarea name="" id="eventConfirmationEmail" class="tall">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sed arcu eu nisi viverra gravida. Quisque sodales tempus ipsum eu congue. Aenean ac velit tellus, quis condimentum ipsum. Nunc felis nunc, ultrices id tincidunt et, lacinia in lorem. Pellentesque lacinia tristique varius. Duis fringilla mattis velit, non vestibulum ante sollicitudin quis. Fusce purus lacus, dictum vitae venenatis ac, molestie id sapien. Maecenas sit amet lorem nisl, eu auctor nulla. <br/>
+										Sed molestie vehicula nisl ac condimentum. Suspendisse porttitor, arcu non dapibus blandit, augue arcu rhoncus tortor, et mattis mi elit quis ligula. In sed dolor elit. Cras pulvinar porta porttitor. </textarea>
+									</div>
+								</fieldset>
+
+								<fieldset class="twoCol">						
+									<div class="formAction">
+										<a href="register_3.html" class="button">Create Event</a>
+									</div>
+								</fieldset>
+							</form>
+
+						</div>
+						<div class="threeColumns-2"></div>
+						<div class="clear"></div>
+					</div>
+					<footer>
+						footer content
+					</footer>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
