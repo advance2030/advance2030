@@ -3,8 +3,22 @@
 	#calendar td.notmonth {color:#cecece;}
 </style>
 
+<h2>Calendar</h2>
 
-<% calendar_for(@events, :html => {:id => 'calendar'}) do |t| %>
+<% form_for @date, :url => calendar_redirect_url do |f| -%>
+	<%= select_month @date %>
+	<%= select_year @date, :start_year => @min.year, :end_year => @max.year %>
+	<%= hidden_field :date, :day %>
+	<%= submit_tag 'Submit' %>
+<% end -%>
+
+
+<div><%=h @date.strftime('%A %B %d, %Y') %><div>
+<div class="today"><%=link_to "Today", current_calendar_url%></div>
+<div class="previoue-month"><%=link_to "<", previous_calendar_url(@date)%></div>
+<div class="next-month"><%=link_to ">", next_calendar_url(@date)%></div>
+
+<% calendar_for(@events, :year => @date.year, :month => @date.month, :day => @date.day, :html => {:id => 'calendar'}) do |t| %>
   <%= t.head(*@days) %>
   <% t.day do |day, events| %>
     <div class="label"><%= day.day %></div>

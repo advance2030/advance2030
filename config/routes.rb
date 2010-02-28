@@ -53,6 +53,7 @@ ActionController::Routing::Routes.draw do |map|
     :year => /\d{4}/,
     :month => /\d{1,2}/,
     :day => /\d{1,2}/
+   map.calendar_redirect 'calendar/redirect', :controller => 'calendar', :action => 'redirect'
   
   map.connect ':controller/:action/:id'
   map.connect ':controller/:action/:id.:format'
