@@ -14,9 +14,7 @@
 
     <fieldset>
       <div class="form-node">
-        <label for="venue">
-          Venue <span class="aside-label">(If you do not see your venue you can <a href="#">add a new venue here</a>)</span>
-        </label>
+        <%= f.label :venue, venue_label_text %>
         <select name="" id="venue">
           <option selected="selected">Select a Venue</option>
           <option value="venueName">Venue Name</option>
