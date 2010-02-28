@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100228010748) do
+ActiveRecord::Schema.define(:version => 20100228012547) do
 
   create_table "accounts", :force => true do |t|
     t.string   "login",                              :null => false
@@ -144,12 +144,24 @@ ActiveRecord::Schema.define(:version => 20100228010748) do
 
   add_index "phone_number_types", ["title"], :name => "index_phone_number_types_on_title", :unique => true
 
+  create_table "postal_code_types", :force => true do |t|
+    t.string   "title",        :limit => 50, :null => false
+    t.string   "url_friendly", :limit => 50, :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "postal_code_types", ["url_friendly"], :name => "index_postal_code_types_on_url_friendly", :unique => true
+
   create_table "postal_codes", :force => true do |t|
     t.string   "code"
     t.integer  "city_id"
     t.integer  "state_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.float    "latitude"
+    t.float    "longitude"
+    t.integer  "postal_code_type_id"
   end
 
   create_table "states", :force => true do |t|
