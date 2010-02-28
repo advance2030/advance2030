@@ -4,11 +4,11 @@ class Event < ActiveRecord::Base
 
   class << self
     def min_start_date_time
-      self.minimum(:start_date_time)
+      self.minimum(:start_datetime)
     end
 
     def max_end_date_time
-      self.maximum(:end_date_time)
+      self.maximum(:end_datetime)
     end
   end
 end
