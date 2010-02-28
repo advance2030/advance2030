@@ -27,6 +27,10 @@ describe EventsController do
       controller.presenter.should be_an_instance_of(Presenters::EventForm)
     end
 
+    it "gives the view access to the presenter" do
+      response.template.should respond_to(:presenter)
+    end
+
   end
 
 end

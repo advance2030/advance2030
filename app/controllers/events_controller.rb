@@ -1,4 +1,5 @@
 class EventsController < ApplicationController
+  helper_method :presenter
 
   def new
     @event = Event.new
@@ -6,7 +7,7 @@ class EventsController < ApplicationController
   end
 
   def presenter
-    @presenter ||= Presenters::EventForm.new
+    @presenter ||= Presenters::EventForm.new(@event)
   end
 
 end
