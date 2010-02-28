@@ -7,7 +7,7 @@ class CreateVenueParkingOptions < ActiveRecord::Migration
     
     add_index :venue_parking_options, :venue_id
     add_index :venue_parking_options, :parking_option_id
-    add_index :venue_parking_options, [:venue_id, :parking_option_id], :unique => true, :name => 'by_venue'
+    #add_index :venue_parking_options, [:venue_id, :parking_option_id], :unique => true, :name => 'by_venue'
   end
 
   def self.down
