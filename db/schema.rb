@@ -154,15 +154,17 @@ ActiveRecord::Schema.define(:version => 20100228012547) do
   add_index "postal_code_types", ["url_friendly"], :name => "index_postal_code_types_on_url_friendly", :unique => true
 
   create_table "postal_codes", :force => true do |t|
-    t.string   "code"
-    t.integer  "city_id"
-    t.integer  "state_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.float    "latitude"
-    t.float    "longitude"
-    t.integer  "postal_code_type_id"
+    t.string  "code"
+    t.integer "city_id"
+    t.integer "state_id"
+    t.float   "latitude"
+    t.float   "longitude"
+    t.integer "postal_code_type_id"
   end
+
+  add_index "postal_codes", ["city_id"], :name => "index_postal_codes_on_city_id"
+  add_index "postal_codes", ["code"], :name => "index_postal_codes_on_code", :unique => true
+  add_index "postal_codes", ["state_id"], :name => "index_postal_codes_on_state_id"
 
   create_table "states", :force => true do |t|
     t.string "title", :limit => 50, :null => false
