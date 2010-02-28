@@ -1,0 +1,153 @@
+<!DOCTYPE HTML>
+<html lang="en-US"><head>
+
+	
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>About 20/30 - Cleveland 2030</title>
+		<link rel="stylesheet" type="text/css" href="/stylesheets/main.css">
+		<link rel="stylesheet" type="text/css" href="/stylesheets/three-col.css">
+		<link rel="stylesheet" type="text/css" href="/stylesheets/about.css">
+		<script type="text/javascript" src="/javascripts/jquery.js"></script>
+		<!--[if lte IE 8]>			
+			<script src="/javascripts/html5.js" type="text/javascript"></script>
+		<![endif]-->
+		<script type="text/javascript">
+			$(document).ready(function(){
+				$("select[id$='dayStartTime'], select[id$='dayEndTime']").attr("disabled", "disabled");
+				$("input[type=checkbox][id$='dayWork']").click(toggleWorkDay);
+				toggleWorkDay();
+			});
+
+			function toggleWorkDay()
+			{
+				$("select[id$='dayStartTime'], select[id$='dayEndTime']").attr("disabled", "disabled");
+				$("input[type=checkbox][id$='dayWork']").each(function(){
+					var daySubstring = $(this).attr("id").substr(0, 3);
+					if(this.checked)
+					{
+						$("select[id*='" + daySubstring + "'], select[id*='" + daySubstring + "']").attr("disabled", "");
+					}
+					else
+					{
+						$("select[id*='" + daySubstring + "'], select[id*='" + daySubstring + "']").attr("disabled", "disabled");
+					}
+				})
+			}
+		</script>
+	</head><body id="page-committee">
+		<div id="container">
+			<div id="shadowContainer">
+				<div id="innerContainer">				
+					<div id="header">
+						<div id="topHeader"></div>				
+						<a href="" title="The Cleveland 2030 Club home page" class="logo">
+							<img src="oganization_files/logo.gif" alt="The Cleveland 2030 Logo" border="0">
+						</a>
+						<div id="alertSection">
+						</div>
+						<div id="loginSection">
+							<a href="#" title="login" class="login">LOGIN</a> | NEW HERE?
+							<a href="http://localhost/%7Ejon/2030/app/views/mockups/basic/register_1.html" title="register">REGISTER</a>
+						</div>
+					</div>
+					<nav>
+						<div>
+							<ul>
+								<li><a href="http://localhost/%7Ejon/2030/app/views/mockups/basic/index.html" title="Home">Home</a></li>
+								<li><a href="#" title="Member Benefits">Member Benefits</a></li>
+								<li><a href="http://localhost/%7Ejon/2030/app/views/mockups/basic/Calendar.html" title="Calendar Events">Calendar Events</a></li>
+								<li><a href="#" title="20/30 Members">20/30 Members</a></li>
+								<li><a href="#" title="Cleveland Plus">Cleveland Plus</a></li>
+								<li class="current"><a href="http://localhost/%7Ejon/2030/app/views/mockups/basic/admin/about.html" title="About 20/30">About 20/30</a></li>
+							</ul>
+						</div>
+					</nav>
+					<div id="content">
+						<div class="threeColumns-0">
+							<div class="section">
+								<ul>
+									<li><a href="">Link 1</a></li>
+									<li><a href="">Link 2</a></li>
+									<li><a href="">Link 3</a></li>
+									<li><a href="">Link 4</a></li>
+								</ul>
+							</div>
+						</div>
+						<div class="threeColumns-1">
+							<h1>Discount Codes</h1>
+							<form class="allPurposeForm">
+							<fieldset class="twoCol" style="width: 500px;">
+								<!-- <h2>Discount Label</h2> -->
+								<div>
+									<label for="DiscountName">Discount Label</label>
+									<input name="DiscountName" id="DiscountName" required="" type="dropdown">
+								</div>
+
+								<div>
+									<label for="User">User Requesting Discount</label>
+									<select name="User" id="User">
+                                        <option selected="selected" value="UserGUID1">Board User 1</option>
+										<option value="UserGUID2">Board User 2</option>
+                                        <option value="UserGUID2">Board User 3</option>
+                                    </select>
+								</div>
+								<div>
+									<label for="DiscountEvent">Linked Event</label>
+									<select name="DiscountEvent" id="DiscountEvent">
+										<option selected="selected" value="Event1">Event1</option>
+										<option value="Event2">Event2</option>
+										<option value="Event3">Event3</option>
+									</select>
+                                    
+								</div>
+
+								<div>
+									<label for="DiscountDescription">
+										Discount Description
+									</label>
+									<textarea name="DiscountDescription" id="DiscountDescription" cols="24" rows="4"></textarea>
+								</div>
+
+								<div>
+									<label for="DiscountAmount">Discount Amount</label>
+									<input name="DiscountAmount" id="DiscountAmount" required="yes" type="text">
+								</div>
+
+								<div>
+									<label for="DiscountDate">Date Requested</label>
+									<input name="Date" id="Date" required="Yes" type="text">
+
+								</div>
+                                
+                                <!-- Process Discount Request -->
+								
+
+								<div class="formAction">
+									<a href="" class="button">Generate Code</a>
+								</div>
+                                
+                                 <!-- Discount Code -->
+
+								<div>
+									<h1>Discount Code</h1>
+									<div>
+                                    <label for="DiscountCode">Discount Code</label>
+                                    <h2>1A2B3C4D</h2>
+                                    </div>
+
+                                </div>
+
+							</fieldset>
+							</form>
+						</div>
+						<div class="threeColumns-2">
+						</div>
+						<div class="clear"></div>
+					</div>
+					<footer>
+						footer content
+					</footer>
+				</div>
+			</div>
+		</div>
+	</body></html>

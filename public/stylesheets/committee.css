@@ -85,3 +85,52 @@
 {
 	width: 480px;
 }
+/* PostedComments _______________________________ */
+
+#PostedComments {
+    float: left;
+    margin-left: 80px;
+    margin-top: 10px;
+    width: 400px;
+}    
+
+#Comments {
+	border-bottom: #2c83af solid 1px;
+	border-left: #2c83af solid 2px;
+	clear: both;
+    margin-bottom: 5px;
+    margin-top: 10px;
+    padding-left: 10px;
+    padding-top: 5px;
+}
+
+#Comments img {
+    float: left;
+    margin-right: 10px;
+}    
+
+#Comments h3 {
+}    
+
+#Comments p {
+    font-style:italic;
+    font-size: 0.8em;
+    margin-bottom: 0.5em;
+}    
+
+/* PostAComment _______________________________ */
+
+.PostAComment {
+    margin-bottom: 20px;
+    margin-top: 5px;
+    padding-top: 5px;
+}
+
+.PostAComment img {
+    float: left;
+    margin-right: 10px;
+}    
+
+.PostAComment input {
+	margin: 10px 0;
+}    

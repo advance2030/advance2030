@@ -1,0 +1,30 @@
+hr
+{
+	margin-top: 4px;
+	margin-bottom: 20px;
+}
+
+.memberInfo
+{
+	margin-bottom: 20px;
+	padding-left: 16px;
+	height: 57px;
+}
+
+.memberInfo div
+{
+	margin-left: 77px;
+}
+
+.memberInfo div img
+{
+	margin-left: 6px;
+}
+
+.memberInfo div p
+{
+	width: 200px;
+	margin-top: 4px;
+}
+
+.blueMemberName{ color: #0A4D8F; }
