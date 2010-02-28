@@ -1,0 +1,70 @@
+<style type="text/css" media="screen">
+  label {
+    display: block;
+    font-weight: bold;
+  }
+  form legend {
+    display: none;
+  }
+</style>
+<% form_for venue, :html => { :multipart => true } do |f| %>
+  <fieldset>
+    <legend>Venue Information</legend>
+    
+    <div>
+      <%= f.error_message_on :title %>
+      <%= f.label :title, 'Title' %>
+      <%= f.text_field :title %>
+    </div>
+    
+    <div>
+      <%= f.error_message_on :url_friendly %>
+      <%= f.label :url_friendly, 'Permalink Title' %>
+      <%= f.text_field :url_friendly %>
+    </div>
+    
+    <div>
+      <%= f.error_message_on :venue_type_id %>
+      <%= f.label :venue_type_id, 'Venue Type' %>
+      <%= f.select :venue_type_id, @venue_options %>
+    </div>
+    
+    <div>
+      <% if @venue.avatar? %>
+        <%= image_tag @venue.avatar.url(:thumb), :class => 'avatar' %>
+      <% end %>
+      
+      <%= f.error_message_on :avatar %>
+      <%= f.label :avatar, 'Logo' %>
+      <%= f.file_field :avatar %>
+    </div>
+  </fieldset>
+  <fieldset>
+    <legend>Venue Capacity</legend>
+    
+    <div>
+      <%= f.error_message_on :capacity %>
+      <%= f.label :capacity, 'Attendee Size' %>
+      <%= f.text_field :capacity, :size => 4 %>
+    </div>
+    
+    <div>
+      <%= f.error_message_on :full_capacity %>
+      <%= f.label :full_capacity, 'Maximum Capacity' %>
+      <%= f.text_field :full_capacity, :size => 4 %>
+    </div>
+    
+  </fieldset>
+  
+  <fieldset>
+    <legend>Amenities</legend>
+    
+    <div>
+      <%= f.check_box :has_internet %>
+      <%= f.label :has_internet, 'Internet available?' %>
+    </div>
+  </fieldset>
+  <fieldset class="submit">
+    <p><%= f.submit 'Save' %> or <%= link_to 'Cancel', venues_path, :class => 'cancel' %></p>
+  </fieldset>
+<% end %>

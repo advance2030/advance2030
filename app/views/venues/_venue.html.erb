@@ -1,0 +1,4 @@
+<tr>
+  <td><%= link_to venue.title, venue_path(venue.url_friendly) %></td>
+  <td><%= link_to 'Edit', edit_venue_path(venue.url_friendly) %> <%= link_to 'Delete', venue_path(venue.url_friendly), :method => :delete, :confirm => 'Are you sure you want to remove this venue?' %></td>
+</tr>

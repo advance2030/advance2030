@@ -1,0 +1,15 @@
+<h1><%= @venue.title %></h1>
+<p><%= link_to "&larr; View other Venues", venues_path %></p>
+
+<% if @venue.avatar? %>
+<%= image_tag @venue.avatar.url(:medium) %>
+<% end %>
+
+<p><strong>Venue Type</strong>: <%= @venue.venue_type.title %></p>
+<p><strong>Capacity</strong>: <%= pluralize(@venue.capacity, 'Person') %></p>
+<p><strong>Full Capacity</strong>: <%= pluralize(@venue.full_capacity, 'Person') %></p>
+
+
+<% if @venue.has_internet? %>
+<p>This venue is Internet ready!</p>
+<% end %>

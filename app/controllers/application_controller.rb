@@ -1,13 +1,41 @@
-# Filters added to this controller apply to all controllers in the application.
-# Likewise, all the methods added will be available for all controllers.
 require 'authlogic'
 
 class ApplicationController < ActionController::Base
-  helper :all # include all helpers, all the time
-  protect_from_forgery # See ActionController::RequestForgeryProtection for details
+  helper :all
+  protect_from_forgery
 
   helper_method :current_user_session, :current_user
   filter_parameter_logging :password, :password_confirmation
+  
+  def redirect_permanent(url)
+    head :moved_permanently, :location => url
+    return
+  end
+  
+  def render_404
+    render :file => File.join(Rails.root, 'public', '404.html')
+    #render :template => 'pages/404', :status => 404
+  end
+  
+  def render_edit
+    render :action => :edit
+  end
+  
+  def render_new
+    render :action => :new
+  end
+  
+  def flash_and_redirect(location, msg)
+    flash[:notice] = if msg then msg else '' end
+    redirect_to(location)
+    return
+  end
+  
+  def flash_and_redirect_back_or_default(location, msg)
+    flash[:notice] = if msg then msg else '' end
+    redirect_back_or_default(location)
+    return
+  end
   
 private
   def current_user_session

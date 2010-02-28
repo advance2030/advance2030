@@ -1,0 +1,21 @@
+<style type="text/css" media="screen">
+  thead {
+    text-align: left;
+  }
+</style>
+<h1>All Venues</h1>
+<p><%= link_to 'Add a Venue', new_venue_path, :class => 'add' %></p>
+<% if @venues.any? %>
+  <table cellpadding="0" cellspacing="0" width="100%" summary="Listing of all venues">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <td class="options"></td>
+      </tr>
+    </thead>
+    <tfoot></tfoot>
+    <tbody>
+      <%= render @venues %>
+    </tbody>
+  </table>
+<% end %>
