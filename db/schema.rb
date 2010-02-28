@@ -205,10 +205,6 @@ ActiveRecord::Schema.define(:version => 20100228035118) do
     t.string "title", :limit => 100, :null => false
   end
 
-  add_index "postal_codes", ["city_id"], :name => "index_postal_codes_on_city_id"
-  add_index "postal_codes", ["code"], :name => "index_postal_codes_on_code", :unique => true
-  add_index "postal_codes", ["state_id"], :name => "index_postal_codes_on_state_id"
-
   create_table "states", :force => true do |t|
     t.string "title", :limit => 50, :null => false
     t.string "code",  :limit => 10, :null => false
