@@ -20,5 +20,10 @@ namespace :ac do
       types = ["Corporation", "Nonprofit", "Media", "Government", "Political", "Other"]
       types.each { |t| OrganizationType.create(:title => t) }
     end
+    
+    task :load_organization_roles => :environment do
+      roles = ["Employer", "Venue", "Corporate Member", "Sponsor", "Donor", "Civic Partner", "YP Group"]
+      roles.each { |r| OrganizationRole.create(:role => r) }
+    end
   end
 end
