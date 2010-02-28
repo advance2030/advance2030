@@ -5,6 +5,15 @@
 <%= image_tag @venue.avatar.url(:medium) %>
 <% end %>
 
+<% if @venue.notes? %>
+<h2>Notes</h2>
+<ol>
+  <% @venue.notes.each do |n| %>
+  <li><%= n.note %></li>
+  <% end %>
+</ol>
+<% end %>
+
 <% if @venue.av_equipment_options? %>
 <p>AudioVideo equipment options include <%= @venue.av_equipment_options.map(&:title).to_sentence %></p>
 <% end %>

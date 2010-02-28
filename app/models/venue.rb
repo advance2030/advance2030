@@ -43,6 +43,10 @@ class Venue < ActiveRecord::Base
     self.food_service_options.any?
   end
   
+  def notes?
+    self.notes.any?
+  end
+  
   def blacklisted?
     self.is_blacklisted
   end

@@ -63,6 +63,17 @@
     </div>
   </fieldset>
   
+  <div class="notes">
+    <p><%= link_to 'Add a Note', new_venue_venue_note_path(venue) %></p>
+    <% if @venue.notes? %>
+    <ol>
+      <% @venue.notes.each do |n| %>
+        <li><%= n.note %></li>
+      <% end %>
+    </ol>
+    <% end %>
+  </div>
+  
   <% if @parking_options.any? %>
   <fieldset>
   	<legend>Parking Options</legend>

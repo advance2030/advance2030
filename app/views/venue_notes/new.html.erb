@@ -1,0 +1,14 @@
+<h1>Add a note for <%= @venue.title %></h1>
+<% form_for @venue_note, :url => venue_venue_notes_path(@venue.url_friendly) do |f| %>
+  <fieldset>
+    <legend>Note</legend>
+    
+    <div>
+      <%= f.label :note, 'Note' %>
+      <%= f.text_area :note, :size => '50x20' %>
+    </div>
+  </fieldset>
+  <fieldset class="submit">
+    <p><%= f.submit 'Save' %> or <%= link_to 'Cancel', edit_venue_path(@venue), :class => 'cancel' %></p>
+  </fieldset>
+<% end %>
