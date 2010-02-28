@@ -1,6 +1,6 @@
 class VenuesController < ApplicationController
   before_filter :find_venue, :only => [:show, :edit, :update, :destroy]
-  before_filter :find_venue_options, :find_parking_options, :only => [:new, :edit, :update, :create]
+  before_filter :find_venue_options, :find_parking_options, :find_fee_options, :find_food_service_options, :find_av_equipment_options, :only => [:new, :edit, :update, :create]
   
   def index
     @venues = Venue.list
@@ -43,11 +43,23 @@ private
     end
   end
   
+  def find_venue_options
+    @venue_options = VenueType.options
+  end
+  
   def find_parking_options
     @parking_options = ParkingOption.list
   end
   
-  def find_venue_options
-    @venue_options = VenueType.options
+  def find_fee_options
+    @fee_options = FeeOption.list
+  end
+  
+  def find_food_service_options
+    @food_service_options = FoodServiceOption.list
+  end
+  
+  def find_av_equipment_options
+    @av_equipment_options = AvEquipmentOption.list
   end
 end

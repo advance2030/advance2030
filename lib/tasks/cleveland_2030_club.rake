@@ -51,9 +51,9 @@ namespace :ac do
       types.each { |t| PhoneNumberType.create(:title => t) }
     end
     
-    task :load_av_equipments => :environment do
+    task :load_av_equipment_options => :environment do
       avs = ["LCDs", "Projector", "Audio", "Other"]
-      avs.each { |a| AvEquipment.create(:title => a) }
+      avs.each { |a| AvEquipmentOption.create(:title => a) }
     end
     
     task :load_parking_options => :environment do

@@ -43,12 +43,67 @@
   <% if @parking_options.any? %>
   <fieldset>
   	<legend>Parking Options</legend>
+  	<p>This venue has the following available parking options.</p>
   	<%= hidden_field_tag "venue[parking_option_ids][]", '' %>
   	<% content_tag :div, :class => 'authors' do -%>
   		<% @parking_options.each do |s| -%>
   			<% div_for s do %>
   				<label>
   					<%= check_box_tag "venue[parking_option_ids][]", s.id, venue.parking_options.include?(s) %>
+  					<%= s.title %>
+  				</label>
+  			<% end -%>
+  		<% end -%>
+  	<% end -%>
+  </fieldset>
+  <% end %>
+  
+  <% if @fee_options.any? %>
+  <fieldset>
+  	<legend>Fee Options</legend>
+  	<p>This venue has the following associated fees.</p>
+  	<%= hidden_field_tag "venue[fee_option_ids][]", '' %>
+  	<% content_tag :div, :class => 'authors' do -%>
+  		<% @fee_options.each do |s| -%>
+  			<% div_for s do %>
+  				<label>
+  					<%= check_box_tag "venue[fee_option_ids][]", s.id, venue.fee_options.include?(s) %>
+  					<%= s.title %>
+  				</label>
+  			<% end -%>
+  		<% end -%>
+  	<% end -%>
+  </fieldset>
+  <% end %>
+  
+  <% if @food_service_options.any? %>
+  <fieldset>
+  	<legend>Food Service Options</legend>
+  	<p>This venue has the following food service options.</p>
+  	<%= hidden_field_tag "venue[food_service_option_ids][]", '' %>
+  	<% content_tag :div, :class => 'authors' do -%>
+  		<% @food_service_options.each do |s| -%>
+  			<% div_for s do %>
+  				<label>
+  					<%= radio_button_tag "venue[food_service_option_ids][]", s.id, venue.food_service_options.include?(s) %>
+  					<%= s.title %>
+  				</label>
+  			<% end -%>
+  		<% end -%>
+  	<% end -%>
+  </fieldset>
+  <% end %>
+  
+  <% if @av_equipment_options.any? %>
+  <fieldset>
+  	<legend>AV Equipment Options</legend>
+  	<p>This venue has the following audio/video equipment options.</p>
+  	<%= hidden_field_tag "venue[av_equipment_option_ids][]", '' %>
+  	<% content_tag :div, :class => 'authors' do -%>
+  		<% @av_equipment_options.each do |s| -%>
+  			<% div_for s do %>
+  				<label>
+  					<%= check_box_tag "venue[av_equipment_option_ids][]", s.id, venue.av_equipment_options.include?(s) %>
   					<%= s.title %>
   				</label>
   			<% end -%>

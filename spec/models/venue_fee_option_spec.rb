@@ -1,5 +1,5 @@
 require File.expand_path(File.dirname(__FILE__) + '/../spec_helper')
 
-describe VenueFeeOptions do
+describe VenueFeeOption do
 
 end

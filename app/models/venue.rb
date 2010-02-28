@@ -17,7 +17,7 @@ class Venue < ActiveRecord::Base
   has_many :fee_options, :through => :venue_fee_options
   
   has_many :venue_av_equipment_options, :dependent => :destroy
-  has_many :av_equipment_options, :through => :value_av_equipment_options
+  has_many :av_equipment_options, :through => :venue_av_equipment_options
   
   has_many :notes, :class_name => 'VenueNote'
   
@@ -25,6 +25,22 @@ class Venue < ActiveRecord::Base
   
   def validate
     self.errors.add(:title, 'Please provide a title') unless self.title?
+  end
+  
+  def parking_options?
+    self.parking_options.any?
+  end
+  
+  def fee_options?
+    self.fee_options.any?
+  end
+  
+  def av_equipment_options?
+    self.av_equipment_options.any?
+  end
+  
+  def food_service_options?
+    self.food_service_options.any?
   end
   
   def blacklisted?

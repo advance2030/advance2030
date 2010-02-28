@@ -5,6 +5,14 @@
 <%= image_tag @venue.avatar.url(:medium) %>
 <% end %>
 
+<% if @venue.parking_options? %>
+<p>Parking options include <%= @venue.parking_options.map(&:title).to_sentence %></p>
+<% end %>
+
+<% if @venue.food_service_options? %>
+<p><strong>Food Service Options</strong>: <%= @venue.food_service_options.map(&:title).to_sentence %></p>
+<% end %>
+
 <p><strong>Venue Type</strong>: <%= @venue.venue_type.title %></p>
 <p><strong>Capacity</strong>: <%= pluralize(@venue.capacity, 'Person') %></p>
 <p><strong>Full Capacity</strong>: <%= pluralize(@venue.full_capacity, 'Person') %></p>
