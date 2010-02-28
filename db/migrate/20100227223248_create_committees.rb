@@ -32,6 +32,7 @@ class CreateCommittees < ActiveRecord::Migration
       t.string  :title, :null => false, :length => 100
       t.integer :user_id, :null => false
       t.string  :text, :null => false
+    end
   end
 
   def self.down
