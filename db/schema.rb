@@ -223,6 +223,7 @@ ActiveRecord::Schema.define(:version => 20100228010748) do
     t.integer  "user_profiles_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "middle_name"
     t.integer  "surname_id"
     t.integer  "suffix_id"
     t.string   "gender"
