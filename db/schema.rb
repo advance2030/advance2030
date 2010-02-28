@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100228180341) do
+ActiveRecord::Schema.define(:version => 20100228182153) do
 
   create_table "accounts", :force => true do |t|
     t.string   "login",                              :null => false
@@ -204,6 +204,21 @@ ActiveRecord::Schema.define(:version => 20100228180341) do
   add_index "organization_addresses", ["address_type_id"], :name => "index_organization_addresses_on_address_type_id"
   add_index "organization_addresses", ["organization_id"], :name => "index_organization_addresses_on_organization_id"
   add_index "organization_addresses", ["postal_code_id"], :name => "index_organization_addresses_on_postal_code_id"
+
+  create_table "organization_email_addresses", :force => true do |t|
+    t.integer  "email_address_type_id", :null => false
+    t.integer  "organization_id",       :null => false
+    t.string   "address",               :null => false
+    t.boolean  "is_primary"
+    t.boolean  "is_confirmed"
+    t.integer  "sort_order"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "organization_email_addresses", ["address"], :name => "index_organization_email_addresses_on_address", :unique => true
+  add_index "organization_email_addresses", ["email_address_type_id"], :name => "index_organization_email_addresses_on_email_address_type_id"
+  add_index "organization_email_addresses", ["organization_id"], :name => "index_organization_email_addresses_on_organization_id"
 
   create_table "organization_links", :force => true do |t|
     t.integer "link_type_id",    :null => false

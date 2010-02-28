@@ -1,0 +1,17 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  email_address_type_id: 1
+  organization_id: 1
+  address: MyString
+  is_primary: false
+  is_confirmed: false
+  sort_order: 1
+
+two:
+  email_address_type_id: 1
+  organization_id: 1
+  address: MyString
+  is_primary: false
+  is_confirmed: false
+  sort_order: 1
