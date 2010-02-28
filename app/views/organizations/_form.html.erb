@@ -80,6 +80,24 @@
   </fieldset>
   <% end %>
   
+  <% if @industries.any? %>
+  <fieldset>
+    <legend>Industries</legend>
+    <p>This organization is in the following industries.</p>
+    <%= hidden_field_tag "organization[industry_ids][]", '' %>
+    <% content_tag :div, :class => 'authors' do -%>
+      <% @industries.each do |s| -%>
+        <% div_for s do %>
+          <label>
+            <%= check_box_tag "organization[industry_ids][]", s.id, organization.industries.include?(s) %>
+            <%= s.title %>
+          </label>
+        <% end -%>
+      <% end -%>
+    <% end -%>
+  </fieldset>
+  <% end %>
+  
   <div>
     <%= f.error_message_on :tax_identification %>
     <%= f.label :tax_identification, 'Tax Identification Number' %>
