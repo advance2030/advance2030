@@ -43,5 +43,4 @@ end
 
 require 'newrelic_rpm'
 
-require 'urligence'
 Bundler.require :default, Rails.env
