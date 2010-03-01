@@ -15,8 +15,8 @@
         <div id="innerContainer">
           <div id="header">
             <div id="topHeader"></div>
-            <a href="" title="The Cleveland 2030 Club home page" class="logo">
-              <img src="/images/Cleveland2030-Logo.png" alt="The Cleveland 2030 Logo" style="width:289px;height:98px;">
+            <a href="<%=root_url%>" title="The Cleveland 2030 Club home page" class="logo">
+                <img src="/images/logo.gif" alt="The Cleveland 2030 Logo" border="0">
             </a>
             <div id="alertSection">
             </div>
@@ -32,7 +32,7 @@
           <nav>
             <div>
               <ul>
-                <li class="current"><a href="#" title="Home">Home</a></li>
+                <li class="current"><a href="<%=root_url%>" title="Home">Home</a></li>
                 <li><a href="#" title="Member Benefits">Member Benefits</a></li>
                 <li><%= link_to 'Calendar Events', current_calendar_url, :title => 'Calendar Events' %></li>
                 <li><a href="#" title="Cleveland Plus">Cleveland Plus</a></li>
