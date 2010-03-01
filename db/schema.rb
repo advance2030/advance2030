@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(:version => 20100228230609) do
     t.datetime "last_login_at"
     t.string   "current_login_ip"
     t.string   "last_login_ip"
+    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.datetime "joined_at"
