@@ -9,3 +9,4 @@ public/system/**/*
 *.tmproj
 rerun.txt
 nbproject
+vendor/cache/*
