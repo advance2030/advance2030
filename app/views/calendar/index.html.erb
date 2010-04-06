@@ -13,8 +13,8 @@
 			</fieldset>
 		</form>
 		<div style="width:275px;">
-			<%=link_to "&rsaquo;", previous_calendar_url(@date), :class => 'leftArrow' %>
-			<%=link_to "&lsaquo;", next_calendar_url(@date), :class => 'rightArrow' %>
+			<%=link_to "&rsaquo;", next_calendar_url(@date), :class => 'leftArrow' %>
+			<%=link_to "&lsaquo;", previous_calendar_url(@date), :class => 'rightArrow' %>
 			<span class="daySelected"><%=h @date.strftime('%A %B %d, %Y') %></span>
 		</div>
 	</div>
