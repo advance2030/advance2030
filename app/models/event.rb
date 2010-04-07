@@ -21,7 +21,7 @@ class Event < ActiveRecord::Base
   def color
     category = self.primary_category
     
-    category.blank? ? 'unknown' : category.color
+    category.blank? ? 'uncategorized' : category.color
   end
 
   class << self

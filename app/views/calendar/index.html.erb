@@ -30,16 +30,24 @@
 			}) do |t| %>
 	  <%= t.head(*@days) %>
 	  <% t.day :day_method => :start_datetime do |day, events| %>
-	    <div class="label"><%= day.day %></div>
-		<% if events.length > 3 %>
-	    	<% events.each do |event| %>
-	      		color(<%= h(event.color) %>)
-	    	<% end %>
-		<% else %>
-	    	<% events.each do |event| %>
-	      		<%= h(event.name) %>
-	    	<% end %>
-		<% end %>
+		    <div class="label"><%= day.day %></div>
+			<% if events.length > 3 %>
+				<ul class="events"><li>
+		    	<% events.each do |event| %>
+		      		<span class="<%= h(event.color) %>"></span>
+		    	<% end %>
+				</li></ul>
+				<br /><a href=""><%=events.length%> Events</a>
+			<% else %>
+				<ul class="events">
+		    	<% events.each do |event| %>
+					<li>
+					<span class="<%= h(event.color) %>"></span>
+		      		<a href="" title="<%=h event.name%>"><%=h event.name%></a>
+					</li>
+		    	<% end %>
+				</li></ul>
+			<% end %>
 	  <% end %>
 	<% end %>
 </div>
@@ -66,14 +74,14 @@
 						<label for="networking">Networking</label>
 					</li>
 					<li>
-						<span class="philanthopic"></span>
+						<span class="philanthropy"></span>
 						<input type="checkbox" id="philanthopic">
-						<label for="philanthopic">Philanthropy</label>
+						<label for="philanthropy">Philanthropy</label>
 					</li>
 					<li>
 						<span class="educational"></span>
 						<input type="checkbox" id="educational">
-						<label for="philanthopic">Educational</label>
+						<label for="educational">Educational</label>
 					</li>
 					<li>
 						<span class="coupons"></span>
