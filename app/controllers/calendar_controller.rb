@@ -4,7 +4,7 @@ class CalendarController < ApplicationController
   def index
     @date = Time.local(params[:year], params[:month], params[:day])
     @days = Date::DAYNAMES
-    @events = []
+    @events = Event.all_in_month(@date)
   end
   
   def redirect

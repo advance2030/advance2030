@@ -3,4 +3,10 @@ class Category < ActiveRecord::Base
 
   has_many :categorizations
   has_many :events, :through => :categorizations
+
+  def color
+    #TODO: migrate this to the db for site specific, or admin changability
+    #TODO: for now, let's assume sluggable name is the css class -> color:
+    self.name.parameterize.to_s
+  end
 end

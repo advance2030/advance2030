@@ -29,11 +29,17 @@
 			:cellspacing => 0
 			}) do |t| %>
 	  <%= t.head(*@days) %>
-	  <% t.day do |day, events| %>
+	  <% t.day :day_method => :start_datetime do |day, events| %>
 	    <div class="label"><%= day.day %></div>
-	    <% events.each do |event| %>
-	      <%= h(event.name) %>
-	    <% end %>
+		<% if events.length > 3 %>
+	    	<% events.each do |event| %>
+	      		color(<%= h(event.color) %>)
+	    	<% end %>
+		<% else %>
+	    	<% events.each do |event| %>
+	      		<%= h(event.name) %>
+	    	<% end %>
+		<% end %>
 	  <% end %>
 	<% end %>
 </div>

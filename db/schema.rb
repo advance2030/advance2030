@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100228230609) do
+ActiveRecord::Schema.define(:version => 20100407010806) do
 
   create_table "accounts", :force => true do |t|
     t.string   "login",                              :null => false
@@ -70,10 +70,10 @@ ActiveRecord::Schema.define(:version => 20100228230609) do
 
   create_table "categorizations", :force => true do |t|
     t.integer "category_id", :null => false
-    t.integer "item_id",     :null => false
+    t.integer "event_id",    :null => false
   end
 
-  add_index "categorizations", ["item_id", "category_id"], :name => "index_categorizations_on_item_id_and_category_id", :unique => true
+  add_index "categorizations", ["event_id", "category_id"], :name => "index_categorizations_on_event_id_and_category_id", :unique => true
 
   create_table "cities", :force => true do |t|
     t.string "title",        :limit => 75, :null => false

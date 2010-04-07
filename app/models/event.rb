@@ -1,6 +1,8 @@
 require 'is_taggable'
 
 class Event < ActiveRecord::Base
+  named_scope :by_range, lambda { |from, to| { :conditions => ["events.start_datetime between ? and ?", from, to]} }
+
   has_many :categorizations
   has_many :categories, :through => :categorizations
   has_one :manager, :class_name => "User"
@@ -8,7 +10,19 @@ class Event < ActiveRecord::Base
   has_one :supervisor, :class_name => "User"
   has_one :committee_sponsor, :foreign_key => :committee_id, :class_name => "Committee"
 
+  validates_presence_of :start_datetime, :end_datetime
+
   is_taggable :tags
+
+  def primary_category
+    self.categories.first
+  end
+
+  def color
+    category = self.primary_category
+    
+    category.blank? ? 'unknown' : category.color
+  end
 
   class << self
     def min_start_date_time
@@ -17,6 +31,10 @@ class Event < ActiveRecord::Base
 
     def max_end_date_time
       self.maximum(:end_datetime)
+    end
+
+    def all_in_month(date)
+      self.by_range(date.beginning_of_month, date.end_of_month)
     end
   end
 
