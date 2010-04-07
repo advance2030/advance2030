@@ -30,20 +30,20 @@
 			}) do |t| %>
 	  <%= t.head(*@days) %>
 	  <% t.day :day_method => :start_datetime do |day, events| %>
-		    <div class="label"><%= day.day %></div>
+		    <div class="label"><%=day.day%></div>
 			<% if events.length > 3 %>
 				<ul class="events"><li>
 		    	<% events.each do |event| %>
 		      		<span class="<%= h(event.color) %>"></span>
 		    	<% end %>
 				</li></ul>
-				<br /><a href=""><%=events.length%> Events</a>
+				<br /><%=link_to "#{events.length} Events", calendar_day_url(day) %>
 			<% else %>
 				<ul class="events">
 		    	<% events.each do |event| %>
 					<li>
 					<span class="<%= h(event.color) %>"></span>
-		      		<a href="" title="<%=h event.name%>"><%=h event.name%></a>
+					<%=link_to event.name, event_detail_url(event.url_friendly), :title => event.name%>
 					</li>
 		    	<% end %>
 				</li></ul>
@@ -132,7 +132,7 @@
 
 <div class="twoColumns-0">
 	<div class="dayEvents">
-		<h2>EVENTS FOR: <span>Friday March 12, 2010</span></h2>
+		<h2>EVENTS FOR: <span><%= @date.strftime('%A %B %d, %Y')%></span></h2>
 		<div class="event">
 			<ul>
 				<li class="social">

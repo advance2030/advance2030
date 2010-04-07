@@ -1,16 +1,16 @@
 module CalendarHelper
+  def calendar_day_url(date)
+    calendar_url :year => date.year, :month => date.month, :day => date.day
+  end
   def current_calendar_url
-    current = Date.today
-    calendar_url :year => current.year, :month => current.month, :day => current.day
+    calendar_day_url(Date.today)
   end
   
   def previous_calendar_url(date)
-    previous = date.last_month
-    calendar_url :year => previous.year, :month => previous.month, :day => previous.day
+    calendar_day_url(date.last_month)
   end
 
   def next_calendar_url(date)
-    nmonth = date.next_month
-    calendar_url :year => nmonth.year, :month => nmonth.month, :day => nmonth.day
+    calendar_day_url(date.next_month)
   end
 end
