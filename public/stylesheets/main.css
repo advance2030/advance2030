@@ -188,7 +188,7 @@ ul li span.social{background:#ff9933;}
 ul li span.networking{background:#cc3333;}
 ul li span.philanthropy{background:#00a651;}
 ul li span.educational{background:#66ccff;}
-ul li span.uncategorized{background:#ffffff;border:1px solid black;}
+ul li span.uncategorized{background:#aaaaaa;}
 
 div.dayEvents{margin:20px 0 0 0;}
 div.dayEvents h2{border-bottom:5px solid #ccc;padding:4px;}
@@ -342,7 +342,7 @@ div.flickrRight a { display: block; background: url(../images/flickrRight.jpg) n
 {
 	border-left-color: #cc3333;
 }
-.event ul li.philanthopic
+.event ul li.philanthropy
 {
 	border-left-color: #00a651;
 }
@@ -350,6 +350,11 @@ div.flickrRight a { display: block; background: url(../images/flickrRight.jpg) n
 {
 	border-left-color: #66ccff;
 }
+.event ul li.uncategorized
+{
+	border-left-color: #aaaaaa;
+}
+
 .event ul li.more
 {
 	background-color: #f2f2f2;

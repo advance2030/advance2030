@@ -19,7 +19,7 @@
 		</div>
 	</div>
 
-	<% calendar_for(@events,
+	<% calendar_for(@months_events,
 		:year => @date.year,
 		:month => @date.month,
 		:day => @date.day,
@@ -35,7 +35,7 @@
 			<% events.first(2).each do |event| %>
 				<li>
 					<span class="<%= h(event.color) %>"></span>
-					<%=link_to event.name, event_detail_url(event.url_friendly), :title => event.name%>
+					<%=link_to event.name, event_detail_url(event.to_param), :title => event.name%>
 				</li>
 			<% end %>
 			<% if events.length - 2 > 0 %>
@@ -69,7 +69,7 @@
 					</li>
 					<li>
 						<span class="philanthropy"></span>
-						<input type="checkbox" id="philanthopic">
+						<input type="checkbox" id="philanthropy">
 						<label for="philanthropy">Philanthropy</label>
 					</li>
 					<li>
@@ -83,7 +83,7 @@
 						<label for="coupons">Coupons</label>
 					</li>
 					<li>
-						<span></span>
+						<span class="uncategorized"></span>
 						<input type="checkbox" id="uncategorized">
 						<label for="uncategorized">Un-Categorized</label>
 					</li>
@@ -128,6 +128,20 @@
 	<div class="dayEvents">
 		<a name="events"></a>
 		<h2>EVENTS FOR: <span><%= @date.strftime('%A %B %d, %Y')%></span></h2>
+		<% @days_events.each do |event| %>
+			<div class="event">
+				<ul>
+					<li class="<%=h event.color%>">
+						<%=link_to event.name, event_detail_url(event.to_param)%>
+						<div class="details">
+							<p><%=event.start_datetime.strftime('%I:%M %p')%>
+							<% if event.venue? %> at <span><%=link_to event.venue.title, venue_detail_url(event.venue.to_param)%></span><% end %>
+							</p>
+						</div>
+					</li>
+				</ul>
+			</div>
+		<% end %>
 		<div class="event">
 			<ul>
 				<li class="social">
