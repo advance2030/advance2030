@@ -1,6 +1,7 @@
 module CalendarHelper
-  def calendar_day_url(date)
-    calendar_url :year => date.year, :month => date.month, :day => date.day
+  def calendar_day_url(date, args = {})
+    options = {:year => date.year, :month => date.month, :day => date.day}.merge!(args)
+    calendar_url options
   end
   def current_calendar_url
     calendar_day_url(Date.today)
