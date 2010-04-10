@@ -63,6 +63,7 @@ ActionController::Routing::Routes.draw do |map|
   map.about_directors 'about/directors', :controller => 'about', :action => 'directors'
   map.about_facts 'about/facts', :controller => 'about', :action => 'facts'
   map.about_corporate 'about/facts', :controller => 'about', :action => 'corporate'
+  map.members 'members', :controller => 'members', :action => 'index'
   map.connect ':controller/:action/:id'
   map.connect ':controller/:action/:id.:format'
 end
