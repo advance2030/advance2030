@@ -4,4 +4,10 @@ class AboutController < ApplicationController
 
   def directors
   end
+  
+  def facts
+  end
+
+  def corporate
+  end
 end

@@ -60,7 +60,9 @@ ActionController::Routing::Routes.draw do |map|
   map.event_detail 'events/:id', :controller => 'events', :action => 'detail'
   map.venue_detail 'venues/:id', :controller => 'venues', :action => 'detail'
   map.about 'about', :controller => 'about', :action => 'index'
-  map.directors 'about/directors', :controller => 'about', :action => 'directors'
+  map.about_directors 'about/directors', :controller => 'about', :action => 'directors'
+  map.about_facts 'about/facts', :controller => 'about', :action => 'facts'
+  map.about_corporate 'about/facts', :controller => 'about', :action => 'corporate'
   map.connect ':controller/:action/:id'
   map.connect ':controller/:action/:id.:format'
 end

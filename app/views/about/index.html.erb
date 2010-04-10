@@ -2,16 +2,8 @@
 	<%= stylesheet_link_tag 'three-col', 'about' %>
 <% end %>
 
-<div class="threeColumns-0">
-	<div class="section">
-		<ul>
-			<li><a href="">Fact Sheet</a></li>
-			<li><%=link_to "Board of Directors", directors_url%></li>
-			<li><a href="">Professional Advisors</a></li>
-			<li><a href="">Corporate Membership / Sponsorship</a></li>
-		</ul>
-	</div>
-</div>
+<%= render :partial => 'nav' %>
+
 <div class="threeColumns-1">
 	<div class="section">
 		<h1>About 20/30</h1>
