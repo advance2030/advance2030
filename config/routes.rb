@@ -57,8 +57,10 @@ ActionController::Routing::Routes.draw do |map|
     :month => /\d{1,2}/,
     :day => /\d{1,2}/
   map.calendar_redirect 'calendar/redirect', :controller => 'calendar', :action => 'redirect'
-  map.event_detail '/events/:id', :controller => 'events', :action => 'detail'
-  map.venue_detail '/venues/:id', :controller => 'venues', :action => 'detail'
+  map.event_detail 'events/:id', :controller => 'events', :action => 'detail'
+  map.venue_detail 'venues/:id', :controller => 'venues', :action => 'detail'
+  map.about 'about', :controller => 'about', :action => 'index'
+  map.directors 'about/directors', :controller => 'about', :action => 'directors'
   map.connect ':controller/:action/:id'
   map.connect ':controller/:action/:id.:format'
 end
