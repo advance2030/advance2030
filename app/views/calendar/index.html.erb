@@ -13,37 +13,13 @@
 			</fieldset>
 		</form>
 		<div style="width:275px;">
-			<%=link_to "&rsaquo;", next_calendar_url(@date), :class => 'leftArrow' %>
-			<%=link_to "&lsaquo;", previous_calendar_url(@date), :class => 'rightArrow' %>
+			<%=link_to "&rsaquo;", next_calendar_url(@date), :class => 'rightArrow' %>
+			<%=link_to "&lsaquo;", previous_calendar_url(@date), :class => 'leftArrow' %>
 			<span class="daySelected"><%=h @date.strftime('%A %B %d, %Y') %></span>
 		</div>
 	</div>
 
-	<% calendar_for(@months_events,
-		:year => @date.year,
-		:month => @date.month,
-		:day => @date.day,
-		:html => {
-			:id => 'calendar',
-			:cellpadding => 0,
-			:cellspacing => 0
-			}) do |t| %>
-	  <%= t.head(*@days) %>
-	  <% t.day :day_method => :start_datetime do |day, events| %>
-		    <div class="label"><%=day.day%></div>
-			<ul class="events">
-			<% events.first(2).each do |event| %>
-				<li>
-					<span class="<%= h(event.color) %>"></span>
-					<%=link_to event.name, event_detail_url(event.to_param), :title => event.name%>
-				</li>
-			<% end %>
-			<% if events.length - 2 > 0 %>
-				<li><%=link_to "#{events.length-2} more", calendar_day_url(day, :anchor => 'events') %></li>
-			<% end %>
-			</ul>
-	  <% end %>
-	<% end %>
+	<% render_calendar(@date, @months_events) %>
 </div>
 
 <div class="twoColumns-1" style="width:248px">
