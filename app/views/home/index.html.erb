@@ -90,7 +90,9 @@
        </div>
 </div>
 <div class="twoColumns-1">
-	<div class="miniCalendar"></div>
+	<div class="miniCalendar">
+		<% render_calendar(@date, @months_events, :mini => true) %>
+	</div>
 	<div class="event">
 		<h3 class="date"><span>Feb</span> 18</h3>
 		<ul>
