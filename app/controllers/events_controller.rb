@@ -10,4 +10,7 @@ class EventsController < ApplicationController
     @presenter ||= Presenters::EventForm.new(@event)
   end
 
+  def detail
+    @event = Event.find_by_url_friendly(params[:id])
+  end
 end
