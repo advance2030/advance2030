@@ -67,7 +67,7 @@ nav div{overflow:hidden;height:45px;margin:0 auto;padding:0 3px;/*background:tra
 nav ul li{float:left;margin:0 3px;height:42px;}
 nav ul li a{font-size:115%;/*font-size:130%;*/text-decoration:none;font-weight:normal;/*font-weight:bold;*/color:#fff;display:block;height:24px;/*height:42px;*/padding:17px 5px 0;/*padding:14px 10px 0;*/}
 nav ul li a:hover{color:#ebebeb;}
-nav ul li.current a{background:transparent url(../images/cle2030-menu_re.png) repeat-x 0 -50px;}
+nav a.current{background:transparent url(../images/cle2030-menu_re.png) repeat-x 0 -50px;}
 
 #content{padding:10px;background:#fff;}
 footer{background:#2d2d2d;padding:10px;height:100px;color:#fff;}

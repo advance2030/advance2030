@@ -3,15 +3,15 @@
   <head>
     <meta charset="utf-8">
     <title>Cleveland 2030</title>
-    <link rel="stylesheet" type="text/css" href="/stylesheets/main.css">
-    <link rel="stylesheet" type="text/css" href="/stylesheets/jquery-ui-1.7.2.css">
+    <link rel="stylesheet" href="/stylesheets/main.css">
+    <link rel="stylesheet" href="/stylesheets/jquery-ui-1.7.2.css">
     <%= yield :stylesheets %>
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.2/jquery-ui.min.js"></script>
     <%= javascript_include_tag 'datepicker' %>
-    <!--[if lte IE 8]>
-      <script src="/javascripts/html5.js" type="text/javascript"></script>
-    <![endif]-->
+    <!--[if lt IE 9]>
+	  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
   </head>
   <body>
     <div id="container">
@@ -34,15 +34,13 @@
             </div>
           </div>
           <nav>
-            <div>
               <ul>
-                <li class="current"><a href="<%=root_url%>" title="Home">Home</a></li>
-                <li><%= link_to 'Calendar Events', current_calendar_url, :title => 'Calendar Events' %></li>
-				<li><%=link_to '20/30 Members', members_url, :title => '20/30 Members'%></li>
-                <li><%=link_to 'Cleveland Plus', cleveland_plus_url, :title => 'Cleveland Plus'%></li>
-                <li><%=link_to 'About 20/30', about_url, :title => "About 20/30"%></li>
+                <li><%= current_link 'Home', root_path, :title => 'Home' %></li>
+                <li><%= current_link 'Calendar Events', current_calendar_url, :title => 'Calendar Events' %></li>
+				<li><%=current_link '20/30 Members', members_url, :title => '20/30 Members'%></li>
+                <li><%=current_link 'Cleveland Plus', cleveland_plus_url, :title => 'Cleveland Plus'%></li>
+                <li><%=current_link 'About 20/30', about_url, :title => "About 20/30"%></li>
               </ul>
-            </div>
           </nav>
           <div id="content">
             <%= yield %>
