@@ -39,15 +39,19 @@ div.clear{clear:both;}
 h1{font-size:180%;}
 h2{font-size:160%;}
 h3{font-size:140%;}
-h4{font-size:120%;}
+h4{font-size:108%;text-transform:uppercase;margin:1em 0;}
 h5{font-size:100%;}
 
 h1 span {color:#0a4d8f}
 .small{font-size:84%;}
 
+a{color:#377fb9;text-decoration:none;}
+a:hover{background-color:#f4f2e4;border-bottom:1px solid #aaa;color:#333;}
+
 /*generic formatting*/
 .right{float:right;}
 .left{float:left;}
+.viewMore {font-size:85%;margin-top:1em;float:right;}
 
 /* Structure Styles */
 body{font-family: Helvetica, Tahoma, Verdana, sans-serif;font-size:80%;position:relative;background:#fff url(../images/bg-strech.jpg) repeat-x top left;color:#333;}
@@ -65,85 +69,38 @@ body{font-family: Helvetica, Tahoma, Verdana, sans-serif;font-size:80%;position:
 nav {height:40px;padding:0;background:transparent url(../images/nav-bg.gif) repeat-x 0 3px;border-bottom:3px solid #2c2d2d;}
 nav div{overflow:hidden;height:45px;margin:0 auto;padding:0 3px;/*background:transparent url(../images/cle2030-skyline.png) no-repeat 100% -63px;*/}
 nav ul li{float:left;margin:0 3px;height:42px;}
-nav ul li a{font-size:115%;/*font-size:130%;*/text-decoration:none;font-weight:normal;/*font-weight:bold;*/color:#fff;display:block;height:24px;/*height:42px;*/padding:17px 5px 0;/*padding:14px 10px 0;*/}
-nav ul li a:hover{color:#ebebeb;}
-nav a.current{background:transparent url(../images/cle2030-menu_re.png) repeat-x 0 -50px;}
+nav ul li a{font-size:116%;/*font-size:130%;*/text-decoration:none;font-weight:normal;/*font-weight:bold;*/color:#fff;display:block;height:24px;/*height:42px;*/padding:17px 5px 0;/*padding:14px 10px 0;*/}
+nav ul li a:hover, nav ul li.current a{color:#ebebeb; background:transparent url(../images/cle2030-menu_re.png) repeat-x 0 -50px; border-bottom:none;}
 
 #content{padding:10px;background:#fff;}
 footer{background:#2d2d2d;padding:10px;height:100px;color:#fff;}
 
 /* column styles */
 /* 2 column layout */
-div.twoColumns-0{float:left;/*width:695px;*/width:670px;}
+div.twoColumns-0{float:left;width:655px;}
 div.twoColumns-1{float:right;width:275px;}
 
 /* column styles end*/
 
 /* content styles */
 div.introContainer{position:relative;/*width:692px;*/height:240px;margin:0 0 10px 0;}
-div.intro{/*width:722px;*/ width:700px; height:240px;background:#044e8f url(../images/cle2030-intro-bg_re.png) repeat-x top left;position:absolute;top:0;left:-30px;}
+div.intro{width:685px; height:240px;background:#044e8f url(../images/cle2030-intro-bg_re.png) repeat-x top left;position:absolute;top:0;left:-30px;}
 div.introContainer .corner{width:18px;height:9px;position:absolute;bottom:-9px;left:-29px;background:transparent url(../images/cle2030-intro-corner.png) no-repeat top left;}
 
-div.miniCalendar{width:274px;height:240px;background:#293239;}
+div.miniCalendar{width:274px;height:240px;}
 
 div.calendarHeader{overflow:hidden;height:30px;margin:10px 0 0 0;width:692px;}
 
+div.calendarHeader{overflow:hidden;height:30px;}
 div.calendarHeader form{float:left;width:360px;height:40px;}
 div.calendarHeader form select{width:200px;}
-div.calendarHeader div{float:right;width:45%;text-align:right;height:40px;padding:0 6px 0 0;}
+div.calendarHeader div{float:right;/*width:45%;*/text-align:right;height:40px;padding:0 6px 0 0;}
 div.calendarHeader div span.daySelected{display:block;float:right;padding:2px 5px;font-weight:bold;background:#0099ff;color:#fff;margin:4px;}
 div.calendarHeader div a{-moz-border-radius: 3px; -webkit-border-radius: 3px;text-decoration:none;font-size:130%;display:block;height:21px;width:32px;line-height:21px;padding:0 0 0 0;background:#000;color:#fff;float:right;margin:2px;text-align:center;}
 div.calendarHeader div a:hover{background:#666;}
 
-/*
-div.calendar{margin:10px 0 0 0;}
-div.calendar div.month {width:686px;overflow:hidden;border:1px solid #ccc;}
-div.calendar div.month div.weekTitles{height:30px;background:#000;}
-
-div.calendar div.month div.weekTitles div{width:96px;float:left;color:#fff;text-align:center;padding:8px 0;border:1px solid #000;border-right:1px solid #ccc;font-weight:bold;}
-div.calendar div.month div.weekRow{overflow:hidden;border-bottom:1px solid #ccc;clear:both;}
-div.calendar div.month div.weekRow div.day{height:64px;border:1px solid #fff;border-right:1px solid #ccc;float:left;width:96px;}
-div.calendar div.month div.weekTitles div.last,
-div.calendar div.month div.weekRow div.last{border-right:none;}
-div.calendar div.month div.weekRow div.day a.date{display:block;background:#c0e0ff;padding:1px 3px;font-size:85%;}
-div.calendar div.month div.weekRow div.day span.blank{background:#ebebeb;display:block;padding:1px 3px;font-size:85%;}
-div.calendar div.month div.weekRow div.day ul{list-style:none;}
-div.calendar div.month div.weekRow div.day ul li{padding:2px 0 1px 2px;overflow:hidden;}
-div.calendar div.month div.weekRow div.day ul li a{font-size:82%;padding:0 0 0 2px;white-space:nowrap;display:block;float:left;}
-div.calendar div.month div.weekRow div.day ul li span{width:5px;height:10px;margin:0 2px 1px 0;float:left;}
-div.calendar div.month div.weekRow div.current {border:1px solid #0099ff;}
-div.calendar div.month div.weekRow div.current a.date{background:#0099ff;color:#fff;}
-*/
-
-
-table#calendar{margin:0;}
-table#calendar {width:686px;overflow:hidden;border:1px solid #ccc;border-left:2px solid #ccc;border-collapse:separate;}
-table#calendar thead tr{background:#000;}
-
-table#calendar thead tr th{height:14px;background:#000;width:96px;color:#fff;text-align:center;padding:8px 0;border:1px solid #000;border-right:1px solid #ccc;font-weight:bold;}
-table#calendar tbody tr{overflow:hidden;border-bottom:1px solid #ccc;clear:both;}
-table#calendar tbody tr td{overflow:hidden;border-bottom:1px solid #ccc;height:64px;border:1px solid #fff;border-right:1px solid #ccc;width:96px;}
-table#calendar tbody tr td.weekend{background:#ebebeb;}
-table#calendar tbody tr td div.label{background:#c0e0ff;padding:1px 3px;font-size:85%;zoom:1;}
-table#calendar tbody tr td div.label a{display:block;width:95px;}
-
-table#calendar tbody tr td a.date{display:block;background:#c0e0ff;padding:1px 3px;font-size:85%;}
-table#calendar tbody tr td.notmonth div{background:#ebebeb;display:block;padding:1px 3px;font-size:85%;}
-table#calendar tbody tr td ul{list-style:none;}
-table#calendar tbody tr td ul li{padding:2px 0 1px 2px;overflow:hidden;}
-table#calendar tbody tr td ul li a{font-size:82%;padding:0 0 0 2px;white-space:nowrap;display:block;float:left;}
-table#calendar tbody tr td ul li span{width:5px;height:10px;margin:0 2px 1px 0;float:left;}
-table#calendar tbody tr td.today {border:1px solid #255683;}
-table#calendar tbody tr td.today div{background:#255683;font-weight:bold;color:#fff;}
-table#calendar tbody tr td.today div a{font-weight:bold;color:#fff;}
-table#calendar tbody tr td.current {border:1px solid #0099ff;}
-table#calendar tbody tr td.current div{font-weight:bold;background:#0099ff;color:#fff;}
-table#calendar tbody tr td.current div a{font-weight:bold;color:#fff;}
 
 div.miniCalendar{width:275px;height:240px;margin-top:0;padding-top:0;}
-div.miniCalendar div.calendarHeader form{float:none;margin:0 auto;}
-div.miniCalendar div.calendarHeader div{float:none;width:210px;margin: 0 auto;}
-div.miniCalendar div.calendarHeader div span.daySelected{background-color: transparent;color: #000;display:block;text-align:center;width:120px;}
 div.miniCalendar div.month{width: 273px;}
 div.miniCalendar div.month div.weekTitles div,
 div.miniCalendar div.month div.weekRow div.day{width: 37px;}
@@ -166,8 +123,7 @@ table#calendar thead tr th{height:14px;background:#000;width:96px;color:#fff;tex
 table#calendar tbody tr{overflow:hidden;border-bottom:1px solid #ccc;clear:both;}
 table#calendar tbody tr td{overflow:hidden;border-bottom:1px solid #ccc;height:64px;border:1px solid #fff;border-right:1px solid #ccc;width:96px;}
 table#calendar tbody tr td.weekend{background:#ebebeb;}
-table#calendar tbody tr td div.label{background:#c0e0ff;padding:1px 3px;font-size:85%;zoom:1;}
-table#calendar tbody tr td div.label a{display:block;width:95px;}
+table#calendar tbody tr td div.label{height:31px;background:#c0e0ff;padding:1px 3px;font-size:85%;zoom:1;}
 
 table#calendar tbody tr td a.date{display:block;background:#c0e0ff;padding:1px 3px;font-size:85%;}
 table#calendar tbody tr td.notmonth div{background:#ebebeb;display:block;padding:1px 3px;font-size:85%;}
@@ -182,13 +138,36 @@ table#calendar tbody tr td.current {border:1px solid #0099ff;}
 table#calendar tbody tr td.current div{font-weight:bold;background:#0099ff;color:#fff;}
 table#calendar tbody tr td.current div a{font-weight:bold;color:#fff;}
 
+div.miniCalendar{width:274px;height:240px;}
+div.miniCalendar div.calendarHeader {width:274px;/*text-align:center;height:30px;padding:4px 0 1px 0;margin:0;*/}
+
+/*div.miniCalendar div.calendarHeader a{text-decoration:none;font-size:123.1%;display:block;height:21px;width:32px;line-height:21px;padding:0 0 0 0;background:none;color:#333;font-weight:bold;float:left;margin:2px;text-align:center;}
+div.miniCalendar div.calendarHeader a.leftArrow{float:left;font-size:180%;}
+div.miniCalendar div.calendarHeader a.rightArrow{float:right;font-size:180%;}
+div.miniCalendar div.calendarHeader a:hover{background:none;}
+div.miniCalendar div.calendarHeader a.month{background:none;width:194px;}*/
+
+div.miniCalendar table#calendar {margin:0 auto;width:270px;border-collapse:separate;border:0;}
+
+div.miniCalendar table#calendar thead tr th{height:14px;color:#fff;text-align:center;padding:8px 0;border:1px solid #293239;border-right:1px solid #293239;font-weight:bold;}
+div.miniCalendar table#calendar tbody tr td{overflow:hidden;border-bottom:1px solid #ccc;height:22px;border:1px solid #fff;border-right:1px solid #ccc;}
+div.miniCalendar table#calendar tbody tr td.weekend{background:#ebebeb;}
+div.miniCalendar table#calendar tbody tr td div.label{background:#e9e9e9;padding:0;font-size:85%;zoom:1;text-align:center;padding:10px 0 0 0;height:22px;}
+/*div.miniCalendar table#calendar tbody tr td div.label a{display:block;width:38px;}
+div.miniCalendar table#calendar tbody tr td.today {border:1px solid #255683;}*/
+div.miniCalendar table#calendar tbody tr td.today div{/*background:#255683;*/font-weight:bold;color:black;}
+div.miniCalendar table#calendar tbody tr td.current {border:1px solid #0099ff;}
+div.miniCalendar table#calendar tbody tr td.current div{font-weight:bold;background:#0099ff;color:#fff;}
+div.miniCalendar table#calendar tbody tr td.current div a{font-weight:bold;color:#fff;}
+div.miniCalendar table#calendar tbody tr td.events div{font-weight:bold;background:#f8efbe;color:#fff;}
+div.miniCalendar table#calendar tbody tr td.events div a{font-weight:bold;}
+
 
 ul li span.coupons{background:#cc66ff;}
 ul li span.social{background:#ff9933;}
 ul li span.networking{background:#cc3333;}
-ul li span.philanthropy{background:#00a651;}
+ul li span.philanthopic{background:#00a651;}
 ul li span.educational{background:#66ccff;}
-ul li span.uncategorized{background:#aaaaaa;}
 
 div.dayEvents{margin:20px 0 0 0;}
 div.dayEvents h2{border-bottom:5px solid #ccc;padding:4px;}
@@ -235,17 +214,17 @@ input.paypalSubmit {padding:5px;font-weight:bold;margin:10px auto;display:block;
 div.eventTypesContainer{height:120px;padding:3px;overflow:auto;border:1px solid #ccc;}
 
 div.subintroContainer { margin-bottom: 15px; overflow: hidden;}
-div.subintroColumnLeft, div.subintroColumnRight { float: left; width: 460px; }
+div.subintroColumnLeft, div.subintroColumnRight { float: left; width: 450px; }
 div.subintroColumnRight { margin-left: 15px; width: 190px; }
 
-div.membership, div.recentnews, div.sponsor, div.flickr { margin-bottom: 30px; }
-div.membership h3, div.recentnews h3, div.sponsor h3, div.flickr h3 { text-transform: uppercase; font-size: 15px; margin-bottom: 5px; }
+div.membership, div.recentnews, div.sponsor, div.flickr { margin-bottom: 30px;overflow:hidden; }
 
 div.membershipBody { background: #ebebeb; border: 5px solid #ebebeb; -moz-border-radius: 5px; -webkit-border-radius: 5px; overflow: hidden; padding: 3px; }
 	div.register { float: left; padding-right: 10px; text-align: center; }
-		div.register p a { color: #336799; font-family: Arial; }
+		/*div.register p a { color: #336799; font-family: Arial; }*/
 			p.becomeMember { margin: 24px 0 5px 0; }
 			p.becomeMember a { background: url(../images/becomeamember.jpg) no-repeat 0 0; display: block; height: 48px; text-indent: -9999px; width: 195px; }
+			p.becomeMember a:hover {border-bottom:navy;}
 	div.testimonials { border-left: 5px solid #ccc; float: left; padding-left: 10px;}
 			div.testimonials h4 { float: left; margin-bottom:3px; }
 			div.testimonials a { background: #999 url(../images/testimonialsrightarrow.jpg) no-repeat 100% 0; color: #fff; display: block; float: right; font-size: 11px; font-weight: normal; line-height: 12px; margin-top:2px; padding-left: 6px; text-decoration: none; width: 34px; }
@@ -253,11 +232,10 @@ div.membershipBody { background: #ebebeb; border: 5px solid #ebebeb; -moz-border
 			div.testimonialBody p { font-size: 12px; }
 			div.testimonialBody p.testimonialAuthor { color: #666; margin-top: 30px; }
 			
-div.recentnewsBody ul { list-style: square; margin-left:20px; }
-	div.recentnewsBody ul li { font-size: 12px; line-height: 15px; padding-bottom:5px; }
-		div.recentnewsBody ul li a { color: #2c83b0; }
-		div.recentnewsBody ul li.recentnewsMore { list-style: none; padding-left: 5px; }
-			div.recentnewsBody ul li.recentnewsMore a { color: #676767; font-size: 10px; }
+div.recentnewsBody ul { }
+	div.recentnewsBody ul li { font-size: 12px; line-height: 15px; padding-bottom:5px;list-style:none;}
+		/*div.recentnewsBody ul li a { color: #2c83b0; }*/
+			div.recentnewsBody .date{font-size:85%;display: block;}
 
 div.flickrBody { margin-top: 8px; }
 div.flickrLeft, div.flickrImage, div.flickrRight { float: left; height: 145px; }
@@ -267,23 +245,14 @@ div.flickrRight a { display: block; background: url(../images/flickrRight.jpg) n
 /* Jon's Event */
 .event
 {
-	background-color: #0066b6;
-	border-bottom-left-radius: 10px;
-	border-top-left-radius: 10px;
-	color: #fff;
 	margin: 6px 0;
 	position: relative;
 	text-align: center;
-	width: 200px;
-	-moz-border-radius-bottomleft: 10px;
-	-moz-border-radius-topleft: 10px;
-	-webkit-border-bottom-left-radius: 10px;
-	-webkit-border-top-left-radius: 10px;
+	overflow:hidden;
 }
 
 .event .date
 {
-	font-size: 140%;
 	font-variant: small-caps;
 	line-height: 150%;
 	padding: 10px 5px;
@@ -300,19 +269,16 @@ div.flickrRight a { display: block; background: url(../images/flickrRight.jpg) n
 
 .event ul
 {
-	background-color: #fff;
 	border-left: #fff solid 1px;
-	height: 100%;
 	list-style: none;
 	margin: 0 0 0 60px;
 	padding: 0;
 	text-align: left;
-	width: 100%;
 }
 
 .event ul li
 {
-	border-left: transparent solid 8px;
+	border-left: transparent solid 4px;
 	color: #111;
 	display: block;
 	line-height: 140%;
@@ -324,10 +290,10 @@ div.flickrRight a { display: block; background: url(../images/flickrRight.jpg) n
 	background-color: #f2f2f2;
 }
 
-.event ul li a
+/*.event ul li a
 {
 	display: block;
-}
+}*/
 
 /* !Event Types */
 .event ul li.coupons
@@ -342,7 +308,7 @@ div.flickrRight a { display: block; background: url(../images/flickrRight.jpg) n
 {
 	border-left-color: #cc3333;
 }
-.event ul li.philanthropy
+.event ul li.philanthopic
 {
 	border-left-color: #00a651;
 }
@@ -350,15 +316,11 @@ div.flickrRight a { display: block; background: url(../images/flickrRight.jpg) n
 {
 	border-left-color: #66ccff;
 }
-.event ul li.uncategorized
-{
-	border-left-color: #aaaaaa;
-}
-
 .event ul li.more
 {
 	background-color: #f2f2f2;
 }
+
 
 div.dayEvents .event
 {
@@ -382,14 +344,14 @@ div.dayEvents .event ul li div.details div.columns ul li{padding:2px 2px 0 15px;
 div.dayEvents .sponsored ul li{border:0!important;overflow:hidden;}
 div.dayEvents .sponsored ul li img{display:block;float:left;margin:0 5px 0 0;}
 div.dayEvents .sponsored ul li div.details,
-div.dayEvents .sponsored ul li a{display:block;width:126px;float:right;}
-div.dayEvents .sponsored ul li div{padding:0!important;}
+div.dayEvents .sponsored ul li div{padding-left:85px;}
+/*div.dayEvents .sponsored ul li div.details{padding:0!important;}*/
 div.twoColumns-1 div.eventDetails div.event ul {width:155px;}
 div.twoColumns-1 div.eventDetails div.event ul li{width:155px;}
 
-div.dayEvents .event{width: 690px;}
+div.dayEvents .event{}
 div.dayEvents .sponsored{width: 240px;}
-div.flickrImage { width: 360px; text-align: center; }
+div.flickrImage { width: 350px; text-align: center; }
 .uploadedEventLogo{width:200px; background-color:#eee;}
 
 div.eventDetails {overflow:hidden;}
@@ -444,38 +406,30 @@ div.intro a.learn
 	-webkit-border-radius:5px;
 }
 div.intro a.learn:hover{text-decoration:underline;}
-div.intro ul
+div.intro .committees
 {
-	margin-top:14px;
-	margin-left:18px;
-	width:165px;
+	margin-top:35px;margin-left:30px;width:165px;font-size:124%;
 }
-div.intro ul li
+div.intro .committees li
 {
-	display:block;height:100%;font-size:140%;line-height:230%;list-style:none;margin:4px 15px 4px 0;padding-right:15px;width:100%;
+	display:block;line-height:260%;list-style:none;margin:0px 15px 0px 0;width:100%;
 }
-div.intro ul li a
+div.intro .committees li a
 {
-	background-color:#1082e1;
 	color:#fff;
 	display:block;
-	height:38px;
-	margin-right: 15px;
-	padding-left: 20px;
 	text-decoration:none;
+	font-weight:normal;
+	padding-left:15px;
 }
-div.intro ul li.current, div.intro ul li:hover
-{
-	color:#000;
+div.intro .committees li a:hover{
+	border-bottom:none;
+	background-color:#f2f2f2;
+	color:#333;
 }
-div.intro ul li.current
+div.intro  .committees li.current
 {
-	background:transparent url('../images/intro-li-background.png') 0 0 no-repeat;
-}
-div.intro ul li:hover a, div.intro ul li.current a
-{
-	background-color:#fff;
-	color:#000;
+	
 }
 div.intro div p
 {
@@ -486,6 +440,10 @@ div.intro div p
 	top: 25px;
 	left: 200px;
 }
+.intro .committees li.social {border-left:15px solid #ff9933;}
+.intro .committees li.networking {border-left:15px solid #cc3333;}
+.intro .committees li.philanthopic {border-left:15px solid #00a651;}
+.intro .committees li.educational {border-left:15px solid #66ccff;}
 
 
 /* forms */
