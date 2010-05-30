@@ -499,17 +499,20 @@ div.intro div p
 	color:#a1a1a1;
 	display: block;
 }
-.allPurposeForm fieldset.checklist div {
-	margin: 5px 0;
-	padding: 0;	
-}
-.allPurposeForm fieldset.checklist label {
-	margin: 4px 8px 0 0;
+.allPurposeForm fieldset.checklist .form-node div {
+	margin: 5px 0 0 190px;
 	padding: 0;
+	overflow:hidden;	
+}
+.allPurposeForm fieldset.checklist .form-node div label {
+	margin: 0 8px 0 10px;
+	padding: 0;
+	text-align:left;
 }
 .allPurposeForm fieldset.checklist input[type="checkbox"] {
 	margin: 0;
 	padding: 4px 0 4px 4px;
+	float:left;
 }
 .allPurposeForm fieldset label.checkbox {
 	text-align:left;
@@ -524,13 +527,20 @@ div.intro div p
 	width: 200px;
 	display: block;
 	border: 1px solid #6c6c6c;
-	margin: 6px 8px 0 0;
+	margin: 6px 8px 0 190px;
 	padding: 4px 0 4px 4px;
 }
 .allPurposeForm fieldset input[type="file"]{
 	width: 200px;
 	margin: 6px 8px 0 0;
 	padding: 4px 0 4px 4px;
+}
+.allPurposeForm fieldset .form-node div a{
+	margin:0 0 0 180px;
+}
+
+.allPurposeForm fieldset textarea.short {
+	height:100px;
 }
 .allPurposeForm fieldset textarea.tall {
 	height:200px;

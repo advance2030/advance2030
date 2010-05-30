@@ -2,16 +2,6 @@
   <link rel="stylesheet" type="text/css" href="/stylesheets/three-col.css">
   <link rel="stylesheet" type="text/css" href="/stylesheets/about.css">
 <% end %>
-<div class="threeColumns-0">
-  <div class="section">
-    <ul>
-      <li><a href="">Fact Sheet</a></li>
-      <li><a href="">Board of Directors</a></li>
-      <li><a href="">Professional Advisors</a></li>
-      <li><a href="">Corporate Membership / Sponsorship</a></li>
-    </ul>
-  </div>
-</div>
 <div class="threeColumns-1">
   <h1>Create an Event</h1>
   <% form_for presenter, :url => events_path, :html => { :class => "allPurposeForm" } do |f| %>
@@ -23,7 +13,7 @@
       </div>
     </fieldset>
 
-    <fieldset class="twoCol">
+    <fieldset class="oneCol">
 
       <div class="form-node">
         <%= f.label :manager, "Event Manager" %>
@@ -42,24 +32,44 @@
 
     </fieldset>
 
-    <fieldset class="twoCol">
+    <fieldset class="oneCol">
       <div class="form-node">
         <%= f.label :name, "Event Title" %>
         <%= f.text_field :name %>
       </div>
       <div class="form-node">
         <%= f.label :summary, "Event Summary" %>
-        <%= f.text_area :summary %>
+        <%= f.text_area :summary, :class => "short" %>
       </div>
       <div class="form-node">
         <%= f.label :description %>
-        <%= f.text_area :description %>
+        <%= f.text_area :description, :class => "tall" %>
       </div>
+    </fieldset>
+    <fieldset class="oneCol checklist">
+      
       <div class="form-node">
-        <%= f.label :tag_list, tag_list_label_text %>
-        <%= f.text_field :tag_list %>
+        <%#= f.label :tag_list, tag_list_label_text %>
+        <%#= f.text_field :tag_list %>
+		<label>Tag List <span class="aside-label">(select all that apply)</span></label>
+		<div><input type="checkbox" id="social" name="social"> <label id="social" for="social">Social</label></div>
+		<div><input type="checkbox" id="" name=""> <label id="" for="">Networking</label></div>
+		<div><input type="checkbox" id="" name=""> <label id="" for="">Philanthropy</label></div>
+		<div><input type="checkbox" id="" name=""> <label id="" for="">Education</label></div>
+		<div><input type="checkbox" id="" name=""> <label id="" for="">Volunteering</label></div>
+		<div><input type="checkbox" id="" name=""> <label id="" for="">Fundraising</label></div>
+		<div><input type="checkbox" id="" name=""> <label id="" for="">Event</label></div>
+		<div><input type="checkbox" id="" name=""> <label id="" for="">Planning</label></div>
+		<div><input type="checkbox" id="" name=""> <label id="" for="">Economic</label></div>
+		<div><input type="checkbox" id="" name=""> <label id="" for="">Development</label></div>
+		<div><input type="checkbox" id="" name=""> <label id="" for="">Technology</label></div>
+		<div><input type="checkbox" id="" name=""> <label id="" for="">Entrepreneurship</label></div>
+		<div><input type="checkbox" id="" name=""> <label id="" for="">Non-Profits</label></div>
+		<div><input type="checkbox" id="" name=""> <label id="" for="">Civic Improvement</label></div>
       </div>
-
+    </fieldset>
+    <fieldset class="oneCol">
+    
       <div class="form-node">
         <%= f.label :logo, "Event Logo" %>
         <%= f.file_field :logo %>
@@ -68,64 +78,99 @@
         <div class="label-like">
           <span class="aside-label">(Uploaded Logo)</span>
         </div>
-        <a href="#" class="small">Remove image</a>
         <img src="/images/logo.gif" class="uploadedEventLogo" border="0">
+        <div><a href="#" class="small">Remove image</a></div>
       </div>
 
     </fieldset>
-    <fieldset class="twoCol">
+    <fieldset class="oneCol">
       <div class="form-node">
         <%= f.label :start_datetime %>
         <%= f.text_field :start_datetime, :class => 'datepicker' %>
+        <select>
+        	<option selected="selected">Select a time</option>
+        	<option>12:00 am</option>
+        	<option>1:00 am</option>
+        	<option>2:00 am</option>
+        	<option>3:00 am</option>
+        	<option>4:00 am</option>
+        	<option>5:00 am</option>
+        	<option>6:00 am</option>
+        	<option>7:00 am</option>
+        	<option>8:00 am</option>
+        	<option>9:00 am</option>
+        	<option>18:00 am</option>
+        	<option>11:00 am</option>
+        	<option>12:00 pm</option>
+        	<option>1:00 pm</option>
+        	<option>2:00 pm</option>
+        	<option>3:00 pm</option>
+        	<option>4:00 pm</option>
+        	<option>5:00 pm</option>
+        	<option>6:00 pm</option>
+        	<option>7:00 pm</option>
+        	<option>8:00 pm</option>
+        	<option>9:00 pm</option>
+        	<option>18:00 pm</option>
+        	<option>11:00 pm</option>
+        </select>
       </div>
       <div class="form-node">
         <%= f.label :end_datetime %>
         <%= f.text_field :end_datetime, :class => 'datepicker' %>
+                <select>
+        	<option selected="selected">Select a time</option>
+        	<option>12:00 am</option>
+        	<option>1:00 am</option>
+        	<option>2:00 am</option>
+        	<option>3:00 am</option>
+        	<option>4:00 am</option>
+        	<option>5:00 am</option>
+        	<option>6:00 am</option>
+        	<option>7:00 am</option>
+        	<option>8:00 am</option>
+        	<option>9:00 am</option>
+        	<option>18:00 am</option>
+        	<option>11:00 am</option>
+        	<option>12:00 pm</option>
+        	<option>1:00 pm</option>
+        	<option>2:00 pm</option>
+        	<option>3:00 pm</option>
+        	<option>4:00 pm</option>
+        	<option>5:00 pm</option>
+        	<option>6:00 pm</option>
+        	<option>7:00 pm</option>
+        	<option>8:00 pm</option>
+        	<option>9:00 pm</option>
+        	<option>18:00 pm</option>
+        	<option>11:00 pm</option>
+        </select>
       </div>
     </fieldset>
-    <fieldset class="twoCol">
+    <fieldset class="oneCol">
       <div class="form-node">
         <label for="eventCostEstimate">
           Event Total Cost Estimate
         </label>
-        <input type="text" name="" class="twoFieldsinline" id="eventCostEstimate" value="$">
+        <input type="text" name="" id="eventCostEstimate" value="$">
       </div>
-    </fieldset>
-    <fieldset class="twoCol">
       <div class="form-node">
         <div class="label-like">&nbsp;</div>
-        <input type="checkbox" name="" class="checkbox" id="attendeePrice" value="$">
+        <input type="checkbox" name="" class="checkbox" id="attendeeCharge" value="$">
         <label for="attendeeCharge" class="checkbox">
           Will attenttee's be charged for this event?
         </label>
-
       </div>
-      <div class="form-node">
-        <div class="label-like">&nbsp;</div>
-        <a href="#" >Add a discount price</a>
+      <div class="form-node attendeeCharged">
+        <label for="attendeeMemberPrice">Members Price</label>
+        <input type="text" id="attendeeMemberPrice" value="$">
       </div>
-      <div class="form-node">
-        <label for="attendeeNonMemberPrice">
-          Discount</span>
-        </label>
-        <input type="text" class="twoFieldsinline" value="Member">
-        <input type="text" class="twoFieldsinline" value="$75">
-        <a href="#" class="remove">Remove</a>
-      </div>
-      <div class="form-node">
-        <label for="attendeeNonMemberPrice">
-          Discount <span class="aside-label">(Add the Discount price and Price)</span></span>
-        </label>
-        <input type="text" class="twoFieldsinline" value="">
-        <select class="twoFieldsinline">
-          <option selected="selected">Discount</option>
-          <option>minus computed value</option>
-          <option>minus computed value</option>
-          <option>minus computed value</option>
-        </select>
+      <div class="form-node attendeeCharged">
+        <label for="attendeeNonMemberPrice">Non-Members Price</label>
+        <input type="text" id="attendeeNonMemberPrice" value="$">
       </div>
     </fieldset>
-    <fieldset class="twoCol">
+    <fieldset class="oneCol">
          <div class="form-node">
         <label for="eventConfirmationEmail">
           Event Confirmation Email
@@ -135,7 +180,7 @@
       </div>
     </fieldset>
 
-    <fieldset class="twoCol">
+    <fieldset class="oneCol">
       <div class="formAction">
         <a href="register_3.html" class="button">Create Event</a>
       </div>
