@@ -1,15 +1,14 @@
 <div class="twoColumns-0">
 	<div class="introContainer">
 		<div class="intro">
-			<ul>
-				<li><a href="" id="link-featured">Featured</a></li>
-				<li><a href="" id="link-social">Social</a></li>
-				<li class="current"><a href="" id="link-networking">Networking</a></li>
-				<li><a href="" id="link-philanthopic">Philanthopic</a></li>
-				<li><a href="" id="link-educational">Educational</a></li>
+			<ul class="committees">
+				<li class="social"><a href="" id="link-social">Social</a></li>
+				<li class="networking current"><a href="" id="link-networking">Networking</a></li>
+				<li class="philanthopic"><a href="" id="link-philanthopic">Philanthopic</a></li>
+				<li class="educational"><a href="" id="link-educational">Educational</a></li>
 			</ul>
 
-			<div id="content-featured">
+			<!--<div id="content-featured">
 				<p>The Social Committee in The Cleveland 20/30 Club holds social events which include sports, wine socials ...</p>
 				<a class="learn" href="">Learn More</a>
 			</div>
@@ -32,7 +31,7 @@
 			<div id="content-educational">
 				<p>I am text on the educational page</p>
 				<a class="learn" href="">Learn More</a>
-			</div>
+			</div>-->
 		</div>
 		<div class="corner"></div>
 	
@@ -40,7 +39,7 @@
 	<div class="subintroContainer">
             <div class="subintroColumnLeft">
                <div class="membership">
-                   <h3>Membership</h3>
+                   <h4>Membership</h4>
                    <div class="membershipBody">
                        <div class="register">
                            <p class="becomeMember"><a href="#">Become A Member</a></p>
@@ -57,7 +56,7 @@
                    </div>
                </div>
                <div class="flickr">
-               	<h3>Photos From Recent Events</h3>
+               	<h4>Photos From Recent Events</h4>
                    <div class="flickrBody">
                    	<div class="flickrLeft"><a href="#"></a></div>
                        <div class="flickrImage"><a href="#"><img src="/images/flickrImage.jpg"></a></div>
@@ -67,46 +66,70 @@
            </div>
            <div class="subintroColumnRight">
                <div class="recentnews">
-                   <h3>Recent News</h3>
+                   <h4>Recent News</h4>
                    <div class="recentnewsBody">
                        <ul>
-                           <li><a href="#">Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah</a></li>
-                           <li><a href="#">Blah Blah Blah</a></li>
-                           <li><a href="#">Blah Blah Blah</a></li>
-                           <li><a href="#">Blah Blah Blah</a></li>
-                           <li><a href="#">Blah Blah Blah</a></li>
-                           <li><a href="#">Blah Blah Blah</a></li>
-                           <li class="recentnewsMore"><a href="#">More Top Stories &raquo;</a></li>
+                           <li>
+							<span class="date">01/12/2010</span>
+							<a href="#">Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah</a>
+						   </li>
+                           <li>
+							<span class="date">01/12/2010</span>
+							<a href="#">Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah</a>
+						   </li>
+						   <li>
+							<span class="date">01/12/2010</span>
+							<a href="#">Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah</a>
+						   </li>
+						   <li>
+							<span class="date">01/12/2010</span>
+							<a href="#">Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah</a>
+						   </li>
+                           <li>
+							<span class="date">01/12/2010</span>
+							<a href="#">Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah</a>
+						   </li>
+						   <li>
+							<span class="date">01/12/2010</span>
+							<a href="#">Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah</a>
+						   </li>
                        </ul>
-                   </div>
-               </div>
-               <div class="sponsor">
-               	<h3>Sponsor</h3>
-                   <div class="sponsorBody">
-                   	<div><a href="#"><img src="/images/sponsorImage.jpg"></a></div>
+                     <a href="#" class="viewMore">More Top Stories &raquo;</a>                       
                    </div>
                </div>  
            </div>                          
        </div>
 </div>
 <div class="twoColumns-1">
-	<div class="miniCalendar">
-		<% render_calendar(@date, @months_events, :mini => true) %>
-	</div>
-	<div class="event">
-		<h3 class="date"><span>Feb</span> 18</h3>
+	<!--<div class="miniCalendar">
+		<% render_calendar(@date, @months_events, :mini => true) %>							
+	</div>-->
+	<h4>Sponsored Events</h4>
+	<div class="event sponsored">
+		<h4 class="date"><span>Feb</span> 18</h4>	
 		<ul>
-			<li class="social"><a href="">Movers &amp; Shakers Event and Celebration and this is a really long title so we see what happens</a> 6:00 pm</li>
+			<li class="social">
+				<img style="width: 75px; height: 32px;" src="/images/sponsoreImage_small.png">
+				<div><a href="">Movers &amp; Shakers Event and Celebration and this is a </a></div>
+				<div class="details">
+					<p>February 27th at 6:00 pm</p>
+				</div>
+			</li>
+		</ul>
+	</div>
+	<h4>Upcomming Events</h4>
+	<div class="event">
+		<h4 class="date"><span>Feb</span> 18</h4>
+		<ul>
+			<li class="networking"><a href="">Movers &amp; Shakers Event and Celebration and this is a really long title so we see what happens</a> 6:00 pm</li>
 			<li class="social"><a href="">Movers &amp; Shakers Event and Celebration</a> 6:00 pm</li>
-			<li class="more"><a href="">4 more</a></li>
 		</ul>
 	</div>
 	<div class="event">
-		<h3 class="date"><span>Feb</span> 18</h3>
+		<h4 class="date"><span>Feb</span> 18</h4>
 		<ul>
 			<li class="social"><a href="">Movers &amp; Shakers Event and Celebration and this is a really long title so we see what happens</a> 6:00 pm</li>
-			<li class="social"><a href="">Movers &amp; Shakers Event and Celebration</a> 6:00 pm</li>
-			<li class="more"><a href="">4 more</a></li>
+			<li class="educational"><a href="">Movers &amp; Shakers Event and Celebration</a> 6:00 pm</li>
 		</ul>
 	</div>
 </div>

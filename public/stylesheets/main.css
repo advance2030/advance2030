@@ -13,7 +13,7 @@ table, caption, tbody, tfoot, thead, tr, th, td,
 article, aside, dialog, figure, footer, header, 
 hgroup, menu, nav, section,
 time, mark, audio, video {margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent;}
-body {line-height:1;}
+body {line-height:1.3em;}
 article, aside, dialog, figure, footer, header, 
 hgroup, nav, section {display:block;}
 nav ul {list-style:none;}
@@ -39,7 +39,7 @@ div.clear{clear:both;}
 h1{font-size:180%;}
 h2{font-size:160%;}
 h3{font-size:140%;}
-h4{font-size:108%;text-transform:uppercase;margin:1em 0;}
+h4{font-size:108%;text-transform:uppercase;margin:2em 0 1em;}
 h5{font-size:100%;}
 
 h1 span {color:#0a4d8f}
@@ -70,7 +70,7 @@ nav {height:40px;padding:0;background:transparent url(../images/nav-bg.gif) repe
 nav div{overflow:hidden;height:45px;margin:0 auto;padding:0 3px;/*background:transparent url(../images/cle2030-skyline.png) no-repeat 100% -63px;*/}
 nav ul li{float:left;margin:0 3px;height:42px;}
 nav ul li a{font-size:116%;/*font-size:130%;*/text-decoration:none;font-weight:normal;/*font-weight:bold;*/color:#fff;display:block;height:24px;/*height:42px;*/padding:17px 5px 0;/*padding:14px 10px 0;*/}
-nav ul li a:hover, nav ul li.current a{color:#ebebeb; background:transparent url(../images/cle2030-menu_re.png) repeat-x 0 -50px; border-bottom:none;}
+nav ul li a:hover, nav ul li a.current{color:#ebebeb; background:transparent url(../images/cle2030-menu_re.png) repeat-x 0 -50px; border-bottom:none;}
 
 #content{padding:10px;background:#fff;}
 footer{background:#2d2d2d;padding:10px;height:100px;color:#fff;}
@@ -83,7 +83,7 @@ div.twoColumns-1{float:right;width:275px;}
 /* column styles end*/
 
 /* content styles */
-div.introContainer{position:relative;/*width:692px;*/height:240px;margin:0 0 10px 0;}
+div.introContainer{position:relative;/*width:692px;*/height:240px;}
 div.intro{width:685px; height:240px;background:#044e8f url(../images/cle2030-intro-bg_re.png) repeat-x top left;position:absolute;top:0;left:-30px;}
 div.introContainer .corner{width:18px;height:9px;position:absolute;bottom:-9px;left:-29px;background:transparent url(../images/cle2030-intro-corner.png) no-repeat top left;}
 
@@ -96,7 +96,7 @@ div.calendarHeader form{float:left;width:360px;height:40px;}
 div.calendarHeader form select{width:200px;}
 div.calendarHeader div{float:right;/*width:45%;*/text-align:right;height:40px;padding:0 6px 0 0;}
 div.calendarHeader div span.daySelected{display:block;float:right;padding:2px 5px;font-weight:bold;background:#0099ff;color:#fff;margin:4px;}
-div.calendarHeader div a{-moz-border-radius: 3px; -webkit-border-radius: 3px;text-decoration:none;font-size:130%;display:block;height:21px;width:32px;line-height:21px;padding:0 0 0 0;background:#000;color:#fff;float:right;margin:2px;text-align:center;}
+div.calendarHeader div a{-moz-border-radius: 3px; -webkit-border-radius: 3px;text-decoration:none;font-size:130%;display:block;height:21px;width:32px;padding:0 0 0 0;background:#000;color:#fff;float:right;margin:2px;text-align:center;}
 div.calendarHeader div a:hover{background:#666;}
 
 
@@ -163,11 +163,11 @@ div.miniCalendar table#calendar tbody tr td.events div{font-weight:bold;backgrou
 div.miniCalendar table#calendar tbody tr td.events div a{font-weight:bold;}
 
 
-ul li span.coupons{background:#cc66ff;}
+/*ul li span.coupons{background:#cc66ff;}
 ul li span.social{background:#ff9933;}
 ul li span.networking{background:#cc3333;}
 ul li span.philanthopic{background:#00a651;}
-ul li span.educational{background:#66ccff;}
+ul li span.educational{background:#66ccff;}*/
 
 div.dayEvents{margin:20px 0 0 0;}
 div.dayEvents h2{border-bottom:5px solid #ccc;padding:4px;}
@@ -227,13 +227,13 @@ div.membershipBody { background: #ebebeb; border: 5px solid #ebebeb; -moz-border
 			p.becomeMember a:hover {border-bottom:navy;}
 	div.testimonials { border-left: 5px solid #ccc; float: left; padding-left: 10px;}
 			div.testimonials h4 { float: left; margin-bottom:3px; }
-			div.testimonials a { background: #999 url(../images/testimonialsrightarrow.jpg) no-repeat 100% 0; color: #fff; display: block; float: right; font-size: 11px; font-weight: normal; line-height: 12px; margin-top:2px; padding-left: 6px; text-decoration: none; width: 34px; }
+			div.testimonials a { background: #999 url(../images/testimonialsrightarrow.jpg) no-repeat 100% 0; color: #fff; display: block; float: right; font-size: 11px; font-weight: normal; margin-top:2px; padding-left: 6px; text-decoration: none; width: 34px; }
 		div.testimonialBody { border-top:1px solid #D4D8DB; padding: 8px; clear: both; }
 			div.testimonialBody p { font-size: 12px; }
 			div.testimonialBody p.testimonialAuthor { color: #666; margin-top: 30px; }
 			
 div.recentnewsBody ul { }
-	div.recentnewsBody ul li { font-size: 12px; line-height: 15px; padding-bottom:5px;list-style:none;}
+	div.recentnewsBody ul li {padding:5px 0;list-style:none;}
 		/*div.recentnewsBody ul li a { color: #2c83b0; }*/
 			div.recentnewsBody .date{font-size:85%;display: block;}
 
@@ -250,11 +250,12 @@ div.flickrRight a { display: block; background: url(../images/flickrRight.jpg) n
 	text-align: center;
 	overflow:hidden;
 }
-
+.event.sponsored{
+	background: #ebebeb; border: 5px solid #ebebeb; -moz-border-radius: 5px; -webkit-border-radius: 5px; overflow: hidden; padding: 3px; 
+}
 .event .date
 {
 	font-variant: small-caps;
-	line-height: 150%;
 	padding: 10px 5px;
 	position: absolute;
 	top: 0;
@@ -281,7 +282,6 @@ div.flickrRight a { display: block; background: url(../images/flickrRight.jpg) n
 	border-left: transparent solid 4px;
 	color: #111;
 	display: block;
-	line-height: 140%;
 	padding: 5px 10px;
 }
 
@@ -295,7 +295,7 @@ div.flickrRight a { display: block; background: url(../images/flickrRight.jpg) n
 	display: block;
 }*/
 
-/* !Event Types */
+/* !Event Types 
 .event ul li.coupons
 {
 	border-left-color: #cc66ff;
@@ -320,7 +320,7 @@ div.flickrRight a { display: block; background: url(../images/flickrRight.jpg) n
 {
 	background-color: #f2f2f2;
 }
-
+*/
 
 div.dayEvents .event
 {
@@ -358,13 +358,13 @@ div.eventDetails {overflow:hidden;}
 div.eventDetails div.columnsContainer{clear:both;padding:8px 5px;overflow:hidden;}
 div.eventDetails div.miniColumn{float:left;width:180px;margin:5px;}
 div.eventDetails div.miniColumn h3{margin:2px 0 3px 0;font-size:90%;}
-div.eventDetails div.miniColumn address{line-height:20px;}
+div.eventDetails div.miniColumn address{}
 div.eventDetails div.miniColumn a{display:block;height:20px;}
 div.eventDetails div.miniColumn ul li{padding-bottom:3px;}
 div.eventDetails div.miniColumn dl{width:150px;overflow:hidden;}
 div.eventDetails div.miniColumn dl dt{clear:left;float:left;width:88px;}
 div.eventDetails div.miniColumn dl dd{float:left;width:40px;font-weight:bold;}
-div.eventDetails h1{display:inline;line-height:35px;}
+div.eventDetails h1{display:inline;}
 a.titleLink{white-space:nowrap;}
 div.eventDetails div.event {float:left;width:260px;}
 div.eventDetails div.event ul{width:200px;}
@@ -373,7 +373,7 @@ div.eventDetails div.event ul li dl{width:150px;overflow:hidden;}
 div.eventDetails div.event ul li dl dt{clear:left;float:left;width:68px;}
 div.eventDetails div.event ul li dl dd{float:left;width:82px;font-weight:bold;}
 div.eventDetails div.event ul li  span.weekday{font-weight:bold;color:#666;}
-div.eventDetails div.section {line-height:20px;padding:5px;clear:both;}
+div.eventDetails div.section {padding:5px;clear:both;}
 div.eventDetails div.section  p{padding:5px;}
 div.eventDetails div.section h3{border-bottom:4px solid #ccc;font-size:90%;}
 div.eventDetails div.section h4{font-size:90%;}
@@ -381,7 +381,7 @@ div.eventDetails div.section div.map{width:420px;float:left;margin:0 3px 0 0;}
 
 
 div.whoElse{margin:20px 0 5px 0;}
-div.whoElse p{margin:5px;line-height:20px;}
+div.whoElse p{margin:5px;}
 div.whoElse h3{font-size:90%;}
 
 div.intro div{display:none;}
@@ -412,7 +412,7 @@ div.intro .committees
 }
 div.intro .committees li
 {
-	display:block;line-height:260%;list-style:none;margin:0px 15px 0px 0;width:100%;
+	display:block;list-style:none;margin:0px 15px 0px 0;width:100%;
 }
 div.intro .committees li a
 {
@@ -440,10 +440,10 @@ div.intro div p
 	top: 25px;
 	left: 200px;
 }
-.intro .committees li.social {border-left:15px solid #ff9933;}
+/*.intro .committees li.social {border-left:15px solid #ff9933;}
 .intro .committees li.networking {border-left:15px solid #cc3333;}
 .intro .committees li.philanthopic {border-left:15px solid #00a651;}
-.intro .committees li.educational {border-left:15px solid #66ccff;}
+.intro .committees li.educational {border-left:15px solid #66ccff;}*/
 
 
 /* forms */
