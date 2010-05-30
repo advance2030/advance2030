@@ -89,7 +89,7 @@ div.introContainer .corner{width:18px;height:9px;position:absolute;bottom:-9px;l
 
 div.miniCalendar{width:274px;height:240px;}
 
-div.calendarHeader{overflow:hidden;height:30px;margin:10px 0 0 0;width:692px;}
+div.calendarHeader{overflow:hidden;height:30px;margin:10px 0 0 0;}
 
 div.calendarHeader{overflow:hidden;height:30px;}
 div.calendarHeader form{float:left;width:360px;height:40px;}
@@ -116,7 +116,7 @@ div.miniCalendar div.month div.weekRow div.current a.date{color:#000;}
 div.miniCalendar div.month div.weekRow div.day span.blank{background:inherit}
 
 table#calendar{margin:0;}
-table#calendar {width:686px;overflow:hidden;border:1px solid #ccc;border-left:2px solid #ccc;border-collapse:separate;}
+table#calendar {overflow:hidden;border:1px solid #ccc;border-left:2px solid #ccc;border-collapse:separate;}
 table#calendar thead tr{background:#000;}
 
 table#calendar thead tr th{height:14px;background:#000;width:96px;color:#fff;text-align:center;padding:8px 0;border:1px solid #000;border-right:1px solid #ccc;font-weight:bold;}
