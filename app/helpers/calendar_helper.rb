@@ -49,6 +49,7 @@ module CalendarHelper
     					concat link_to(event.name, event_detail_url(event.to_param), :title => event.name)
     				concat "</li>"
     			end
+    		end	
 
 			  concat "</ul>"
       end
