@@ -44,16 +44,11 @@ module CalendarHelper
 		    if !mini
   			  concat "<ul class=\"events\">"
 
-    			events.first(2).each do |event|
+    			events.each do |event|
     				concat "<li><span class=\"" + h(event.color) + "\"></span>"
     					concat link_to(event.name, event_detail_url(event.to_param), :title => event.name)
     				concat "</li>"
     			end
-
-    			if events.length - 2 > 0
-    				concat "<li>" + link_to("#{events.length-2} more", calendar_day_url(day, :anchor => 'events')) + "</li>"
-    			end
-  			end
 
 			  concat "</ul>"
       end
