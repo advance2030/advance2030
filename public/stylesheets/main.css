@@ -73,7 +73,8 @@ nav ul li a{font-size:116%;/*font-size:130%;*/text-decoration:none;font-weight:n
 nav ul li a:hover, nav ul li a.current{color:#ebebeb; background:transparent url(../images/cle2030-menu_re.png) repeat-x 0 -50px; border-bottom:none;}
 
 #content{padding:10px;background:#fff;}
-footer{background:#2d2d2d;padding:10px;height:100px;color:#fff;}
+footer{background:#2d2d2d;padding:10px;color:#fff;}
+footer h4{margin-top:0;}
 
 /* column styles */
 /* 2 column layout */
@@ -217,7 +218,7 @@ div.subintroContainer { margin-bottom: 15px; overflow: hidden;}
 div.subintroColumnLeft, div.subintroColumnRight { float: left; width: 450px; }
 div.subintroColumnRight { margin-left: 15px; width: 190px; }
 
-div.membership, div.recentnews, div.sponsor, div.flickr { margin-bottom: 30px;overflow:hidden; }
+div.membership, div.recentnews, div.flickr { margin-bottom: 30px;overflow:hidden; }
 
 div.membershipBody { background: #ebebeb; border: 5px solid #ebebeb; -moz-border-radius: 5px; -webkit-border-radius: 5px; overflow: hidden; padding: 3px; }
 	div.register { float: left; padding-right: 10px; text-align: center; }
@@ -232,10 +233,10 @@ div.membershipBody { background: #ebebeb; border: 5px solid #ebebeb; -moz-border
 			div.testimonialBody p { font-size: 12px; }
 			div.testimonialBody p.testimonialAuthor { color: #666; margin-top: 30px; }
 			
-div.recentnewsBody ul { }
-	div.recentnewsBody ul li {padding:5px 0;list-style:none;}
-		/*div.recentnewsBody ul li a { color: #2c83b0; }*/
-			div.recentnewsBody .date{font-size:85%;display: block;}
+div.rss_box ul { }
+	div.rss_box ul li {padding:5px 0;list-style:none;font-size:77%;}
+	div.rss_box ul li a{font-size:130%;}
+			
 
 div.flickrBody { margin-top: 8px; }
 div.flickrLeft, div.flickrImage, div.flickrRight { float: left; height: 145px; }
