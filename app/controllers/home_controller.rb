@@ -1,16 +1,11 @@
 class HomeController < ApplicationController
 
   def index
-    @date = get_date
-    @months_events = Event.all_in_month(@date)
+    @coming_events = Event.by_range(Time.now, Time.now.advance(:days => 14))
+    @sponsored_events = @coming_events.sponsored
+    @unsponsored_events = @coming_events - @coming_sponsored_events
   end
-
-  private
-    def get_date
-      begin
-        Time.local(params[:year], params[:month], 1)
-      rescue Exception => e
-        Time.now
-      end
-    end
+  
 end
+
+  

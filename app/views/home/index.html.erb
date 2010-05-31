@@ -78,17 +78,18 @@
 		<% render_calendar(@date, @months_events, :mini => true) %>							
 	</div>-->
 	<h4>Sponsored Events</h4>
+	<% @sponsored_events.each do |event| %>
 	<div class="event sponsored">
 		<div class="date">
-			<span class="day">18</span> 
-			<span class="month">FEB</span>
+			<span class="day"><%= event.start_datetime.day %></span> 
+			<span class="month"><%= truncate(event.start_datetime.month, :length => 3, "") %></span>
 		</div>	
 		<ul>
-			<li class="social">
-				<img style="width: 75px; height: 32px;" src="/images/sponsoreImage_small.png">
-				<div><a href="">Movers &amp; Shakers Event and Celebration and this is a </a></div>
+			<li class=<%= event.primary_category.name || "social" %>>
+				<%= image_tag event.sponsor.logo.url(:medium) %>
+				<div><%=link_to truncate(event.name, :length => 50), event_detail_path(event) %></div>
 				<div class="details">
-					<p>February 27th at 6:00 pm</p>
+					<p><%= event.start_datetime.strftime("%B %d, at %I:%M %p")%></p>
 				</div>
 			</li>
 		</ul>

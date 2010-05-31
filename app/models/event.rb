@@ -2,7 +2,9 @@ require 'lib/helper/string'
 require 'is_taggable'
 
 class Event < ActiveRecord::Base
-  named_scope :by_range, lambda { |from, to| { :conditions => ["events.start_datetime between ? and ?", from, to]} }
+  named_scope :by_range, lambda { |from, to|  {:conditions => ["start_datetime between ? and ?", from, to],
+                                              :order => :start_datetime }}
+  named_scope :sponsored, :conditions => {:sponsor => true }
 
   has_many :categorizations
   has_many :categories, :through => :categorizations
@@ -11,7 +13,7 @@ class Event < ActiveRecord::Base
   has_one :supervisor, :class_name => "User"
   has_one :committee_sponsor, :foreign_key => :committee_id, :class_name => "Committee"
   has_many :event_sponorship_details
-  has_many :sponsors, :through => :event_sponsorship_details, :class_name => "Organization"
+  has_one :sponsor, :through => :event_sponsorship_details, :class_name => "Organization"
 
   validates_presence_of :start_datetime, :end_datetime
 
