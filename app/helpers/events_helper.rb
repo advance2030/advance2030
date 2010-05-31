@@ -1,7 +1,7 @@
 module EventsHelper
 
   def venue_label_text
-    %(Venue <span class="aside-label">(If you do not see your venue you can #{link_to_new_venue("add a new a venue here")})</span>)
+    %(Venue <span class="aside-label">(Don't see your venue?<br> #{link_to_new_venue("Add a new a venue here")})</span>)
   end
 
   def tag_list_label_text

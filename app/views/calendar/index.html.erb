@@ -2,7 +2,7 @@
 	<h1>Calendar</h1>
 
 	<div class="calendarHeader">
-		<form action="<%=calendar_redirect_url %>" style="width:400px" method="get">
+		<form action="<%=calendar_redirect_url %>" method="get">
 			<fieldset>
 				<%= select_month @date, {}, {:style => 'width:100px;display:inline;'} %>
 				<%= select_year @date, {:start_year => @min.year, :end_year => @max.year}, {:style => 'width:75px;display:inline;'} %>
@@ -21,164 +21,20 @@
 
 	<% render_calendar(@date, @months_events) %>
 </div>
-
-<div class="twoColumns-1" style="width:248px">
-	<form class="filters">
-		<fieldset>
-			<label>Filter Event Categories</label>
-			<div class="eventTypesContainer">
-				<ul>
-					<li>
-						<span class="all"></span>
-						<input type="checkbox" id="all">
-						<label for="all">Check All</label>
-					</li>
-					<li>
-						<span class="social"></span>
-						<input type="checkbox" id="social">
-						<label for="social">Social</label>
-					</li>
-					<li>
-						<span class="networking"></span>
-						<input type="checkbox" id="networking">
-						<label for="networking">Networking</label>
-					</li>
-					<li>
-						<span class="philanthropy"></span>
-						<input type="checkbox" id="philanthropy">
-						<label for="philanthropy">Philanthropy</label>
-					</li>
-					<li>
-						<span class="educational"></span>
-						<input type="checkbox" id="educational">
-						<label for="educational">Educational</label>
-					</li>
-					<li>
-						<span class="coupons"></span>
-						<input type="checkbox" id="coupons">
-						<label for="coupons">Coupons</label>
-					</li>
-					<li>
-						<span class="uncategorized"></span>
-						<input type="checkbox" id="uncategorized">
-						<label for="uncategorized">Un-Categorized</label>
-					</li>
-				</ul>
-			</div>
-		</fieldset>
-
-		<fieldset>
-			<label>Filter By Community</label>
-			<div class="eventTypesContainer">
-				<ul>
-					<li>
-						<input type="checkbox" id="all">
-						<label for="all">Check All</label>
-					</li>
-					<li>
-						<input type="checkbox" id="social">
-						<label for="social">Cleveland 2030 Club</label>
-					</li>
-					<li>
-						<input type="checkbox" id="networking">
-						<label for="networking">Young Professionals</label>
-					</li>
-					<li>
-						<input type="checkbox" id="philanthopic">
-						<label for="philanthopic">Young Professional</label>
-					</li>
-					<li>
-						<input type="checkbox" id="educational">
-						<label for="philanthopic">Young Professional</label>
-					</li>
-				</ul>
-			</div>
-			<input type="submit" value="Filter Events">
-		</fieldset>
-	</form>
-</div>
-<div class="clear"></div>
-
-<% if @days_events.any? %>
-<div class="twoColumns-0">
-	<div class="dayEvents">
-		<a name="events"></a>
-		<h2>EVENTS FOR: <span><%= @date.strftime('%A %B %d, %Y')%></span></h2>
-		<% @days_events.each do |event| %>
-			<div class="event">
-				<ul>
-					<li class="<%=h event.color%>">
-						<%=link_to event.name, event_detail_url(event.to_param)%>
-						<div class="details">
-							<p><%=event.start_datetime.strftime('%I:%M %p')%>
-							<% if event.venue? %> at <span><%=link_to event.venue.title, venue_detail_url(event.venue.to_param)%></span><% end %>
-							</p>
-						</div>
-					</li>
-				</ul>
-			</div>
-		<% end %>
-		<!-->
-		<div class="event">
-			<ul>
-				<li class="social">
-					<a href="">Movers &amp; Shakers Event and Celebration and this is a really long title so we see what happens</a>
-					<div class="details">
-						<p>6:00 pm at <span><a href="">The Leandog Boat</a></span></p>
-						<div class="columns">
-							<ul>
-								<li>Members</li>
-								<li>Non-Members</li>
-							</ul>
-						</div>
-						<div class="columns">
-							<ul>
-								<li>Members</li>
-								<li>Non-Members</li>
-							</ul>
-						</div>
-					</div>
-				</li>
-			</ul>
-		</div>
-		<div class="event">
-			<ul>
-				<li class="networking">
-					<a href="">Movers &amp; Shakers Event and Celebration and this is a really long title so we see what happens</a>
-					<div class="details">
-						6:00 pm at <span>The Leandog Boat</span>
-					</div>
-				</li>
-			</ul>
-		</div>
-		-->
-	</div>
-</div>
-<% end %>
-<div class="twoColumns-1" style="width:248px">
-	<div class="dayEvents">
-		<h2>SPONSORED EVENTS</h2>
-		<div class="event sponsored">
-			<ul>
-				<li class="social">
-					<img src="/images/sponsoreImage_small.png" style="width:75px;height:32px;">
-					<a href="">Movers &amp; Shakers Event and Celebration and this is a </a>												<div class="details">
-						<p>February 27th at 6:00 pm</p>
-					</div>
-				</li>
-			</ul>
-		</div>
-		<div class="event sponsored">
-			<ul>
-				<li class="networking">
-					<img src="/images/sponsoreImage_small.png" style="width:75px;height:32px;">
-					<a href="">Movers &amp; Shakers Event and Celebration and this is a really long title so we see what happens</a>
-					<div class="details">
-						<p>February 27th at 6:00 pm</p>
-					</div>
-				</li>
-			</ul>
-		</div>
+	
+<div class="twoColumns-1">
+	<h4>Sponsored Events</h4>
+	<div class="event sponsored">
+		<h4 class="date"><span>Feb</span> 18</h4>	
+		<ul>
+			<li class="social">
+				<img style="width: 75px; height: 32px;" src="/images/sponsoreImage_small.png">
+				<div><a href="">Movers &amp; Shakers Event and Celebration and this is a </a></div>
+				<div class="details">
+					<p>February 27th at 6:00 pm</p>
+				</div>
+			</li>
+		</ul>
 	</div>
 </div>
 <div class="clear"></div>
