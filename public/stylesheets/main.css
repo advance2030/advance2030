@@ -72,7 +72,7 @@ nav ul li{float:left;margin:0 3px;height:42px;}
 nav ul li a{font-size:116%;/*font-size:130%;*/text-decoration:none;font-weight:normal;/*font-weight:bold;*/color:#fff;display:block;height:24px;/*height:42px;*/padding:17px 5px 0;/*padding:14px 10px 0;*/}
 nav ul li a:hover, nav ul li a.current{color:#ebebeb; background:transparent url(../images/cle2030-menu_re.png) repeat-x 0 -50px; border-bottom:none;}
 
-#content{padding:10px;background:#fff;overflow:hidden;}
+#content{padding:10px;background:#fff;overflow:hidden;min-height:400px;}
 footer{background:#2d2d2d;padding:10px;color:#fff;}
 footer h4{margin-top:0;}
 
@@ -426,6 +426,7 @@ div.intro div p
 /* forms */
 form {
 	overflow:hidden;
+	margin-bottom:1em;
 }
 form legend {
 	font-size:1em;
@@ -433,7 +434,7 @@ form legend {
 }
 form fieldset {
 	margin: 0 40px 0 0;
-	padding: 20px 0;
+	padding: 0 0 20px;
 }
 form fieldset>fieldset {
 	padding: 0; margin: 0;
