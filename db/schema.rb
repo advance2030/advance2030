@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100407010806) do
+ActiveRecord::Schema.define(:version => 20100531175811) do
 
   create_table "accounts", :force => true do |t|
     t.string   "login",                              :null => false
@@ -142,6 +142,14 @@ ActiveRecord::Schema.define(:version => 20100407010806) do
 
   add_index "event_notes", ["event_id"], :name => "index_event_notes_on_event_id"
 
+  create_table "event_sponsorship_details", :force => true do |t|
+    t.integer  "event_id"
+    t.integer  "organization_id"
+    t.text     "sponsorship_summary"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "events", :force => true do |t|
     t.string   "name",                        :null => false
     t.string   "url_friendly",                :null => false
@@ -159,6 +167,7 @@ ActiveRecord::Schema.define(:version => 20100407010806) do
     t.integer  "manager_id"
     t.integer  "supervisor_id"
     t.integer  "committee_id"
+    t.boolean  "sponsor"
   end
 
   create_table "fee_options", :force => true do |t|

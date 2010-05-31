@@ -1,0 +1,11 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  event_id: 1
+  organization_id: 1
+  sponsorship_summary: MyText
+
+two:
+  event_id: 1
+  organization_id: 1
+  sponsorship_summary: MyText

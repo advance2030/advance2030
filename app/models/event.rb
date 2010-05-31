@@ -10,6 +10,8 @@ class Event < ActiveRecord::Base
   belongs_to :venue
   has_one :supervisor, :class_name => "User"
   has_one :committee_sponsor, :foreign_key => :committee_id, :class_name => "Committee"
+  has_many :event_sponorship_details
+  has_many :sponsors, :through => :event_sponsorship_details, :class_name => "Organization"
 
   validates_presence_of :start_datetime, :end_datetime
 
