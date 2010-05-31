@@ -11,8 +11,34 @@
         <%= f.label :venue, venue_label_text %>
         <%= f.collection_select :venue, presenter.venues, :id, :title, :prompt => presenter.venue_prompt %>
       </div>
-    </fieldset>
 
+      <div class="form-node">
+        <div class="label-like">&nbsp;</div>
+        <input type="checkbox" name="" class="checkbox" id="eventSponsor" value="$">
+        <label for="eventSponsor" class="checkbox">Is this event sponsored?</label>
+      </div>
+      <div class="form-node eventSponsored">
+        <label for="eventSponsored">Sponsor</label>
+        <select id="eventSponsored">
+        	<option selected="selected">Select a sponsor</option>
+        </select>
+        <label for="eventSponsored">Sponsorship Agreement</label>
+        <textarea class="short"></textarea>
+      </div>
+
+      <div class="form-node">
+        <div class="label-like">&nbsp;</div>
+        <input type="checkbox" name="" class="checkbox" id="eventPartner" value="$">
+        <label for="eventPartner" class="checkbox">Is this event partnering with anouther group?</label>
+      </div>
+      <div class="form-node eventPartnered">
+        <label for="eventPartnered">Partner Group</label>
+        <select id="eventPartnered">
+        	<option selected="selected">Select a partner</option>
+        </select>
+      </div>
+    </fieldset>
+    
     <fieldset class="oneCol">
 
       <div class="form-node">
@@ -182,7 +208,7 @@
 
     <fieldset class="oneCol">
       <div class="formAction">
-        <a href="register_3.html" class="button">Create Event</a>
+         <input type="submit" value="Create Event">
       </div>
     </fieldset>
   <% end %>

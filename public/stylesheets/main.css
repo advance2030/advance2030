@@ -507,6 +507,13 @@ div.intro div p
 	margin: 6px 8px 0 190px;
 	padding: 4px 0 4px 4px;
 }
+.allPurposeForm fieldset input[type="submit"] {
+	display: block;
+	border: 1px solid #6c6c6c;
+	margin: 6px 8px 0 190px;
+	padding: 8px;
+
+}
 .allPurposeForm fieldset input[type="file"]{
 	width: 200px;
 	margin: 6px 8px 0 0;
