@@ -1,11 +1,7 @@
-<% content_for :stylesheets do %>
-  <link rel="stylesheet" type="text/css" href="/stylesheets/three-col.css">
-  <link rel="stylesheet" type="text/css" href="/stylesheets/about.css">
-<% end %>
 <div class="threeColumns-1">
-  <h1>Create an Event</h1>
-  <% form_for presenter, :url => events_path, :html => { :class => "allPurposeForm" } do |f| %>
-
+    <h1>Create an Event</h1>
+    <% form_for presenter, :url => events_path, :html => { :class => "allPurposeForm" } do |f| %>
+	<form>
     <fieldset>
       <div class="form-node">
         <%= f.label :venue, venue_label_text %>
@@ -206,14 +202,12 @@
       </div>
     </fieldset>
 
-    <fieldset class="oneCol">
-      <div class="formAction">
-         <input type="submit" value="Create Event">
-      </div>
-    </fieldset>
+    <div class="formAction">
+       <input type="submit" value="Create Event">
+    </div>
   <% end %>
-
+  </form>
 </div>
-<div class="threeColumns-2"></div>
-<div class="clear"></div>
+
+
 
