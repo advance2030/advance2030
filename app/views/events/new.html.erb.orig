@@ -1,3 +1,10 @@
+<<<<<<< HEAD
+<% content_for :stylesheets do %>
+  <link rel="stylesheet" href="/stylesheets/three-col.css">
+  <link rel="stylesheet" href="/stylesheets/about.css">
+<% end %>
+=======
+>>>>>>> 21530f2ceca7491277b057989d543ed3f8f360e1
 <div class="threeColumns-1">
     <h1>Create an Event</h1>
     <% form_for presenter, :url => events_path, :html => { :class => "allPurposeForm" } do |f| %>

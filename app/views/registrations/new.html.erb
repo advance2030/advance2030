@@ -1,12 +1,10 @@
-<% form_for @registration, :url => registration_path do |f| %>
+<div class="threeColumns-1">
+  <h1>Register </h1><a href="/user_sessions/new/" class="login">(I already have an account)</a>
+  <% form_for @registration, :url => registration_path do |f| %>
   <%= f.error_messages %>
-	<fieldset class="twoCol">
-		<h2>Register <a href="/user_sessions/new/" class="login">(I already have an account)</a></h2>
-
-	  	<%= render :partial => "form", :object => f %>
-
-		<div class="formAction clear">
-		  <%= f.submit "Register" %>
-		</div>
-	</fieldset>
-<% end %>
+	<%= render :partial => "form", :object => f %>
+   	<div class="formAction clear">
+	  <%= f.submit "Register" %>
+    </div>
+  <% end %>
+</div>  

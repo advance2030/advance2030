@@ -1,41 +1,44 @@
-<div>
-	<label for="firstName">
-		First name
-	</label>
-	<%= form.text_field :first_name %>
-</div>
-
-<div>
-	<label for="lastName">
-		Last name
-	</label>
-<%= form.text_field :last_name %>
-</div>
-
-<div>
-	<label for="email">
-		Email
-	</label>
-<%= form.text_field :email_address %>
-</div>
-
-<div>
-	<label for="email">
-		Login
-	</label>
-<%= form.text_field :login %>
-</div>
-
-<div>
-	<label for="password">
-		Password
-	</label>
-<%= form.password_field :password %>
-</div>
-
-<div>
-	<label for="password2">
-		Verify password
-	</label>
-<%= form.password_field :password_confirmation %>
-</div>
+<fieldset class="twoCol">
+	<div class="form-node">
+		<label for="firstName">
+			First name
+		</label>
+		<%= form.text_field :first_name %>
+	</div>
+	
+	<div class="form-node">
+		<label for="lastName">
+			Last name
+		</label>
+	<%= form.text_field :last_name %>
+	</div>
+	
+	<div class="form-node">
+		<label for="email">
+			Email
+		</label>
+	<%= form.text_field :email_address %>
+	</div>
+</fieldset>
+<fieldset class="twoCol">
+	<div class="form-node">
+		<label for="email">
+			Login
+		</label>
+	<%= form.text_field :login %>
+	</div>
+	
+	<div class="form-node">
+		<label for="password">
+			Password
+		</label>
+	<%= form.password_field :password %>
+	</div>
+	
+	<div class="form-node">
+		<label for="password2">
+			Verify password
+		</label>
+	<%= form.password_field :password_confirmation %>
+	</div>
+</fieldset>

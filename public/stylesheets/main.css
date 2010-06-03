@@ -72,7 +72,7 @@ nav ul li{float:left;margin:0 3px;height:42px;}
 nav ul li a{font-size:116%;/*font-size:130%;*/text-decoration:none;font-weight:normal;/*font-weight:bold;*/color:#fff;display:block;height:24px;/*height:42px;*/padding:17px 5px 0;/*padding:14px 10px 0;*/}
 nav ul li a:hover, nav ul li a.current{color:#ebebeb; background:transparent url(../images/cle2030-menu_re.png) repeat-x 0 -50px; border-bottom:none;}
 
-#content{padding:10px;background:#fff;}
+#content{padding:10px;background:#fff;overflow:hidden;min-height:400px;}
 footer{background:#2d2d2d;padding:10px;color:#fff;}
 footer h4{margin-top:0;}
 
@@ -211,6 +211,7 @@ div.flickrRight a { display: block; background: url(../images/flickrRight.jpg) n
 }
 .event.sponsored{
 	background: #ebebeb; border: 5px solid #ebebeb; -moz-border-radius: 5px; -webkit-border-radius: 5px; overflow: hidden; padding: 3px; 
+	margin-bottom:.5em;
 }
 .event .date
 {
@@ -422,46 +423,49 @@ div.intro div p
 .intro .committees li.philanthopic {border-left:15px solid #00a651;}
 .intro .committees li.educational {border-left:15px solid #66ccff;}*/
 
-
 /* forms */
-.allPurposeForm legend {
+form {
+	overflow:hidden;
+	margin-bottom:1em;
+}
+form legend {
 	font-size:1em;
 	text-transform:uppercase;
 }
-.allPurposeForm fieldset {
+form fieldset {
 	margin: 0 40px 0 0;
-	padding: 20px 0;
+	padding: 0 0 20px;
 }
-.allPurposeForm fieldset>fieldset {
+form fieldset>fieldset {
 	padding: 0; margin: 0;
 }
-.allPurposeForm fieldset.oneCol {
+form fieldset.oneCol {
 	float: left;
 	width: 500px;
 }
-.allPurposeForm fieldset.twoCol {
+form fieldset.twoCol {
 	float: left;
 	width: 400px;
 }
-.allPurposeForm fieldset h2 {
+form fieldset h2 {
 	font-size: 108%;
 	font-weight: bold;
 	color:#333;
 }
-.allPurposeForm fieldset>fieldset h2 {
+form fieldset>fieldset h2 {
 	font-size: 160%;
 }
-.allPurposeForm fieldset h2 a.login {
+form fieldset h2 a.login {
 	font-size: 50%;	
 }
-.allPurposeForm fieldset div {
+form fieldset div {
 	margin: 16px 0;
 }
-.allPurposeForm fieldset div.form-node {
+form fieldset div.form-node {
 	clear:left;
 	overflow:hidden;
 }
-.allPurposeForm fieldset label, .allPurposeForm fieldset .label-like {
+form fieldset label, form fieldset .label-like {
 	text-align: right;
 	width: 170px;
 	display: block;
@@ -471,105 +475,113 @@ div.intro div p
 	font-size: 90%;
 	color: #6C6C6C;
 }
-.allPurposeForm fieldset .aside-label {
+form fieldset .aside-label {
 	font-size:84%;
 	color:#a1a1a1;
 	display: block;
 }
-.allPurposeForm fieldset.checklist .form-node div {
+form fieldset.checklist .form-node div {
 	margin: 5px 0 0 190px;
 	padding: 0;
 	overflow:hidden;	
 }
-.allPurposeForm fieldset.checklist .form-node div label {
+form fieldset.checklist .form-node div label {
 	margin: 0 8px 0 10px;
 	padding: 0;
 	text-align:left;
 }
-.allPurposeForm fieldset.checklist input[type="checkbox"] {
+form fieldset.checklist input[type="checkbox"] {
 	margin: 0;
 	padding: 4px 0 4px 4px;
 	float:left;
 }
-.allPurposeForm fieldset label.checkbox {
+form fieldset label.checkbox {
 	text-align:left;
 	margin-left:1em;
 }
-.allPurposeForm fieldset input[type="checkbox"].checkbox {
+form fieldset input[type="checkbox"].checkbox {
 	float:left;
 }
 
 
-.allPurposeForm fieldset input[type="text"], .allPurposeForm fieldset input[type="password"], .allPurposeForm fieldset input[type="email"], .allPurposeForm fieldset select, .allPurposeForm fieldset textarea {
+form fieldset input[type="text"], form fieldset input[type="password"], form fieldset input[type="email"], form fieldset select, form fieldset textarea {
 	width: 200px;
 	display: block;
 	border: 1px solid #6c6c6c;
 	margin: 6px 8px 0 190px;
 	padding: 4px 0 4px 4px;
 }
-.allPurposeForm fieldset input[type="file"]{
+form fieldset input[type="file"]{
 	width: 200px;
 	margin: 6px 8px 0 0;
 	padding: 4px 0 4px 4px;
 }
-.allPurposeForm fieldset .form-node div a{
+form fieldset .form-node div a{
 	margin:0 0 0 180px;
 }
 
-.allPurposeForm fieldset textarea.short {
+form fieldset textarea.short {
 	height:100px;
 }
-.allPurposeForm fieldset textarea.tall {
+form fieldset textarea.tall {
 	height:200px;
 }
-.allPurposeForm fieldset input[type="text"].twoFieldsinline, .allPurposeForm fieldset select.twoFieldsinline{
+form fieldset input[type="text"].twoFieldsinline, form fieldset select.twoFieldsinline{
 	float:left;
 	width:95px;
 }
-.allPurposeForm fieldset input[name="address2"],
-.allPurposeForm fieldset input[name="localAddress2"],
-.allPurposeForm fieldset input[name="hqAddress2"] {
+form fieldset input[name="address2"],
+form fieldset input[name="localAddress2"],
+form fieldset input[name="hqAddress2"] {
 	margin: 7px 0 0 178px;
 }
-.allPurposeForm fieldset input[name="zip"] {
+form fieldset input[name="zip"] {
 	width: 50px;
 }
-.allPurposeForm fieldset select.time
+form fieldset select.time
 {
 	width: 80px;
 	display: inline;
 	margin: 0;
 }
 
-.allPurposeForm fieldset input[name="phone1"], .allPurposeForm fieldset input[name="phone2"],
-.allPurposeForm fieldset input[name="taxID1"]{
+form fieldset input[name="phone1"], form fieldset input[name="phone2"],
+form fieldset input[name="taxID1"]{
 	width: 30px;
 	display: inline;
 	margin: 0;
 }
-.allPurposeForm fieldset input[name="taxID2"] {
+form fieldset input[name="taxID2"] {
 	width: 70px;
 	display: inline;
 	margin: 0;
 }
-.allPurposeForm fieldset input[name="phone3"] {
+form fieldset input[name="phone3"] {
 	width: 40px;
 	float: none;
 	display: inline;
 	margin: 0;
 }
-.allPurposeForm fieldset div.formAction {
+div.formAction {
 	border-top: 3px solid #6c6c6c;
 	margin: 26px 0 0 0;
 	padding: 13px 0;
 	background-color: #ebebeb;
 	overflow: auto;
 }
-.allPurposeForm fieldset a.button {/* FORM BUTTON */
+div.formAction input[type="submit"] {
+	display: block;
+	border: 1px solid #6c6c6c;
+	margin: 6px 8px 0 190px;
+	padding: 8px;
+
+}
+
+/*form fieldset a.button {
 	float: right;
 	margin: 0 13px 0 13px;
 }
-.allPurposeForm fieldset a.button, .allPurposeForm fieldset a.button:visited, .rsvp fieldset a.button {
+form fieldset a.button, form fieldset a.button:visited, .rsvp fieldset a.button {
 	background-color: #2799e9;
 	display: inline-block; 
 	padding: 5px 10px 6px; 
@@ -585,16 +597,16 @@ div.intro div p
 	cursor: pointer;
 	font-size: 140%;
 }
-.allPurposeForm fieldset a.button:hover { background-color: #2181c3; color: #fff; }
-.allPurposeForm fieldset a.button:active { top: 1px; }
-.allPurposeForm fieldset .remove {
+form fieldset a.button:hover { background-color: #2181c3; color: #fff; }
+form fieldset a.button:active { top: 1px; }*/
+form fieldset .remove {
 	float:left;
 	display:block;
 	padding-left:15px;
 	margin:5px;
 	background:url("../images/remove-icon.gif") no-repeat left top;
 }
-.allPurposeForm fieldset div.no-logo
+form fieldset div.no-logo
 {
 	border: 1px dashed #ccc;
 	height: 100px;

@@ -18,35 +18,38 @@
     })
   })
 </script>
-<style type="text/css" media="screen">
-  label {
-    display: block;
-    font-weight: bold;
-  }
-  form legend {
-    display: none;
-  }
-</style>
+
 <% form_for venue, :html => { :multipart => true } do |f| %>
   <fieldset>
-    <legend>Venue Information</legend>
 
-    <div>
+
+    <div class="form-node">
       <%= f.error_message_on :title %>
       <%= f.label :title, 'Title' %>
       <%= f.text_field :title %>
     </div>
 
-    <div>
+    <div class="form-node">
       <%= f.error_message_on :url_friendly %>
       <%= f.label :url_friendly, 'Permalink Title' %>
       <%= f.text_field :url_friendly %>
     </div>
 
-    <div>
+    <div class="form-node">
       <%= f.error_message_on :venue_type_id %>
       <%= f.label :venue_type_id, 'Venue Type' %>
-      <%= f.select :venue_type_id, @venue_options %>
+      <%#= f.select :venue_type_id, @venue_options %>
+      <select id="venueType" name="venueType">
+										<option value="Bar">Bar</option>
+										<option value="Restaurant">Restaurant</option>
+										<option value="Bar - Restaurant">Bar - Restaurant</option>
+										<option value="Hall">Hall</option>
+										<option value="Theater">Theater</option>
+										<option value="Private Club">Private Club</option>
+										<option value="Museum">Museum</option>
+										<option value="Outdoor">Outdoor</option>
+										<option value="Other">Other</option>
+									</select>
     </div>
     
     <div id="<%= dom_id(venue, :avatar) %>">
@@ -76,7 +79,7 @@
 
   <% if @parking_options.any? %>
   <fieldset>
-    <legend>Parking Options</legend>
+    
     <p>This venue has the following available parking options.</p>
     <%= hidden_field_tag "venue[parking_option_ids][]", '' %>
     <% content_tag :div, :class => 'authors' do -%>
@@ -94,7 +97,7 @@
 
   <% if @fee_options.any? %>
   <fieldset>
-    <legend>Fee Options</legend>
+    
     <p>This venue has the following associated fees.</p>
     <%= hidden_field_tag "venue[fee_option_ids][]", '' %>
     <% content_tag :div, :class => 'authors' do -%>
@@ -112,7 +115,7 @@
 
   <% if @food_service_options.any? %>
   <fieldset>
-    <legend>Food Service Options</legend>
+    
     <p>This venue has the following food service options.</p>
     <%= hidden_field_tag "venue[food_service_option_ids][]", '' %>
     <% content_tag :div, :class => 'authors' do -%>
@@ -130,7 +133,7 @@
 
   <% if @av_equipment_options.any? %>
   <fieldset>
-    <legend>AV Equipment Options</legend>
+    
     <p>This venue has the following audio/video equipment options.</p>
     <%= hidden_field_tag "venue[av_equipment_option_ids][]", '' %>
     <% content_tag :div, :class => 'authors' do -%>
@@ -147,15 +150,15 @@
   <% end %>
 
   <fieldset>
-    <legend>Venue Capacity</legend>
+    
 
-    <div>
+    <div class="form-node">
       <%= f.error_message_on :capacity %>
       <%= f.label :capacity, 'Attendee Size' %>
       <%= f.text_field :capacity, :size => 4 %>
     </div>
 
-    <div>
+    <div class="form-node">
       <%= f.error_message_on :full_capacity %>
       <%= f.label :full_capacity, 'Maximum Capacity' %>
       <%= f.text_field :full_capacity, :size => 4 %>
@@ -164,14 +167,12 @@
   </fieldset>
 
   <fieldset>
-    <legend>Amenities</legend>
-
-    <div>
+    <div class="form-node">
       <%= f.check_box :has_internet %>
       <%= f.label :has_internet, 'Internet available?' %>
     </div>
   </fieldset>
-  <fieldset class="submit">
-    <p><%= f.submit 'Save' %> or <%= link_to 'Cancel', venues_path, :class => 'cancel' %></p>
-  </fieldset>
+  <div class="formAction clear">
+    <%= f.submit 'Save Venue' %>
+  </div>
 <% end %>

@@ -4,7 +4,7 @@ describe Category do
   before(:each) do
     @category = Factory.build(:category)
   end
-  
+
 
   it "should create a new instance given valid attributes" do
     @category.should be_valid
@@ -17,4 +17,9 @@ describe Category do
     new_category.should_not be_valid
     new_category.errors.on(:name).should == "must be unique"
   end
+
+
+  it { should have_many :categorizations }
+  it { should have_many :events }
 end
+
