@@ -7,5 +7,7 @@ Feature: Manage Users
     Given there are no users in the database
       And I go to the user registration page
     When I press "Register"
-    Then I'd like to see the error message "Login is too short"
-     And I should see the error message "Password is too short"
+    Then I should see "Login can't be blank"
+     And I should see "First name can't be blank"
+     And I should see "Last name can't be blank"
+     And I should see "Email address can't be blank"
