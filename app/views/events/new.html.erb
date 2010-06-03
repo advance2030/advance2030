@@ -2,58 +2,7 @@
     <h1>Create an Event</h1>
     <% form_for presenter, :url => events_path, :html => { :class => "allPurposeForm" } do |f| %>
 	<form>
-    <fieldset>
-      <!--<div class="form-node">
-        <%#= f.label :venue, venue_label_text %>
-        <%#= f.collection_select :venue, presenter.venues, :id, :title, :prompt => presenter.venue_prompt %>
-      </div>
-
-      <div class="form-node">
-        <div class="label-like">&nbsp;</div>
-        <input type="checkbox" name="" class="checkbox" id="eventSponsor" value="$">
-        <label for="eventSponsor" class="checkbox">Is this event sponsored?</label>
-      </div>
-      <div class="form-node eventSponsored">
-        <label for="eventSponsored">Sponsor</label>
-        <select id="eventSponsored">
-        	<option selected="selected">Select a sponsor</option>
-        </select>
-        <label for="eventSponsored">Sponsorship Agreement</label>
-        <textarea class="short"></textarea>
-      </div>
-
-      <div class="form-node">
-        <div class="label-like">&nbsp;</div>
-        <input type="checkbox" name="" class="checkbox" id="eventPartner" value="$">
-        <label for="eventPartner" class="checkbox">Is this event partnering with anouther group?</label>
-      </div>
-      <div class="form-node eventPartnered">
-        <label for="eventPartnered">Partner Group</label>
-        <select id="eventPartnered">
-        	<option selected="selected">Select a partner</option>
-        </select>
-      </div>
-    </fieldset>
-    
-    <fieldset class="oneCol">
-
-      <div class="form-node">
-        <%#= f.label :manager, "Event Manager" %>
-        <%#= f.collection_select :manager, presenter.managers, :id, :name, :prompt => presenter.manager_prompt %>
-      </div>
-
-      <div class="form-node">
-        <%#= f.label :supervisor, "Event Supervisor" %>
-        <%#= f.collection_select :supervisor, presenter.supervisors, :id, :name, :prompt => presenter.supervisor_prompt %>
-      </div>
-
-      <div class="form-node">
-        <%#= f.label :committee_sponsor, "Committee Sponsor" %>
-        <%#= f.collection_select :committee_sponsor, presenter.committee_sponsors, :id, :name, :prompt => presenter.committee_sponsor_prompt %>
-      </div>
-
-    </fieldset>-->
-
+        
     <fieldset class="oneCol">
       <div class="form-node">
         <%= f.label :name, "Event Title" %>
@@ -68,43 +17,7 @@
         <%= f.text_area :description, :class => "tall" %>
       </div>
     </fieldset>
-     <!--<fieldset class="oneCol checklist">
-      
-     <div class="form-node">
-        <%#= f.label :tag_list, tag_list_label_text %>
-        <%#= f.text_field :tag_list %>
-		<label>Tag List <span class="aside-label">(select all that apply)</span></label>
-		<div><input type="checkbox" id="social" name="social"> <label id="social" for="social">Social</label></div>
-		<div><input type="checkbox" id="" name=""> <label id="" for="">Networking</label></div>
-		<div><input type="checkbox" id="" name=""> <label id="" for="">Philanthropy</label></div>
-		<div><input type="checkbox" id="" name=""> <label id="" for="">Education</label></div>
-		<div><input type="checkbox" id="" name=""> <label id="" for="">Volunteering</label></div>
-		<div><input type="checkbox" id="" name=""> <label id="" for="">Fundraising</label></div>
-		<div><input type="checkbox" id="" name=""> <label id="" for="">Event</label></div>
-		<div><input type="checkbox" id="" name=""> <label id="" for="">Planning</label></div>
-		<div><input type="checkbox" id="" name=""> <label id="" for="">Economic</label></div>
-		<div><input type="checkbox" id="" name=""> <label id="" for="">Development</label></div>
-		<div><input type="checkbox" id="" name=""> <label id="" for="">Technology</label></div>
-		<div><input type="checkbox" id="" name=""> <label id="" for="">Entrepreneurship</label></div>
-		<div><input type="checkbox" id="" name=""> <label id="" for="">Non-Profits</label></div>
-		<div><input type="checkbox" id="" name=""> <label id="" for="">Civic Improvement</label></div>
-      </div>
-    </fieldset>
-    <fieldset class="oneCol">
     
-      <div class="form-node">
-        <%#= f.label :logo, "Event Logo" %>
-        <%#= f.file_field :logo %>
-      </div>
-      <div class="form-node">
-        <div class="label-like">
-          <span class="aside-label">(Uploaded Logo)</span>
-        </div>
-        <img src="/images/logo.gif" class="uploadedEventLogo" border="0">
-        <div><a href="#" class="small">Remove image</a></div>
-      </div>
-
-    </fieldset>-->
     <fieldset class="oneCol">
       <div class="form-node">
         <%= f.label :start_datetime %>
@@ -171,12 +84,6 @@
     </fieldset>
     <fieldset class="oneCol">
       <div class="form-node">
-        <label for="eventCostEstimate">
-          Event Total Cost Estimate
-        </label>
-        <input type="text" name="" id="eventCostEstimate" value="$">
-      </div>
-      <div class="form-node">
         <div class="label-like">&nbsp;</div>
         <input type="checkbox" name="" class="checkbox" id="attendeeCharge" value="$">
         <label for="attendeeCharge" class="checkbox">
@@ -192,16 +99,7 @@
         <input type="text" id="attendeeNonMemberPrice" value="$">
       </div>
     </fieldset>
-    <!--<fieldset class="oneCol">
-         <div class="form-node">
-        <label for="eventConfirmationEmail">
-          Event Confirmation Email
-        </label>
-        <textarea name="" id="eventConfirmationEmail" class="tall">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sed arcu eu nisi viverra gravida. Quisque sodales tempus ipsum eu congue. Aenean ac velit tellus, quis condimentum ipsum. Nunc felis nunc, ultrices id tincidunt et, lacinia in lorem. Pellentesque lacinia tristique varius. Duis fringilla mattis velit, non vestibulum ante sollicitudin quis. Fusce purus lacus, dictum vitae venenatis ac, molestie id sapien. Maecenas sit amet lorem nisl, eu auctor nulla. <br/>
-        Sed molestie vehicula nisl ac condimentum. Suspendisse porttitor, arcu non dapibus blandit, augue arcu rhoncus tortor, et mattis mi elit quis ligula. In sed dolor elit. Cras pulvinar porta porttitor. </textarea>
-      </div>
-    </fieldset>-->
-
+   
     <div class="formAction">
        <input type="submit" value="Create Event">
     </div>
