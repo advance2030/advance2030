@@ -615,6 +615,32 @@ form fieldset div.no-logo
 
 }
 
+/* ------ Errors ------------*/
+.errorExplanation {
+	background:#FBE3E4 none repeat scroll 0 0;
+	border-color:#FBC2C4;
+	color:#8A1F11;
+}
+.errorExplanation {
+	border:2px solid #DDDDDD;
+	margin-bottom:1em;
+	padding:0.8em;
+}
+.errorExplanation ul{
+	margin-left:2em;
+}
+form fieldset div.fieldWithErrors {
+	margin: 0;
+}
+form fieldset div.fieldWithErrors label {
+	color:#8A1F11;
+}
+form fieldset div.fieldWithErrors input[type="text"] {
+	background:#FBE3E4 none repeat scroll 0 0;
+}
+
+
+
 .addPrice{
 	display:block;
 	margin:1em 0;
@@ -642,3 +668,5 @@ div.sponsor .sponsorBody .coda-slider-wrapper .coda-slider
 	min-height: 220px;
 	width: 190px !important;
 }
+
+
