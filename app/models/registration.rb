@@ -9,4 +9,8 @@ class Registration < ActiveRecord::Base
   validates_format_of :email_address,
     :with => RegistrationsHelper::EMAIL_REGEX,
     :if => :email_address?
+
+  def validate
+    errors.add('password', 'and confirmation do not match') unless password_confirmation == password
+  end
 end
