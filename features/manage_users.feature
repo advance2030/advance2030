@@ -11,3 +11,5 @@ Feature: Manage Users
      And I should see "First name can't be blank"
      And I should see "Last name can't be blank"
      And I should see "Email address can't be blank"
+		 And I should see "Password can't be blank"
+		 And I should see "Password confirmation can't be blank"
