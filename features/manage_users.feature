@@ -36,7 +36,7 @@ Feature: Manage Users
       And I fill in "Login" with "jdoe"
       And I fill in "Password" with "password"
       And I fill in "Verify password" with "password"
-    When I press "Register"
+    When I press "Continue"
     Then I should be on the user account page
      And I should have one user with first name "John"
      And I should have one account with the login "jdoe"
