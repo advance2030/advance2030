@@ -36,14 +36,16 @@ div.clear{clear:both;}
 /* Cleveland 2030 Styles start here */
 
 /* Font Styles */
+h1,h2,h3,h4,h5{margin-bottom:1em;}
 h1{font-size:180%;}
 h2{font-size:160%;}
 h3{font-size:140%;}
 h4{font-size:108%;text-transform:uppercase;margin:2em 0 1em;}
 h5{font-size:100%;}
 
+p{margin-bottom:1em;}
+
 h1 span {color:#0a4d8f}
-.small{font-size:84%;}
 
 a{color:#377fb9;text-decoration:none;}
 a:hover{background-color:#f4f2e4;border-bottom:1px solid #aaa;color:#333;}
@@ -51,7 +53,14 @@ a:hover{background-color:#f4f2e4;border-bottom:1px solid #aaa;color:#333;}
 /*generic formatting*/
 .right{float:right;}
 .left{float:left;}
+.small{font-size:85%;}
+.tiny{font-size:77%;}
+h1 .tiny{font-size:50%;}
+.txt-r{text-align: right;}
+.txt-l{text-align: left;}
 .viewMore {font-size:85%;margin-top:1em;float:right;}
+.success{color:#73ac59}
+.hr{border-bottom:1px dotted #ccc;}
 
 /* Structure Styles */
 body{font-family: Helvetica, Tahoma, Verdana, sans-serif;font-size:80%;position:relative;background:#fff url(../images/bg-strech.jpg) repeat-x top left;color:#333;}
@@ -72,7 +81,7 @@ nav ul li{float:left;margin:0 3px;height:42px;}
 nav ul li a{font-size:116%;/*font-size:130%;*/text-decoration:none;font-weight:normal;/*font-weight:bold;*/color:#fff;display:block;height:24px;/*height:42px;*/padding:17px 5px 0;/*padding:14px 10px 0;*/}
 nav ul li a:hover, nav ul li a.current{color:#ebebeb; background:transparent url(../images/cle2030-menu_re.png) repeat-x 0 -50px; border-bottom:none;}
 
-#content{padding:10px;background:#fff;overflow:hidden;min-height:400px;}
+#content{padding:1em .5em .5em;background:#fff;overflow:hidden;min-height:400px;}
 footer{background:#2d2d2d;padding:10px;color:#fff;}
 footer h4{margin-top:0;}
 
@@ -428,52 +437,46 @@ form {
 	overflow:hidden;
 	margin-bottom:1em;
 }
-form legend {
-	font-size:1em;
+form legend span{
+	position:absolute;
+	width:100%;
+}
+form legend span strong{
 	text-transform:uppercase;
+	font-size:85%;
+	background:#ddd;
+	padding:.4em 0 .4em 1em;
+	display:block;
+	-moz-border-radius: 5px; 
+	-webkit-border-radius: 5px;
 }
 form fieldset {
-	margin: 0 40px 0 0;
-	padding: 0 0 20px;
-}
-form fieldset>fieldset {
-	padding: 0; margin: 0;
-}
-form fieldset.oneCol {
-	float: left;
-	width: 500px;
-}
-form fieldset.twoCol {
-	float: left;
-	width: 400px;
-}
-form fieldset h2 {
-	font-size: 108%;
-	font-weight: bold;
-	color:#333;
-}
-form fieldset>fieldset h2 {
-	font-size: 160%;
-}
-form fieldset h2 a.login {
-	font-size: 50%;	
-}
-form fieldset div {
-	margin: 16px 0;
+	padding: 3em 0 1em;
+	display: block;
+	width:100%;
+	position:relative;
 }
 form fieldset div.form-node {
+	margin: 0 0 .5em;
 	clear:left;
+	position:relative;
 	overflow:hidden;
+	*zoom:1;
 }
 form fieldset label, form fieldset .label-like {
 	text-align: right;
 	width: 170px;
 	display: block;
 	float: left;
-	margin: 6px 8px 0 0;
+	margin: 0 8px 0 0;
 	text-transform: uppercase;
 	font-size: 90%;
 	color: #6C6C6C;
+}
+form fieldset .default-value{
+	width: 200px;
+	margin: 0 8px 1em 190px;
+	padding-left:4px;
 }
 form fieldset .aside-label {
 	font-size:84%;
@@ -504,11 +507,11 @@ form fieldset input[type="checkbox"].checkbox {
 }
 
 
-form fieldset input[type="text"], form fieldset input[type="password"], form fieldset input[type="email"], form fieldset select, form fieldset textarea {
+form fieldset input[type="text"], form fieldset input[type="password"], form fieldset select, form fieldset textarea {
 	width: 200px;
 	display: block;
 	border: 1px solid #6c6c6c;
-	margin: 6px 8px 0 190px;
+	margin: 0 8px 0 190px;
 	padding: 4px 0 4px 4px;
 }
 form fieldset input[type="file"]{
@@ -530,26 +533,16 @@ form fieldset input[type="text"].twoFieldsinline, form fieldset select.twoFields
 	float:left;
 	width:95px;
 }
-form fieldset input[name="address2"],
-form fieldset input[name="localAddress2"],
-form fieldset input[name="hqAddress2"] {
-	margin: 7px 0 0 178px;
-}
 form fieldset input[name="zip"] {
 	width: 50px;
 }
-form fieldset select.time
-{
+form fieldset select.time{
 	width: 80px;
 	display: inline;
 	margin: 0;
 }
-
-form fieldset input[name="phone1"], form fieldset input[name="phone2"],
-form fieldset input[name="taxID1"]{
-	width: 30px;
-	display: inline;
-	margin: 0;
+form fieldset input[name="phone"]{
+	width: 80px;
 }
 form fieldset input[name="taxID2"] {
 	width: 70px;
@@ -562,19 +555,30 @@ form fieldset input[name="phone3"] {
 	display: inline;
 	margin: 0;
 }
-div.formAction {
-	border-top: 3px solid #6c6c6c;
-	margin: 26px 0 0 0;
-	padding: 13px 0;
-	background-color: #ebebeb;
-	overflow: auto;
-}
+div.formAction {}
 div.formAction input[type="submit"] {
 	display: block;
 	border: 1px solid #6c6c6c;
-	margin: 6px 8px 0 190px;
-	padding: 8px;
+	margin: 0 8px 0 190px;
+	padding: .5em;
 
+}
+div.formAction .submit {
+	margin: 0 8px 0 190px;
+}
+
+/*------ dicount code and checkout ----------*/
+form .apply-code{
+	float: left;
+	display: block;
+	border: 1px solid #6c6c6c;
+	padding: .1em .4em;
+	margin:2px 0 0 320px;
+}
+form .price{
+	width:114px;
+	float:right;
+	padding-left:20px;
 }
 
 /*form fieldset a.button {
@@ -635,10 +639,9 @@ form fieldset div.fieldWithErrors {
 form fieldset div.fieldWithErrors label {
 	color:#8A1F11;
 }
-form fieldset div.fieldWithErrors input[type="text"] {
+form fieldset div.fieldWithErrors input[type="text"],form fieldset div.fieldWithErrors input[type="password"] {
 	background:#FBE3E4 none repeat scroll 0 0;
 }
-
 
 
 .addPrice{
@@ -669,4 +672,7 @@ div.sponsor .sponsorBody .coda-slider-wrapper .coda-slider
 	width: 190px !important;
 }
 
-
+/* Galleria styles */
+#galleria .galleria-container{
+	background: #2D2D2D ;
+}
