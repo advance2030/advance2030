@@ -54,3 +54,13 @@ Feature: Manage Users
       And I fill in "Password" with "password"
     When I press "Log In"
     Then I should see "Login/Password combination is not valid"
+
+  Scenario: User should be able to successfully log in
+    Given the following user records in the data store
+      | first_name | last_name | email_address | login | password | password_confirmation |
+      | John | Doe | jdoe@gmail.com | jdoe | password | password |
+      And I go to the user login page
+      And I fill in "Login" with "jdoe"
+      And I fill in "Password" with "password"
+    When I press "Log In"
+    Then I should be logged in
