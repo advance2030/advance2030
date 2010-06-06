@@ -11,7 +11,7 @@ class Account < ActiveRecord::Base
     c.validate_login_field = true
     c.validate_password_field = true
     c.perishable_token_valid_for = 5.minutes
-  end   
-  
+  end
+
 end
 

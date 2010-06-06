@@ -3,11 +3,13 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 		<title>Cleveland 2030</title>
-		<link rel="stylesheet" type="text/css" href="/stylesheets/main.css">
+		<link rel="stylesheet" type="text/css" href="../../../../public/stylesheets/main.css">
+		<link rel="stylesheet" type="text/css" href="../../../../public/stylesheets/three-col.css">		
+		<link rel="stylesheet" type="text/css" href="../../../../public/stylesheets/about.css">				
 		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
-		<script type="text/javascript" src="/javascripts/stuff.js"></script>
+		<script type="text/javascript" src="../../../../public/javascripts/stuff.js"></script>
 		<!--[if lte IE 8]>			
-			<script src="/javascripts/html5.js" type="text/javascript"></script>
+			<script src="../../../../public/javascripts/html5.js" type="text/javascript"></script>
 		<![endif]-->
 	</head>
 	<body>
@@ -17,7 +19,7 @@
 					<div id="header">
 						<div id="topHeader"></div>				
 						<a href="index.html" title="The Cleveland 2030 Club home page" class="logo">
-							<img src="/images/logo.gif" alt="The Cleveland 2030 Logo" border="0">
+							<img src="../../../../public/images/logo.gif" alt="The Cleveland 2030 Logo" border="0">
 						</a>
 						<div id="alertSection">
 							
@@ -40,126 +42,99 @@
 						</div>
 					</nav>
 					<div id="content">
-						<form class="allPurposeForm">
-							<fieldset class="twoCol">
-								<h2>Personal info</h2>
-								<div>
-									<label for="address1">
-										Address
-									</label>
-									<input type="text" name="address1" id="address1" required />
-									<input type="text" name="address2" id="address2" />
-								</div>
-								
-								<div>
-									<label for="city">
-										City
-									</label>
-									<input type="text" name="city" id="city" required />
-								</div>
-								
-								<div>
-									<label for="state">
-										State
-									</label>
-									<select name="state" id="state">
-										<option value="AL">Alabama</option>
-										<option value="AK">Alaska</option>
-										<option value="AZ">Arizona</option>
-										<option value="AR">Arkansas</option>
-										<option value="CA">California</option>
-										<option value="CO">Colorado</option>
-										<option value="CT">Connecticut</option>
-										<option value="DE">Delaware</option>
-										<option value="DC">Dist of Columbia</option>
-									</select>
-								</div>
+						<div class="threeColumns-1">
+							<h1>Register</h1>
+							<form>								
+								<fieldset>
+									<legend><span><strong>Personal Information</strong></span></legend>
+									<div class="form-node">
+										<label for="address1">
+											Address
+										</label>
+										<input type="text" name="address1" id="address1" required />
+										<input type="text" name="address2" id="address2" />
+									</div>
+									
+									<div class="form-node">
+										<label for="city">
+											City
+										</label>
+										<input type="text" name="city" id="city" required />
+									</div>
+									
+									<div class="form-node">
+										<label for="state">
+											State
+										</label>
+										<select name="state" id="state">
+											<option value="AL">Alabama</option>
+											<option value="AK">Alaska</option>
+											<option value="AZ">Arizona</option>
+											<option value="AR">Arkansas</option>
+											<option value="CA">California</option>
+											<option value="CO">Colorado</option>
+											<option value="CT">Connecticut</option>
+											<option value="DE">Delaware</option>
+											<option value="DC">Dist of Columbia</option>
+										</select>
+									</div>
+	
+									<div class="form-node">
+										<label for="zip">
+											Zip
+										</label>
+										<input type="text" name="zip" id="zip" maxlength="5" class="formZip" required />
+									</div>
+									
+									<div class="form-node">
+										<label for="phone">
+											Phone number
+										</label>
+										<input type="text" name="phone" id="phone" maxlength="10" required /> 
+									</div>
+									
 
-								<div>
-									<label for="zip">
-										Zip
-									</label>
-									<input type="text" name="zip" id="zip" maxlength="5" class="formZip" required />
-								</div>
-								
-								<div>
-									<label for="phone">
-										Phone number
-									</label>
-									<input type="text" name="phone1" id="phone1" maxlength="3" required /> &mdash; 
-									<input type="text" name="phone2" id="phone2" maxlength="3" required /> &mdash; 
-									<input type="text" name="phone3" id="phone3" maxlength="4" required />
-								</div>
-								
-								<div>
-									<label for="hearAbout">
-										How did you hear about us?
-									</label>
-									<textarea name="hearAbout" id="hearAbout" cols="26" rows="4"></textarea>
-								</div>
-								
-								<div>
-									<label for="whoInvited">
-										Invited by a member?
-									</label>
-									<input type="text" name="whoInvited" id="whoInvited" />
-								</div>
-
-								<h2>About me</h2>
-
-								<div>
-									<label for="profession">
-										Profession
-									</label>
-									<input type="text" name="profession" id="profession" />
-								</div>
-								
-								<div>
-									<label for="employer">
-										Employer
-									</label>
-									<input type="text" name="employer" id="fbPemployerwd" />
-								</div>
-
-								<div>
-									<label for="education">
-										Education
-									</label>
-									<input type="text" name="education" id="education" />
-								</div>
-								
-								<div>
-									<label for="oidPwd">
-										Password
-									</label>
-									<input type="text" name="oidPwd" id="oidPwd" />
-								</div>
-								
-								<h2>Interests</h2>
-								<fieldset class="checklist">
-									<div><input type="checkbox" name="social" id="social" /> <label for="social" id="social">Social</label></div>
-									<div><input type="checkbox" name="" id="" /> <label for="" id="">Networking</label></div>
-									<div><input type="checkbox" name="" id="" /> <label for="" id="">Philanthropy</label></div>
-									<div><input type="checkbox" name="" id="" /> <label for="" id="">Education</label></div>
-									<div><input type="checkbox" name="" id="" /> <label for="" id="">Volunteering</label></div>
-									<div><input type="checkbox" name="" id="" /> <label for="" id="">Fundraising</label></div>
-									<div><input type="checkbox" name="" id="" /> <label for="" id="">Event</label></div>
-									<div><input type="checkbox" name="" id="" /> <label for="" id="">Planning</label></div>
-									<div><input type="checkbox" name="" id="" /> <label for="" id="">Economic</label></div>
-									<div><input type="checkbox" name="" id="" /> <label for="" id="">Development</label></div>
-									<div><input type="checkbox" name="" id="" /> <label for="" id="">Technology</label></div>
-									<div><input type="checkbox" name="" id="" /> <label for="" id="">Entrepreneurship</label></div>
-									<div><input type="checkbox" name="" id="" /> <label for="" id="">Non-Profits</label></div>
-									<div><input type="checkbox" name="" id="" /> <label for="" id="">Civic Improvement</label></div>
+								</fieldset>	
+								<fieldset>
+									<legend><span><strong>Profesion and Education</strong></span></legend>
+	
+									<div class="form-node">
+										<label for="profession">
+											Profession
+										</label>
+										<input type="text" name="profession" id="profession" />
+									</div>
+									
+									<div class="form-node">
+										<label for="employer">
+											Employer
+										</label>
+										<input type="text" name="employer" id="fbPemployerwd" />
+									</div>
+	
+									<div class="form-node">
+										<label for="education">
+											Education
+										</label>
+										<input type="text" name="education" id="education" />
+									</div>
+																		
 								</fieldset>
-								
+								<fieldset>
+									<legend><span><strong>About Us</strong></span></legend>
+									<div class="form-node">
+										<label for="hearAbout">
+											How did you hear about Cleveland 20/30?
+										</label>
+										<textarea name="hearAbout" id="hearAbout" cols="26" rows="4"></textarea>
+									</div>
+									
+								</fieldset>
 								<div class="formAction">
-									<a href="register_3.html" class="button">Continue</a>
+									<input type="submit" value="Continue">
 								</div>
-							</fieldset>
-						</form>
-						
-						<div class="clear"></div>
+							</form>
+						</div>						
 					</div>
 					<footer>
 						footer content

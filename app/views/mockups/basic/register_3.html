@@ -3,11 +3,13 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 		<title>Cleveland 2030</title>
-		<link rel="stylesheet" type="text/css" href="/stylesheets/main.css">
+		<link rel="stylesheet" type="text/css" href="../../../../public/stylesheets/main.css">
+		<link rel="stylesheet" type="text/css" href="../../../../public/stylesheets/three-col.css">		
+		<link rel="stylesheet" type="text/css" href="../../../../public/stylesheets/about.css">			
 		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
-		<script type="text/javascript" src="/javascripts/stuff.js"></script>
+		<script type="text/javascript" src="../../../../public/javascripts/stuff.js"></script>
 		<!--[if lte IE 8]>			
-			<script src="/javascripts/html5.js" type="text/javascript"></script>
+			<script src="../../../../public/javascripts/html5.js" type="text/javascript"></script>
 		<![endif]-->
 	</head>
 	<body>
@@ -17,7 +19,7 @@
 					<div id="header">
 						<div id="topHeader"></div>				
 						<a href="" title="The Cleveland 2030 Club home page" class="logo">
-							<img src="/images/logo.gif" alt="The Cleveland 2030 Logo" border="0">
+							<img src="../../../../public/images/logo.gif" alt="The Cleveland 2030 Logo" border="0">
 						</a>
 						<div id="alertSection">
 							
@@ -39,40 +41,27 @@
 						</div>
 					</nav>
 					<div id="content">
-						<h1>Membership dues</h1>
-
-						<form class="allPurposeForm">
-							<fieldset class="twoCol">
-								<h2>Pay with PayPal</h2>
-								
-								<p>Membership dues are $x per month. You may pay now or you may pay at the next event. Membership dues provide the budget necessary for member benefits.</p>
-								
-								<div>
-									<label for="discountCode">
-										Discount code
-									</label>
-									<input type="text" name="discountCode" id="discountCode" />
-								</div>
-								
-								<div>
-									<a href="#" class="button">Apply code</a>
-								</div>
-								
+						<div class="threeColumns-1">
+							<h1>Registration: Membership Dues</h1>
+							<p>Membership dues provide the budget necessary for member benefits.</p>
+							<form>
+								<fieldset>
+									<legend><span><strong>Pay with PayPal</strong></span></legend>
+									
+									<div class="form-node">
+										<label for="discountCode">
+											Discount code
+										</label>
+										<input type="text" name="discountCode" id="discountCode" />
+										<a href="#" class="apply-code">Apply code</a>
+									</div>
+									
+								</fieldset>
 								<div class="formAction clear">
-									<a href="#"><img src="/images/paypal.gif" /></a>
-								</div>
-							</fieldset>
-							
-							<fieldset class="twoCol">
-								<h2>Pay at the next event</h2>
-
-								<div class="formAction">
-									<a href="#" class="button">Edit my profile</a>
-								</div>
-							</fieldset>							
-						</form>
-						
-						<div class="clear"></div>
+									<a href="#" class="submit"><img src="../../../../public/images/paypal.gif" /></a>
+								</div>														
+							</form>
+						</div>						
 					</div>
 					<footer>
 						footer content

@@ -57,12 +57,33 @@
                </div>
                <div class="flickr">
                	<h4>Photos From Recent Events</h4>
-                   <div class="flickrBody">
-                   	<div class="flickrLeft"><a href="#"></a></div>
-                       <div class="flickrImage"><a href="#"><img src="/images/flickrImage.jpg"></a></div>
-                       <div class="flickrRight"><a href="#"></a></div>
-                   </div>
-               </div>
+				<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+				<script src="/javascripts/aino-galleria-165c5d5/src/galleria.js"></script>
+				<script src="/javascripts/aino-galleria-165c5d5/src/plugins/galleria.flickr.js"></script>
+				<style>
+				    #galleria{width:100%;}
+				    .galleria-container{background:#044E8F url(/images/cle2030-intro-bg_re.png) repeat-x scroll left top}
+				</style>
+				<div id="galleria"></div>
+				 <script>
+				    
+				    // Load theme
+				    Galleria.loadTheme('/javascripts/aino-galleria-165c5d5/src/themes/classic/galleria.classic.js');
+				    
+				    // intiialize flickr plugin
+				    var flickr = new Galleria.Flickr('9005c2c39147fac3ffca9964197671c5');
+				    
+				    // inject a photset into galleria
+				    flickr.getSet('72157624191939250', { 
+				        size: 'medium'
+				    }, function(data) {
+				        $('#galleria').galleria({
+				            data_source:data
+				        });
+				    });
+				    
+				    </script>          
+              	</div>
            </div>
            <div class="subintroColumnRight">
              <div class="recentnews">
@@ -94,7 +115,7 @@
 		</div>
 		<% end %>
 	<% end %>
-	<h4>Upcomming Events</h4>
+	<h4>Upcoming Events</h4>
 	<div class="event">
 		<a href="#" class="date">
 			<span class="day">08</span>
