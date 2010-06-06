@@ -100,12 +100,12 @@
 		<% @sponsored_events.each do |event| %>
 		<div class="event sponsored">
 			<div class="date">
-				<span class="day"><%= event.start_datetime.day %></span> 
+				<span class="day"><%= event.start_datetime.strftime("%d") %></span> 
 				<span class="month"><%= event.start_datetime.strftime("%b") %></span>
 			</div>	
 			<ul>
-				<li class=<%= event.primary_category.name || "social" %>>
-					<%= image_tag event.sponsor.logo.url(:medium) %>
+				<li class="social">
+					<%= image_tag event.sponsor_logo.url(:sponsored_event) %>
 					<div><%=link_to truncate(event.name, :length => 50), event_detail_path(event) %></div>
 					<div class="details">
 						<p><%= event.start_datetime.strftime("%B %d, at %I:%M %p")%></p>
