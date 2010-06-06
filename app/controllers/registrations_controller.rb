@@ -13,7 +13,8 @@ class RegistrationsController < ApplicationController
       registration_converter = ConvertsRegistrationToAccountInformation.new
       registration_converter.do_it(@registration)
       
-      render :action => :show
+      # render :action => :show
+      redirect_to account_url
     else
       render :action => :new
     end
