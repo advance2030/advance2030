@@ -19,6 +19,7 @@ describe Venue do
     @venue.should be_blacklisted
   end
 
+=begin
   it "should only allow capacity to be numeric" do
     pending
     @venue.capacity = 'letters'
@@ -30,6 +31,7 @@ describe Venue do
     @venue.full_capacity = 'letters'
     @venue.should_not be_valid
   end
+=end
 
   context "#url_friendly" do
     it "should be set to the value provided" do
