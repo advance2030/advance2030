@@ -477,6 +477,7 @@ form fieldset .default-value{
 	width: 200px;
 	margin: 0 8px 1em 190px;
 	padding-left:4px;
+	display:block;
 }
 form fieldset .aside-label {
 	font-size:84%;
@@ -575,10 +576,13 @@ form .apply-code{
 	padding: .1em .4em;
 	margin:2px 0 0 320px;
 }
-form .price{
+form .for-price{
 	width:114px;
 	float:right;
 	padding-left:20px;
+}
+form .price{
+	font-weight:bold;
 }
 
 /*form fieldset a.button {
