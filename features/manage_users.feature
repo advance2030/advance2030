@@ -6,7 +6,7 @@ Feature: Manage Users
   Scenario: All fields should be validated
     Given there are no users in the database
       And I go to the user registration page
-    When I press "Register"
+    When I press "Continue"
     Then I should see "Login can't be blank"
      And I should see "First name can't be blank"
      And I should see "Last name can't be blank"
@@ -23,7 +23,7 @@ Feature: Manage Users
       And I fill in "Login" with "jdoe"
       And I fill in "Password" with "password"
       And I fill in "Verify password" with "password1"
-    When I press "Register"
+    When I press "Continue"
     Then I should not see "First name can't be blank"
      And I should see "Password and confirmation do not match"
 
@@ -36,7 +36,7 @@ Feature: Manage Users
       And I fill in "Login" with "jdoe"
       And I fill in "Password" with "password"
       And I fill in "Verify password" with "password"
-    When I press "Register"
+    When I press "Continue"
     Then I should see "hello"
      And I should have one user with first name "John"
      And I should have one account with the login "jdoe"
