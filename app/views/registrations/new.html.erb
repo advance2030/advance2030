@@ -2,9 +2,9 @@
   <h1>Register </h1><a href="/user_sessions/new/" class="login">(I already have an account)</a>
   <% form_for @registration, :url => registration_path do |f| %>
   <%= f.error_messages %>
-	<%= render :partial => "form", :object => f %>
-   	<div class="formAction clear">
-	  <%= f.submit "Register" %>
-    </div>
+  <%= render :partial => "form", :object => f %>
+  <div class="formAction clear">
+    <%= f.submit "Register" %>
+  </div>
   <% end %>
 </div>  
