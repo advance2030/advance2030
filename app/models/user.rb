@@ -16,7 +16,11 @@ class User < ActiveRecord::Base
   }}
 
   def display_name
-    "%s %s" % [first_name, last_name]
+    "#{first_name} #{last_name}"
+  end
+
+  def login
+    account.login
   end
 
 end

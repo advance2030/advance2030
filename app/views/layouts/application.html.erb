@@ -28,7 +28,9 @@
             <div id="alertSection">
             </div>
             <div id="loginSection">
-            <% if !@current_user.nil? and @current_user.logged_in? %>
+              <% if !@current_user.nil? and @current_user.logged_in? %>
+                <%= @current_user.login %> | 
+                <a href="javscript:void();">Account</a> | 
               <%= link_to "Sign out", user_session_url(@current_user), :method => :delete  %>
             <% else %>
               <a href="/user_sessions/new/" title="login" class="login">LOGIN</a> | NEW HERE?
@@ -40,7 +42,7 @@
               <ul>
                 <li><%= current_link 'Home', root_path, :title => 'Home' %></li>
                 <li><%= current_link 'Calendar Events', current_calendar_url, :title => 'Calendar Events' %></li>
-				<li><%=current_link '20/30 Members', members_url, :title => '20/30 Members'%></li>
+                <li><%=current_link '20/30 Members', members_url, :title => '20/30 Members'%></li>
                 <li><%=current_link 'Cleveland Plus', cleveland_plus_url, :title => 'Cleveland Plus'%></li>
                 <li><%=current_link 'About 20/30', about_url, :title => "About 20/30"%></li>
               </ul>

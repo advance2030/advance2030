@@ -63,4 +63,4 @@ Feature: Manage Users
       And I fill in "Login" with "jdoe"
       And I fill in "Password" with "password"
     When I press "Log In"
-    Then I should be logged in
+    Then I should see "jdoe"
