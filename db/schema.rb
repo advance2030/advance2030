@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100531175811) do
+ActiveRecord::Schema.define(:version => 20100603013628) do
 
   create_table "accounts", :force => true do |t|
     t.string   "login",                              :null => false
@@ -168,6 +168,10 @@ ActiveRecord::Schema.define(:version => 20100531175811) do
     t.integer  "supervisor_id"
     t.integer  "committee_id"
     t.boolean  "sponsor"
+    t.string   "sponsor_logo_file_name"
+    t.string   "sponsor_logo_content_type"
+    t.integer  "sponsor_logo_file_size"
+    t.datetime "sponsor_logo_updated_at"
   end
 
   create_table "fee_options", :force => true do |t|

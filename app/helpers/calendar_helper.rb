@@ -45,7 +45,7 @@ module CalendarHelper
   			  concat "<ul class=\"events\">"
 
     			events.each do |event|
-    				concat "<li><span class=\"" + h(event.color) + "\"></span>"
+    				concat "<li><span class=""></span>"
     					concat link_to(truncate(event.name, :length=>50), event_detail_url(event.to_param), :title => event.name)
     				concat "</li>"
     			end
