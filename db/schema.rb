@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100603013628) do
+ActiveRecord::Schema.define(:version => 20100606200652) do
 
   create_table "accounts", :force => true do |t|
     t.string   "login",                              :null => false
@@ -151,8 +151,8 @@ ActiveRecord::Schema.define(:version => 20100603013628) do
   end
 
   create_table "events", :force => true do |t|
-    t.string   "name",                        :null => false
-    t.string   "url_friendly",                :null => false
+    t.string   "name",                                                      :null => false
+    t.string   "url_friendly",                                              :null => false
     t.text     "summary"
     t.text     "description"
     t.datetime "start_datetime"
@@ -172,6 +172,8 @@ ActiveRecord::Schema.define(:version => 20100603013628) do
     t.string   "sponsor_logo_content_type"
     t.integer  "sponsor_logo_file_size"
     t.datetime "sponsor_logo_updated_at"
+    t.decimal  "member_price",                :precision => 6, :scale => 2
+    t.decimal  "non_member_price",            :precision => 6, :scale => 2
   end
 
   create_table "fee_options", :force => true do |t|
