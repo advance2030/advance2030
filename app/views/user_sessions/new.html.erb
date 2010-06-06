@@ -1,19 +1,20 @@
-<% form_for @user_session, :url => user_session_path do |f| %>
 <div class="threeColumns-1">
-  <h1>Login <a href="/registrations/new/" class="tiny right">Create a new account</a></h1>
+  <h1>Login <% form_for @user_session, :url => user_session_path do |f|, :class => "tiny right" %></h1>
+  <%= f.error_messages %>
   <fieldset>
   	<legend><span><strong>Welcome Back</strong></span></legend>
-  	<div class="form-node">
-		  <label for="email">Login</label>
-		  <%= f.text_field :login, :class => "text", :tabindex => 1 %>
-	  </div>
-	  <div class="form-node">
-			<label for="password">Password</label>
-		  <%= f.password_field :password, :class => "text", :tabindex => 2 %>
-	  </div>
-	</fieldset>		
-  	<div class="formAction ">
-	  <%= f.submit "Log In" %>
-	</div>
+    <div class="form-node">
+      <%= f.label :login %>
+      <%= f.text_field :login, :class => "text", :tabindex => 1 %>
+    </div>
+    <div class="form-node">
+      <%= f.label :password %>
+      <%= f.password_field :password, :class => "text", :tabindex => 2 %>
+    </div>
+  </fieldset>		
+  <div class="formAction ">
+    <%= f.submit "Log In" %>
+  </div>
+  <% end %>
 </div>
-<% end %>
+
