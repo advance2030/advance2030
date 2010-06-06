@@ -1,13 +1,19 @@
 <div class="threeColumns-1">
     <h1>Create an Event</h1>
-    <% form_for presenter, :url => events_path, :html => { :class => "allPurposeForm" } do |f| %>
-	<form>
-        
+    <% form_for @event, :html => { :class => "allPurposeForm", :multipart => true } do |f| %>   
     <fieldset class="oneCol">
       <div class="form-node">
         <%= f.label :name, "Event Title" %>
         <%= f.text_field :name %>
       </div>
+	  <div class="form-node">
+		<%= f.label :sponsor, "Is this a Sponsored Event?"%>
+		<%= f.check_box :sponsor %>
+	  </div>
+	  <div class="form-node">
+		<%= f.label :sponsor_logo %>
+		<%= f.file_field :sponsor_logo %>
+	  </div>
       <div class="form-node">
         <%= f.label :summary, "Event Summary" %>
         <%= f.text_area :summary, :class => "short" %>
@@ -91,20 +97,19 @@
         </label>
       </div>
       <div class="form-node attendeeCharged">
-        <label for="attendeeMemberPrice">Members Price</label>
-        <input type="text" id="attendeeMemberPrice" value="$">
-      </div>
-      <div class="form-node attendeeCharged">
-        <label for="attendeeNonMemberPrice">Non-Members Price</label>
-        <input type="text" id="attendeeNonMemberPrice" value="$">
+        <%= f.label :member_price %>
+		<%= f.text_field :member_price %>
+	  </div>
+	  <div class="form-node attendeeCharged">
+        <%= f.label :non_member_price %>
+		<%= f.text_field :non_member_price %>
       </div>
     </fieldset>
    
     <div class="formAction">
-       <input type="submit" value="Create Event">
+       <%= f.submit "Create" %>
     </div>
   <% end %>
-  </form>
 </div>
 
 

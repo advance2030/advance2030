@@ -4,7 +4,7 @@ ActionController::Routing::Routes.draw do |map|
     venue.resources :venue_notes, :as => :notes
   end
   map.resources :organizations, :member => { :destroy_logo => :delete }
-  map.resources :events, :only => [:new, :create]
+  map.resources :events, :only => [:new, :create], :member => {:detail => :get}
 
   map.root :controller => 'home'
   # The priority is based upon order of creation: first created -> highest priority.
