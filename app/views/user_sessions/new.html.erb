@@ -1,8 +1,8 @@
 <div class="threeColumns-1">
-  <h1>Login <% form_for @user_session, :url => user_session_path do |f|, :class => "tiny right" %></h1>
+  <h1>Login</h1>
+  <% form_for @user_session, :url => user_session_path do |f| %>
   <%= f.error_messages %>
   <fieldset>
-  	<legend><span><strong>Welcome Back</strong></span></legend>
     <div class="form-node">
       <%= f.label :login %>
       <%= f.text_field :login, :class => "text", :tabindex => 1 %>
