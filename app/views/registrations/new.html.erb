@@ -1,10 +1,10 @@
 <div class="threeColumns-1">
-  <h1>Register </h1><a href="/user_sessions/new/" class="login">(I already have an account)</a>
+  <h1>Register <a href="/user_sessions/new/" class="tiny right">I already have an account</a></h1>
   <% form_for @registration, :url => registration_path do |f| %>
   <%= f.error_messages %>
 	<%= render :partial => "form", :object => f %>
    	<div class="formAction clear">
-	  <%= f.submit "Register" %>
+	  <%= f.submit "Continue" %>
     </div>
   <% end %>
 </div>  
