@@ -47,7 +47,7 @@ Feature: Manage Users
     When I press "Log In"
     Then I should see "You did not provide any details for authentication"
 
-  Scenario: User tried to login with invalid username/password
+  Scenario: User tries to login with invalid username/password
     Given there are no users in the database
       And I go to the user login page
       And I fill in "Login" with "jdoe"
@@ -63,4 +63,4 @@ Feature: Manage Users
       And I fill in "Login" with "jdoe"
       And I fill in "Password" with "password"
     When I press "Log In"
-    Then I should be logged in
+    Then I should see "jdoe"
