@@ -10,7 +10,7 @@ class EventsController < ApplicationController
     @event = Event.new(params[:event])
     if @event.save
       flash[:notice] = "You Have Successfully Registered a New Event"
-      redirect_to (detail_event_path(@event))
+      redirect_to (event_detail_path(@event))
     else
       render new_event_path
     end
@@ -21,6 +21,6 @@ class EventsController < ApplicationController
   end
 
   def detail
-    @event = Event.find(params[:id])
+    @event = Event.find_by_url_friendly(params[:id])
   end
 end
