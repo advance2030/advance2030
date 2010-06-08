@@ -2,6 +2,7 @@ require 'lib/helper/string'
 require 'is_taggable'
 
 class Event < ActiveRecord::Base
+  attr_accessor :start_time, :end_time
   
   validates_presence_of :start_datetime, :end_datetime
   has_attached_file :sponsor_logo, :styles => {:sponsored_event => "75x75"}
@@ -19,7 +20,7 @@ class Event < ActiveRecord::Base
   def to_param
     self.url_friendly
   end
-  
+    
   class << self
     def min_start_date_time
       self.minimum(:start_datetime)

@@ -27,65 +27,14 @@
     <fieldset class="oneCol">
       <div class="form-node">
         <%= f.label :start_datetime %>
-        <%= f.text_field :start_datetime, :class => 'datepicker' %>
-        <select>
-        	<option selected="selected">Select a time</option>
-        	<option>12:00 am</option>
-        	<option>1:00 am</option>
-        	<option>2:00 am</option>
-        	<option>3:00 am</option>
-        	<option>4:00 am</option>
-        	<option>5:00 am</option>
-        	<option>6:00 am</option>
-        	<option>7:00 am</option>
-        	<option>8:00 am</option>
-        	<option>9:00 am</option>
-        	<option>18:00 am</option>
-        	<option>11:00 am</option>
-        	<option>12:00 pm</option>
-        	<option>1:00 pm</option>
-        	<option>2:00 pm</option>
-        	<option>3:00 pm</option>
-        	<option>4:00 pm</option>
-        	<option>5:00 pm</option>
-        	<option>6:00 pm</option>
-        	<option>7:00 pm</option>
-        	<option>8:00 pm</option>
-        	<option>9:00 pm</option>
-        	<option>18:00 pm</option>
-        	<option>11:00 pm</option>
-        </select>
+        <%= f.datetime_select :start_datetime, {:use_short_month => true, 
+							  :order => [:month, :day, :year]},
+							  :class => 'datepicker' %>
       </div>
       <div class="form-node">
         <%= f.label :end_datetime %>
-        <%= f.text_field :end_datetime, :class => 'datepicker' %>
-                <select>
-        	<option selected="selected">Select a time</option>
-        	<option>12:00 am</option>
-        	<option>1:00 am</option>
-        	<option>2:00 am</option>
-        	<option>3:00 am</option>
-        	<option>4:00 am</option>
-        	<option>5:00 am</option>
-        	<option>6:00 am</option>
-        	<option>7:00 am</option>
-        	<option>8:00 am</option>
-        	<option>9:00 am</option>
-        	<option>18:00 am</option>
-        	<option>11:00 am</option>
-        	<option>12:00 pm</option>
-        	<option>1:00 pm</option>
-        	<option>2:00 pm</option>
-        	<option>3:00 pm</option>
-        	<option>4:00 pm</option>
-        	<option>5:00 pm</option>
-        	<option>6:00 pm</option>
-        	<option>7:00 pm</option>
-        	<option>8:00 pm</option>
-        	<option>9:00 pm</option>
-        	<option>18:00 pm</option>
-        	<option>11:00 pm</option>
-        </select>
+        <%= f.datetime_select :end_datetime, {:use_short_month => true, :order => [:month, :day, :year]},
+ 							  :class => 'datepicker' %>
       </div>
     </fieldset>
     <fieldset class="oneCol">
