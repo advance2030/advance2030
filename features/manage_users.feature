@@ -64,3 +64,14 @@ Feature: Manage Users
       And I fill in "Password" with "password"
     When I press "Log In"
     Then I should see "jdoe"
+
+  Scenario: User login name should be displayed on the home page after user logged in
+    Given the following user records in the data store
+      | first_name | last_name | email_address | login | password | password_confirmation |
+      | Jane | Smith | jsmith@gmail.com | jsmith | password | password |
+      And I am on the user login page
+      And I fill in "Login" with "jsmith"
+      And I fill in "Password" with "password"
+      And I press "Log In"
+    When I go to the home page
+    Then I should see "jsmith"

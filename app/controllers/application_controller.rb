@@ -7,6 +7,8 @@ class ApplicationController < ActionController::Base
   helper_method :current_user_session, :current_user
   filter_parameter_logging :password, :password_confirmation
 
+  before_filter :current_user
+
   def redirect_permanent(url)
     head :moved_permanently, :location => url
     return

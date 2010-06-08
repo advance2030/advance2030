@@ -16,8 +16,3 @@ end
 Then /^I should have one account with the login "([^\"]*)"$/ do |login|
   Account.find_by_login(login).should_not be_nil
 end
-
-Then /^I should be logged in$/ do
-  pending # express the regexp above with the code you wish you had
-end
-
