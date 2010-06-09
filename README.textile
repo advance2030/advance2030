@@ -23,3 +23,5 @@ h3. Developer Instructions
 h3. Workflow Details
 
 After you have finished making changes and are ready for them to go public, follow the instructions under "Pushing your Changes" at "http://help.github.com/forking/":http://help.github.com/forking/. The build master will be alerted of your request and eventually merge your changes into the mainline codebase. To keep your copy of the application up to date with the mainline see the instructions under "Pulling in Upstream Changes" at "http://help.github.com/forking/":http://help.github.com/forking/.
+
+Trying Heroku.
