@@ -35,7 +35,10 @@ div.clear{clear:both;}
 
 /* Cleveland 2030 Styles start here */
 
-/* Font Styles */
+/* ------------------------------- */
+/* 		Font Styles 	 		   */
+/* ------------------------------ */
+
 h1,h2,h3,h4,h5{margin-bottom:1em;}
 h1{font-size:180%;}
 h2{font-size:160%;}
@@ -50,7 +53,10 @@ h1 span {color:#0a4d8f}
 a{color:#377fb9;text-decoration:none;}
 a:hover{background-color:#f4f2e4;border-bottom:1px solid #aaa;color:#333;}
 
-/*generic formatting*/
+/* ------------------------------- */
+/* 		Generic Formating  		   */
+/* ------------------------------ */
+
 .right{float:right;}
 .left{float:left;}
 .small{font-size:85%;}
@@ -62,7 +68,10 @@ h1 .tiny{font-size:50%;}
 .success{color:#73ac59}
 .hr{border-bottom:1px dotted #ccc;}
 
-/* Structure Styles */
+/* ------------------------------- */
+/* 		Structure Styles  		   */
+/* ------------------------------ */
+
 body{font-family: Helvetica, Tahoma, Verdana, sans-serif;font-size:80%;position:relative;background:#fff url(../images/bg-strech.jpg) repeat-x top left;color:#333;}
 #container{width:100%;margin:0 auto;background:transparent url(../images/bg.jpg) no-repeat top center;}
 #container img.skyline{position:absolute;right:140px;top:107px;}
@@ -85,104 +94,47 @@ nav ul li a:hover, nav ul li a.current{color:#ebebeb; background:transparent url
 footer{background:#2d2d2d;padding:10px;color:#fff;}
 footer h4{margin-top:0;}
 
-/* column styles */
+/* ------------------------------- */
+/* 		Colum Styles  		   	*/
+/* ------------------------------ */
+
 /* 2 column layout */
 div.twoColumns-0{float:left;width:655px;}
 div.twoColumns-1{float:right;width:275px;}
 
-/* column styles end*/
+/* 3 colum layout */
+.threeColumns-0{background: transparent url('../images/subnav-background.jpg') 0 0 no-repeat;float: left;min-height: 249px;width: 162px;}
+.threeColumns-0 ul{font-size: 90%;list-style: none;margin-top: 25px;padding: 0 18px;}
+.threeColumns-0 ul li.current a{color: #000 !important;}
+.threeColumns-0 ul li{padding: 0 0 10px 0;}
+.threeColumns-1{float: left;padding: 15px 20px 0 20px;width: 530px;}
+.threeColumns-2{float: left;padding-top: 15px;width: 220px;}
 
-/* content styles */
+/* ------------------------------- */
+/* 		intro home		  		   */
+/* ------------------------------ */
+
 div.introContainer{position:relative;/*width:692px;*/height:240px;}
 div.intro{width:685px; height:240px;background:#044e8f url(../images/cle2030-intro-bg_re.png) repeat-x top left;position:absolute;top:0;left:-30px;}
 div.introContainer .corner{width:18px;height:9px;position:absolute;bottom:-9px;left:-29px;background:transparent url(../images/cle2030-intro-corner.png) no-repeat top left;}
-
-div.calendarHeader{overflow:hidden;height:30px;margin:10px 0 0 0;}
-
-div.calendarHeader{overflow:hidden;height:30px;}
-div.calendarHeader form{float:left;width:360px;height:40px;}
-div.calendarHeader form select{width:200px;}
-div.calendarHeader div{float:right;/*width:45%;*/text-align:right;height:40px;padding:0 6px 0 0;}
-div.calendarHeader div span.daySelected{display:block;float:right;padding:2px 5px;font-weight:bold;background:#0099ff;color:#fff;margin:4px;}
-div.calendarHeader div a{-moz-border-radius: 3px; -webkit-border-radius: 3px;text-decoration:none;font-size:130%;display:block;height:21px;width:32px;padding:0 0 0 0;background:#000;color:#fff;float:right;margin:2px;text-align:center;}
-div.calendarHeader div a:hover{background:#666;}
-
-table#calendar{margin:0;}
-table#calendar {overflow:hidden;border:1px solid #ccc;border-left:2px solid #ccc;border-collapse:separate;}
-table#calendar thead tr{background:#000;}
-
-table#calendar thead tr th{height:14px;background:#000;width:96px;color:#fff;text-align:center;padding:8px 0;border:1px solid #000;border-right:1px solid #ccc;font-weight:bold;}
-table#calendar tbody tr{overflow:hidden;border-bottom:1px solid #ccc;clear:both;}
-table#calendar tbody tr td{overflow:hidden;border-bottom:1px solid #ccc;height:64px;border:1px solid #fff;border-right:1px solid #ccc;width:96px;}
-table#calendar tbody tr td.weekend{background:#ebebeb;}
-table#calendar tbody tr td div.label{height:31px;background:#c0e0ff;padding:1px 3px;font-size:85%;zoom:1;}
-
-table#calendar tbody tr td a.date{display:block;background:#c0e0ff;padding:1px 3px;font-size:85%;}
-table#calendar tbody tr td.notmonth div{background:#ebebeb;display:block;padding:1px 3px;font-size:85%;}
-table#calendar tbody tr td ul{list-style:none;}
-table#calendar tbody tr td ul li{padding:2px 0 1px 2px;overflow:hidden;}
-table#calendar tbody tr td ul li a{font-size:82%;padding:0 0 0 2px;white-space:nowrap;display:block;float:left;}
-table#calendar tbody tr td ul li span{width:5px;height:10px;margin:0 2px 1px 0;float:left;}
-table#calendar tbody tr td.today {border:1px solid #255683;}
-table#calendar tbody tr td.today div{background:#255683;font-weight:bold;color:#fff;}
-table#calendar tbody tr td.today div a{font-weight:bold;color:#fff;}
-table#calendar tbody tr td.current {border:1px solid #0099ff;}
-table#calendar tbody tr td.current div{font-weight:bold;background:#0099ff;color:#fff;}
-table#calendar tbody tr td.current div a{font-weight:bold;color:#fff;}
-
-/*ul li span.coupons{background:#cc66ff;}
-ul li span.social{background:#ff9933;}
-ul li span.networking{background:#cc3333;}
-ul li span.philanthopic{background:#00a651;}
-ul li span.educational{background:#66ccff;}*/
-
-div.dayEvents{margin:20px 0 0 0;}
-div.dayEvents h2{border-bottom:5px solid #ccc;padding:4px;}
-div.dayEvents span{color:#0a4d8f;}
-
-form.filters {margin:60px 0 0 0;}
-form.filters fieldset{width:248px;padding:0 0 20px 0;}
-form.filters fieldset label{font-weight:bold;clear:both;}
-form.filters fieldset ul{list-style:none;overflow:hidden;}
-form.filters fieldset ul li{overflow:hidden;width:240px;}
-form.filters fieldset ul li input{vertical-align:baseline;}
-form.filters fieldset ul li label{font-weight:normal;vertical-align:baseline;}
-form.filters fieldset ul li span{width:5px;height:12px;margin:0 2px 1px 0;display:block;float:left;margin:4px 0 0 0;}		
-form.filters fieldset input{margin:2px;}
-
-form.rsvp label{font-weight:bold;border-bottom:1px solid #ccc;display:block;padding:5px 0 8px 4px;}
-form.rsvp fieldset {background:#f0f0f0;padding:4px;-moz-border-radius: 5px; -webkit-border-radius: 5px;}
-form.rsvp fieldset div label{display:inline;border:0;padding:0;}
-form.rsvp fieldset div{padding:5px;}
-form.rsvp fieldset div.first{border-bottom:1px dotted #ccc;}
-form.rsvp fieldset div.disabled label{text-decoration:line-through;}
-form.rsvp fieldset div input {vertical-align:text-top;}
-form.rsvp fieldset div p {width:200px;margin:2px 0 2px 25px;color:#666;}
-form.rsvp fieldset div ul{list-style:none;}
-form.rsvp fieldset div ul li {margin:2px 0 0 25px;padding:2px;}
-form.rsvp fieldset div ul li label{display:block;padding:2px;font-weight:normal;}
-form.rsvp fieldset div ul li input{width:180px;}
-form.rsvp fieldset div.submit{padding:2px 0 3px 33px;}
-
-table.rsvpTable{margin:5px 0;width:100%;border:1px solid #ccc;border-collapse:separate;border-bottom:0;border-right:0;}
-table.rsvpTable tr th{background:#000;color:#fff;text-align:center;padding:8px 0;border:1px solid #000;border-right:1px solid #ccc;font-weight:bold;}
-table.rsvpTable tr td{width:96px;color:#666;padding:4px;border-bottom:1px solid #ccc;border-right:1px solid #ccc;font-weight:bold;}
-table.rsvpTable tr td.price{text-align:right;}
-table.rsvpTable tr th.items{width:150px;}
-table.rsvpTable tr td select{width:120px;}
-table.rsvpTable tr.subtotal td.subtotalLabel {border-top:3px solid #000;padding:10px;text-align:right;}
-table.rsvpTable tr.subtotal td.price {border-top:3px solid #000;padding:10px;font-size:120%;}
-
-div.eventRSVP h4{margin:10px 0 0 0;}
-div.eventRSVP table{margin:10px 0 0 0;}
-
-input.paypalSubmit {padding:5px;font-weight:bold;margin:10px auto;display:block;}
-
-div.eventTypesContainer{height:120px;padding:3px;overflow:auto;border:1px solid #ccc;}
+div.intro div{display:none;}
+div.intro div.current{display:block;}
+div.intro a.learn{background:#FFF url('../images/learn-more-background.jpg') 0 0 repeat-x;border-radius:5px;color:#294558;display:block;position:absolute;bottom:20px;right:20px;font-size:160%;padding: 10px 15px;text-decoration:none;text-shadow:rgba(10, 10, 10, 0.2) 1px 2px 2px;-moz-border-radius:5px;-webkit-border-radius:5px;}
+div.intro a.learn:hover{text-decoration:underline;}
+div.intro .committees{margin-top:35px;margin-left:30px;width:165px;font-size:124%;}
+div.intro .committees li{display:block;list-style:none;margin:0px 15px 0px 0;width:100%;}
+div.intro .committees li a{color:#fff;display:block;text-decoration:none;font-weight:normal;padding-left:15px;}
+div.intro .committees li a:hover{border-bottom:none;background-color:#f2f2f2;color:#333;}
+div.intro  .committees li.current{}
+div.intro div p{color: #fff;font-size:240%;position:absolute;margin-right:20px;top:25px;left:200px;}
 
 div.subintroContainer { margin-bottom: 15px; overflow: hidden;}
 div.subintroColumnLeft, div.subintroColumnRight { float: left; width: 450px; }
 div.subintroColumnRight { margin-left: 15px; width: 190px; }
+
+/* ---------------------------------------- */
+/* 		home membership, news, flicker	   */
+/* --------------------------------------- */
 
 div.membership, div.recentnews, div.flickr { margin-bottom: 30px;overflow:hidden; }
 
@@ -209,474 +161,70 @@ div.flickrLeft, div.flickrImage, div.flickrRight { float: left; height: 145px; }
 div.flickrLeft a { display: block; background: url(../images/flickrLeft.jpg) no-repeat 0 0; width: 30px; height: 85px; margin: 32px 10px; }
 div.flickrRight a { display: block; background: url(../images/flickrRight.jpg) no-repeat 0 0; width: 30px; height: 85px; margin: 32px 10px; }
 
-/* Jon's Event */
-.event
-{
-	/*margin: 6px 0;
-	position: relative;
-	text-align: center;
-	overflow:hidden;*/
-	clear:left;
-}
-.event.sponsored{
-	background: #ebebeb; border: 5px solid #ebebeb; -moz-border-radius: 5px; -webkit-border-radius: 5px; overflow: hidden; padding: 3px; 
-	margin-bottom:.5em;
-}
-.event .date
-{
-	margin-top:7px;
-	float: left;
-	position:relative;
-	padding:5px;
-	background-color:#0056A5;
-	width:3.4em;
-	height:2em;
-	color:#fff;
-	-moz-border-radius: 5px; 
-	-webkit-border-radius: 5px;
-}
-.event .date .day{
-	font-size:225%;
-	float:left;
-	line-height:1em;
-}
-.event .date .month{
-	-webkit-transform: rotate(-90deg); 
-	-moz-transform: rotate(-90deg);
-	font-weight:bold;
-	font-size:65%;
-	position:absolute;
-	top:.9em;
-	left:4em;
-	letter-spacing:2px;
-}
+/* ------------------------ */
+/* 		Foms	   			*/
+/* ------------------------ */
 
-.event ul
-{
-	border-left: #fff solid 1px;
-	list-style: none;
-	margin: 0 0 0 60px;
-	padding: 0;
-	text-align: left;
-}
-
-.event ul li
-{
-	border-left: transparent solid 4px;
-	color: #111;
-	display: block;
-	padding: 5px 10px;
-}
-
-.event ul li:hover
-{
-	background-color: #f2f2f2;
-}
-
-.event ul li span{
-	display:block;
-	font-size:77%;
-}
-/*.event ul li a
-{
-	display: block;
-}*/
-
-/* !Event Types 
-.event ul li.coupons
-{
-	border-left-color: #cc66ff;
-}
-.event ul li.social
-{
-	border-left-color: #ff9933;
-}
-.event ul li.networking
-{
-	border-left-color: #cc3333;
-}
-.event ul li.philanthopic
-{
-	border-left-color: #00a651;
-}
-.event ul li.educational
-{
-	border-left-color: #66ccff;
-}
-.event ul li.more
-{
-	background-color: #f2f2f2;
-}
-*/
-
-div.dayEvents .event
-{
-	background-color: transparent !important;
-	border-bottom-left-radius: 10px;
-	border-top-left-radius: 10px;
-	margin: 3px 0 !important;
-	position: relative;
-	text-align: center;
-}
-
-div.dayEvents .event ul{margin: 0;}
-div.dayEvents .event ul li div.details {color:#666;padding:4px;overflow:hidden;}
-div.dayEvents .event ul li div.details a{display:inline;padding:1px 0 0 2px;}
-div.dayEvents .event ul li div.details span{display:inline;padding:1px 0 0 2px;color:#000;}
-div.dayEvents .event ul li div.details div.columns{background:transparent;width:150px;float:left;padding:3px;}
-div.eventDetails div.miniColumn  ul,
-div.dayEvents .event ul li div.details div.columns ul{list-style:none;background:transparent;border:0;}
-div.eventDetails div.miniColumn  ul li,
-div.dayEvents .event ul li div.details div.columns ul li{padding:2px 2px 0 15px;color:#666;margin:0;border:0;background:transparent url(../images/check_icon.png) no-repeat 0 5px;}
-div.dayEvents .sponsored ul li{border:0!important;overflow:hidden;}
-div.dayEvents .sponsored ul li img{display:block;float:left;margin:0 5px 0 0;}
-div.dayEvents .sponsored ul li div.details,
-div.dayEvents .sponsored ul li div{padding-left:85px;}
-/*div.dayEvents .sponsored ul li div.details{padding:0!important;}*/
-div.twoColumns-1 div.eventDetails div.event ul {width:155px;}
-div.twoColumns-1 div.eventDetails div.event ul li{width:155px;}
-
-div.dayEvents .event{}
-div.dayEvents .sponsored{width: 240px;}
-div.flickrImage { width: 350px; text-align: center; }
-.uploadedEventLogo{width:200px; background-color:#eee;}
-
-div.eventDetails {overflow:hidden;}
-div.eventDetails div.columnsContainer{clear:both;padding:8px 5px;overflow:hidden;}
-div.eventDetails div.miniColumn{float:left;width:180px;margin:5px;}
-div.eventDetails div.miniColumn h3{margin:2px 0 3px 0;font-size:90%;}
-div.eventDetails div.miniColumn address{}
-div.eventDetails div.miniColumn a{display:block;height:20px;}
-div.eventDetails div.miniColumn ul li{padding-bottom:3px;}
-div.eventDetails div.miniColumn dl{width:150px;overflow:hidden;}
-div.eventDetails div.miniColumn dl dt{clear:left;float:left;width:88px;}
-div.eventDetails div.miniColumn dl dd{float:left;width:40px;font-weight:bold;}
-div.eventDetails h1{display:inline;}
-a.titleLink{white-space:nowrap;}
-div.eventDetails div.event {float:left;width:260px;}
-div.eventDetails div.event ul{width:200px;}
-div.eventDetails div.event ul li {width:170px;height:62px;background:#f0f0f0;-moz-border-radius-bottomright: 10px;-moz-border-radius-topright: 10px;-webkit-border-bottom-right-radius: 10px;-webkit-border-top-right-radius: 10px;}
-div.eventDetails div.event ul li dl{width:150px;overflow:hidden;}
-div.eventDetails div.event ul li dl dt{clear:left;float:left;width:68px;}
-div.eventDetails div.event ul li dl dd{float:left;width:82px;font-weight:bold;}
-div.eventDetails div.event ul li  span.weekday{font-weight:bold;color:#666;}
-div.eventDetails div.section {padding:5px;clear:both;}
-div.eventDetails div.section  p{padding:5px;}
-div.eventDetails div.section h3{border-bottom:4px solid #ccc;font-size:90%;}
-div.eventDetails div.section h4{font-size:90%;}
-div.eventDetails div.section div.map{width:420px;float:left;margin:0 3px 0 0;}
-
-
-div.whoElse{margin:20px 0 5px 0;}
-div.whoElse p{margin:5px;}
-div.whoElse h3{font-size:90%;}
-
-div.intro div{display:none;}
-div.intro div.current
-{
-	display:block;
-}
-div.intro a.learn
-{
-	background:#FFF url('../images/learn-more-background.jpg') 0 0 repeat-x;
-	border-radius:5px;
-	color:#294558;
-	display:block;
-	position:absolute;
-	bottom:20px;
-	right:20px;
-	font-size: 160%;
-	padding: 10px 15px;
-	text-decoration:none;
-	text-shadow:rgba(10, 10, 10, 0.2) 1px 2px 2px;
-	-moz-border-radius:5px;
-	-webkit-border-radius:5px;
-}
-div.intro a.learn:hover{text-decoration:underline;}
-div.intro .committees
-{
-	margin-top:35px;margin-left:30px;width:165px;font-size:124%;
-}
-div.intro .committees li
-{
-	display:block;list-style:none;margin:0px 15px 0px 0;width:100%;
-}
-div.intro .committees li a
-{
-	color:#fff;
-	display:block;
-	text-decoration:none;
-	font-weight:normal;
-	padding-left:15px;
-}
-div.intro .committees li a:hover{
-	border-bottom:none;
-	background-color:#f2f2f2;
-	color:#333;
-}
-div.intro  .committees li.current
-{
-	
-}
-div.intro div p
-{
-	color: #fff;
-	font-size: 240%;
-	position: absolute;
-	margin-right: 20px;
-	top: 25px;
-	left: 200px;
-}
-/*.intro .committees li.social {border-left:15px solid #ff9933;}
-.intro .committees li.networking {border-left:15px solid #cc3333;}
-.intro .committees li.philanthopic {border-left:15px solid #00a651;}
-.intro .committees li.educational {border-left:15px solid #66ccff;}*/
-
-/* forms */
-form {
-	overflow:hidden;
-	margin-bottom:1em;
-}
-form legend span{
-	position:absolute;
-	width:100%;
-}
-form legend span strong{
-	text-transform:uppercase;
-	font-size:85%;
-	background:#ddd;
-	padding:.4em 0 .4em 1em;
-	display:block;
-	-moz-border-radius: 5px; 
-	-webkit-border-radius: 5px;
-}
-form fieldset {
-	padding: 3em 0 1em;
-	display: block;
-	width:100%;
-	position:relative;
-}
-form fieldset div.form-node {
-	margin: 0 0 .5em;
-	clear:left;
-	position:relative;
-	overflow:hidden;
-	*zoom:1;
-}
-form fieldset label, form fieldset .label-like {
-	text-align: right;
-	width: 170px;
-	display: block;
-	float: left;
-	margin: 0 8px 0 0;
-	text-transform: uppercase;
-	font-size: 90%;
-	color: #6C6C6C;
-}
-form fieldset .default-value{
-	width: 200px;
-	margin: 0 8px 1em 190px;
-	padding-left:4px;
-	display:block;
-}
-form fieldset .aside-label {
-	font-size:84%;
-	color:#a1a1a1;
-	display: block;
-}
-form fieldset.checklist .form-node div {
-	margin: 5px 0 0 190px;
-	padding: 0;
-	overflow:hidden;	
-}
-form fieldset.checklist .form-node div label {
-	margin: 0 8px 0 10px;
-	padding: 0;
-	text-align:left;
-}
-form fieldset.checklist input[type="checkbox"] {
-	margin: 0;
-	padding: 4px 0 4px 4px;
-	float:left;
-}
-form fieldset label.checkbox {
-	text-align:left;
-	margin-left:1em;
-}
-form fieldset input[type="checkbox"].checkbox {
-	float:left;
-}
-
-
-form fieldset input[type="text"], form fieldset input[type="password"], form fieldset select, form fieldset textarea {
-	width: 200px;
-	display: block;
-	border: 1px solid #6c6c6c;
-	margin: 0 8px 0 190px;
-	padding: 4px 0 4px 4px;
-}
-form fieldset input[type="file"]{
-	width: 200px;
-	margin: 6px 8px 0 0;
-	padding: 4px 0 4px 4px;
-}
-form fieldset .form-node div a{
-	margin:0 0 0 180px;
-}
-
-form fieldset textarea.short {
-	height:100px;
-}
-form fieldset textarea.tall {
-	height:200px;
-}
-form fieldset input[type="text"].twoFieldsinline, form fieldset select.twoFieldsinline{
-	float:left;
-	width:95px;
-}
-form fieldset input[name="zip"] {
-	width: 50px;
-}
-form fieldset select.time{
-	width: 80px;
-	display: inline;
-	margin: 0;
-}
-form fieldset input[name="phone"]{
-	width: 80px;
-}
-form fieldset input[name="taxID2"] {
-	width: 70px;
-	display: inline;
-	margin: 0;
-}
-form fieldset input[name="phone3"] {
-	width: 40px;
-	float: none;
-	display: inline;
-	margin: 0;
-}
+form {overflow:hidden;margin-bottom:1em;}
+form legend span{position:absolute;width:100%;}
+form legend span strong{text-transform:uppercase;font-size:85%;background:#ddd;padding:.4em 0 .4em 1em;display:block;-moz-border-radius:5px;-webkit-border-radius:5px;}
+form fieldset {padding: 3em 0 1em;display: block;width:100%;position:relative;}
+form fieldset div.form-node {margin: 0 0 .5em;clear:left;position:relative;overflow:hidden;*zoom:1;}
+form fieldset label, form fieldset .label-like {text-align:right;width:170px;display:block;float:left;margin: 0 8px 0 0;text-transform:uppercase;font-size:90%;color:#6C6C6C;}
+form fieldset .default-value{width:200px;margin:0 8px 1em 190px;padding-left:4px;display:block;}
+form fieldset .aside-label {font-size:84%;color:#a1a1a1;display:block;}
+form fieldset.checklist .form-node div {margin: 5px 0 0 190px;padding:0;overflow:hidden;}
+form fieldset.checklist .form-node div label {margin:0 8px 0 10px;padding:0;text-align:left;}
+form fieldset.checklist input[type="checkbox"] {margin:0;padding:4px 0 4px 4px;float:left;}
+form fieldset label.checkbox {text-align:left;margin-left:1em;}
+form fieldset input[type="checkbox"].checkbox {float:left;}
+form fieldset input[type="text"], form fieldset input[type="password"], form fieldset select, form fieldset textarea {width:200px;display:block;border:1px solid #6c6c6c;margin:0 8px 0 190px;padding:4px 0 4px 4px;}
+form fieldset input[type="file"]{width:200px;margin:6px 8px 0 0;padding:4px 0 4px 4px;}
+form fieldset .form-node div a{margin:0 0 0 180px;}
+form fieldset textarea.short {height:100px;}
+form fieldset textarea.tall {height:200px;}
+form fieldset input[type="text"].twoFieldsinline, form fieldset select.twoFieldsinline{float:left;width:95px;}
+form fieldset input[name="zip"] {width:50px;}
+form fieldset select.time{width:80px;display:inline;margin:0;}
+form fieldset input[name="phone"]{width:80px;}
+form fieldset input[name="taxID2"] {width:70px;display:inline;margin:0;}
+form fieldset input[name="phone3"] {width:40px;float:none;display:inline;margin:0;}
 div.formAction {}
-div.formAction input[type="submit"] {
-	display: block;
-	border: 1px solid #6c6c6c;
-	margin: 0 8px 0 190px;
-	padding: .5em;
+div.formAction input[type="submit"] {display:block;border:1px solid #6c6c6c;margin:0 8px 0 190px;padding:.5em;}
+div.formAction .submit {margin:0 8px 0 190px;}
 
-}
-div.formAction .submit {
-	margin: 0 8px 0 190px;
-}
+/* ------------------------ */
+/* 		Errors	   			*/
+/* ------------------------ */
 
-/*------ dicount code and checkout ----------*/
-form .apply-code{
-	float: left;
-	display: block;
-	border: 1px solid #6c6c6c;
-	padding: .1em .4em;
-	margin:2px 0 0 320px;
-}
-form .for-price{
-	width:114px;
-	float:right;
-	padding-left:20px;
-}
-form .price{
-	font-weight:bold;
-}
+.errorExplanation {background:#FBE3E4 none repeat scroll 0 0;border-color:#FBC2C4;color:#8A1F11;}
+.errorExplanation {border:2px solid #DDDDDD;margin-bottom:1em;padding:0.8em;}
+.errorExplanation ul{margin-left:2em;}
+form fieldset div.fieldWithErrors {margin:0;}
+form fieldset div.fieldWithErrors label {color:#8A1F11;}
+form fieldset div.fieldWithErrors input[type="text"],form fieldset div.fieldWithErrors input[type="password"] {background:#FBE3E4 none repeat scroll 0 0;}
+.addPrice{display:block;margin:1em 0;}
 
-/*form fieldset a.button {
-	float: right;
-	margin: 0 13px 0 13px;
-}
-form fieldset a.button, form fieldset a.button:visited, .rsvp fieldset a.button {
-	background-color: #2799e9;
-	display: inline-block; 
-	padding: 5px 10px 6px; 
-	color: #fff;
-	text-decoration: none;
-	-moz-border-radius: 5px; 
-	-webkit-border-radius: 5px;
-	-moz-box-shadow: 0 1px 3px rgba(0,0,0,0.5);
-	-webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.5);
-	text-shadow: 0 -1px 1px rgba(0,0,0,0.25);
-	border-bottom: 1px solid rgba(0,0,0,0.25);
-	position: relative;
-	cursor: pointer;
-	font-size: 140%;
-}
-form fieldset a.button:hover { background-color: #2181c3; color: #fff; }
-form fieldset a.button:active { top: 1px; }*/
-form fieldset .remove {
-	float:left;
-	display:block;
-	padding-left:15px;
-	margin:5px;
-	background:url("../images/remove-icon.gif") no-repeat left top;
-}
-form fieldset div.no-logo
-{
-	border: 1px dashed #ccc;
-	height: 100px;
-	margin-left: 178px;
-	width: 300px;
+/* -------------------------------- */
+/* 		Sponsorship rotator			*/
+/* -------------------------------- */
 
-}
+div.sponsor .sponsorBody, div.sponsor .sponsorBody .coda-slider-wrapper, div.sponsor .sponsorBody .coda-slider-wrapper .coda-slider, div.sponsor .sponsorBody .coda-slider-wrapper .coda-slider .panel-wrapper{margin:0;padding:0;width:inherit;}
+div.sponsor .sponsorBody .coda-slider-wrapper .coda-slider{background-color:inherit;}
+.coda-slider, .coda-slider .panel{min-height:220px;width:190px !important;}
 
-/* ------ Errors ------------*/
-.errorExplanation {
-	background:#FBE3E4 none repeat scroll 0 0;
-	border-color:#FBC2C4;
-	color:#8A1F11;
-}
-.errorExplanation {
-	border:2px solid #DDDDDD;
-	margin-bottom:1em;
-	padding:0.8em;
-}
-.errorExplanation ul{
-	margin-left:2em;
-}
-form fieldset div.fieldWithErrors {
-	margin: 0;
-}
-form fieldset div.fieldWithErrors label {
-	color:#8A1F11;
-}
-form fieldset div.fieldWithErrors input[type="text"],form fieldset div.fieldWithErrors input[type="password"] {
-	background:#FBE3E4 none repeat scroll 0 0;
-}
+/* -------------------------------- */
+/* 		Galleria					*/
+/* -------------------------------- */
 
+#galleria .galleria-container{background: #2D2D2D ;}
 
-.addPrice{
-	display:block;
-	margin:1em 0;
-}
+/* -------------------------------- */
+/* 		Checkout					*/
+/* -------------------------------- */
 
-
-/* Sponsorship rotator on the home page */
-div.sponsor .sponsorBody,
-div.sponsor .sponsorBody .coda-slider-wrapper,
-div.sponsor .sponsorBody .coda-slider-wrapper .coda-slider,
-div.sponsor .sponsorBody .coda-slider-wrapper .coda-slider .panel-wrapper
-{
-	margin: 0;
-	padding: 0;
-	width: inherit;
-}
-
-div.sponsor .sponsorBody .coda-slider-wrapper .coda-slider
-{
-	background-color: inherit;
-}
-
-.coda-slider, .coda-slider .panel
-{
-	min-height: 220px;
-	width: 190px !important;
-}
-
-/* Galleria styles */
-#galleria .galleria-container{
-	background: #2D2D2D ;
-}
+form .apply-code{float:left;display:block;border:1px solid #6c6c6c;padding:.1em .4em;margin:2px 0 0 320px;}
+form .for-price{width:114px;float:right;padding-left:20px;}
+form .price{font-weight:bold;}
+form fieldset .remove {float:left;display:block;padding-left:15px;margin:5px;background:url("../images/remove-icon.gif") no-repeat left top;}
+form fieldset div.no-logo{border:1px dashed #ccc;height:100px;margin-left:178px;width:300px;}

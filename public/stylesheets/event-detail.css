@@ -1,0 +1,33 @@
+/* ------------------------------- */
+/* 		Event Details	  		   */
+/* ------------------------------ */
+
+div.eventDetails {overflow:hidden;}
+div.eventDetails div.columnsContainer{clear:both;padding:8px 5px;overflow:hidden;}
+div.eventDetails div.miniColumn{float:left;width:180px;margin:5px;}
+div.eventDetails div.miniColumn h3{margin:2px 0 3px 0;font-size:90%;}
+div.eventDetails div.miniColumn address{}
+div.eventDetails div.miniColumn a{display:block;height:20px;}
+div.eventDetails div.miniColumn ul li{padding-bottom:3px;}
+div.eventDetails div.miniColumn dl{width:150px;overflow:hidden;}
+div.eventDetails div.miniColumn dl dt{clear:left;float:left;width:88px;}
+div.eventDetails div.miniColumn dl dd{float:left;width:40px;font-weight:bold;}
+div.eventDetails h1{display:inline;}
+a.titleLink{white-space:nowrap;}
+div.eventDetails div.event {float:left;width:260px;}
+div.eventDetails div.event ul{width:200px;}
+div.eventDetails div.event ul li {width:170px;height:62px;background:#f0f0f0;-moz-border-radius-bottomright: 10px;-moz-border-radius-topright: 10px;-webkit-border-bottom-right-radius: 10px;-webkit-border-top-right-radius: 10px;}
+div.eventDetails div.event ul li dl{width:150px;overflow:hidden;}
+div.eventDetails div.event ul li dl dt{clear:left;float:left;width:68px;}
+div.eventDetails div.event ul li dl dd{float:left;width:82px;font-weight:bold;}
+div.eventDetails div.event ul li  span.weekday{font-weight:bold;color:#666;}
+div.eventDetails div.section {padding:5px;clear:both;}
+div.eventDetails div.section  p{padding:5px;}
+div.eventDetails div.section h3{border-bottom:4px solid #ccc;font-size:90%;}
+div.eventDetails div.section h4{font-size:90%;}
+div.eventDetails div.section div.map{width:420px;float:left;margin:0 3px 0 0;}
+
+div.whoElse{margin:20px 0 5px 0;}
+div.whoElse p{margin:5px;}
+div.whoElse h3{font-size:90%;}
+

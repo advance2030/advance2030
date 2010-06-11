@@ -1,4 +1,72 @@
-.twoColumns-1
-{
-	width: 248px !important;
-}
+/* ------------------------------- */
+/* 		Calendar Styles  		   */
+/* ------------------------------ */
+
+div.calendarHeader{overflow:hidden;height:30px;margin:10px 0 0 0;}
+
+div.calendarHeader{overflow:hidden;height:30px;}
+div.calendarHeader form{float:left;width:360px;height:40px;}
+div.calendarHeader form select{width:200px;}
+div.calendarHeader div{float:right;/*width:45%;*/text-align:right;height:40px;padding:0 6px 0 0;}
+div.calendarHeader div span.daySelected{display:block;float:right;padding:2px 5px;font-weight:bold;background:#0099ff;color:#fff;margin:4px;}
+div.calendarHeader div a{-moz-border-radius: 3px; -webkit-border-radius: 3px;text-decoration:none;font-size:130%;display:block;height:21px;width:32px;padding:0 0 0 0;background:#000;color:#fff;float:right;margin:2px;text-align:center;}
+div.calendarHeader div a:hover{background:#666;}
+
+table#calendar{margin:0;}
+table#calendar {overflow:hidden;border:1px solid #ccc;border-left:2px solid #ccc;border-collapse:separate;}
+table#calendar thead tr{background:#000;}
+
+table#calendar thead tr th{height:14px;background:#000;width:96px;color:#fff;text-align:center;padding:8px 0;border:1px solid #000;border-right:1px solid #ccc;font-weight:bold;}
+table#calendar tbody tr{overflow:hidden;border-bottom:1px solid #ccc;clear:both;}
+table#calendar tbody tr td{overflow:hidden;border-bottom:1px solid #ccc;height:64px;border:1px solid #fff;border-right:1px solid #ccc;width:96px;}
+table#calendar tbody tr td.weekend{background:#ebebeb;}
+table#calendar tbody tr td div.label{height:31px;background:#c0e0ff;padding:1px 3px;font-size:85%;zoom:1;}
+
+table#calendar tbody tr td a.date{display:block;background:#c0e0ff;padding:1px 3px;font-size:85%;}
+table#calendar tbody tr td.notmonth div{background:#ebebeb;display:block;padding:1px 3px;font-size:85%;}
+table#calendar tbody tr td ul{list-style:none;}
+table#calendar tbody tr td ul li{padding:2px 0 1px 2px;overflow:hidden;}
+table#calendar tbody tr td ul li a{font-size:82%;padding:0 0 0 2px;white-space:nowrap;display:block;float:left;}
+table#calendar tbody tr td ul li span{width:5px;height:10px;margin:0 2px 1px 0;float:left;}
+table#calendar tbody tr td.today {border:1px solid #255683;}
+table#calendar tbody tr td.today div{background:#255683;font-weight:bold;color:#fff;}
+table#calendar tbody tr td.today div a{font-weight:bold;color:#fff;}
+table#calendar tbody tr td.current {border:1px solid #0099ff;}
+table#calendar tbody tr td.current div{font-weight:bold;background:#0099ff;color:#fff;}
+table#calendar tbody tr td.current div a{font-weight:bold;color:#fff;}
+
+form.filters {margin:60px 0 0 0;}
+form.filters fieldset{width:248px;padding:0 0 20px 0;}
+form.filters fieldset label{font-weight:bold;clear:both;}
+form.filters fieldset ul{list-style:none;overflow:hidden;}
+form.filters fieldset ul li{overflow:hidden;width:240px;}
+form.filters fieldset ul li input{vertical-align:baseline;}
+form.filters fieldset ul li label{font-weight:normal;vertical-align:baseline;}
+form.filters fieldset ul li span{width:5px;height:12px;margin:0 2px 1px 0;display:block;float:left;margin:4px 0 0 0;}		
+form.filters fieldset input{margin:2px;}
+
+form.rsvp label{font-weight:bold;border-bottom:1px solid #ccc;display:block;padding:5px 0 8px 4px;}
+form.rsvp fieldset {background:#f0f0f0;padding:4px;-moz-border-radius: 5px; -webkit-border-radius: 5px;}
+form.rsvp fieldset div label{display:inline;border:0;padding:0;}
+form.rsvp fieldset div{padding:5px;}
+form.rsvp fieldset div.first{border-bottom:1px dotted #ccc;}
+form.rsvp fieldset div.disabled label{text-decoration:line-through;}
+form.rsvp fieldset div input {vertical-align:text-top;}
+form.rsvp fieldset div p {width:200px;margin:2px 0 2px 25px;color:#666;}
+form.rsvp fieldset div ul{list-style:none;}
+form.rsvp fieldset div ul li {margin:2px 0 0 25px;padding:2px;}
+form.rsvp fieldset div ul li label{display:block;padding:2px;font-weight:normal;}
+form.rsvp fieldset div ul li input{width:180px;}
+form.rsvp fieldset div.submit{padding:2px 0 3px 33px;}
+
+table.rsvpTable{margin:5px 0;width:100%;border:1px solid #ccc;border-collapse:separate;border-bottom:0;border-right:0;}
+table.rsvpTable tr th{background:#000;color:#fff;text-align:center;padding:8px 0;border:1px solid #000;border-right:1px solid #ccc;font-weight:bold;}
+table.rsvpTable tr td{width:96px;color:#666;padding:4px;border-bottom:1px solid #ccc;border-right:1px solid #ccc;font-weight:bold;}
+table.rsvpTable tr td.price{text-align:right;}
+table.rsvpTable tr th.items{width:150px;}
+table.rsvpTable tr td select{width:120px;}
+table.rsvpTable tr.subtotal td.subtotalLabel {border-top:3px solid #000;padding:10px;text-align:right;}
+table.rsvpTable tr.subtotal td.price {border-top:3px solid #000;padding:10px;font-size:120%;}
+
+div.eventRSVP h4{margin:10px 0 0 0;}
+div.eventRSVP table{margin:10px 0 0 0;}

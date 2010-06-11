@@ -1,3 +1,6 @@
+<% content_for :stylesheets do %>
+	<%= stylesheet_link_tag 'event-detail', 'event-teasers' %>
+<% end %>
 <% if @event.nil? %>
 	<h1>Event Not Found</h1>
 <% else %>

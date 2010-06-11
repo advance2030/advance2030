@@ -1,0 +1,13 @@
+/* ---------------------------- */
+/* 		Event Teasers		   */
+/* --------------------------- */
+
+.event{clear:left;}
+.event.sponsored{background:#ebebeb;border:5px solid #ebebeb;-moz-border-radius:5px;-webkit-border-radius:5px;overflow:hidden;padding:3px; margin-bottom:.5em;}
+.event .date{margin-top:7px;float:left;position:relative;padding:5px;background-color:#0056A5;width:3.4em;height:2em;color:#fff;-moz-border-radius:5px;-webkit-border-radius:5px;}
+.event .date .day{font-size:225%;float:left;line-height:1em;}
+.event .date .month{-webkit-transform:rotate(-90deg);-moz-transform: rotate(-90deg);font-weight:bold;font-size:65%;position:absolute;top:.9em;left:4em;letter-spacing:2px;}
+.event ul{border-left: #fff solid 1px;list-style:none;margin: 0 0 0 60px;padding: 0;text-align:left;}
+.event ul li{border-left: transparent solid 4px;color:#111;display: block;padding: 5px 10px;}
+.event ul li:hover{background-color: #f2f2f2;}
+.event ul li span{display:block;font-size:77%;}
