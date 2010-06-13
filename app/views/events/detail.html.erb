@@ -54,29 +54,114 @@
 	</div>
 </div>
 <div class="twoColumns-1">
-	<form class="rsvp">								
+	<!-- Member: RSVP event form (event with no charge) -->
+	<form class="rsvp">						
 		<fieldset>
-			<legend><span><strong>Register for this Event </strong></span></legend>
+			<legend><span><strong>RSVP for this Event </strong></span></legend>
+			<div class="form-node member">
+				<img src="/images/check_icon.png" class="checked"> <label for="members" class="radio member">RSVP as a Member</label>
+			</div>
+			<div class="formAction">
+				<input type="submit" value="RSVP">
+			</div>
+		</fieldset>
+	</form>
+
+	<!-- Non Member: RSVP event form (event with no charge) -->
+	<form class="rsvp">								
+		<div id="errorExplanation" class="errorExplanation">
+			<h2>2 errors prohibited you from RSVP-ing</h2>
+			<p>There were problems with the following fields:</p>
+			<ul>
+				<li>First name can't be blank</li>
+				<li>Last name can't be blank</li>
+			</ul>
+		</div>
+		<fieldset>
+			<legend><span><strong>RSVP for this Event </strong></span></legend>
 			<div class="form-node disabled first">
-				<input type="radio" name="member" value="true" disabled id="members" class="radio" /> <label for="members" class="radio member">Register as a Member</label>
+				<input type="radio" name="member" value="true" disabled id="members" class="radio" /> <label for="members" class="radio member">RSVP as a Member</label>
 			</div>
 			<div class="form-node">
 				<p class="notice">You must <a href="#">log in</a> before you can register as a member!</p>
 			</div>
 
 			<div class="form-node">				
-				<input type="radio" name="member" value="false" checked id="nonmembers" class="radio"/> <label for="nonmembers" class="radio non-member">Register as a Non-Member</label>
+				<input type="radio" name="member" value="false" checked id="nonmembers" class="radio"/> <label for="nonmembers" class="radio non-member">RSVP as a Non-Member</label>
 			</div>
-			<div class="form-node">				
+			<div class="form-node">
+				<div class="fieldWithErrors">
 				<label for="firstName">First Name:</label>
+				</div>
+				<div class="fieldWithErrors">
 				<input type="text" id="firstName" />
+				</div>
 			</div>
 			<div class="form-node">	
+				<div class="fieldWithErrors">
 				<label for="lastName">Last Name:</label>
+				</div>
+				<div class="fieldWithErrors">
 				<input type="text" id="lastName" />
+				</div>
 			</div>
 			<div class="formAction">
-				<input type="submit" value="Register">
+				<input type="submit" value="RSVP">
+			</div>
+		</fieldset>
+	</form>
+	<!-- Member: Register event form (event with a charge) -->
+	<form class="rsvp">						
+		<fieldset>
+			<legend><span><strong>Register for this Event </strong></span></legend>
+			<div class="form-node member">
+				<img src="/images/check_icon.png" class="checked"> <label for="members" class="radio member">Register as a Member $20</label>
+			</div>
+			<div class="formAction">
+				<input type="submit" value="Continue">
+			</div>
+		</fieldset>
+	</form>
+	<!-- Non Member: Register event form (event with a charge) -->	
+	<form class="rsvp">								
+		<div id="errorExplanation" class="errorExplanation">
+			<h2>2 errors prohibited you from continuing</h2>
+			<p>There were problems with the following fields:</p>
+			<ul>
+				<li>First name can't be blank</li>
+				<li>Last name can't be blank</li>
+			</ul>
+		</div>
+		<fieldset>
+			<legend><span><strong>Register for this Event </strong></span></legend>
+			<div class="form-node disabled first">
+				<input type="radio" name="member" value="true" disabled id="members" class="radio" /> <label for="members" class="radio member">Register as a Member $20</label>
+			</div>
+			<div class="form-node">
+				<p class="notice">You must <a href="#">log in</a> before you can register as a member!</p>
+			</div>
+
+			<div class="form-node">				
+				<input type="radio" name="member" value="false" checked id="nonmembers" class="radio"/> <label for="nonmembers" class="radio non-member">Register as a Non-Member $50</label>
+			</div>
+			<div class="form-node">
+				<div class="fieldWithErrors">
+				<label for="firstName">First Name:</label>
+				</div>
+				<div class="fieldWithErrors">
+				<input type="text" id="firstName" />
+				</div>
+			</div>
+			<div class="form-node">	
+				<div class="fieldWithErrors">
+				<label for="lastName">Last Name:</label>
+				</div>
+				<div class="fieldWithErrors">
+				<input type="text" id="lastName" />
+				</div>
+			</div>
+			<div class="formAction">
+				<input type="submit" value="Continue">
 			</div>
 		</fieldset>
 	</form>

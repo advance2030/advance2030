@@ -176,7 +176,7 @@ form fieldset .aside-label {font-size:84%;color:#a1a1a1;display:block;}
 form fieldset.checklist .form-node div {margin: 5px 0 0 190px;padding:0;overflow:hidden;}
 form fieldset.checklist .form-node div label {margin:0 8px 0 10px;padding:0;text-align:left;}
 form fieldset.checklist input[type="checkbox"] {margin:0;padding:4px 0 4px 4px;float:left;}
-form fieldset label.checkbox, form fieldset label.radio {text-align:left;margin-left:1em; text-transform: none;}
+form fieldset label.checkbox, form fieldset label.radio, form fieldset img.checked {float:left;text-align:left;margin-left:1em; text-transform: none;}
 form fieldset input[type="checkbox"].checkbox,form fieldset input[type="radio"].radio {float:left;}
 form fieldset input[type="text"], form fieldset input[type="password"], form fieldset select, form fieldset textarea {width:350px;display:block;border:1px solid #6c6c6c;margin:0 8px 0 190px;padding:4px 0 4px 4px;}
 form fieldset input[type="file"]{width:200px;margin:6px 8px 0 0;padding:4px 0 4px 4px;}
