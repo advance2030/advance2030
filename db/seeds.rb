@@ -7,19 +7,19 @@
 #   Major.create(:name => 'Daley', :city => cities.first)
 events = Event.create([
   {:name => "National City Night on the Town", 
-   :start_datetime => "2010-06-18 08:30:00",
-   :end_datetime => "2010-06-18 10:30:00",
+   :start_datetime => Time.now.advance(:days => 5),
+   :end_datetime => Time.now.advance(:days =>5, :minutes => 30),
    :sponsor => true
    },
    {:name => "Great Lakes Brewery...",
-     :start_datetime => "2010-06-20 09:00:00",
-     :end_datetime => "2010-06-20 10:00:00",
+     :start_datetime => Time.now.advance(:days => 8),
+     :end_datetime => Time.now.advance(:days => 8, :minutes => 30),
      :sponsor => true},
    {:name => "Hackibou",
-     :start_datetime => "2010-07-03 07:30:00",
-     :end_datetime => "2010-07-03 11:00:00",
+     :start_datetime => Time.now.advance(:days => 20),
+     :end_datetime => Time.now.advance(:days => 20, :minutes => 30),
      :sponsor => true},
     {:name => "Clerb",
-     :start_datetime => "2010-06-17 10:00:00",
-     :end_datetime => "2010-06-17 11:00:00",
+     :start_datetime => Time.now.advance(:days => 6),
+     :end_datetime => Time.now.advance(:days => 6, :minutes => 30),
      :sponsor => false}])
