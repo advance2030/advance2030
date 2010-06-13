@@ -1,4 +1,4 @@
-<div class="threeColumns-1">
+<div class="twoColumns-0">
     <h1>Create an Event</h1>
     <% form_for @event, :html => { :class => "allPurposeForm", :multipart => true } do |f| %>   
     <fieldset class="oneCol">
@@ -6,21 +6,24 @@
         <%= f.label :name, "Event Title" %>
         <%= f.text_field :name %>
       </div>
-	  <div class="form-node">
-		<%= f.label :sponsor, "Is this a Sponsored Event?"%>
-		<%= f.check_box :sponsor %>
-	  </div>
-	  <div class="form-node">
-		<%= f.label :sponsor_logo %>
-		<%= f.file_field :sponsor_logo %>
-	  </div>
       <div class="form-node">
         <%= f.label :summary, "Event Summary" %>
         <%= f.text_area :summary, :class => "short" %>
       </div>
       <div class="form-node">
         <%= f.label :description %>
-        <%= f.text_area :description, :class => "tall" %>
+        <%= f.text_area :description, :class => "tall", :value => "
+<div class='section'>
+	<h4>Event Description</h4>
+</div>
+<div class='section'>
+	<h4>Map &amp; Directions</h4>
+	<div class='map'>
+		<img src='../../../../public/images/google_map.jpg' style='width:417px;height:272px;'> 
+	</div>
+	<h4>Directions</h4>
+</div>
+        " %>
       </div>
     </fieldset>
     
@@ -36,6 +39,17 @@
         <%= f.datetime_select :end_datetime, {:use_short_month => true, :order => [:month, :day, :year]},
  							  :class => 'datepicker' %>
       </div>
+    </fieldset>
+	<fieldset class="oneCol">
+      <div class="form-node">
+		<div class="label-like">&nbsp;</div>
+		<%= f.check_box :sponsor, :class => "checkbox" %>
+		<%= f.label :sponsor, "Is this a Sponsored Event?", :class => "checkbox" %>
+	  </div>
+	  <div class="form-node eventSponsored">
+		<%= f.label :sponsor_logo %>
+		<%= f.file_field :sponsor_logo %>
+	  </div>
     </fieldset>
     <fieldset class="oneCol">
       <div class="form-node">
@@ -54,7 +68,7 @@
 		<%= f.text_field :non_member_price %>
       </div>
     </fieldset>
-   
+
     <div class="formAction">
        <%= f.submit "Create" %>
     </div>

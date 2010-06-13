@@ -6,14 +6,17 @@
 <% else %>
 <div class="twoColumns-0">
 	<div class="eventDetails">
-		<h1><%=h @event.name%></h1>
-		<a href="<%=calendar_day_url(@event.start_datetime)%>" class="titleLink">&laquo; Back to Calendar</a>				
+		<a href="<%=calendar_day_url(@event.start_datetime)%>" class="small right">&laquo; Back to Calendar</a>
+		<h1><%=h @event.name%></h1>				
 		<div class="columnsContainer">
 			<div class="event">
-				<h3 class="date"><span><%= @event.start_datetime.strftime('%b')%></span> <%= @event.start_datetime.strftime('%d')%></h3>
+				<a href="#" class="date">
+					<span class="day">08</span>
+					<span class="month">AUG</span>
+				</a>
 				<ul>
 					<li class="">
-						<span class="weekday"><%= @event.start_datetime.strftime('%A')%></span>												
+						<h3 class="tiny weekday"><%= @event.start_datetime.strftime('%A')%></h3>
 						<dl>
 							<dt>Start time:</dt>
 							<dd><%=@event.start_datetime.strftime('%I:%M %p')%></dd>
@@ -22,26 +25,9 @@
 						</dl>
 					</li>
 				</ul>
-			</div>
-			<div class="miniColumn">
-				<h3>LOCATION</h3>
-				<address>
-					Cleveland Metroparks Zoo
-					3900 Wildlife Way
-					Cleveland, OH 44109
-				</address>
-				<a href="#">Map & Directions</a>
-				<a href="#">Web Site</a>
-			</div>
-			<div class="miniColumn">
-				<h3>WHO CAN COME?</h3>
-				<ul>
-					<li>Members</li>
-					<li>Non-Members</li>
-				</ul>									
-			</div>
-			<div class="miniColumn">
-				<h3>COST</h3>					
+			</div>			
+			<div class="miniColumn right">
+				<h3 class="tiny">Ccost</h3>					
 				<dl>
 					<dt>Members:</dt>
 					<dd>$20</dd>
@@ -50,14 +36,12 @@
 				</dl>									
 			</div>
 		</div>
-		<div class="section">
-			<h3>EVENT DESCRIPTION</h3>
-			<p>
-				<%=h @event.description%>
-			</p>
+		<%= @event.description%>
+		<!--<div class="section">
+			<h4>EVENT DESCRIPTION</h4>
 		</div>
 		<div class="section">
-			<h3>MAP &amp; DIRECTIONS	</h3>
+			<h4>MAP &amp; DIRECTIONS</h4>
 			<div class="map">
 				<img src="../../../../public/images/google_map.jpg" style="width:417px;height:272px;"> 
 			</div>
@@ -66,49 +50,39 @@
 				<b>From I-71:</b> <br>
 				Exit at West 25th St. and follow Zoo signs.
 			</p>
-			<h4>PARKING</h4>
-			<p>
-				parking is free
-			</p>
-		</div>
-		<div class="section">
-			<h3>INVITE FRIENDS BY EMAIL</h3>
-			
-		</div>
+		</div>-->
 	</div>
 </div>
 <div class="twoColumns-1">
 	<form class="rsvp">								
 		<fieldset>
-			<label>REGISTER for EVENT</label>
-			<div class="disabled first">
-				<input type="radio" name="member" value="true" disabled id="members" /> <label for="members">Members</label>
-				<p>You must <a href="#">log in</a> before you can register as a member!</p>
+			<legend><span><strong>Register for this Event </strong></span></legend>
+			<div class="form-node disabled first">
+				<input type="radio" name="member" value="true" disabled id="members" class="radio" /> <label for="members" class="radio member">Register as a Member</label>
 			</div>
-			<div>
-				<input type="radio" name="member" value="false" checked id="nonmembers"/> <label for="nonmembers">Non-Members</label>										
-				<ul>
-					<li>
-						<label for="firstName">First Name:</label>
-						<input type="text" id="firstName" />
-					</li>
-					<li>
-						<label for="lastName">Last Name:</label>
-						<input type="text" id="lastName" />
-					</li>
-					<li>
-						<a href="#">Privacy Policy</a>
-					</li>
-				</ul>
+			<div class="form-node">
+				<p class="notice">You must <a href="#">log in</a> before you can register as a member!</p>
 			</div>
-			<div class="submit">
-				<a href="#" class="button">Register</a>
+
+			<div class="form-node">				
+				<input type="radio" name="member" value="false" checked id="nonmembers" class="radio"/> <label for="nonmembers" class="radio non-member">Register as a Non-Member</label>
+			</div>
+			<div class="form-node">				
+				<label for="firstName">First Name:</label>
+				<input type="text" id="firstName" />
+			</div>
+			<div class="form-node">	
+				<label for="lastName">Last Name:</label>
+				<input type="text" id="lastName" />
+			</div>
+			<div class="formAction">
+				<input type="submit" value="Register">
 			</div>
 		</fieldset>
 	</form>
 	<div class="whoElse">
-		<h3>WHO ELSE IS GOING?</h3>
-		<p class="login">You must <a href="#">log in</a> before you can see who else is attending!</p>
+		<h4>Who Elese is Going?</h4>
+		<p class="notice">You must <a href="#">log in</a> before you can see who else is attending!</p>
 	</div>
 </div>
 <div class="clear"></div>
