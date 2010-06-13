@@ -100,25 +100,9 @@
 </div>
 <div class="twoColumns-1">
 	<h4>Sponsored Events</h4>
-	<% unless @sponsored_events.empty? %>
-		<% @sponsored_events.each do |event| %>
-		<div class="event sponsored">
-			<div class="date">
-				<span class="day"><%= event.start_datetime.strftime("%d") %></span> 
-				<span class="month"><%= event.start_datetime.strftime("%b") %></span>
-			</div>	
-			<ul>
-				<li class="social">
-					<%= image_tag event.sponsor_logo.url(:sponsored_event) %>
-					<div><%=link_to truncate(event.name, :length => 50), event_detail_path(event) %></div>
-					<div class="details">
-						<p><%= event.start_datetime.strftime("%B %d, at %I:%M %p")%></p>
-					</div>
-				</li>
-			</ul>
-		</div>
-		<% end %>
-	<% end %>
+	<%= render :partial => "shared/upcoming_sponsored_events", 
+			   :collection => @sponsored_events,
+			   :as => :event %>
 	<h4>Upcoming Events</h4>
 	<div class="event">
 		<a href="#" class="date">

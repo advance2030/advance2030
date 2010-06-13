@@ -1,0 +1,16 @@
+<% unless @unsponsored_events.empty? %>
+	<div class="event ">
+		<div class="date">
+			<span class="day"><%= event.start_datetime.strftime("%d") %></span> 
+			<span class="month"><%= event.start_datetime.strftime("%b") %></span>
+		</div>	
+		<ul>
+			<li class="social">
+				<div><%=link_to truncate(event.name, :length => 50), event_detail_path(event) %></div>
+				<div class="details">
+					<p><%= event.start_datetime.strftime("%B %d, at %I:%M %p")%></p>
+				</div>
+			</li>
+		</ul>
+	</div>
+<% end %>
