@@ -1,7 +1,7 @@
 class HomeController < ApplicationController
 
   def index
-    @coming_events = Event.by_range(Time.now, Time.now.advance(:days => 14))
+    @coming_events = Event.by_range
     unless @coming_events.empty?    
       @sponsored_events = @coming_events.sponsored
       @unsponsored_events = @coming_events - @sponsored_events

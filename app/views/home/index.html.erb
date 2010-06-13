@@ -100,90 +100,12 @@
 </div>
 <div class="twoColumns-1">
 	<h4>Sponsored Events</h4>
-	<% unless @sponsored_events.empty? %>
-		<% @sponsored_events.each do |event| %>
-		<div class="event sponsored">
-			<div class="date">
-				<span class="day"><%= event.start_datetime.strftime("%d") %></span> 
-				<span class="month"><%= event.start_datetime.strftime("%b") %></span>
-			</div>	
-			<ul>
-				<li class="social">
-					<%= image_tag event.sponsor_logo.url(:sponsored_event) %>
-					<div><%=link_to truncate(event.name, :length => 50), event_detail_path(event) %></div>
-					<div class="details">
-						<p><%= event.start_datetime.strftime("%B %d, at %I:%M %p")%></p>
-					</div>
-				</li>
-			</ul>
-		</div>
-		<% end %>
-	<% end %>
+	<%= render :partial => "shared/upcoming_sponsored_events", 
+			   :collection => @sponsored_events,
+			   :as => :event %>
 	<h4>Upcoming Events</h4>
-	<div class="event">
-		<a href="#" class="date">
-			<span class="day">08</span>
-			<span class="month">AUG</span>
-		</a>
-		<ul>
-			<li class="networking">
-				<a href="">AIG completes preferred stock sale to government</a>
-				<span class="time">10:00 am</span>
-				<span class="venue">Cleveland State University</span>
-			</li>
-		</ul>
-	</div>
-	<div class="event">
-		<a href="#" class="date">
-			<span class="day">08</span>
-			<span class="month">AUG</span>
-		</a>
-		<ul>
-			<li class="networking">
-				<a href="">AIG completes preferred stock sale to government</a>
-				<span class="time">10:00 am</span>
-				<span class="venue">Cleveland State University</span>
-			</li>
-		</ul>
-	</div>
-	<div class="event">
-		<a href="#" class="date">
-			<span class="day">18</span>
-			<span class="month">FEB</span>
-		</a>
-		<ul>
-			<li class="networking">
-				<a href="">AIG completes preferred stock sale to government</a>
-				<span class="time">10:00 am</span>
-				<span class="venue">Cleveland State University</span>
-			</li>
-		</ul>
-	</div>
-	<div class="event">
-		<a href="#" class="date">
-			<span class="day">11</span>
-			<span class="month">JUL</span>
-		</a>
-		<ul>
-			<li class="networking">
-				<a href="">AIG completes preferred stock sale to government</a>
-				<span class="time">10:00 am</span>
-				<span class="venue">Cleveland State University</span>
-			</li>
-		</ul>
-	</div>
-	<div class="event">
-		<a href="#" class="date">
-			<span class="day">23</span>
-			<span class="month">DEC</span>
-		</a>
-		<ul>
-			<li class="networking">
-				<a href="">AIG completes preferred stock sale to government</a>
-				<span class="time">10:00 am</span>
-				<span class="venue">Cleveland State University</span>
-			</li>
-		</ul>
-	</div>
+	<%= render :partial => "shared/upcoming_unsponsored_events",
+			   :collection => @unsponsored_events,
+			   :as => :event %>
 </div>
 

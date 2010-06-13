@@ -7,10 +7,8 @@ class Event < ActiveRecord::Base
   validates_presence_of :start_datetime, :end_datetime
   has_attached_file :sponsor_logo, :styles => {:sponsored_event => "75x75"}
   
-  named_scope :by_range do |from, to|  
-    {:conditions => ["start_datetime between ? and ?", from, to],
-    :order => :start_datetime} 
-  end
+  named_scope :by_range, :conditions => ["start_datetime between ? and ?", Time.now, Time.now.advance(:days => 14)],
+    :order => :start_datetime 
   named_scope :sponsored, :conditions => {:sponsor => true }
   
   def before_save
