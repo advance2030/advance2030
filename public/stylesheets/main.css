@@ -99,8 +99,8 @@ footer h4{margin-top:0;}
 /* ------------------------------ */
 
 /* 2 column layout */
-div.twoColumns-0{float:left;width:655px;}
-div.twoColumns-1{float:right;width:275px;}
+div.twoColumns-0{float:left;width:655px;padding: 1em 0 2em 0;}
+div.twoColumns-1{float:right;width:275px;padding: 1em 0 2em 0;}
 
 /* 3 colum layout */
 .threeColumns-0{background: transparent url('../images/subnav-background.jpg') 0 0 no-repeat;float: left;min-height: 249px;width: 162px;}
@@ -168,7 +168,7 @@ div.flickrRight a { display: block; background: url(../images/flickrRight.jpg) n
 form {overflow:hidden;margin-bottom:1em;}
 form legend span{position:absolute;width:100%;}
 form legend span strong{text-transform:uppercase;font-size:85%;background:#ddd;padding:.4em 0 .4em 1em;display:block;-moz-border-radius:5px;-webkit-border-radius:5px;}
-form fieldset {padding: 3em 0 1em;display: block;width:100%;position:relative;}
+form fieldset {padding: 1em 0 3em;display: block;width:100%;position:relative;}
 form fieldset div.form-node {margin: 0 0 .5em;clear:left;position:relative;overflow:hidden;*zoom:1;}
 form fieldset label, form fieldset .label-like {text-align:right;width:170px;display:block;float:left;margin: 0 8px 0 0;text-transform:uppercase;font-size:90%;color:#6C6C6C;}
 form fieldset .default-value{width:200px;margin:0 8px 1em 190px;padding-left:4px;display:block;}
@@ -176,9 +176,9 @@ form fieldset .aside-label {font-size:84%;color:#a1a1a1;display:block;}
 form fieldset.checklist .form-node div {margin: 5px 0 0 190px;padding:0;overflow:hidden;}
 form fieldset.checklist .form-node div label {margin:0 8px 0 10px;padding:0;text-align:left;}
 form fieldset.checklist input[type="checkbox"] {margin:0;padding:4px 0 4px 4px;float:left;}
-form fieldset label.checkbox {text-align:left;margin-left:1em;}
-form fieldset input[type="checkbox"].checkbox {float:left;}
-form fieldset input[type="text"], form fieldset input[type="password"], form fieldset select, form fieldset textarea {width:200px;display:block;border:1px solid #6c6c6c;margin:0 8px 0 190px;padding:4px 0 4px 4px;}
+form fieldset label.checkbox, form fieldset label.radio {text-align:left;margin-left:1em;}
+form fieldset input[type="checkbox"].checkbox,form fieldset input[type="radio"].radio {float:left;}
+form fieldset input[type="text"], form fieldset input[type="password"], form fieldset select, form fieldset textarea {width:350px;display:block;border:1px solid #6c6c6c;margin:0 8px 0 190px;padding:4px 0 4px 4px;}
 form fieldset input[type="file"]{width:200px;margin:6px 8px 0 0;padding:4px 0 4px 4px;}
 form fieldset .form-node div a{margin:0 0 0 180px;}
 form fieldset textarea.short {height:100px;}
@@ -193,17 +193,21 @@ div.formAction {}
 div.formAction input[type="submit"] {display:block;border:1px solid #6c6c6c;margin:0 8px 0 190px;padding:.5em;}
 div.formAction .submit {margin:0 8px 0 190px;}
 
-/* ------------------------ */
-/* 		Errors	   			*/
-/* ------------------------ */
+/* ------------------------------------ */
+/* 		Errors, Notices, Success	   		*/
+/* ------------------------------------ */
 
 .errorExplanation {background:#FBE3E4 none repeat scroll 0 0;border-color:#FBC2C4;color:#8A1F11;}
-.errorExplanation {border:2px solid #DDDDDD;margin-bottom:1em;padding:0.8em;}
+.notice {background:#FFF6BF none repeat scroll 0 0;border-color:#FFD324;}
+.success {background:#E6EFC2 none repeat scroll 0 0;border-color:#C6D880;}
+.errorExplanation, .notice {border:2px solid #DDDDDD;margin-bottom:1em;padding:0.8em;}
 .errorExplanation ul{margin-left:2em;}
 form fieldset div.fieldWithErrors {margin:0;}
 form fieldset div.fieldWithErrors label {color:#8A1F11;}
 form fieldset div.fieldWithErrors input[type="text"],form fieldset div.fieldWithErrors input[type="password"] {background:#FBE3E4 none repeat scroll 0 0;}
 .addPrice{display:block;margin:1em 0;}
+
+
 
 /* -------------------------------- */
 /* 		Sponsorship rotator			*/

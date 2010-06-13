@@ -23,15 +23,7 @@ $(document).ready(function() {
 //show and hide for user wether event is sponsored
 $(document).ready(function() {
 	$(".eventSponsored").hide();
-	$("#eventSponsor").change(function(e){
+	$("#event_sponsor").change(function(e){
 		$(".eventSponsored").toggle();
-	});
-});
-
-//show and hide for user wether event has a partner group
-$(document).ready(function() {
-	$(".eventPartnered").hide();
-	$("#eventPartner").change(function(e){
-		$(".eventPartnered").toggle();
 	});
 });
