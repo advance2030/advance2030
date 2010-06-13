@@ -8,10 +8,13 @@ class Registration < ActiveRecord::Base
   attr_writer :current_step
 
   validates_presence_of :login, :first_name, :last_name, :email_address,
-    :password, :password_confirmation, :if => lambda { |o| o.current_step == 'create' }
+    :password, :password_confirmation, :if => lambda { |r| r.current_step == 'create' }
   validates_format_of :email_address,
     :with => RegistrationsHelper::EMAIL_REGEX,
     :if => :email_address?
+
+  validates_presence_of :address, :city, :state, :zip, :phone_number,
+    :if => lambda { |r| r.current_step == 'personal_info' }
 
   def validate
     errors.add('password', 'and confirmation do not match') unless password_confirmation == password
