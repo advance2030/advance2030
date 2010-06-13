@@ -1,12 +1,13 @@
 Given /^I passed the first step of registration$/ do
   pending
+  registration = Factory.build(:registration)
   visit(new_registration_path)
-  fill_in('First name', :with => 'John')
-  fill_in('Last name', :with => 'Doe')
-  fill_in('Email address', :with => 'jdoe@gmail.com')
-  fill_in('Login', :with => 'jdoe')
-  fill_in('Password', :with => 'password')
-  fill_in('Verify password', :with => 'password')
+  fill_in('First name', :with => registration.first_name)
+  fill_in('Last name', :with => registration.last_name)
+  fill_in('Email address', :with => registration.email_address)
+  fill_in('Login', :with => registration.login)
+  fill_in('Password', :with => registration.password)
+  fill_in('Verify password', :with => registration.password_confirmation)
   click_button('Continue')
   # puts page.source
 end
