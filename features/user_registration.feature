@@ -27,7 +27,7 @@ Feature: Register Users
     Then I should not see "First name can't be blank"
      And I should see "Password and confirmation do not match"
 
-  Scenario: User should be successfully registered
+  Scenario: User should pass the first step in Registration
     Given there are no users in the database
       And I go to the user registration page
       And I fill in "First name" with "John"
@@ -38,4 +38,12 @@ Feature: Register Users
       And I fill in "Verify password" with "password"
     When I press "Continue"
     Then I should see "Personal Information"
+
+  Scenario: All personal info is required on the second step of Registration
+    Given I passed the first step of registration
+     When I press "Continue"
+     Then I should see "Address can't be blank"
+      And I should see "City can't be blank"
+      And I should see "Zip can't be blank"
+      And I should see "Phone number can't be blank"
 
