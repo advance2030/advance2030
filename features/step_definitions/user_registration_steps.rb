@@ -1,5 +1,5 @@
 Given /^I passed the first step of registration$/ do
-  pending
+  # #pending
   registration = Factory.build(:registration)
   visit(new_registration_path)
   fill_in('First name', :with => registration.first_name)

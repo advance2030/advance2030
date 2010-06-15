@@ -38,6 +38,7 @@ describe RegistrationsController do
     registration.should_receive(:current_step=).with(nil)
     registration.should_receive(:valid?).and_return(true)
     registration.should_receive(:next_step)
+    registration.should_receive(:current_step)
     registration.should_receive(:new_record?).and_return(true)
 
     # Call the action

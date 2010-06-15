@@ -2,15 +2,15 @@
   <legend><span><strong>Personal Information</strong></span></legend>
   <div class="form-node">
     <%= f.label :address %>
-    <%= f.text_field :address, :required => true %>
+    <%= f.text_field :address  %>
   </div>
   <div class="form-node">
     <%= f.label :address2 %>
-    <%= f.text_field :address2, :required => true %>
+    <%= f.text_field :address2 %>
   </div>
   <div class="form-node">
     <%= f.label :city %>
-    <%= f.text_field :city, :required => true %>
+    <%= f.text_field :city %>
   </div>
 
 									<div class="form-node">
@@ -34,50 +34,39 @@
 
   <div class="form-node">
     <%= f.label :zip %>
-    <%= f.text_field :zip, :required => true %>
+    <%= f.text_field :zip  %>
   </div>
   <div class="form-node">
     <%= f.label :phone_number %>
-    <%= f.text_field :phone_number, :required => true %>
+    <%= f.text_field :phone_number %>
   </div>
 
 </fieldset>
 <fieldset>
-<legend><span><strong>Profesion and Education</strong></span></legend>
+<legend><span><strong>Profession and Education</strong></span></legend>
 
 									<div class="form-node">
-										<label for="profession">
-											Profession
-										</label>
-
-										<input type="text" name="profession" id="profession" />
+										<%= f.label :profession %>
+					 					<%= f.text_field :profession %>
 									</div>
 
 									<div class="form-node">
-										<label for="employer">
-											Employer
-										</label>
-										<input type="text" name="employer" id="fbPemployerwd" />
+										<%= f.label :employer %>
+										<%= f.text_field :employer %>
 									</div>
 
 									<div class="form-node">
-
-										<label for="education">
-											Education
-										</label>
-										<input type="text" name="education" id="education" />
+										<%= f.label :education %>
+										<%= f.text_field :education %>
 									</div>
 
 								</fieldset>
+								 
 								<fieldset>
 									<legend><span><strong>About Us</strong></span></legend>
 									<div class="form-node">
-
-										<label for="hearAbout">
-											How did you hear about Cleveland 20/30?
-										</label>
-										<textarea name="hearAbout" id="hearAbout" cols="26" rows="4"></textarea>
+										<%= f.label :about2030, "How did you hear about Cleveland 20/30" %>
+										<%= f.text_area :about2030, :cols => "26", :rows => "4" %>
 									</div>
 
 								</fieldset>
-
