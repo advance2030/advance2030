@@ -1,5 +1,5 @@
 <% content_for :stylesheets do %>
-	<%= stylesheet_link_tag 'event-teasers' %>
+	<%= stylesheet_link_tag 'event-teasers','twitter-widget' %>
 <% end %>
 
 <div class="twoColumns-0">
@@ -79,6 +79,49 @@
 		<%= render :partial => "shared/upcoming_unsponsored_events",
 				:collection => @unsponsored_events,
 				:as => :event %>
-	</div>		   
+	</div>
 </div>
-
+<aside class="aditional-marketing">
+	<div class="twoColumns-0">
+		<script src="http://widgets.twimg.com/j/2/widget.js"></script>
+		<script>
+		new TWTR.Widget({
+		  version: 2,
+		  type: 'search',
+		  search: '#cleveland',
+		  interval: 6000,
+		  title: 'What are tweeps saying about #Cleveland',
+		  subject: 'OMG!',
+		  width: 'auto',
+		  height: 110,
+		  theme: {
+		    shell: {
+		      background: '#8ec1da',
+		      color: '#ffffff'
+		    },
+		    tweets: {
+		      background: '#ffffff',
+		      color: '#444444',
+		      links: '#1985b5'
+		    }
+		  },
+		  features: {
+		    scrollbar: false,
+		    loop: true,
+		    live: true,
+		    hashtags: true,
+		    timestamp: true,
+		    avatars: true,
+		    toptweets: true,
+		    behavior: 'default'
+		  }
+		}).render().start();
+		</script>
+	</div>
+	<div class="twoColumns-1">
+		<div class="sponsor">
+			<h1 class="tiny">Our Sponsors</h1>
+			<div><a href="#"><img src="/images/sponsorImage.jpg"></a></div>
+		</div>
+	</div>
+</aside>

@@ -70,7 +70,7 @@ div.clear{clear:both;}
 /* 		Structure Styles  		   */
 /* ------------------------------ */
 
-body{font-family: Helvetica, Tahoma, Verdana, sans-serif;font-size:13px;position:relative;background:#fff url(../images/bg-strech.jpg) repeat-x top left;color:#333;}
+body{/*font-family: Helvetica, Tahoma, Verdana, sans-serif;*/font-family:"lucida grande",lucida,tahoma,helvetica,arial,sans-serif !important;font-size:13px;position:relative;background:#fff url(../images/bg-strech.jpg) repeat-x top left;color:#333;}
 #container{width:100%;margin:0 auto;background:transparent url(../images/bg.jpg) no-repeat top center;}
 #container img.skyline{position:absolute;right:140px;top:107px;}
 #shadowContainer{width:960px;margin:0 auto;}
@@ -89,16 +89,16 @@ nav ul li a{font-size:116%;/*font-size:130%;*/text-decoration:none;font-weight:n
 nav ul li a:hover, nav ul li a.current{color:#ebebeb; background:transparent url(../images/cle2030-menu_re.png) repeat-x 0 -50px; border-bottom:none;}
 
 #content{padding:1em .5em .5em;background:#fff;overflow:hidden;min-height:400px;}
-footer{background:#2d2d2d;padding:10px;color:#fff;}
-footer h4{margin-top:0;}
+aside{overflow:hidden;*zoom:1;}
+footer{background:#2d2d2d;padding:10px;color:#fff;font-size:77%;}
 
 /* ------------------------------- */
 /* 		Colum Styles  		   	*/
 /* ------------------------------ */
 
 /* 2 column layout */
-div.twoColumns-0{float:left;width:655px;padding: 1em 0 2em 0;}
-div.twoColumns-1{float:right;width:285px;padding: 1em 0 2em 0;}
+div.twoColumns-0{ float:left;width:655px;padding: 1em 0;}
+div.twoColumns-1{float:right;width:295px;padding: 1em 0;}
 
 /* 3 colum layout */
 .threeColumns-0{background: transparent url('../images/subnav-background.jpg') 0 0 no-repeat;float: left;min-height: 249px;width: 162px;}
@@ -218,10 +218,8 @@ form fieldset div.fieldWithErrors input[type="text"],form fieldset div.fieldWith
 /* -------------------------------- */
 /* 		Sponsorship rotator			*/
 /* -------------------------------- */
-
-div.sponsor .sponsorBody, div.sponsor .sponsorBody .coda-slider-wrapper, div.sponsor .sponsorBody .coda-slider-wrapper .coda-slider, div.sponsor .sponsorBody .coda-slider-wrapper .coda-slider .panel-wrapper{margin:0;padding:0;width:inherit;}
-div.sponsor .sponsorBody .coda-slider-wrapper .coda-slider{background-color:inherit;}
-.coda-slider, .coda-slider .panel{min-height:220px;width:190px !important;}
+.aditional-marketing{background: #ebebeb;clear: both;margin:-.5em;padding:0 0.5em 0.5em;}
+.sponsor{margin:0;padding:0;width:inherit;text-align:center; }
 
 /* -------------------------------- */
 /* 		Galleria					*/

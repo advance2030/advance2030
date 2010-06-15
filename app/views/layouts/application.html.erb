@@ -28,8 +28,8 @@
                 <a href="javscript:void();">Account</a> | 
               <%= link_to "Sign out", user_session_url(@current_user), :method => :delete  %>
             <% else %>
-              <a href="/user_sessions/new/" title="login" class="login">LOGIN</a> | NEW HERE?
-              <a href="/registrations/new/" title="register">REGISTER</a>			
+              <a href="/user_sessions/new/" title="login" class="login">Login</a> | New Here?
+              <a href="/registrations/new/" title="register">Register</a>			
             <% end %>
             </div>
           </div>
@@ -45,14 +45,9 @@
           <div id="content">
             <%= yield %>
           </div>
+          
           <footer>
-          	<div class="sponsor">
-              <h4>Sponsors</h4>
-              <div class="sponsorBody">
-                <div><a href="#"><img src="/images/sponsorImage.jpg"></a></div>
-              </div>
-            </div>
-          </footer>
+          	The Cleveland Professional 20/30 Club, 600 Superior Avenue, Suite 1300, Cleveland, OH 44114 &nbsp;<a href="mailto:info@cleveland2030.org">info@cleveland2030.org</a></footer>
         </div>
       </div>
     </div>
