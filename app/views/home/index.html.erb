@@ -7,60 +7,33 @@
 		<div class="intro">
 			<ul class="committees">
 				<li class="social"><a href="" id="link-social">Social</a></li>
-				<li class="networking current"><a href="" id="link-networking">Networking</a></li>
+				<li class="networking"><a href="" id="link-networking">Networking</a></li>
 				<li class="philanthopic"><a href="" id="link-philanthopic">Philanthopic</a></li>
 				<li class="educational"><a href="" id="link-educational">Educational</a></li>
 			</ul>
-
-			<!--<div id="content-featured">
-				<p>The Social Committee in The Cleveland 20/30 Club holds social events which include sports, wine socials ...</p>
-				<a class="learn" href="">Learn More</a>
+			<div id="content-featured">
+				<p>Enhancing the lives of Cleveland's young professionals by offering hundreds of opportunities each year to socialize, network, volunteer, and enjoy life in Cleveland. <a class="learn" href="">Learn More</a></p>
 			</div>
-
-			<div id="content-social">
-				<p>I am text on the social page</p>
-				<a class="learn" href="">Learn More</a>
-			</div>
-
-			<div class="current" id="content-networking">
-				<p>I am text on the networking page</p>
-				<a class="learn" href="">Learn More</a>
-			</div>
-
-			<div id="content-philanthopic">
-				<p>I am text on the philanthopic page</p>
-				<a class="learn" href="">Learn More</a>
-			</div>
-
-			<div id="content-educational">
-				<p>I am text on the educational page</p>
-				<a class="learn" href="">Learn More</a>
-			</div>-->
 		</div>
-		<div class="corner"></div>
-	
 	</div>
 	<div class="subintroContainer">
-            <div class="subintroColumnLeft">
-               <div class="membership">
-                   <h4>Membership</h4>
-                   <div class="membershipBody">
-                       <div class="register">
-                           <p class="becomeMember"><a href="#">Become A Member</a></p>
-                           <p><a href="#">Renew Membership</a></p>
-                       </div>
-                       <div class="testimonials">
-                           <h4 class="testimonialsHeader">Testimonials</h4>
-                           <a href="#">Next</a>
-                           <div class="testimonialBody">
-                               <p>"This club is great!<br />There are always a lot of events and<br />this website is cool!"</p>
-                               <p class="testimonialAuthor"><strong>John Smith</strong><br />Sales Representative for Renewal<br />By Andersen</p>
-                           </div>
-                       </div>
-                   </div>
-               </div>
-               <div class="flickr">
-               	<h4>Photos From Recent Events</h4>
+		<div class="subintroColumnLeft">
+    	<div class="membership">
+        <div class="membershipBody">
+        	<div class="register">
+          	<p class="becomeMember"><a href="#">Become A Member</a></p>
+            <p><a href="#">Renew Membership</a></p>
+					</div>
+          <div class="testimonials">
+						<div class="testimonialBody">
+							<p>"This club is great!<br />There are always a lot of events and<br />this website is cool!"</p>
+              <p class="testimonialAuthor"><strong>John Smith</strong><br />Sales Representative for Renewal<br />By Andersen</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="flickr">
+				<h4>Photos From Recent Events</h4>
 				<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
 				<script src="/javascripts/aino-galleria-165c5d5/src/galleria.js"></script>
 				<script src="/javascripts/aino-galleria-165c5d5/src/plugins/galleria.flickr.js"></script>
@@ -69,43 +42,43 @@
 				    .galleria-container{background:#044E8F url(/images/cle2030-intro-bg_re.png) repeat-x scroll left top}
 				</style>
 				<div id="galleria"></div>
-				 <script>
-				    
-				    // Load theme
-				    Galleria.loadTheme('/javascripts/aino-galleria-165c5d5/src/themes/classic/galleria.classic.js');
-				    
-				    // intiialize flickr plugin
-				    var flickr = new Galleria.Flickr('9005c2c39147fac3ffca9964197671c5');
-				    
-				    // inject a photset into galleria
-				    flickr.getSet('72157624191939250', { 
-				        size: 'medium'
-				    }, function(data) {
-				        $('#galleria').galleria({
-				            data_source:data
-				        });
-				    });
-				    
-				    </script>          
-              	</div>
-           </div>
-           <div class="subintroColumnRight">
-             <div class="recentnews">
-               <h4>Cleveland YP News</h4>
-               <script language="JavaScript" src="http://itde.vccs.edu/rss2js/feed2js.php?src=http%3A%2F%2Fblog.cleveland.com%2Fbusiness%2Fatom.xml&chan=n&num=5&desc=50&date=n&targ=n" type="text/javascript"></script>
-			   <br><div class="small">News provided by: &nbsp;<a href="http://cleveland.com"><img src="/images/sponsoreImage_small.png" style="width: 75px; height: 32px;vertical-align:middle;" border="0"></a></div>
-             </div>  
-           </div>                          
-       </div>
+				<script>
+					// Load theme
+					Galleria.loadTheme('/javascripts/aino-galleria-165c5d5/src/themes/classic/galleria.classic.js');				    
+					// intiialize flickr plugin
+					var flickr = new Galleria.Flickr('9005c2c39147fac3ffca9964197671c5');				    
+					// inject a photset into galleria
+					flickr.getSet('72157624191939250', { 
+						size: 'medium'
+						}, function(data) {
+						$('#galleria').galleria({
+							data_source:data
+						});
+					});
+				</script>          
+			</div>
+		</div>
+		<div class="subintroColumnRight">
+			<div class="recentnews">
+				<h4>Cleveland YP News</h4>
+				<script language="JavaScript" src="http://itde.vccs.edu/rss2js/feed2js.php?src=http%3A%2F%2Fblog.cleveland.com%2Fbusiness%2Fatom.xml&chan=n&num=5&desc=50&date=n&targ=n" type="text/javascript"></script>
+				<br><div class="small">News provided by: &nbsp;<a href="http://cleveland.com"><img src="/images/sponsoreImage_small.png" style="width: 75px; height: 32px;vertical-align:middle;" border="0"></a></div>
+			</div>  
+		</div>                          
+	</div>
 </div>
 <div class="twoColumns-1">
-	<h4>Sponsored Events</h4>
-	<%= render :partial => "shared/upcoming_sponsored_events", 
-			   :collection => @sponsored_events,
-			   :as => :event %>
-	<h4>Upcoming Events</h4>
-	<%= render :partial => "shared/upcoming_unsponsored_events",
-			   :collection => @unsponsored_events,
-			   :as => :event %>
+	<div class="sponsored-events">
+		<h4>Sponsored Events</h4>
+		<%= render :partial => "shared/upcoming_sponsored_events", 
+	  		:collection => @sponsored_events,
+	   		:as => :event %>
+	</div>
+	<div class="upcomming-events">
+		<h4>Upcoming Events</h4>
+		<%= render :partial => "shared/upcoming_unsponsored_events",
+				:collection => @unsponsored_events,
+				:as => :event %>
+	</div>		   
 </div>
 
