@@ -1,23 +1,20 @@
 <fieldset>
   <legend><span><strong>Personal Information</strong></span></legend>
   <div class="form-node">
-    <label for="address1">Address</label>
-    <input type="text" name="address1" id="address1" required />
-    <label for="address2">Address2</label>
-										<input type="text" name="address2" id="address2" />
-
-									</div>
-
-									<div class="form-node">
-										<label for="city">
-											City
-										</label>
-										<input type="text" name="city" id="city" required />
-									</div>
+    <%= f.label :address %>
+    <%= f.text_field :address, :required => true %>
+  </div>
+  <div class="form-node">
+    <%= f.label :address2 %>
+    <%= f.text_field :address2, :required => true %>
+  </div>
+  <div class="form-node">
+    <%= f.label :city %>
+    <%= f.text_field :city, :required => true %>
+  </div>
 
 									<div class="form-node">
 										<label for="state">
-
 											State
 										</label>
 										<select name="state" id="state">
@@ -25,7 +22,6 @@
 											<option value="AK">Alaska</option>
 											<option value="AZ">Arizona</option>
 											<option value="AR">Arkansas</option>
-
 											<option value="CA">California</option>
 											<option value="CO">Colorado</option>
 											<option value="CT">Connecticut</option>
@@ -35,25 +31,19 @@
 
 									</div>
 
-									<div class="form-node">
-										<label for="zip">
-											Zip
-										</label>
-										<input type="text" name="zip" id="zip" maxlength="5" class="formZip" required />
-									</div>
 
-									<div class="form-node">
-										<label for="phone">
+  <div class="form-node">
+    <%= f.label :zip %>
+    <%= f.text_field :zip, :required => true %>
+  </div>
+  <div class="form-node">
+    <%= f.label :phone_number %>
+    <%= f.text_field :phone_number, :required => true %>
+  </div>
 
-											Phone number
-										</label>
-										<input type="text" name="phone" id="phone" maxlength="10" required />
-									</div>
-
-
-								</fieldset>
-								<fieldset>
-									<legend><span><strong>Profesion and Education</strong></span></legend>
+</fieldset>
+<fieldset>
+<legend><span><strong>Profesion and Education</strong></span></legend>
 
 									<div class="form-node">
 										<label for="profession">
