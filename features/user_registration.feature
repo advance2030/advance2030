@@ -47,3 +47,17 @@ Feature: Register Users
       And I should see "Zip can't be blank"
       And I should see "Phone number can't be blank"
 
+  @test
+  Scenario: User should pass the second step in Registration
+    Given I passed the first step of registration
+      And I fill in "Address" with "243 Cedar"
+      And I fill in "City" with "Mayfield Heights"
+      And I select "Ohio" from "State"
+      And I fill in "Zip" with "44124"
+      And I fill in "Phone number" with "651-342-3987"
+      And I fill in "Profession" with "plumber"
+      And I fill in "Employer" with "City of Mayfield"
+      And I fill in "Education" with "High School Diploma"
+      And I fill in "How did you hear about Cleveland 20/30" with "Through friends"
+    When I press "Continue"
+     Then I should see something like "Registration: Membership Dues"
