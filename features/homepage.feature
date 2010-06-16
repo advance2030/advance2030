@@ -6,7 +6,7 @@ Feature: Home page
   Scenario: Login link displayed on home page
     Given there are no users in the database
     When I go to the home page
-    Then I should see a link with the text "LOGIN"
+    Then I should see a link with the text "Login"
 
   Scenario: Menu links displayed on home page
     Given there are no users in the database
