@@ -12,26 +12,10 @@
     <%= f.label :city %>
     <%= f.text_field :city %>
   </div>
-
-									<div class="form-node">
-										<label for="state">
-											State
-										</label>
-										<select name="state" id="state">
-											<option value="AL">Alabama</option>
-											<option value="AK">Alaska</option>
-											<option value="AZ">Arizona</option>
-											<option value="AR">Arkansas</option>
-											<option value="CA">California</option>
-											<option value="CO">Colorado</option>
-											<option value="CT">Connecticut</option>
-											<option value="DE">Delaware</option>
-											<option value="DC">Dist of Columbia</option>
-										</select>
-
-									</div>
-
-
+  <div class="form-node">
+    <%= f.label :state %>
+    <%= f.select :state, State.all.collect { |s| [s.title, s.code] }, :include_blank => false %>
+  </div>
   <div class="form-node">
     <%= f.label :zip %>
     <%= f.text_field :zip  %>
@@ -40,33 +24,28 @@
     <%= f.label :phone_number %>
     <%= f.text_field :phone_number %>
   </div>
-
 </fieldset>
+
 <fieldset>
-<legend><span><strong>Profession and Education</strong></span></legend>
+  <legend><span><strong>Profession and Education</strong></span></legend>
+  <div class="form-node">
+    <%= f.label :profession %>
+    <%= f.text_field :profession %>
+  </div>
+  <div class="form-node">
+    <%= f.label :employer %>
+    <%= f.text_field :employer %>
+  </div>
+  <div class="form-node">
+    <%= f.label :education %>
+    <%= f.text_field :education %>
+  </div>
+</fieldset>
 
-									<div class="form-node">
-										<%= f.label :profession %>
-					 					<%= f.text_field :profession %>
-									</div>
-
-									<div class="form-node">
-										<%= f.label :employer %>
-										<%= f.text_field :employer %>
-									</div>
-
-									<div class="form-node">
-										<%= f.label :education %>
-										<%= f.text_field :education %>
-									</div>
-
-								</fieldset>
-								 
-								<fieldset>
-									<legend><span><strong>About Us</strong></span></legend>
-									<div class="form-node">
-										<%= f.label :about2030, "How did you hear about Cleveland 20/30" %>
-										<%= f.text_area :about2030, :cols => "26", :rows => "4" %>
-									</div>
-
-								</fieldset>
+<fieldset>
+  <legend><span><strong>About Us</strong></span></legend>
+  <div class="form-node">
+    <%= f.label :about2030, "How did you hear about Cleveland 20/30" %>
+    <%= f.text_area :about2030, :cols => "26", :rows => "4" %>
+  </div>
+</fieldset>
