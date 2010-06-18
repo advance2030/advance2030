@@ -6,7 +6,7 @@
 .event{clear:left;padding:3px;}
 .event.sponsored{background-color:#ebebeb;-moz-border-radius:5px;-webkit-border-radius:5px;overflow:hidden;margin-bottom:.5em;}
 .event .date{margin:7px 0 0 3px;float:left;position:relative;padding:5px;background-color:#0056A5;background-image:url('/images/btn-bg.gif');background-position:repeat-x;width:3.4em;height:2em;color:#fff;-moz-border-radius:5px;-webkit-border-radius:5px;}
-.event .date .day{font-size:225%;float:left;line-height:1em;}
+.event .date .day{font-size:200%;float:left;line-height:1em;}
 .event .date .month{-webkit-transform:rotate(-90deg);-moz-transform: rotate(-90deg);font-weight:bold;font-size:65%;position:absolute;top:.9em;left:4em;letter-spacing:2px;}
 .event ul{list-style:none;margin: 0 0 0 60px;padding: 0;text-align:left;}
 .event ul li{border-left: transparent solid 4px;color:#111;display: block;padding: 5px 10px;}

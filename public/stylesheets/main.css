@@ -90,7 +90,7 @@ nav ul li a:hover, nav ul li a.current{color:#ebebeb; background:transparent url
 
 #content{padding:1em .5em .5em;background:#fff;overflow:hidden;min-height:400px;}
 aside{overflow:hidden;*zoom:1;}
-footer{background:#2d2d2d;padding:10px;color:#fff;font-size:77%;}
+footer{background:#2d2d2d;padding:10px;color:#fff;font-size:77%;margin-bottom:2em;}
 
 /* ------------------------------- */
 /* 		Colum Styles  		   	*/
@@ -114,24 +114,14 @@ div.twoColumns-1{float:right;width:295px;padding: 1em 0;}
 
 div.introContainer{margin-bottom:2em;}
 div.intro{overflow:hidden; width:100%;background:#044e8f url(../images/cle2030-intro-bg_re.png) repeat-x top left;margin-left:-6px;}
-/*div.introContainer .corner{width:18px;height:9px;position:absolute;bottom:-9px;left:-29px;background:transparent url(../images/cle2030-intro-corner.png) no-repeat top left;}*/
-/*div.intro div{display:none;}*/
-/*div.intro a.learn{background:#FFF url('../images/learn-more-background.jpg') 0 0 repeat-x;border-radius:5px;color:#294558;display:block;position:absolute;bottom:20px;right:20px;font-size:160%;padding: 10px 15px;text-decoration:none;text-shadow:rgba(10, 10, 10, 0.2) 1px 2px 2px;-moz-border-radius:5px;-webkit-border-radius:5px;}
-div.intro a.learn:hover{text-decoration:underline;}
-div.intro .committees{margin-top:35px;margin-left:30px;width:165px;font-size:124%;}
-div.intro .committees li{display:block;list-style:none;margin:0px 15px 0px 0;width:100%;}
-div.intro .committees li a{color:#fff;display:block;text-decoration:none;font-weight:normal;padding-left:15px;}
-div.intro .committees li a:hover{border-bottom:none;background-color:#f2f2f2;color:#333;}
-div.intro  .committees li.current{}*/
 div.intro .committees{width:33%;float:left;margin:3em 0;}
 div.intro .committees li{display:block;list-style:none;width:70%;margin:.1em auto;}
-/*div.intro .committees li a{border:1px solid #0D3756; font-size:116%; color:#fff;display:block;text-decoration:none;font-weight:normal;padding:.5em 2em;margin-bottom:.1em;-moz-border-radius:5px;-webkit-border-radius:5px;}*/
-/*div.intro .committees li a{border:1px solid #0D3756; font-size:116%; color:#fff;display:block;text-decoration:none;font-weight:normal;padding:.5em 2em;margin-bottom:.1em;-moz-border-radius:5px;-webkit-border-radius:5px;background:url('/images/btn-bg.gif') repeat-x;}*/
-div.intro .committees li a{background-color:#0056A5;font-size:116%; color:#fff;display:block;text-decoration:none;font-weight:normal;padding:.5em 2em;margin-bottom:.1em;-moz-border-radius:5px;-webkit-border-radius:5px;}
+div.intro .committees li a{background-color:#0056A5;font-size:116%; color:#fff;display:block;text-decoration:none;font-weight:normal;padding:.5em 2em;margin-bottom:.1em;-moz-border-radius:5px;-webkit-border-radius:5px; -moz-box-shadow: 0 5px 12px #0e3653; -webkit-box-shadow: 0 5px 15px #0e3653; }
 div.intro .committees li a:hover, div.intro li.current a{border:0; background-color:#EBEBEB;color:#333;}
-/*div.intro div p{color: #fff;position:absolute;margin-right:40px;top:57px;left:245px;font-size:124%;line-height:1.6em; border-left:1px dotted #fff;}*/
 div.intro #content-featured{float:left;color:#fff;width:67%;}
-div.intro div p{padding:3em 25px 3em 0;font-size:132%;line-height:1.6em; margin:0; /*border-left:1px dotted #fff;*/}
+div.intro div p{padding:3em 25px 3em 0;font-size:132%;line-height:1.6em; margin:0;}
+div.intro a.learn{background-color:#0056A5;color:#fff;font-size:70%;padding: 1px 4px;text-decoration:none;-moz-border-radius:5px;-webkit-border-radius:5px;-moz-box-shadow: 0 5px 12px #0e3653; -webkit-box-shadow: 0 5px 15px #0e3653; }
+div.intro a.learn:hover{background-color:#fff;color:#294558;border:0;}
 
 div.subintroContainer { margin-bottom: 15px; overflow: hidden;}
 div.subintroColumnLeft, div.subintroColumnRight { float: left; width: 450px; }
@@ -173,7 +163,7 @@ div.flickrRight a { display: block; background: url(../images/flickrRight.jpg) n
 
 form {overflow:hidden;margin-bottom:1em;}
 form legend span{position:absolute;width:100%;}
-form legend span strong{text-transform:uppercase;font-size:85%;background:#ddd;padding:.4em 0 .4em 1em;display:block;-moz-border-radius:5px;-webkit-border-radius:5px;}
+form legend span strong{font-size:85%;background:#ddd;padding:.4em 0 .4em 1em;display:block;-moz-border-radius:5px;-webkit-border-radius:5px;}
 form fieldset {padding: 3em 0 1em;display: block;width:100%;position:relative;}
 form fieldset div.form-node {margin: 0 0 .5em;clear:left;position:relative;overflow:hidden;*zoom:1;}
 form fieldset label, form fieldset .label-like {text-align:right;width:170px;display:block;float:left;margin: 0 8px 0 0;text-transform:uppercase;font-size:90%;color:#6C6C6C;}
