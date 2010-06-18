@@ -60,4 +60,4 @@ Feature: Register Users
       And I fill in "Education" with "High School Diploma"
       And I fill in "How did you hear about Cleveland 20/30" with "Through friends"
     When I press "Continue"
-     Then I should see "Registration: Membership Dues"
+     Then I should see "Membership Dues"
