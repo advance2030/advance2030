@@ -1,0 +1,36 @@
+.aditional-marketing .twtr-widget {
+	font-family:inherit !important;
+	font-size:inherit !important;
+	position:none !important;
+}
+.aditional-marketing #twtr-widget-1 .twtr-doc, .aditional-marketing #twtr-widget-1 .twtr-hd a, .aditional-marketing #twtr-widget-1 h3, #twtr-widget-1 h4, .aditional-marketing #twtr-widget-1 .twtr-popular,
+.aditional-marketing #twtr-widget-1 .twtr-doc, .aditional-marketing #twtr-widget-1 .twtr-hd a, .aditional-marketing #twtr-widget-1 h3, .aditional-marketing #twtr-widget-1 h4, #twtr-widget-1 .twtr-popular{
+	background-color:transparent !important;
+	color:inherit !important;
+}
+.aditional-marketing .twtr-widget h4{
+	display:none;
+}
+.aditional-marketing .twtr-widget h3{
+	margin-bottom:1em !important;
+	font-size:77% !important;
+	font-weight:bold !important;
+	margin-left:80px !important;
+}
+.aditional-marketing .twtr-widget .twtr-hd{
+	padding:0;
+}
+.aditional-marketing .twtr-ft {
+	position:absolute !important;
+	top:0 !important;
+}
+.aditional-marketing .twtr-ft div {
+	padding:0 !important;
+}
+.aditional-marketing .twtr-ft span {
+	display:none !important;;
+}
+.aditional-marketing #twtr-widget-1 .twtr-new-results, .aditional-marketing #twtr-widget-1 .twtr-results-inner, .aditional-marketing  #twtr-widget-1 .twtr-timeline {
+	background:transparent none repeat scroll 0 0 !important;
+	font-size:82% !important;
+}
