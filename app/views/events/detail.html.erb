@@ -11,8 +11,8 @@
 		<div class="columnsContainer">
 			<div class="event">
 				<a href="#" class="date">
-					<span class="day">08</span>
-					<span class="month">AUG</span>
+					<span class="day"><%= @event.start_datetime.strftime("%d") %></span>
+					<span class="month"><%= @event.start_datetime.strftime("%b") %></span>
 				</a>
 				<ul>
 					<li class="">
@@ -25,32 +25,27 @@
 						</dl>
 					</li>
 				</ul>
-			</div>			
+			</div>	
+			<% if @event.member_price || @event.non_member_price %>		
 			<div class="miniColumn right">
-				<h3 class="tiny">Ccost</h3>					
+				<h3 class="tiny">Cost</h3>					
 				<dl>
+					<% if @event.member_price %>
 					<dt>Members:</dt>
-					<dd>$20</dd>
+					<dd><%= number_to_currency(@event.member_price) %></dd>
+					<% end %>
+					<% if @event.non_member_price %>
 					<dt>Non-Members:</dt>
-					<dd>$50</dd>
+					<dd><%= number_to_currency(@event.non_member_price) %></dd>
+					<% end %>
 				</dl>									
 			</div>
+			<% end %>
+			<aside class="sponsor-logo">
+				<%= image_tag(@event.sponsor_logo.url(:sponsored_event)) %>
+			</aside><!-- /sponsored-logo -->
 		</div>
 		<%= @event.description%>
-		<!--<div class="section">
-			<h4>EVENT DESCRIPTION</h4>
-		</div>
-		<div class="section">
-			<h4>MAP &amp; DIRECTIONS</h4>
-			<div class="map">
-				<img src="../../../../public/images/google_map.jpg" style="width:417px;height:272px;"> 
-			</div>
-			<h4>DIRECTIONS</h4>
-			<p>
-				<b>From I-71:</b> <br>
-				Exit at West 25th St. and follow Zoo signs.
-			</p>
-		</div>-->
 	</div>
 </div>
 <div class="twoColumns-1">
