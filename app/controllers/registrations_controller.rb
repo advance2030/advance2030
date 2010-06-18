@@ -22,7 +22,7 @@ class RegistrationsController < ApplicationController
       #redirect_to account_url
       @registration.next_step
       session[:registration_step] = @registration.current_step
-      #logger.info("Current step is #{@registration.current_step}")
+      # logger.info("Current step is #{@registration.current_step}")
     end
 
     if @registration.new_record?

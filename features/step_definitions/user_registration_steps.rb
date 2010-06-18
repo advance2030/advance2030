@@ -19,3 +19,8 @@ end
 Then /^I should have one account with the login "([^\"]*)"$/ do |login|
   Account.find_by_login(login).should_not be_nil
 end
+
+Then /^I should see the Paypal button$/ do
+  page.should have_xpath('//input[@type="image" and @src="images/paypal.gif"]')
+end
+
