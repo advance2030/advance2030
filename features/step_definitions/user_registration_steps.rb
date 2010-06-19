@@ -1,5 +1,4 @@
 Given /^I passed the first step of registration$/ do
-  # #pending
   registration = Factory.build(:registration)
   visit(new_registration_path)
   fill_in('First name', :with => registration.first_name)
@@ -22,5 +21,10 @@ end
 
 Then /^I should see the Paypal button$/ do
   page.should have_xpath('//input[@type="image" and @src="images/paypal.gif"]')
+end
+
+Then /^I should have a User account created$/ do
+  registration = Factory.build(:registration)
+  Account.find_by_login(registration.login).should_not be_nil
 end
 
