@@ -38,6 +38,15 @@ class RegistrationsController < ApplicationController
     end
   end
 
+  def start_over
+    session[:registration_params] = nil
+    session[:registration_step] = nil
+    redirect_to new_registration_path
+  end
+
+  def review
+  end
+
   def show
   end
 

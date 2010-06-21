@@ -70,7 +70,7 @@ describe RegistrationsController do
         "state" => "OH", "zip" => "44253", "phone_number" => "216-453-4433"}
       session[:registration_params] = @create_post_values
       session[:registration_step] = 'personal_info'
-      
+
       merged_params = @create_post_values.deep_merge!(second_step_params)
       registration = stub(Registration)
       Registration.stub!(:new).with(merged_params).and_return(registration)
@@ -91,6 +91,5 @@ describe RegistrationsController do
       post 'create', {:registration => second_step_params}
     end
   end
-  
 end
 

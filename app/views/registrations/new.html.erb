@@ -1,4 +1,4 @@
-<div class="twoColumns-0"> 
+<div class="twoColumns-0">
   <h1><%= title_string(@registration.current_step) %> <a href="/user_sessions/new/" class="tiny right">I already have an account</a></h1>
   <% form_for @registration, :url => registration_path do |f| %>
   <%= f.error_messages %>
@@ -7,8 +7,9 @@
     <% if @registration.current_step == 'review' %>
     <input type="image" src="images/paypal.gif" />
     <% else %>
-    <%= f.submit "Continue" %>
+    <%= f.submit "Continue" %> or <%= link_to 'Start Over', registration_start_over_path %>
     <% end %>
   </div>
   <% end %>
 </div>
+
