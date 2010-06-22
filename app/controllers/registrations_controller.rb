@@ -18,12 +18,10 @@ class RegistrationsController < ApplicationController
         @registration.save!
         registration_converter = ConvertsRegistrationToAccountInformation.new
         registration_converter.do_it(@registration)
+      else
+        @registration.next_step
+        session[:registration_step] = @registration.current_step
       end
-
-      # render :action => :show
-      #redirect_to account_url
-      @registration.next_step
-      session[:registration_step] = @registration.current_step
       # logger.info("Current step is #{@registration.current_step}")
     end
 
@@ -31,7 +29,7 @@ class RegistrationsController < ApplicationController
       render "new"
     else
       #Continue from here -> the 3rd step should render "show"
-      render "new"
+      render "review"
       #session[:registration_step] = session[:registration_params] = nil
       #flash[:notice] = "Registration saved!"
       #render "show"
@@ -45,6 +43,7 @@ class RegistrationsController < ApplicationController
   end
 
   def review
+    # logger.info("The current_user is #{@current_user}")
   end
 
   def show

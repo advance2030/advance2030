@@ -20,7 +20,8 @@ Then /^I should have one account with the login "([^\"]*)"$/ do |login|
 end
 
 Then /^I should see the Paypal button$/ do
-  page.should have_xpath('//input[@type="image" and @src="images/paypal.gif"]')
+  button_src_attribute = find('input[@type="image"]')['src']
+  button_src_attribute.match(/^\/images\/paypal.gif/).should_not be_nil
 end
 
 Then /^I should have a User account created$/ do
