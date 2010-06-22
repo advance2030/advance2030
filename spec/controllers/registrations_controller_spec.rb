@@ -91,5 +91,16 @@ describe RegistrationsController do
       post 'create', {:registration => second_step_params}
     end
   end
+
+  it "clears the session info when the start_over action is called" do
+    session["registration_params"] = {"first_name" => "John"}
+    session["registration_step"] = "personal_info"
+
+    get 'start_over'
+
+    session["registration_params"].should be_nil
+    session["registration_step"].should be_nil
+  end
+
 end
 
