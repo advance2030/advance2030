@@ -4,6 +4,7 @@ class User < ActiveRecord::Base
   has_many :roles, :through => :users_roles
   has_one :account
   has_one :user_profile
+  has_one :user_address
 
   named_scope :managers, lambda {{
     :joins => :users_roles,
@@ -24,3 +25,4 @@ class User < ActiveRecord::Base
   end
 
 end
+

@@ -18,4 +18,12 @@ describe User do
     @user.account = account
     @user.login.should == 'gplate'
   end
+
+  it { should have_many :email_addresses }
+  it { should have_many :users_roles }
+  it { should have_many(:roles).through(:users_roles) }
+  it { should have_one :account }
+  it { should have_one :user_profile }
+  it { should have_one :user_address }
 end
+
