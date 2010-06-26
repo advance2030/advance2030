@@ -1,6 +1,6 @@
 Factory.define(:user_address) do |f|
   f.user_id 1
-  f.address '111 Cleveland Avenue'
+  f.sequence(:address) { |n| "#{n} Cleveland Avenue" }
   f.city 'Cleveland'
   f.state_code 'OH'
   f.zip '46751'
