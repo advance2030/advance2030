@@ -1,10 +1,11 @@
 <% content_for :stylesheets do %>
-	<%= stylesheet_link_tag 'three-col', 'about' %>
+	<%= stylesheet_link_tag 'three-col', 'about', 'twitter-widget' %>
 <% end %>
 
 <%= render :partial => 'nav' %>
 
 <div class="threeColumns-1">
+	<h1>About 20/30</h1>
 	<div class="section">
 		<h2>Our Mission</h2>
 		<p>Our mission is to be "the first line of defense" in engaging young professionals with the Northeast Ohio community, creating an incubator for new management and leadership talent. In support of this goal, we will organize and execute unique events of interest to our membership, providing content for entry-level members, project management experience for committee members and leaders, and executive experience for elected board-level directors and subcommittee directors.</p>
@@ -30,3 +31,4 @@
 		<h3 class="member-name"><a href="">- Jonathan Knapp</a></h3>
 	</div>
 </div>
+<%= render :partial => '/shared/additional_marketing' %>

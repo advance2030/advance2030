@@ -1,5 +1,5 @@
 <% content_for :stylesheets do %>
-	<%= stylesheet_link_tag 'calendar','event-teasers' %>
+	<%= stylesheet_link_tag 'calendar','event-teasers', 'twitter-widget' %>
 <% end %>
 
 <div class="twoColumns-0">
@@ -32,4 +32,4 @@
 			   :collection => @sponsored_events,
 			   :as => :event %>
 </div>
-<div class="clear"></div>
+<%= render :partial => '/shared/additional_marketing' %>

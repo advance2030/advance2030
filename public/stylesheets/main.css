@@ -221,8 +221,9 @@ form fieldset div.fieldWithErrors input[type="text"],form fieldset div.fieldWith
 /* 		Checkout					*/
 /* -------------------------------- */
 
-form .apply-code{float:left;display:block;border:1px solid #6c6c6c;padding:.1em .4em;margin:2px 0 0 320px;}
-form .for-price{width:114px;float:right;padding-left:20px;}
+form .recalculate{border:1px solid #6c6c6c;padding:.2em .4em;}
+form .for-price{width:140px;float:right;padding-left:20px;}
+form .for-price input[type="text"] {width:15px;display:inline;margin:0 5px 0 0;}
 form .price{font-weight:bold;}
 form fieldset .remove {float:left;display:block;padding-left:15px;margin:5px;background:url("../images/remove-icon.gif") no-repeat left top;}
 form fieldset div.no-logo{border:1px dashed #ccc;height:100px;margin-left:178px;width:300px;}

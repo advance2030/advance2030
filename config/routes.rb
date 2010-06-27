@@ -52,6 +52,15 @@ ActionController::Routing::Routes.draw do |map|
   map.registration_review 'registration/review', :controller => 'registrations', :action => 'review'
   map.registration_start_over 'registration/start_over', :controller => 'registrations', :action => 'start_over'
 
+  map.benefits 'benefits', :controller => 'benefits', :action => 'index'
+  map.benefits_social 'benefits/social', :controller => 'benefits', :action => 'social'
+  map.benefits_networking 'benefits/networking', :controller => 'benefits', :action => 'networking'
+  map.benefits_philanthropic 'benefits/philanthropic', :controller => 'benefits', :action => 'philanthropic'
+  map.benefits_educational 'benefits/educational', :controller => 'benefits', :action => 'educational'
+  map.benefits_involved 'benefits/involved', :controller => 'benefits', :action => 'involved'
+  map.benefits_discounts 'benefits/discounts', :controller => 'benefits', :action => 'discounts'
+  map.benefits_join 'benefits/join', :controller => 'benefits', :action => 'join'
+      
   map.calendar 'calendar/:year/:month/:day',
     :controller => 'calendar',
     :action => 'index',
