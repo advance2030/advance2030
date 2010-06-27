@@ -8,4 +8,7 @@ describe UserAddress do
   it "should create a new instance given valid attributes" do
     @user_address.should be_valid
   end
+
+  it { should belong_to :user }
 end
+

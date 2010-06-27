@@ -24,7 +24,7 @@ ActionController::Routing::Routes.draw do |map|
 
   # Sample resource route with sub-resources:
   #   map.resources :products, :has_many => [ :comments, :sales ], :has_one => :seller
-  
+
   # Sample resource route with more complex sub-resources
   #   map.resources :products do |products|
   #     products.resources :comments
@@ -49,6 +49,9 @@ ActionController::Routing::Routes.draw do |map|
   map.resource :account
   map.resource :alert
   map.resource :registration
+  map.registration_review 'registration/review', :controller => 'registrations', :action => 'review'
+  map.registration_start_over 'registration/start_over', :controller => 'registrations', :action => 'start_over'
+
   map.calendar 'calendar/:year/:month/:day',
     :controller => 'calendar',
     :action => 'index',
@@ -67,3 +70,4 @@ ActionController::Routing::Routes.draw do |map|
   map.connect ':controller/:action/:id'
   map.connect ':controller/:action/:id.:format'
 end
+

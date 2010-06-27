@@ -15,6 +15,8 @@ describe Registration do
     it { should_not allow_value("john_gmail.com").for(:email_address) }
     it { should_not allow_value("john@gmailcom").for(:email_address) }
     it { should_not allow_value("john@@gmail.com").for(:email_address) }
+    
+    it { should_not allow_value("p").for(:password) }
 
     it "validates that password and password_confirm match" do
       registration = Registration.new(:password => 'password', :password_confirmation => 'password1')

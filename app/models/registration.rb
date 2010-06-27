@@ -15,6 +15,7 @@ class Registration < ActiveRecord::Base
 
   validates_presence_of :address, :city, :state, :zip, :phone_number,
     :if => lambda { |r| r.current_step == 'personal_info' }
+  validates_length_of :password, :minimum => 4, :if => :password?
 
   def validate
     errors.add('password', 'and confirmation do not match') unless password_confirmation == password
@@ -42,6 +43,11 @@ class Registration < ActiveRecord::Base
 
   def last_step?
     current_step == steps.last
+  end
+
+  def password?
+    return true unless @password == nil || @password.strip == ''
+    false
   end
 
 end

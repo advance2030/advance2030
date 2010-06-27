@@ -9,17 +9,17 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100613212120) do
+ActiveRecord::Schema.define(:version => 20100619133911) do
 
   create_table "accounts", :force => true do |t|
-    t.string   "login",                              :null => false
-    t.string   "crypted_password",                   :null => false
-    t.string   "password_salt",                      :null => false
-    t.string   "persistence_token",                  :null => false
-    t.string   "single_access_token",                :null => false
-    t.string   "perishable_token",                   :null => false
-    t.integer  "login_count",         :default => 0, :null => false
-    t.integer  "failed_login_count",  :default => 0, :null => false
+    t.string   "login",                                  :null => false
+    t.string   "crypted_password",                       :null => false
+    t.string   "password_salt",                          :null => false
+    t.string   "persistence_token",                      :null => false
+    t.string   "single_access_token",                    :null => false
+    t.string   "perishable_token",                       :null => false
+    t.integer  "login_count",         :default => 0,     :null => false
+    t.integer  "failed_login_count",  :default => 0,     :null => false
     t.datetime "last_request_at"
     t.datetime "current_login_at"
     t.datetime "last_login_at"
@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(:version => 20100613212120) do
     t.datetime "updated_at"
     t.datetime "joined_at"
     t.datetime "expired_at"
+    t.boolean  "active",              :default => false
   end
 
   create_table "address_types", :force => true do |t|
@@ -453,17 +454,19 @@ ActiveRecord::Schema.define(:version => 20100613212120) do
 
   create_table "user_addresses", :force => true do |t|
     t.integer  "user_id",                            :null => false
-    t.text     "street"
-    t.integer  "postal_code_id",                     :null => false
+    t.text     "address2"
     t.integer  "address_type_id",                    :null => false
     t.boolean  "is_primary",      :default => false
     t.integer  "sort_order"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "address",                            :null => false
+    t.string   "city",                               :null => false
+    t.string   "state_code",                         :null => false
+    t.string   "zip",                                :null => false
   end
 
   add_index "user_addresses", ["address_type_id"], :name => "index_user_addresses_on_address_type_id"
-  add_index "user_addresses", ["postal_code_id"], :name => "index_user_addresses_on_postal_code_id"
   add_index "user_addresses", ["user_id"], :name => "index_user_addresses_on_user_id"
 
   create_table "user_phone_numbers", :force => true do |t|
