@@ -1,7 +1,7 @@
 <div class="twoColumns-0">
-    <h1>Create an Event</h1>
-    <% form_for @event, :url => {:controller => 'events', :action => 'create'},
-				:html => { :class => "allPurposeForm", :multipart => true } do |f| %>   
+	<h1>Edit Event</h1>
+	<% form_for @event, :url => {:controller => 'events', :action => 'update'}, 
+						:html => { :class => "allPurposeForm", :multipart => true } do |f| %>   
 	<fieldset class="oneCol">
 	  <div class="form-node">
 	    <%= f.label :name, "Event Title" %>
@@ -75,6 +75,3 @@
 	</div>
 	<% end %>
 </div>
-
-
-

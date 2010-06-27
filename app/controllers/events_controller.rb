@@ -3,7 +3,6 @@ class EventsController < ApplicationController
 
   def new
     @event = Event.new
-    render :action => :new
   end
   
   def create
@@ -13,6 +12,20 @@ class EventsController < ApplicationController
       redirect_to (event_detail_path(@event))
     else
       render new_event_path
+    end
+  end
+  
+  def edit
+    @event = Event.find_by_url_friendly(params[:id])
+  end
+  
+  def update
+    @event = Event.find_by_url_friendly(params[:id])
+    if @event.update_attributes(params[:event])
+      flash[:notice] = "You have successfully updated the event"
+      redirect_to event_detail_path(@event)
+    else
+      render edit_event_path(@event)
     end
   end
 
