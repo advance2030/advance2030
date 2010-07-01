@@ -21,7 +21,7 @@
     	<div class="membership">
         <div class="membershipBody">
         	<div class="register">
-          	<p class="becomeMember"><a href="#">Become A Member</a></p>
+          	<p class="becomeMember"><a href="/registration/new/" title="register">Become A Member</a></p>
             <p><a href="#">Renew Membership</a></p>
 					</div>
           <div class="testimonials">
@@ -81,47 +81,5 @@
 				:as => :event %>
 	</div>
 </div>
-<aside class="aditional-marketing">
-	<div class="twoColumns-0">
-		<script src="http://widgets.twimg.com/j/2/widget.js"></script>
-		<script>
-		new TWTR.Widget({
-		  version: 2,
-		  type: 'search',
-		  search: '#cleveland',
-		  interval: 6000,
-		  title: 'What are tweeps saying about #Cleveland',
-		  subject: 'OMG!',
-		  width: 'auto',
-		  height: 110,
-		  theme: {
-		    shell: {
-		      background: '#8ec1da',
-		      color: '#ffffff'
-		    },
-		    tweets: {
-		      background: '#ffffff',
-		      color: '#444444',
-		      links: '#1985b5'
-		    }
-		  },
-		  features: {
-		    scrollbar: false,
-		    loop: true,
-		    live: true,
-		    hashtags: true,
-		    timestamp: true,
-		    avatars: true,
-		    toptweets: true,
-		    behavior: 'default'
-		  }
-		}).render().start();
-		</script>
-	</div>
-	<div class="twoColumns-1">
-		<div class="sponsor">
-			<h1 class="tiny">Our Sponsors</h1>
-			<div><a href="#"><img src="/images/sponsorImage.jpg"></a></div>
-		</div>
-	</div>
-</aside>
+
+<%= render :partial => '/shared/additional_marketing' %>

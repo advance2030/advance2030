@@ -20,8 +20,6 @@
             <a href="<%=root_url%>" title="The Cleveland 2030 Club home page" class="logo">
                 <img src="/images/logo.gif" alt="The Cleveland 2030 Logo" border="0">
             </a>
-            <div id="alertSection">
-            </div>
             <div id="loginSection">
               <% if !@current_user.nil? and @current_user.logged_in? %>
                 <%= @current_user.login %> |
