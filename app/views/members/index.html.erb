@@ -1,62 +1,18 @@
 <% content_for :stylesheets do %>
 	<%= stylesheet_link_tag 'members2030' %>
 <% end %>
-<%= @current_user.login %>
+
 <h1>20/30 Members</h1>
 <div id="loginSection">
   <% if !@current_user.nil? and @current_user.logged_in? %>
-
-		<span>Viewing 1-20 of 300 members</span>
+		
+		<span>Viewing 1-20 of 300 members</span> 
 		<hr />
 		
-		<div class="memberInfo">
-			<img class="left" src="/images/no-photo.gif" alt="Member's Avatar" />
-			<div>
-				<span class="blueMemberName">John Doe</span><img src="/images/mail-icon.gif" alt="Send a Message" />
-				<p>Group Name one, Group Name two, Group Name three</p>
-			</div>	
-		</div>
-		
-		<div class="memberInfo">
-			<img class="left" src="/images/no-photo.gif" alt="Member's Avatar" />
-			<div>
-				<span class="blueMemberName">John Doe</span><img src="/images/mail-icon.gif" alt="Send a Message" />
-				<p>Group Name one, Group Name two, Group Name three</p>
-			</div>	
-		</div>
-		
-		<div class="memberInfo">
-			<img class="left" src="/images/no-photo.gif" alt="Member's Avatar" />
-			<div>
-				<span class="blueMemberName">John Doe</span><img src="/images/mail-icon.gif" alt="Send a Message" />
-				<p>Group Name one, Group Name two, Group Name three</p>
-			</div>	
-		</div>
-		
-		<div class="memberInfo">
-			<img class="left" src="/images/no-photo.gif" alt="Member's Avatar" />
-			<div>
-				<span class="blueMemberName">John Doe</span><img src="/images/mail-icon.gif" alt="Send a Message" />
-				<p>Group Name one, Group Name two, Group Name three</p>
-			</div>	
-		</div>
-		
-		<div class="memberInfo">
-			<img class="left" src="/images/no-photo.gif" alt="Member's Avatar" />
-			<div>
-				<span class="blueMemberName">John Doe</span><img src="/images/mail-icon.gif" alt="Send a Message" />
-				<p>Group Name one, Group Name two, Group Name three</p>
-			</div>	
-		</div>
-		
-		<div class="memberInfo">
-			<img class="left" src="/images/no-photo.gif" alt="Member's Avatar" />
-			<div>
-				<span class="blueMemberName">John Doe</span><img src="/images/mail-icon.gif" alt="Send a Message" />
-				<p>Group Name one, Group Name two, Group Name three</p>
-			</div>	
-		</div>
-
+		<%= render :partial => "members_list", 
+	  		:collection => @members,
+	   		:as => :member %>
+	   		
 	<% else %>
 
 		<p>You must be logged in to see the members</p>

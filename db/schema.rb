@@ -503,6 +503,7 @@ ActiveRecord::Schema.define(:version => 20100619133911) do
     t.string   "first_name"
     t.string   "last_name"
     t.integer  "user_profiles_id"
+    t.string   "url_friendly",                           :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "middle_name"
