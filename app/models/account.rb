@@ -2,6 +2,8 @@ require 'authlogic'
 
 class Account < ActiveRecord::Base
 
+  attr_accessible :login, :email, :password, :active
+
   belongs_to :user
   has_one :registration
 
@@ -12,6 +14,5 @@ class Account < ActiveRecord::Base
     c.validate_password_field = true
     c.perishable_token_valid_for = 5.minutes
   end
-
 end
 

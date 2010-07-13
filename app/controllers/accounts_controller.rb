@@ -2,11 +2,11 @@ class AccountsController < ApplicationController
 
   before_filter :require_no_user, :only => [:new, :create]
   before_filter :require_user, :only => [:show, :edit, :update]
-  
+
   def new
     @account = Account.new
   end
-  
+
   def create
     @account = Account.new(params[:account])
     if @account.save
@@ -15,15 +15,15 @@ class AccountsController < ApplicationController
       render :action => :new
     end
   end
-  
+
   def show
     @account = @current_user
   end
- 
+
   def edit
     @account = @current_user
   end
-  
+
   def update
     @account = @current_user # makes our views "cleaner" and more consistent
     if @account.update_attributes(params[:user])
@@ -31,6 +31,7 @@ class AccountsController < ApplicationController
     else
       render :action => :edit
     end
-  end  
-  
+  end
+
 end
+

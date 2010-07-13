@@ -7,15 +7,18 @@ module NavigationHelpers
   #
   def path_to(page_name)
     case page_name
-    
+
     when /the home\s?page/
       '/'
-   
+
     when /the user registration page/
       new_registration_path
 
     when /the user login page/
       new_user_session_path
+
+  when /the registration review page/
+      registration_review_path
 
     when /the user account page/
       account_path
@@ -33,3 +36,4 @@ module NavigationHelpers
 end
 
 World(NavigationHelpers)
+

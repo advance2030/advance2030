@@ -95,19 +95,6 @@ describe RegistrationsController do
     end
   end
 
-  context "activates the user" do
-    it "redirects to the registration index page when the user is not logged in" do
-      get 'review'
-      response.should redirect_to new_registration_path
-    end
-
-    it "redirects to the registration index page when the user is active and logged in" do
-      @current_user = Factory.build(:user)
-      get 'review'
-      response.should redirect_to new_registration_path
-    end
-  end
-
   it "clears the session info when the start_over action is called" do
     session["registration_params"] = {"first_name" => "John"}
     session["registration_step"] = "personal_info"
