@@ -43,6 +43,11 @@ class RegistrationsController < ApplicationController
   end
 
   def review
+    if (@current_user == nil)
+      redirect_to new_registration_path
+    elsif @current_user.active
+      redirect_to '/'
+    end
     # logger.info("The current_user is #{@current_user}")
   end
 

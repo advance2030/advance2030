@@ -89,6 +89,22 @@ describe RegistrationsController do
       registration.should_receive(:new_record?).and_return(:false)
 
       post 'create', {:registration => second_step_params}
+
+      session["registration_params"].should be_nil
+      session["registration_step"].should be_nil
+    end
+  end
+
+  context "activates the user" do
+    it "redirects to the registration index page when the user is not logged in" do
+      get 'review'
+      response.should redirect_to new_registration_path
+    end
+
+    it "redirects to the registration index page when the user is active and logged in" do
+      @current_user = Factory.build(:user)
+      get 'review'
+      response.should redirect_to new_registration_path
     end
   end
 
