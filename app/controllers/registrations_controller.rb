@@ -18,6 +18,7 @@ class RegistrationsController < ApplicationController
         @registration.save!
         registration_converter = ConvertsRegistrationToAccountInformation.new
         registration_converter.do_it(@registration)
+        clear_session
       else
         @registration.next_step
         session[:registration_step] = @registration.current_step
@@ -37,8 +38,7 @@ class RegistrationsController < ApplicationController
   end
 
   def start_over
-    session[:registration_params] = nil
-    session[:registration_step] = nil
+    clear_session
     redirect_to new_registration_path
   end
 
@@ -53,6 +53,12 @@ class RegistrationsController < ApplicationController
   end
 
   def update
+  end
+
+private
+  def clear_session
+    session[:registration_params] = nil
+    session[:registration_step] = nil
   end
 
 end

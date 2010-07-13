@@ -46,3 +46,12 @@ events = Event.create([
      :end_datetime => Time.now.advance(:days => 6, :minutes => 30),
      :sponsor => false}])
 
+# Temp User - we'll remove it later
+registration = Registration.new(:first_name => 'John', :last_name => 'Doe', :email_address => 'johndoe@gmail.com',
+  :login => 'johndoe', :password => 'password', :password_confirmation => 'password', :address => '3600 Cedar Road',
+  :city => 'Shaker Heights', :state => 'OH', :zip => '44390', :phone_number => '216-890-5543')
+registration_converter = ConvertsRegistrationToAccountInformation.new
+user = registration_converter.do_it(registration)
+user.active = true
+user.save!
+
